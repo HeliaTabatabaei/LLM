@@ -1,0 +1,25 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# virtual env
+.venv/
+venv/
+env/
+
+# logs
+logs/
+*.log
+
+# editor
+.vscode/
+.idea/
+
+# generated data / اگر قابل بازتولید است
+data/All_chunks_cleaned_V1.json
