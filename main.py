@@ -269,36 +269,6 @@ def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
 
 sessions = {}
 
-def answer_with_rag(user_id: str, query: str, results, temperature: float = 0.1) -> str:
-    context = build_context(results)
-
-    system_prompt = SYSTEM_PROMPT
-    user_prompt = USER_PROMPT.format(
-        query=query,
-        context=context
-    )
-
-    if user_id not in sessions:
-        sessions[user_id] = []
-
-    messages = [{"role": "system", "content": system_prompt}]
-    messages += sessions[user_id]
-    messages.append({"role": "user", "content": user_prompt})
-
-    response = client.responses.create(
-        model=LLM_MODEL,
-        temperature=temperature,
-        input=messages,
-    )
-
-    answer = response.output_text
-
-    sessions[user_id].append({"role": "user", "content": query})
-    sessions[user_id].append({"role": "assistant", "content": answer})
-
-    sessions[user_id] = sessions[user_id][-20:]
-
-    return answer
 @app.get("/test")
 def test():
     from openai import OpenAI
