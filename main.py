@@ -3,7 +3,9 @@ from fastapi_swagger import patch_fastapi
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from openai import OpenAI
-from config import OPENAI_API_KEY, EMBED_MODEL, LLM_MODEL, COLLECTION_NAME, QDRANT_HOST, QDRANT_PORT
+from config import OPENAI_API_KEY, EMBED_MODEL, LLM_MODEL, COLLECTION_NAME, QDRANT_HOST, QDRANT_PORT,connection_string
+from db import DatabaseConnection
+from log import log_message
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from qdrant_client import QdrantClient
 from qdrant_client import models
@@ -11,6 +13,38 @@ from bm25 import PersianBM25Encoder
 import uvicorn
 import os
 from ingestion import ingest  
+import uuid
+from datetime import datetime
+from typing import Optional, List, Dict, Any
+from fastapi.middleware.cors import CORSMiddleware
+
+from typing import Tuple
+SQL_SERVER_CONNECTION_STRING =connection_string
+import uuid
+
+def normalize_conversation_id(conversation_id: Optional[str]) -> Tuple[str, bool]:
+    """
+    اگر conversation_id معتبر باشد:
+        (conversation_id, False)
+    اگر خالی/نامعتبر باشد:
+        (new_uuid, True)
+    """
+    try:
+        if conversation_id is None:
+            raise ValueError
+
+        conversation_id = str(conversation_id).strip()
+
+        if conversation_id in ("", "undefined", "null", "None"):
+            raise ValueError
+
+        normalized = str(uuid.UUID(conversation_id))
+        return normalized, False
+
+    except (ValueError, TypeError, AttributeError):
+        return str(uuid.uuid4()), True
+
+
 
 app = FastAPI(
     docs_url=None,
@@ -20,7 +54,13 @@ app = FastAPI(
     version="1.0.0"
 )
 patch_fastapi(app, docs_url="/docs")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # برای محیط توسعه؛ در محیط پروداکشن دامنه‌های خود را مشخص کنید
+    allow_credentials=True,
+    allow_methods=["*"],  # اجازه به تمام متدها (POST, GET, OPTIONS و...)
+    allow_headers=["*"],  # اجازه به تمام هدرها
+)
 # Initialize clients
 client = OpenAI(
     api_key=OPENAI_API_KEY,
@@ -54,6 +94,14 @@ class QueryRequest(BaseModel):
     temperature: Optional[float] = Field(0.1, description="دمای مدل", ge=0.0, le=1.0)
     use_hybrid: Optional[bool] = Field(True, description="استفاده از hybrid search (dense + sparse)")
     filters: Optional[SearchFilters] = Field(None, description="فیلترهای metadata")
+class QueryRequestWithHistory(BaseModel):
+    query: str
+    limit: int = 5
+    temperature: float = 0.1
+    use_hybrid: bool = True
+    conversation_id: Optional[str] = None
+    user_key: Optional[str] = None
+    filters: Optional[SearchFilters] = None
 
 
 class SearchResult(BaseModel):
@@ -74,6 +122,57 @@ class QueryResponse(BaseModel):
     sources: List[SearchResult]
     query: str
     search_mode: str  # "dense" یا "hybrid"
+class QueryResponseHistory(BaseModel):
+    answer: str
+    sources: List[SearchResult]
+    query: str
+    search_mode: str
+    conversation_id: Optional[str] = None  # اضافه شد
+
+def save_conversation(cursor, conversation_id: str, title: str, user_key: Optional[str] = None, model_id: Optional[str] = None) -> str:
+    # تبدیل و نرمال‌سازی
+    conversation_guid = str(uuid.UUID(conversation_id))
+    
+    cursor.execute(
+        """
+        INSERT INTO dbo.Conversations (chatId, Title, Userkey, modelId, createDate)
+        VALUES (?, ?, ?, ?, ?)
+        """,
+        (conversation_guid, title[:255], user_key, model_id, datetime.now())
+    )
+    return conversation_guid 
+
+def save_message(cursor, conversation_id: str, role: str, content: str, provider_response_id: Optional[int] = None):
+    cursor.execute(
+        """
+        INSERT INTO dbo.Messages (ConversationId, role, content, providerResponseId, createDate)
+        VALUES (?, ?, ?, ?, ?)
+        """,
+        (
+            str(uuid.UUID(conversation_id)),
+            role,
+            content,
+            provider_response_id,
+            datetime.now()
+        )
+    )
+def get_conversation_history(cursor, conversation_id: str, limit: int = 6):
+    cursor.execute(
+        """
+        SELECT TOP (?) role, content
+        FROM (
+            SELECT TOP (?) role, content, createDate, Id
+            FROM dbo.Messages
+            WHERE ConversationId = ?
+            ORDER BY createDate DESC, Id DESC
+        ) AS recent
+        ORDER BY createDate ASC, Id ASC
+        """,
+        (limit, limit, str(uuid.UUID(conversation_id)))
+    )
+    rows = cursor.fetchall()
+    return [{"role": row.role, "content": row.content} for row in rows]
+
 
 
 # Core functions
@@ -238,6 +337,88 @@ def build_context(results) -> str:
 
     return "\n\n".join(chunks)
 
+def answer_with_rag_withHistory(
+    query: str,
+    results: List[Any],
+    temperature: float = 0.1,
+    conversation_id: Optional[str] = None,
+    user_key: Optional[str] = None
+) -> Dict[str, Any]:
+    conversation_id, is_new_chat = normalize_conversation_id(conversation_id)
+    log_message("444444444444444444444444444444")
+    log_message(conversation_id)
+    context = build_context(results)
+
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        if not is_new_chat:
+            cursor.execute(
+                "SELECT 1 FROM dbo.Conversations WHERE chatId = ?",
+                (conversation_id,)
+            )
+            if not cursor.fetchone():
+                is_new_chat = True
+
+
+        if is_new_chat:
+            conversation_id=save_conversation(
+                cursor=cursor,
+                conversation_id=conversation_id,
+                title=query,
+                user_key=user_key,
+                model_id=1
+            )
+
+        history = get_conversation_history(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            limit=6
+        )
+
+        save_message(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            role="user",
+            content=query
+        )
+    history_text = "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        *history,
+        {
+            "role": "user",
+            "content": USER_PROMPT.format(
+                context=context,
+                query=query,
+                history=history_text
+                
+            )
+        }
+    ]
+    log_message(messages)
+    response = client.responses.create(
+        model=LLM_MODEL,
+        input=messages,
+        temperature=temperature
+    )
+
+    answer = response.output_text
+    response_id = getattr(response, "id", None)
+
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        save_message(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            role="assistant",
+            content=answer,
+            provider_response_id=response_id
+        )
+    print("*********************")
+    print(conversation_id)
+    return {
+        "conversation_id": conversation_id,
+        "answer": answer,
+        "provider_response_id": response_id
+    }
 
 def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
     """تولید پاسخ با RAG"""
@@ -269,15 +450,15 @@ def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
 
 sessions = {}
 
-@app.get("/test")
-def test():
+@app.get("/test11")
+def test1():
     from openai import OpenAI
 
     client = OpenAI(
     api_key="sk-bVyAADjnBq7laj5jYKkhxFCA2W6iGhBC7dNUfdka0b99wiRw",
     base_url="https://api.gapgpt.app/v1"
     )
-
+    
     response = client.responses.create(
     model="gapgpt-qwen-3.5",
     input="salam"
@@ -317,8 +498,56 @@ async def health_check():
         }
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Service unhealthy: {str(e)}")
+@app.post("/api/queryHistory", response_model=QueryResponseHistory)
+async def api_queryHistory(request: QueryRequestWithHistory):
+    try:
+        query_vector = embed_query(request.query)
 
+        if request.use_hybrid:
+            results = hybrid_search(request.query, request.limit, request.filters)
+            search_mode = "hybrid"
+        else:
+            results = search(query_vector, request.limit, request.filters)
+            search_mode = "dense"
 
+        rag_result = answer_with_rag_withHistory(
+            query=request.query,
+            results=results,
+            temperature=request.temperature,
+            conversation_id=request.conversation_id,
+            user_key=getattr(request, "user_key", None)
+        )
+
+        sources = []
+        for r in results:
+            payload = getattr(r, "payload", {}) or {}
+            sources.append({
+                "id": str(getattr(r, "id", "")),
+                "score": getattr(r, "score", None),
+                "text": payload.get("text"),
+                "doc_id": payload.get("doc_id"),
+                "title": payload.get("title"),
+                "heading": payload.get("heading"),
+                "date": payload.get("date"),
+                "tags": payload.get("tags"),
+                "keywords": payload.get("keywords"),
+                "source_file": payload.get("source_file"),
+            })
+
+        return {
+            "answer": rag_result["answer"],
+            "sources": sources,
+            "query": request.query,
+            "search_mode": search_mode,
+            "conversation_id": rag_result["conversation_id"]
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"/api/queryHistory failed: {str(e)}")
+    
+#https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
 @app.post("/api/query", response_model=QueryResponse)
 async def query_endpoint(request: QueryRequest):
     """

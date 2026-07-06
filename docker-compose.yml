@@ -1,4 +1,4 @@
-version: "3.9"
+
 
 services:
 
@@ -18,7 +18,7 @@ services:
 
   qdrant:
     image: qdrant/qdrant:latest
-    container_name: qdrant_db
+    container_name: qdrant 
     ports:
       - "6333:6333"
       - "6334:6334"
