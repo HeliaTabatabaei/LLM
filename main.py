@@ -17,7 +17,7 @@ import uuid
 from datetime import datetime
 from typing import Optional, List, Dict, Any
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi import BackgroundTasks
 from typing import Tuple
 SQL_SERVER_CONNECTION_STRING =connection_string
 import uuid
@@ -174,6 +174,49 @@ def get_conversation_history(cursor, conversation_id: str, limit: int = 6):
     return [{"role": row.role, "content": row.content} for row in rows]
 
 
+def update_conversation_summary_task(conversation_id: str, new_user_msg: str, new_assistant_msg: str):
+    """
+    این تابع در پس‌زمینه اجرا می‌شود و خلاصه مکالمه را به‌روز می‌کند.
+    """
+    try:
+        with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+            # ۱. دریافت خلاصه قبلی از دیتابیس
+            cursor.execute("SELECT Summary FROM dbo.Conversations WHERE chatId = ?", (conversation_id,))
+            row = cursor.fetchone()
+            old_summary = row[0] if row and row[0] else "مکالمه به تازگی شروع شده است."
+
+            # ۲. ساخت پرامپت برای مدل خلاصه‌ساز
+            summary_prompt = f"""
+            با توجه به خلاصه قبلی مکالمه و پیام‌های جدید مبادله شده، یک خلاصه کوتاه، جامع و به زبان فارسی از کل مکالمه تا این لحظه بنویس. 
+            جزئیات فنی مهم (مانند نام ابزارها، پورت‌ها، خطاها یا تصمیمات کلیدی) را حفظ کن اما خلاصه را تا حد امکان فشرده نگه‌دار.
+
+            خلاصه قبلی:
+            {old_summary}
+
+            پیام‌های جدید:
+            کاربر: {new_user_msg}
+            دستیار: {new_assistant_msg}
+
+            خلاصه جدید به‌روزشده:
+            """
+
+            # ۳. فراخوانی مدل برای خلاصه‌سازی (یک مدل سبک‌تر و سریع‌تر ترجیح داده می‌شود)
+            response = client.responses.create(
+                model=LLM_MODEL,  # یا یک مدل سریع‌تر/ارزان‌تر
+                input=[{"role": "user", "content": summary_prompt}],
+                temperature=0.3
+            )
+            new_summary = response.output_text.strip()
+
+            # ۴. ذخیره خلاصه جدید در دیتابیس
+            cursor.execute(
+                "UPDATE dbo.Conversations SET Summary = ? WHERE chatId = ?",
+                (new_summary, conversation_id)
+            )
+            
+    except Exception as e:
+        # اینجا لاگ خطا را ثبت کنید تا در صورت بروز مشکل، جریان اصلی چت متوقف نشود
+        log_message(f"Error updating summary for {conversation_id}: {str(e)}")
 
 # Core functions
 def embed_query(text: str) -> List[float]:
@@ -336,6 +379,106 @@ def build_context(results) -> str:
         chunks.append(f"{header}\n{text}")
 
     return "\n\n".join(chunks)
+from fastapi import BackgroundTasks
+
+def answer_with_rag_with_summary(
+    query: str,
+    results: List[Any],
+    background_tasks: BackgroundTasks,
+    temperature: float = 0.1,
+    conversation_id: Optional[str] = None,
+    user_key: Optional[str] = None
+) -> Dict[str, Any]:
+    
+    # ۱. نرمال‌سازی شناسه مکالمه
+    conversation_id, is_new_chat = normalize_conversation_id(conversation_id)
+    context = build_context(results)
+    current_summary = ""
+    history = []
+
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        if not is_new_chat:
+            cursor.execute(
+                "SELECT 1 FROM dbo.Conversations WHERE chatId = ?",
+                (conversation_id,)
+            )
+            if not cursor.fetchone():
+                is_new_chat = True
+
+        if is_new_chat:
+            save_conversation(
+                cursor=cursor,
+                conversation_id=conversation_id,
+                title=query,
+                user_key=user_key,
+                model_id=1
+            )
+        else:
+            # خواندن خلاصه فعلی مکالمه
+            cursor.execute(
+                "SELECT Summary FROM dbo.Conversations WHERE chatId = ?",
+                (conversation_id,)
+            )
+            row = cursor.fetchone()
+            if row and row[0]:
+                current_summary = row[0]
+
+        # دریافت چند پیام آخر
+        history = get_conversation_history(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            limit=4
+        )
+
+        # ذخیره پیام جدید کاربر
+        save_message(cursor, conversation_id, "user", query)
+
+    # ۲. ساخت پرامپت نهایی
+    prompt_content = USER_PROMPT.format(
+        context=context,
+        history=current_summary if current_summary else "سابقه قبلی وجود ندارد.",
+        query=query
+    )
+
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        *history,
+        {"role": "user", "content": prompt_content}
+    ]
+
+    # ۳. دریافت پاسخ از مدل
+    response = client.responses.create(
+        model=LLM_MODEL,
+        input=messages,
+        temperature=temperature
+    )
+
+    answer = response.output_text
+    response_id = getattr(response, "id", None)
+
+    # ۴. ذخیره پاسخ دستیار
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        save_message(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            role="assistant",
+            content=answer,
+            provider_response_id=response_id
+        )
+
+    # ۵. خلاصه‌سازی در پس‌زمینه
+    background_tasks.add_task(
+        update_conversation_summary_task,
+        conversation_id=conversation_id,
+        new_user_msg=query,
+        new_assistant_msg=answer
+    )
+
+    return {
+        "conversation_id": conversation_id,
+        "answer": answer,
+        "provider_response_id": response_id
+    }
 
 def answer_with_rag_withHistory(
     query: str,
@@ -394,7 +537,7 @@ def answer_with_rag_withHistory(
             )
         }
     ]
-    log_message(messages)
+    #log_message(messages)
     response = client.responses.create(
         model=LLM_MODEL,
         input=messages,
@@ -546,7 +689,64 @@ async def api_queryHistory(request: QueryRequestWithHistory):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"/api/queryHistory failed: {str(e)}")
-    
+
+
+@app.post("/api/querySummeryHistory", response_model=QueryResponseHistory)
+async def api_querySummeryHistory(
+    request: QueryRequestWithHistory, 
+    background_tasks: BackgroundTasks  # ۱. اضافه کردن BackgroundTasks به ورودی API
+):
+    try:
+        query_vector = embed_query(request.query)
+
+        if request.use_hybrid:
+            results = hybrid_search(request.query, request.limit, request.filters)
+            search_mode = "hybrid"
+        else:
+            results = search(query_vector, request.limit, request.filters)
+            search_mode = "dense"
+
+        # ۲. ارسال background_tasks به تابع RAG (مطمئن شوید تابع را طبق پیام قبلی اصلاح کرده‌اید)
+        rag_result = answer_with_rag_with_summary(
+            query=request.query,
+            results=results,
+            background_tasks=background_tasks, # ارسال تسک منیجر
+            temperature=request.temperature,
+            conversation_id=request.conversation_id,
+            user_key=getattr(request, "user_key", None)
+        )
+
+        sources = []
+        for r in results:
+            payload = getattr(r, "payload", {}) or {}
+            sources.append({
+                "id": str(getattr(r, "id", "")),
+                "score": getattr(r, "score", None),
+                "text": payload.get("text"),
+                "doc_id": payload.get("doc_id"),
+                "title": payload.get("title"),
+                "heading": payload.get("heading"),
+                "date": payload.get("date"),
+                "tags": payload.get("tags"),
+                "keywords": payload.get("keywords"),
+                "source_file": payload.get("source_file"),
+            })
+
+        return {
+            "answer": rag_result["answer"],
+            "sources": sources,
+            "query": request.query,
+            "search_mode": search_mode,
+            "conversation_id": rag_result["conversation_id"]
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        # لاگ کردن خطا برای دیباگ راحت‌تر
+        print(f"Error in queryHistory: {e}") 
+        raise HTTPException(status_code=500, detail=f"/api/queryHistory failed: {str(e)}")
+   
 #https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
 @app.post("/api/query", response_model=QueryResponse)
 async def query_endpoint(request: QueryRequest):
