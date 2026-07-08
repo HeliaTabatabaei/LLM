@@ -9,6 +9,14 @@ from log import log_message
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from qdrant_client import QdrantClient
 from qdrant_client import models
+from qdrant_client import QdrantClient
+from qdrant_client.models import (
+    VectorParams,
+    Distance,
+    SparseVectorParams,
+    SparseIndexParams,
+    Modifier
+)
 from bm25 import PersianBM25Encoder
 import uvicorn
 import os
@@ -76,7 +84,62 @@ if os.path.exists("bm25_model.pkl"):
 else:
     print("⚠️ bm25_model.pkl not found. Sparse search will be ineffective until ingestion is run.")
 
+#==============================Qdrant History
+# ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
+COLLECTION_HISTORY = "chat_memory"
 
+def init_history_collection():
+    collections = qdrant.get_collections().collections
+    exists = any(c.name == COLLECTION_HISTORY for c in collections)
+    if not exists:
+        qdrant.recreate_collection(
+            collection_name=COLLECTION_HISTORY,
+            vectors_config=VectorParams(size=3072, distance=Distance.COSINE),
+        )
+
+# فراخوانی در ابتدای برنامه
+init_history_collection()
+
+def save_message_to_qdrant(conversation_id, role, content, user_key=None):
+    """ذخیره هر پیام در کیودرانت برای جستجوی معنایی در آینده"""
+    try:
+        vector = embed_query(content) # از تابع موجود در کد خودت استفاده میکنیم
+        qdrant.upsert(
+            collection_name=COLLECTION_HISTORY,
+            points=[{
+                "id": str(uuid.uuid4()),
+                "vector": vector,
+                "payload": {
+                    "conversation_id": str(conversation_id),
+                    "user_key": user_key,
+                    "role": role,
+                    "content": content,
+                    "timestamp": datetime.now().isoformat()
+                }
+            }]
+        )
+    except Exception as e:
+        print(f"Error saving to Qdrant history: {e}")
+
+def search_chat_history(query_vector, conversation_id, limit=3):
+    """جستجوی پیام‌های مرتبط قبلی در همین کانورسیشن"""
+    try:
+        results = qdrant.search(
+            collection_name=COLLECTION_HISTORY,
+            query_vector=query_vector,
+            query_filter={
+                "must": [
+                    {"key": "conversation_id", "match": {"value": str(conversation_id)}}
+                ]
+            },
+            limit=limit
+        )
+        # تبدیل نتایج به متن برای تزریق به پرامپت
+        past_memories = "\n".join([f"{res.payload['role']}: {res.payload['content']}" for res in results])
+        return past_memories
+    except Exception as e:
+        print(f"Error searching Qdrant history: {e}")
+        return ""
 
 # Request/Response models
 class SearchFilters(BaseModel):
@@ -156,6 +219,7 @@ def save_message(cursor, conversation_id: str, role: str, content: str, provider
             datetime.now()
         )
     )
+    
 def get_conversation_history(cursor, conversation_id: str, limit: int = 6):
     cursor.execute(
         """
@@ -433,7 +497,7 @@ def answer_with_rag_with_summary(
         # ذخیره پیام جدید کاربر
         save_message(cursor, conversation_id, "user", query)
 
-    # ۲. ساخت پرامپت نهایی
+    # ۲. ساخت پرامپت نهاییj
     prompt_content = USER_PROMPT.format(
         context=context,
         history=current_summary if current_summary else "سابقه قبلی وجود ندارد.",
@@ -474,6 +538,148 @@ def answer_with_rag_with_summary(
         new_assistant_msg=answer
     )
 
+    return {
+        "conversation_id": conversation_id,
+        "answer": answer,
+        "provider_response_id": response_id
+    }
+def answer_with_rag_withHistoryAndVectorDB(
+    query: str,
+    results: List[Any],
+    temperature: float = 0.1,
+    conversation_id: Optional[str] = None,
+    user_key: Optional[str] = None
+) -> Dict[str, Any]:
+    conversation_id, is_new_chat = normalize_conversation_id(conversation_id)
+  
+
+    context = build_context(results)
+    log_message("step1")
+    # 1) تولید embedding برای query جدید جهت جستجوی memory در Qdrant
+    try:
+        query_vector = embed_query(query)
+    except Exception as e:
+        log_message(f"embed_query failed in history retrieval: {e}")
+        query_vector = None
+    log_message("step2")
+    # 2) جستجوی حافظه بلندمدت از Qdrant
+    relevant_history_text = ""
+    if query_vector is not None:
+        try:
+            relevant_history_text = search_chat_history(
+                query_vector=query_vector,
+                conversation_id=conversation_id,
+                limit=3
+            )
+        except Exception as e:
+            log_message(f"search_chat_history failed: {e}")
+            relevant_history_text = ""
+    log_message("step4")
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        if not is_new_chat:
+            cursor.execute(
+                "SELECT 1 FROM dbo.Conversations WHERE chatId = ?",
+                (conversation_id,)
+            )
+            if not cursor.fetchone():
+                is_new_chat = True
+
+        if is_new_chat:
+            conversation_id = save_conversation(
+                cursor=cursor,
+                conversation_id=conversation_id,
+                title=query,
+                user_key=user_key,
+                model_id=1
+            )
+
+        # 3) گرفتن 6 پیام آخر از SQL Server
+        history = get_conversation_history(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            limit=6
+        )
+
+        # 4) ذخیره پیام کاربر در SQL Server
+        save_message(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            role="user",
+            content=query
+        )
+    log_message("step saveeeeeeeeeeeeeeeeee")
+    # 5) ذخیره پیام کاربر در Qdrant برای استفاده‌های بعدی
+    try:
+        save_message_to_qdrant(
+            conversation_id=conversation_id,
+            role="user",
+            content=query,
+            user_key=user_key
+        )
+    except Exception as e:
+        log_message(f"save_message_to_qdrant(user) failed: {e}")
+
+    # 6) ساخت متن history کوتاه‌مدت
+    history_text = "\n".join(
+        [f"{msg['role'].capitalize()}: {msg['content']}" for msg in history]
+    )
+
+    # 7) ساخت متن حافظه بلندمدت
+    long_term_memory_text = (
+        relevant_history_text.strip()
+        if relevant_history_text.strip()
+        else "یادآوری مرتبطی از حافظه بلندمدت پیدا نشد."
+    )
+
+    combined_memory = f"""
+    حافظه بلندمدت مرتبط از Qdrant:
+        {long_term_memory_text}
+
+    تاریخچه اخیر گفتگو:
+        {history_text}
+    """.strip()
+
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {
+            "role": "user",
+            "content": USER_PROMPT.format(
+                context=context,
+                query=query,
+                history=combined_memory
+            )
+        }
+    ]
+    response = client.responses.create(
+        model=LLM_MODEL,
+        input=messages,
+        temperature=temperature
+    )
+
+    answer = response.output_text
+    response_id = getattr(response, "id", None)
+
+    with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+        save_message(
+            cursor=cursor,
+            conversation_id=conversation_id,
+            role="assistant",
+            content=answer,
+            provider_response_id=response_id
+        )
+
+    # 9) ذخیره پاسخ دستیار در Qdrant
+    try:
+        save_message_to_qdrant(
+            conversation_id=conversation_id,
+            role="assistant",
+            content=answer,
+            user_key=user_key
+        )
+    except Exception as e:
+        log_message(f"save_message_to_qdrant(assistant) failed: {e}")
+
+   
     return {
         "conversation_id": conversation_id,
         "answer": answer,
@@ -570,7 +776,8 @@ def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
     system_prompt = SYSTEM_PROMPT
     user_prompt = USER_PROMPT.format(
         query=query,
-        context=context
+        context=context,
+        history=""
     )
 
     response = client.responses.create(
@@ -641,6 +848,54 @@ async def health_check():
         }
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Service unhealthy: {str(e)}")
+@app.post("/api/queryHistoryAdVectorDB", response_model=QueryResponseHistory)
+async def api_queryHistory(request: QueryRequestWithHistory):
+    try:
+        query_vector = embed_query(request.query)
+
+        if request.use_hybrid:
+            results = hybrid_search(request.query, request.limit, request.filters)
+            search_mode = "hybrid"
+        else:
+            results = search(query_vector, request.limit, request.filters)
+            search_mode = "dense"
+
+        rag_result = answer_with_rag_withHistoryAndVectorDB(
+            query=request.query,
+            results=results,
+            temperature=request.temperature,
+            conversation_id=request.conversation_id,
+            user_key=getattr(request, "user_key", None)
+        )
+
+        sources = []
+        for r in results:
+            payload = getattr(r, "payload", {}) or {}
+            sources.append({
+                "id": str(getattr(r, "id", "")),
+                "score": getattr(r, "score", None),
+                "text": payload.get("text"),
+                "doc_id": payload.get("doc_id"),
+                "title": payload.get("title"),
+                "heading": payload.get("heading"),
+                "date": payload.get("date"),
+                "tags": payload.get("tags"),
+                "keywords": payload.get("keywords"),
+                "source_file": payload.get("source_file"),
+            })
+
+        return {
+            "answer": rag_result["answer"],
+            "sources": sources,
+            "query": request.query,
+            "search_mode": search_mode,
+            "conversation_id": rag_result["conversation_id"]
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"/api/queryHistory failed: {str(e)}")
 @app.post("/api/queryHistory", response_model=QueryResponseHistory)
 async def api_queryHistory(request: QueryRequestWithHistory):
     try:
