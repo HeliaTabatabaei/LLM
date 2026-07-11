@@ -90,8 +90,9 @@ async def health_check():
         checkQudrant()
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Service unhealthy: {str(e)}")
-@app.post("/api/queryHistoryAdVectorDB", response_model=QueryResponseHistory)
-async def api_queryHistory(request: QueryRequestWithHistory):
+@app.post("/api/queryHistoryWithVectorDB", response_model=QueryResponseHistory)
+async def api_queryHistoryWithVectorDB(request: QueryRequestWithHistory,
+                         background_tasks: BackgroundTasks):
     try:
         query_vector = embed_query(request.query)
 
@@ -105,6 +106,7 @@ async def api_queryHistory(request: QueryRequestWithHistory):
         rag_result = answer_with_rag_withHistoryAndVectorDB(
             query=request.query,
             results=results,
+            background_tasks=background_tasks,
             temperature=request.temperature,
             conversation_id=request.conversation_id,
             user_key=getattr(request, "user_key", None)

@@ -1,4 +1,5 @@
 from datetime import datetime
+import hashlib
 import os
 from typing import List, Optional
 import uuid
@@ -7,6 +8,9 @@ from qdrant_client import QdrantClient
 from qdrant_client import models
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
+    FieldCondition,
+    Filter,
+    MatchValue,
     VectorParams,
     Distance
 )
@@ -34,10 +38,19 @@ def init_history_collection():
 # فراخوانی در ابتدای برنامه
 init_history_collection()
 
+def already_indexed(client, hash_value):
+    flt = Filter(must=[FieldCondition(key="text_hash", match=MatchValue(value=hash_value))])
+    res = client.scroll(collection_name=COLLECTION_HISTORY, scroll_filter=flt, limit=1)
+    return len(res[0]) > 0
+
 def save_message_to_qdrant(conversation_id, role, content, user_key=None):
     """ذخیره هر پیام در کیودرانت برای جستجوی معنایی در آینده"""
     try:
+        hash=str(conversation_id)+":"+ content
         vector = embed_query(content) # از تابع موجود در کد خودت استفاده میکنیم
+        h = text_hash(hash)
+        if already_indexed(qdrant, h):
+            raise ValueError("داده در وکتور استور وجود دارد ")
         qdrant.upsert(
             collection_name=COLLECTION_HISTORY,
             points=[{
@@ -48,6 +61,7 @@ def save_message_to_qdrant(conversation_id, role, content, user_key=None):
                     "user_key": user_key,
                     "role": role,
                     "content": content,
+                    "text_hash":h,
                     "timestamp": datetime.now().isoformat()
                 }
             }]
@@ -129,7 +143,8 @@ def build_filter(filters: Optional[SearchFilters]) -> Optional[models.Filter]:
         return None
 
     return models.Filter(must=conditions)
-
+def text_hash(text):
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 def search(query_vector: List[float], limit: int = 5, filters: Optional[SearchFilters] = None):
     """جستجوی dense معمولی"""

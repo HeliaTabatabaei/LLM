@@ -10,7 +10,7 @@ from QdrantManagment import build_context, save_message_to_qdrant, search_chat_h
 from db import DatabaseConnection
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_assistant_message_task, save_conversation, save_message, update_conversation_summary_task
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
-
+from fastapi import BackgroundTasks
 def normalize_conversation_id(conversation_id: Optional[str]) -> Tuple[str, bool]:
     """
     اگر conversation_id معتبر باشد:
@@ -38,7 +38,9 @@ def normalize_conversation_id(conversation_id: Optional[str]) -> Tuple[str, bool
 
 def answer_with_rag_withHistoryAndVectorDB(
     query: str,
+    
     results: List[Any],
+    background_tasks: BackgroundTasks,
     temperature: float = 0.1,
     conversation_id: Optional[str] = None,
     user_key: Optional[str] = None
@@ -58,7 +60,7 @@ def answer_with_rag_withHistoryAndVectorDB(
     print(f"2 build_context ( {time.time() - start:.2f} seconds")
     # 2) جستجوی حافظه بلندمدت از Qdrant
     relevant_history_text = ""
-    print("s1111111111111111111111111111111")
+    
     if query_vector is not None:
         try:
             relevant_history_text = search_chat_history(
@@ -70,7 +72,7 @@ def answer_with_rag_withHistoryAndVectorDB(
             #log_message(f"search_chat_history failed: {e}")
             relevant_history_text = ""
     #log_message("step4")
-    print("s22222222222222222222222222222222222222222")
+    print(f"3 search_chat_history ( {time.time() - start:.2f} seconds")
     with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
         if not is_new_chat:
             cursor.execute(
@@ -103,17 +105,19 @@ def answer_with_rag_withHistoryAndVectorDB(
             role="user",
             content=query
         )
+        print(f"4 save sql ( {time.time() - start:.2f} seconds")
    # log_message("step saveeeeeeeeeeeeeeeeee")
     # 5) ذخیره پیام کاربر در Qdrant برای استفاده‌های بعدی
     try:
-        save_message_to_qdrant(
+        background_tasks.add_task(
+        save_message_to_qdrant,
             conversation_id=conversation_id,
             role="user",
             content=query,
             user_key=user_key
         )
     except Exception as e:
-        print("error")
+        print(f"error  save_message_to_qdrant:{e}")
         #log_message(f"save_message_to_qdrant(user) failed: {e}")
 
     # 6) ساخت متن history کوتاه‌مدت
@@ -169,17 +173,19 @@ def answer_with_rag_withHistoryAndVectorDB(
 
     # 9) ذخیره پاسخ دستیار در Qdrant
     try:
-        save_message_to_qdrant(
+        background_tasks.add_task(
+            save_message_to_qdrant,
             conversation_id=conversation_id,
             role="assistant",
             content=answer,
             user_key=user_key
         )
     except Exception as e:
-        print("save error")
+        print(f"save_message_to_qdrant(assistant) failed: {e}")
         #log_message(f"save_message_to_qdrant(assistant) failed: {e}")
 
-   
+    print(f"4  end answer with rag ( {time.time() - start:.2f} seconds")
+    
     return {
         "conversation_id": conversation_id,
         "answer": answer,
