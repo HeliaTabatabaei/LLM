@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
+from config import LLM_MODEL, OPENAI_API_KEY
 from  providers.factory import create_provider
 
 router = APIRouter()
@@ -21,10 +22,10 @@ class ChatRequest(BaseModel):
 def chat_stream(request: ChatRequest):
 
     provider = create_provider(
-        provider_name=request.provider_name,
-        base_uri=request.base_uri,
-        api_key=request.api_key,
-        model=request.model,
+        provider_name="openai",
+        base_uri="https://api.gapgpt.app/v1",
+        api_key=OPENAI_API_KEY,
+        model=LLM_MODEL,
         auth_header_name="Authorization",
         auth_token_prefix="Bearer",
         api_path=""

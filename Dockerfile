@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # به جای خط قبلی، این را بنویس:
-RUN pip install --no-cache-dir -r requirements.txt -i https://mirror-pypi.runflare.com/simple
+RUN pip install --no-cache-dir -r requirements.txt 
 
 COPY . .
 

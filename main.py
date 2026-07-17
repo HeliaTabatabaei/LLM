@@ -1,6 +1,7 @@
 import time
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
 from fastapi_swagger import patch_fastapi
 from pydantic import BaseModel, Field
 from typing import List, Optional
@@ -27,6 +28,7 @@ from answerWithRAG import answer_with_rag, answer_with_rag_with_summary, answer_
 from bm25 import PersianBM25Encoder
 import uvicorn
 # import os
+from config import LLM_MODEL, OPENAI_API_KEY
 from ingestion import ingest  
 import uuid
 from datetime import datetime
@@ -35,6 +37,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import BackgroundTasks
 from typing import Tuple
 import uuid
+
+from providers.factory import create_provider
 app = FastAPI(
     docs_url=None,
     swagger_ui_oauth2_redirect_url=None,
@@ -347,6 +351,51 @@ async def query_endpoint(request: QueryRequest):
 async def get_ingestion():
     ingest()
 
+class ChatRequest(BaseModel):
+    provider_name: str
+    base_uri: str | None = None
+    api_key: str
+    model: str
+    system_prompt: str
+    user_prompt: str
+    temperature: float = 0.7
+
+
+@app.post("/chat/stream")
+def chat_stream(request: ChatRequest):
+
+    provider = create_provider(
+        provider_name="openai",
+        base_uri="https://api.gapgpt.app/v1",
+        api_key=OPENAI_API_KEY,
+        model=LLM_MODEL,
+        auth_header_name="Authorization",
+        auth_token_prefix="Bearer",
+        api_path=""
+    )
+
+    def generate():
+        chunks = []
+
+        def on_chunk(text):
+            chunks.append(text)
+
+        provider.chat_stream(
+            system_prompt=request.system_prompt,
+            user_prompt=request.user_prompt,
+            temperature=request.temperature,
+
+            on_chunk=on_chunk
+        )
+
+        for chunk in chunks:
+            yield chunk
+
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/plain"
+    )
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

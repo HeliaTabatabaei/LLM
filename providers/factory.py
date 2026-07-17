@@ -1,13 +1,13 @@
-from .gemini_provider import GeminiProvider
+
 from .openai_provider import OpenAIProvider
-from .anthropic_provider import AnthropicProvider
+
 from .generic_provider import GenericProvider
 
 
 PROVIDER_MAP = {
     "openai": OpenAIProvider,
-    "anthropic": AnthropicProvider,
-    "gemini": GeminiProvider,
+ 
+   
 }
 
 
