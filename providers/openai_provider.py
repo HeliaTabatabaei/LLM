@@ -22,26 +22,30 @@ class OpenAIProvider(LLMProvider):
         )
         return (completion.choices[0].message.content or "").strip()
 
-    def chat_stream(self, system_prompt: str, user_prompt: str, temperature: float, on_chunk):
-        """
-        استریم پاسخ با SDK رسمی. برای هر تکه متن، on_chunk صدا زده می‌شود.
-        """
-        messages: list[ChatCompletionMessageParam] = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ]
+    def chat_stream(
+            self,
+            system_prompt: str,
+            user_prompt: str,
+            temperature: float,
+            on_chunk
+    ):
+
         stream = self.client.chat.completions.create(
             model=self.model,
-            messages=messages,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
             temperature=temperature,
             max_tokens=2000,
             stream=True,
         )
 
         for chunk in stream:
-            if not getattr(chunk, "choices", None):
+            if not chunk.choices:
                 continue
-            delta = chunk.choices[0].delta
-            content = getattr(delta, "content", None)
+
+            content = chunk.choices[0].delta.content
+
             if content:
                 on_chunk(content)
