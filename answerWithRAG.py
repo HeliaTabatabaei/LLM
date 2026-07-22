@@ -5,7 +5,7 @@ import uuid
 
 from fastapi import BackgroundTasks
 
-from OpenAIManagment import CreateResponse, CreateResponseWithInpute, embed_query
+from OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseWithInput, embed_query
 from QdrantManagment import build_context, save_message_to_qdrant, search_chat_history
 from db import DatabaseConnection
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_assistant_message_task, save_conversation, save_message, update_conversation_summary_task
@@ -293,16 +293,31 @@ def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
     #         {"role": "user", "content": user_prompt},
     #     ],
     # )
-    print(response.output_text)
+    #print(response.output_text)
 
 # Get token usage
-    print(response.usage)
-    print("Input tokens:", response.usage.input_tokens)
-    print("Output tokens:", response.usage.output_tokens)
-    print("Total tokens:", response.usage.total_tokens)
-    print("id:", response.id)
+    # print(response.usage)
+    # print("Input tokens:", response.usage.input_tokens)
+    # print("Output tokens:", response.usage.output_tokens)
+    # print("Total tokens:", response.usage.total_tokens)
+    # print("id:", response.id)
     return response.output_text
+def answer_with_rag_stream(
+    query: str,
+    results,
+    temperature: float = 0.1
+):
+    """
+    تولید پاسخ Stream با RAG
+    """
+    context = build_context(results)
 
+    yield from CreateResponseStream(
+        context=context,
+        query=query,
+        history="-",
+        temperature=temperature
+    )
 def answer_with_rag_with_summary(
         query: str,
         results: List[Any],
@@ -371,7 +386,7 @@ def answer_with_rag_with_summary(
     #     temperature=temperature
     # )
 
-    response=CreateResponseWithInpute(messages,temperature)
+    response=CreateResponseWithInput(messages,temperature)
     print(f"LLM Generation Time: {time.time() - start_llm:.2f} seconds")
 
     answer = response.output_text
@@ -391,3 +406,16 @@ def answer_with_rag_with_summary(
         "answer": answer,
         "provider_response_id": response_id
     }
+def answer_stream_only_llm(
+    query: str,
+    temperature: float = 0.1
+):
+    """
+    فقط از LLM پاسخ می‌گیرد، بدون RAG
+    """
+    yield from CreateResponseStream(
+        context="",
+        query=query,
+        history="-",
+        temperature=temperature
+    )

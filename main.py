@@ -1,3 +1,4 @@
+import json
 import time
 
 from fastapi import FastAPI, HTTPException
@@ -24,7 +25,7 @@ from typing import List, Optional
 from Models.mainModels import QueryRequest, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
 from OpenAIManagment import embed_query
 from QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
-from answerWithRAG import answer_with_rag, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
+from answerWithRAG import answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
 from bm25 import PersianBM25Encoder
 import uvicorn
 # import os
@@ -65,8 +66,63 @@ init_history_collection()
 from fastapi import BackgroundTasks
 
 
+def search_documents(request: QueryRequest):
+    if request.use_hybrid:
+        results = hybrid_search(
+            query=request.query,
+            limit=request.limit,
+            filters=request.filters
+        )
+        search_mode = "hybrid"
+    else:
+        query_vector = embed_query(request.query)
 
+        results = search(
+            query_vector=query_vector,
+            limit=request.limit,
+            filters=request.filters
+        )
+        search_mode = "dense"
 
+    if not results:
+        raise HTTPException(
+            status_code=404,
+            detail="هیچ سند مرتبطی یافت نشد"
+        )
+
+    return results, search_mode
+def build_sources(results):
+    sources = []
+
+    for result in results:
+        if isinstance(result, dict):
+            payload = result["payload"]
+            result_id = result["id"]
+            score = result["score"]
+        else:
+            payload = result.payload
+            result_id = result.id
+            score = result.score
+
+        text = payload.get("text", "")
+
+        sources.append(
+            SearchResult(
+                id=str(result_id),
+                score=score,
+                text=text[:200] + ("..." if len(text) > 200 else ""),
+                doc_id=payload.get("doc_id"),
+                title=payload.get("title"),
+                heading=payload.get("heading"),
+                date=payload.get("date"),
+                tags=payload.get("tags"),
+                keywords=payload.get("keywords"),
+                source_file=payload.get("source_file")
+            )
+        )
+
+    return sources
+ 
 sessions = {}
 
 @app.get("/")
@@ -346,6 +402,72 @@ async def query_endpoint(request: QueryRequest):
             detail=f"خطا در پردازش درخواست: {str(e)}"
         )
 
+@app.post("/api/query/stream")
+async def query_stream_endpoint(request: QueryRequest):
+    try:
+        results, search_mode = search_documents(request)
+        sources = build_sources(results)
+        
+        def event_stream():
+            try:
+                source_data = {
+                    "query": request.query,
+                    "search_mode": search_mode,
+                    "sources": [
+                        source.model_dump()
+                        for source in sources
+                    ]
+                }
+
+                yield (
+                    "event: sources\n"
+                    f"data: {json.dumps(source_data, ensure_ascii=False)}\n\n"
+                )
+
+                for chunk in answer_with_rag_stream(
+                    query=request.query,
+                    results=results,
+                    temperature=request.temperature
+                ):
+                    chunk_data = {
+                        "text": chunk
+                    }
+
+                    yield (
+                        "event: token\n"
+                        f"data: {json.dumps(chunk_data, ensure_ascii=False)}\n\n"
+                    )
+
+                yield "event: done\ndata: [DONE]\n\n"
+
+            except Exception as error:
+                error_data = {
+                    "error": str(error)
+                }
+
+                yield (
+                    "event: error\n"
+                    f"data: {json.dumps(error_data, ensure_ascii=False)}\n\n"
+                )
+
+        return StreamingResponse(
+            event_stream(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no"
+            }
+        )
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"خطا در جست‌وجو: {str(error)}"
+        )
 
 @app.get('/api/ingestion')
 async def get_ingestion():
@@ -396,6 +518,55 @@ def chat_stream(request: ChatRequest):
         generate(),
         media_type="text/plain"
     )
+class QueryRequest(BaseModel):
+    query: str
+    temperature: float = 0.1
 
+
+@app.post("/api/query/stream_test")
+async def query_stream_test_endpoint(request: QueryRequest):
+    try:
+        def event_stream():
+            try:
+                yield (
+                    "event: start\n"
+                    f"data: {json.dumps({'message': 'stream started'}, ensure_ascii=False)}\n\n"
+                )
+
+                for chunk in answer_stream_only_llm(
+                    query=request.query,
+                    temperature=request.temperature
+                ):
+                    yield (
+                        "event: token\n"
+                        f"data: {json.dumps({'text': chunk}, ensure_ascii=False)}\n\n"
+                    )
+
+                yield "event: done\ndata: [DONE]\n\n"
+
+            except Exception as error:
+                yield (
+                    "event: error\n"
+                    f"data: {json.dumps({'error': str(error)}, ensure_ascii=False)}\n\n"
+                )
+
+        return StreamingResponse(
+            event_stream(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no"
+            }
+        )
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"خطا: {str(error)}"
+        )
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

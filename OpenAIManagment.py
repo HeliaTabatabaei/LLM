@@ -66,7 +66,29 @@ def CreateResponse(context,query,history,temperature):
 
     answer = response.output_text
     return response
-def CreateResponseWithInpute(messages,temperature):
+def CreateResponseStream(context, query, history, temperature):
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {
+            "role": "user",
+            "content": USER_PROMPT.format(
+                context=context,
+                query=query,
+                history=history
+            )
+        }
+    ]
+
+    with client.responses.stream(
+        model=LLM_MODEL,
+        input=messages,
+        temperature=temperature
+    ) as stream:
+        for event in stream:
+            if event.type == "response.output_text.delta":
+                yield event.delta
+
+def CreateResponseWithInput(messages,temperature):
 
     # messages = [
     #     {"role": "system", "content": SYSTEM_PROMPT},

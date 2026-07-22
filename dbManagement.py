@@ -3,7 +3,7 @@ from typing import Optional
 import uuid
 from OpenAIManagment import createSummery
 from config import connection_string
-from db import DatabaseConnection
+from db import DatabaseConnection  
 
 SQL_SERVER_CONNECTION_STRING =connection_string
 def save_conversation(cursor, conversation_id: str, title: str, user_key: Optional[str] = None, model_id: Optional[str] = None) -> str:
