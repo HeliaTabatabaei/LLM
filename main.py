@@ -348,6 +348,7 @@ async def query_endpoint(request: QueryRequest):
                 limit=request.limit,
                 filters=request.filters
             )
+            print("QrantResult:  ",type(results))
             search_mode = "dense"
   
         if not results:
