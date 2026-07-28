@@ -3,7 +3,7 @@ import json
 import hashlib
 from tqdm import tqdm
 from qdrant_client.models import PointStruct, Filter, FieldCondition, MatchValue
-from vectorstore import get_client, ensure_collection
+from RAG_Management.vectorstore import get_client, ensure_collection
 from config import JSON_PATH, COLLECTION_NAME, BATCH_SIZE, OPENAI_API_KEY, EMBED_MODEL
 from bm25 import PersianBM25Encoder
 from openai import OpenAI

@@ -1,7 +1,10 @@
 import json
 import time
 
-from fastapi import FastAPI, HTTPException
+
+from fastapi import Depends, FastAPI, HTTPException
+
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import StreamingResponse
 from fastapi_swagger import patch_fastapi
 from pydantic import BaseModel, Field
@@ -22,15 +25,16 @@ from typing import List, Optional
 #     SparseIndexParams,
 #     Modifier
 # )
-from Models.mainModels import QueryRequest, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
-from OpenAIManagment import embed_query
-from QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
-from answerWithRAG import answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
+from Models.mainModels import QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
+from LLM.OpenAIManagment import detect_intent, embed_query, rerank_results
+from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
+from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
+from Utility.utiliy import get_current_user_payload
 from bm25 import PersianBM25Encoder
 import uvicorn
 # import os
 from config import LLM_MODEL, OPENAI_API_KEY
-from ingestion import ingest  
+from RAG_Management.ingestion import ingest  
 import uuid
 from datetime import datetime
 from typing import Optional, List, Dict, Any
@@ -38,7 +42,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import BackgroundTasks
 from typing import Tuple
 import uuid
-
+from jose import jwt, JWTError, ExpiredSignatureError  
 from providers.factory import create_provider
 app = FastAPI(
     docs_url=None,
@@ -55,7 +59,7 @@ app.add_middleware(
     allow_methods=["*"],  # اجازه به تمام متدها (POST, GET, OPTIONS و...)
     allow_headers=["*"],  # اجازه به تمام هدرها
 )
-
+security = HTTPBearer()
 
 #qdrant = QdrantClient("http://localhost:6333")
 
@@ -402,42 +406,77 @@ async def query_endpoint(request: QueryRequest):
             status_code=500,
             detail=f"خطا در پردازش درخواست: {str(e)}"
         )
-
 @app.post("/api/query/stream")
-async def query_stream_endpoint(request: QueryRequest):
+async def query_stream_endpoint(
+    request: QueryRequestStream,
+    credentials: HTTPAuthorizationCredentials = Depends(security)
+):
     try:
-        results, search_mode = search_documents(request)
-        sources = build_sources(results)
-        
+        token = credentials.credentials
+        user_key = ""
+
+        try:
+            is_valid, message, user_key = get_current_user_payload(token)
+            if not is_valid:
+                raise HTTPException(status_code=401, detail=message)
+        except ExpiredSignatureError:
+            raise HTTPException(status_code=401, detail="Token expired")
+        except JWTError as e:
+            raise HTTPException(status_code=401, detail=f"Invalid token: {str(e)}")
+
+       
+        print(token, flush=True)
+
+   
+
+        intent =  detect_intent(request.query)
+
+        print("intent", flush=True)
+        print(intent, flush=True)
+
+        if intent == "general":
+            return StreamingResponse(
+                answer_general_stream(request.query),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no"
+                }
+            )
+
+        query_vector = embed_query(request.query)
+
+        results = search(
+            query_vector=query_vector,
+            limit=5,
+            filters=None
+        )
+
+        if not results:
+            raise HTTPException(
+                status_code=404,
+                detail="هیچ سند مرتبطی یافت نشد"
+            )
+
+        reranked_results = rerank_results(request.query, results)
+
         def event_stream():
             try:
-                source_data = {
-                    "query": request.query,
-                    "search_mode": search_mode,
-                    "sources": [
-                        source.model_dump()
-                        for source in sources
-                    ]
-                }
-
-                yield (
-                    "event: sources\n"
-                    f"data: {json.dumps(source_data, ensure_ascii=False)}\n\n"
-                )
-
                 for chunk in answer_with_rag_stream(
                     query=request.query,
-                    results=results,
-                    temperature=request.temperature
+                    results=reranked_results,
+                    temperature=0.1
                 ):
-                    chunk_data = {
-                        "text": chunk
-                    }
+                    if chunk:
+                        chunk_data = {
+                            "text": chunk
+                        }
 
-                    yield (
-                        "event: token\n"
-                        f"data: {json.dumps(chunk_data, ensure_ascii=False)}\n\n"
-                    )
+                        yield (
+                            "event: token\n"
+                            f"data: {json.dumps(chunk_data, ensure_ascii=False)}\n\n"
+                        )
 
                 yield "event: done\ndata: [DONE]\n\n"
 
@@ -470,104 +509,14 @@ async def query_stream_endpoint(request: QueryRequest):
             detail=f"خطا در جست‌وجو: {str(error)}"
         )
 
+
 @app.get('/api/ingestion')
 async def get_ingestion():
     ingest()
 
-class ChatRequest(BaseModel):
-    provider_name: str
-    base_uri: str | None = None
-    api_key: str
-    model: str
-    system_prompt: str
-    user_prompt: str
-    temperature: float = 0.7
 
 
-@app.post("/chat/stream")
-def chat_stream(request: ChatRequest):
-
-    provider = create_provider(
-        provider_name="openai",
-        base_uri="https://api.gapgpt.app/v1",
-        api_key=OPENAI_API_KEY,
-        model=LLM_MODEL,
-        auth_header_name="Authorization",
-        auth_token_prefix="Bearer",
-        api_path=""
-    )
-
-    def generate():
-        chunks = []
-
-        def on_chunk(text):
-            chunks.append(text)
-
-        provider.chat_stream(
-            system_prompt=request.system_prompt,
-            user_prompt=request.user_prompt,
-            temperature=request.temperature,
-
-            on_chunk=on_chunk
-        )
-
-        for chunk in chunks:
-            yield chunk
 
 
-    return StreamingResponse(
-        generate(),
-        media_type="text/plain"
-    )
-class QueryRequest(BaseModel):
-    query: str
-    temperature: float = 0.1
-
-
-@app.post("/api/query/stream_test")
-async def query_stream_test_endpoint(request: QueryRequest):
-    try:
-        def event_stream():
-            try:
-                yield (
-                    "event: start\n"
-                    f"data: {json.dumps({'message': 'stream started'}, ensure_ascii=False)}\n\n"
-                )
-
-                for chunk in answer_stream_only_llm(
-                    query=request.query,
-                    temperature=request.temperature
-                ):
-                    yield (
-                        "event: token\n"
-                        f"data: {json.dumps({'text': chunk}, ensure_ascii=False)}\n\n"
-                    )
-
-                yield "event: done\ndata: [DONE]\n\n"
-
-            except Exception as error:
-                yield (
-                    "event: error\n"
-                    f"data: {json.dumps({'error': str(error)}, ensure_ascii=False)}\n\n"
-                )
-
-        return StreamingResponse(
-            event_stream(),
-            media_type="text/event-stream",
-            headers={
-                "Cache-Control": "no-cache",
-                "Connection": "keep-alive",
-                "X-Accel-Buffering": "no"
-            }
-        )
-
-    except HTTPException:
-        raise
-
-    except Exception as error:
-        raise HTTPException(
-            status_code=500,
-            detail=f"خطا: {str(error)}"
-        )
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

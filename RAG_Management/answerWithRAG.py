@@ -1,13 +1,14 @@
 
+import json
 import time
 from typing import Any, Dict, List, Optional, Tuple
 import uuid
 
 from fastapi import BackgroundTasks
 
-from OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseWithInput, embed_query
-from QdrantManagment import build_context, save_message_to_qdrant, search_chat_history
-from db import DatabaseConnection
+from LLM.OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseStreamGeneral, CreateResponseWithInput, embed_query
+from RAG_Management.QdrantManagment import build_context, save_message_to_qdrant, search_chat_history
+from SQlDB.db import DatabaseConnection
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_assistant_message_task, save_conversation, save_message, update_conversation_summary_task
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from fastapi import BackgroundTasks
@@ -302,22 +303,7 @@ def answer_with_rag(query: str, results, temperature: float = 0.1) -> str:
     # print("Total tokens:", response.usage.total_tokens)
     # print("id:", response.id)
     return response.output_text
-def answer_with_rag_stream(
-    query: str,
-    results,
-    temperature: float = 0.1
-):
-    """
-    تولید پاسخ Stream با RAG
-    """
-    context = build_context(results)
 
-    yield from CreateResponseStream(
-        context=context,
-        query=query,
-        history="-",
-        temperature=temperature
-    )
 def answer_with_rag_with_summary(
         query: str,
         results: List[Any],
@@ -419,3 +405,45 @@ def answer_stream_only_llm(
         history="-",
         temperature=temperature
     )
+def answer_general_stream(query: str):
+    try:
+        for chunk in CreateResponseStreamGeneral(query=query):
+            if chunk:
+                chunk_data = {
+                    "text": chunk
+                }
+
+                yield (
+                    "event: token\n"
+                    f"data: {json.dumps(chunk_data, ensure_ascii=False)}\n\n"
+                )
+
+        yield "event: done\ndata: [DONE]\n\n"
+
+    except Exception as error:
+        error_data = {
+            "error": str(error)
+        }
+
+        yield (
+            "event: error\n"
+            f"data: {json.dumps(error_data, ensure_ascii=False)}\n\n"
+        )
+def answer_with_rag_stream(
+    query: str,
+    results,
+    temperature: float = 0.1
+):
+    """
+    تولید پاسخ Stream با RAG
+    """
+    
+    context = build_context(results)
+
+    yield from CreateResponseStream(
+        context=context,
+        query=query,
+        history="-",
+        temperature=temperature
+    )
+    

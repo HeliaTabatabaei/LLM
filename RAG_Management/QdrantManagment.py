@@ -17,7 +17,7 @@ from qdrant_client.models import (
 from Models.mainModels import SearchFilters
 from bm25 import PersianBM25Encoder
 from config import COLLECTION_NAME, QDRANT_HOST, QDRANT_PORT
-from OpenAIManagment import embed_query
+from LLM.OpenAIManagment import embed_query
 COLLECTION_HISTORY = "chat_memory"
 qdrant = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 

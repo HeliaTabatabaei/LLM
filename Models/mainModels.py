@@ -4,6 +4,9 @@ from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
+class QueryRequestStream(BaseModel):
+    query: str
+    temperature: float = 0.1
 
 class SearchFilters(BaseModel):
     """فیلترهای metadata برای جستجو"""
