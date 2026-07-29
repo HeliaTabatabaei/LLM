@@ -11,10 +11,11 @@ from fastapi_swagger import patch_fastapi
 
 from API.admin_routes import router as admin_router
 
-from Models.mainModels import QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
+from Models.mainModels import BulkChargeRequest, QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
 from LLM.OpenAIManagment import detect_intent, embed_query, rerank_results
 from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
 from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
+from SQlDB.IngestionQuery import bulk_charge_transactions
 from Utility.utiliy import get_current_user_payload
 from RAG_Management.bm25 import PersianBM25Encoder
 import uvicorn
@@ -128,7 +129,6 @@ async def root():
         }
     }
 
-
 @app.get("/health")
 async def health_check():
     """بررسی سلامت سرویس"""
@@ -241,7 +241,6 @@ async def api_queryHistory(request: QueryRequestWithHistory):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"/api/queryHistory failed: {str(e)}")
 
-
 @app.post("/api/querySummeryHistory", response_model=QueryResponseHistory)
 def api_querySummeryHistory(
     request: QueryRequestWithHistory,
@@ -310,7 +309,6 @@ def api_querySummeryHistory(
     except Exception as e:
         print(f"Exception Get2! {e} ")
         raise HTTPException(status_code=500, detail=f"Request processing failed: {str(e)}")
-
 
 #https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
 @app.post("/api/query", response_model=QueryResponse)
@@ -497,14 +495,38 @@ async def query_stream_endpoint(
             detail=f"خطا در جست‌وجو: {str(error)}"
         )
 
-
 @app.get('/api/ingestion')
 async def get_ingestion():
     ingest()
 
-
-
-
+@app.post("/api/bulk-charge")
+async def bulk_charge_tokens(
+    request: BulkChargeRequest,
+    credentials: HTTPAuthorizationCredentials = Depends(security) # احراز هویت توکن سوییگر
+):
+    # بررسی احراز هویت کاربر لاگین شده در Swagger
+    token = credentials.credentials
+    try:
+        is_valid = get_current_user_payload(token)
+        if not is_valid:
+            raise HTTPException(status_code=401, detail="عدم دسترسی: توکن نامعتبر است")
+    except Exception:
+        raise HTTPException(status_code=401, detail="خطا در احراز هویت")
+    
+    try:
+        
+        result = bulk_charge_transactions(
+            user_keys=request.user_keys,
+            amount=request.amount
+                       
+        )
+        return {
+            "success": True,
+            "message": f"تعداد {result['inserted_count']} رکورد با موفقیت ثبت شد.",
+            "total_tokens_charged": result['total_amount']
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"خطا در ثبت اطلاعات: {str(e)}")
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

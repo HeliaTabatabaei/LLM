@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 import uuid
 from LLM.OpenAIManagment import createSummery
 from config import connection_string
@@ -96,8 +96,6 @@ def update_conversation_summary_task(conversation_id: str, new_user_msg: str, ne
         print(e)
         # اینجا لاگ خطا را ثبت کنید تا در صورت بروز مشکل، جریان اصلی چت متوقف نشود
         #(f"Error updating summary for {conversation_id}: {str(e)}")
-
-
 
 def save_assistant_message_task(conv_id, ans, resp_id):
     with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as bg_cursor:

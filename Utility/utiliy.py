@@ -23,7 +23,7 @@ def get_current_user_payload(
 
     # 1) decode (your current approach)
     try:
-       
+        print('tokentokentokentokentokentokentokentokentokentoken',flush=True)
         print(token,flush=True)
         payload = decode_token_no_verify(token)
       

@@ -57,4 +57,7 @@ class QueryResponseHistory(BaseModel):
     query: str
     search_mode: str
     conversation_id: Optional[str] = None  # اضافه شد
-
+#  مدل درخواست ورودی از سوییگر
+class BulkChargeRequest(BaseModel):
+    amount: int = Field(..., gt=0, description="مقدار توکن برای شارژ همه کاربران")#gt=0بزرگتر از صفر باشه
+    user_keys: List[str] = Field(..., min_items=1, description="لیست شناسه کاربران هدف")#min_items=1لیست خالی نفرسته

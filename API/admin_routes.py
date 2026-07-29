@@ -1,4 +1,6 @@
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Depends
+from fastapi.security import HTTPAuthorizationCredentials
+
 from   RAG_Management.vectorstore import get_client
 
 from RAG_Management.ingestion import InsertDocsToSql,LogStatus
@@ -200,6 +202,4 @@ async def ingest_document_by_path(file_path: str, background_tasks: BackgroundTa
             )
         logger.error(f"Ingestion failed for {file_path}: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
-
-
 

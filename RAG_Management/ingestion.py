@@ -74,9 +74,9 @@ def extract_num(chunk_id) -> int:
     
     return int(m.group(1))
 def embed_batch(texts):
-  
-    res = client.embeddings.create(model=EMBED_MODEL, input=texts)
-    return [item.embedding for item in res.data]
+   
+        res = client.embeddings.create(model=EMBED_MODEL, input=texts)
+        return [item.embedding for item in res.data]
 
 
 def text_hash(text):
@@ -193,7 +193,10 @@ def RebuildSparse():
     
 def ingestQdrant(docid):
  try:        
-
+    LogStatus(
+                _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="start ingestQdrant",
+                _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                )
     qdrant = get_client()#اتصال به پایگاه داده Qdrant را برقرار می‌کند.
   
     ensure_collection(qdrant)# چک می‌کند که آیا کالکشن (میز) مورد نظر در Qdrant وجود دارد یا خیر (اگر نبود می‌سازد).
@@ -218,7 +221,7 @@ def ingestQdrant(docid):
             _DocID=docid,_ActionName='Insert', _FileName='', _Step="setIsactiveToFalse",
             _Status="FAILED",_ErrorMessage="Hashfile is Existsted", _Timestamp=datetime.now()
             )
-         #   print("dddddddddddddddddddddddd" )
+            
             return -1
            
         #############14050430
@@ -226,7 +229,10 @@ def ingestQdrant(docid):
         metadata = chunk.get("metadata", {}).copy()
         source_file = metadata.get("source_file", "")
         imgs_info = metadata.get("imgs_info", [])#لیست تصاویر ثبت شده در این چانک را استخراج می‌کند.
-        
+        LogStatus(
+                        _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 1",
+                        _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                        )
        # resolved_imgs_info  = []
         if isinstance(imgs_info, list) and source_file:
             # یک آرایه جدید برای پر کردن مجدد تصاویر با آدرس وب می‌سازیم
@@ -266,15 +272,27 @@ def ingestQdrant(docid):
     
      
         if len(batch_texts) >= BATCH_SIZE:
-            flush_batchBachQdrantInsert(qdrant, batch_texts, batch_points)
+            LogStatus(
+                                    _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 2",
+                                    _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                                    )
+            flush_batchBachQdrantInsert(docid,qdrant, batch_texts, batch_points)
             batch_texts.clear()
             batch_points.clear()
 
     if batch_texts:
       #  print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        flush_batchBachQdrantInsert(qdrant, batch_texts, batch_points)
+        LogStatus(
+                                            _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 3",
+                                            _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                                            )
+        flush_batchBachQdrantInsert(docid,qdrant, batch_texts, batch_points)
     return 1    
  except Exception as e:
+        LogStatus(
+                                            _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 4",
+                                            _Status="doing",_ErrorMessage=e, _Timestamp=datetime.now()
+                                            )
         print(f"Error: {e}")
         return -1
 
@@ -353,11 +371,21 @@ def flush_batchSparse(qdrant, batch_texts, batch_points, sparse_encoder):
     
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
      
-def flush_batchBachQdrantInsert(qdrant, batch_texts, batch_points):
-  
-    dense_embeddings = embed_batch(batch_texts)
-
+def flush_batchBachQdrantInsert(docid,qdrant, batch_texts, batch_points):
+    total_chars = "".join(text for text in batch_texts if text)
+    first_1000_chars = total_chars[:19000]
+    print(f"Total character count: {total_chars}", flush=True)
+    LogStatus(
+            _DocID=docid,_ActionName='flush_batchBachQdrantInsert', _FileName='', _Step="flush_batchBachQdrantInsert  step 1",
+            _Status="doing",_ErrorMessage=str(total_chars), _Timestamp=datetime.now()
+            )
    
+    dense_embeddings = embed_batch(first_1000_chars)
+    
+    LogStatus(
+                _DocID=docid,_ActionName='flush_batchBachQdrantInsert', _FileName='', _Step="flush_batchBachQdrantInsert  step 2",
+                _Status="doing",_ErrorMessage=str(first_1000_chars), _Timestamp=datetime.now()
+                )
     
     points = [
         PointStruct(
@@ -374,7 +402,11 @@ def flush_batchBachQdrantInsert(qdrant, batch_texts, batch_points):
     # for i in range(len(batch_texts)):
     #     print (extract_num([i][0]))
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
-
+    LogStatus(
+                                                        _DocID=docid,_ActionName='flush_batchBachQdrantInsert', _FileName='', _Step="flush_batchBachQdrantInsert  step 3",
+                                                        _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                                                        )
+        
 
 def remove_dense_by_ids(qdrant, ids):
     """
@@ -562,12 +594,16 @@ def InsertDocsPipeLine(target_file_path, Doc_id):
         #"ReadyToRebuild":یعنی اینجست کیو درنت با موفقیت انجام شده است
         if result==1:
            LogStatus(
-            _DocID=Doc_id,_ActionName='Insert', _FileName=target_file_path, _Step="ReadyToRebuild",
+            _DocID=Doc_id,_ActionName='ingestQdrant', _FileName=target_file_path, _Step="InsertDocsPipeLine",
             _Status="SUCCESS", _ErrorMessage=None, _Timestamp=datetime.now()
             )
            SetIsActiveTrue(target_file_path,Doc_id)
         else:
-           SetIsActiveFalse( Doc_id)    
+            LogStatus(
+                       _DocID=Doc_id,_ActionName='ingestQdrant', _FileName=target_file_path, _Step="ingestoQdrant",
+                       _Status="Fail", _ErrorMessage=None, _Timestamp=datetime.now()
+                       )
+            SetIsActiveFalse( Doc_id)    
         
       
     except Exception as e:
