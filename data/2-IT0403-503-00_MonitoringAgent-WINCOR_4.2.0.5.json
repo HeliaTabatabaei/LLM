@@ -1,0 +1,115 @@
+[
+  {
+    "id": "1",
+    "main_text": "* **قبل از اجرای عملیات نصب نرم‌افزار، لازم است از نصب بودن .NET4 اطمینان حاصل نمایید.**\n\nبه‌منظور بررسی وضعیت نصب .NET4 از یکی از دو روش زیر استفاده کنید:\n\n* به رجیستری ویندوز و مسیر زیر مراجعه کنید:\n\n**HKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\Microsoft\\.NET Framework**\n\n**\"ocr_text\": \"Registry Editor\\nFile Edit View Favorites Help\\nMicrosoft\\n  .NET Framework Platform\\n  .NETFramework\\n    AssemblyFolders\\n    v1.0\\n    v2.0.50727\\n    v3.0\\n    v3.5\\n    v4.0.30319\\n  Active Setup\\n  ADs\\n  Advanced INF Setup\\n  ALG\\nName Type Data\\n(Default) REG_SZ (value not set)\\nAspNetEnforceViewState... REG_DWORD 0x00000001 (1)\\nComputer\\\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\.NETFramework\\\\v4.0.30319\",\n  \"caption\": \"نمایی از ویرایشگر رجیستری ویندوز با پوشه v4.0.30319\",\n  \"visual_description\": \"این تصویر یک اسکرین‌شات از ویرایشگر رجیستری ویندوز است که شاخه Microsoft\\\\.NETFramework و زیرشاخه v4.0.30319 انتخاب شده است. در سمت راست، دو مقدار رجیستری نمایش داده شده که یکی مقدار پیش‌فرض و دیگری AspNetEnforceViewState با مقدار 1 است. یک فلش قرمز و کادر دور پوشه v4.0.30319 کشیده شده است تا توجه را به این بخش جلب کند.\"**\n\n*بررسی نصب .Net Framework از طریق رجیستری*\n\n* به Control Panel بروید و از مسیر زیر در فهرست برنامه‎های نصب‌شده، .NET4 را جستجو نمایید:\n\n|  |  |\n| --- | --- |\n| مسیر برنامه‌های نصب‌شده | نوع ویندوز |\n| Start 🡪 Control Panel 🡪 Programs and Features | 7 |\n\n*بررسی نصب .Net Framework از طریق Control Panel*\n\nدر صورت نصب نبودن Microsoft .NET Framework V.4 ، فایل نصبی که در پکیج نصب نرم‎افزار مانیتورینگ و پوشه‎ای به نام .Net Framework 4.0.30319.1 قرار دارد را اجرا و آن را نصب کنید.\n\n* **وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید.**\n\nدرصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.",
+    "embedding_text": "heading_path: اقدامات پیش از نصب نرم‎افزار مانیتورینگ \n\n level: 1 \n\n content: * **قبل از اجرای عملیات نصب نرم‌افزار، لازم است از نصب بودن .NET4 اطمینان حاصل نمایید.**\n\nبه‌منظور بررسی وضعیت نصب .NET4 از یکی از دو روش زیر استفاده کنید:\n\n* به رجیستری ویندوز و مسیر زیر مراجعه کنید:\n\n**HKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\Microsoft\\.NET Framework**\n\n**\"ocr_text\": \"Registry Editor\\nFile Edit View Favorites Help\\nMicrosoft\\n  .NET Framework Platform\\n  .NETFramework\\n    AssemblyFolders\\n    v1.0\\n    v2.0.50727\\n    v3.0\\n    v3.5\\n    v4.0.30319\\n  Active Setup\\n  ADs\\n  Advanced INF Setup\\n  ALG\\nName Type Data\\n(Default) REG_SZ (value not set)\\nAspNetEnforceViewState... REG_DWORD 0x00000001 (1)\\nComputer\\\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\.NETFramework\\\\v4.0.30319\",\n  \"caption\": \"نمایی از ویرایشگر رجیستری ویندوز با پوشه v4.0.30319\",\n  \"visual_description\": \"این تصویر یک اسکرین‌شات از ویرایشگر رجیستری ویندوز است که شاخه Microsoft\\\\.NETFramework و زیرشاخه v4.0.30319 انتخاب شده است. در سمت راست، دو مقدار رجیستری نمایش داده شده که یکی مقدار پیش‌فرض و دیگری AspNetEnforceViewState با مقدار 1 است. یک فلش قرمز و کادر دور پوشه v4.0.30319 کشیده شده است تا توجه را به این بخش جلب کند.\"**\n\n*بررسی نصب .Net Framework از طریق رجیستری*\n\n* به Control Panel بروید و از مسیر زیر در فهرست برنامه‎های نصب‌شده، .NET4 را جستجو نمایید:\n\n|  |  |\n| --- | --- |\n| مسیر برنامه‌های نصب‌شده | نوع ویندوز |\n| Start 🡪 Control Panel 🡪 Programs and Features | 7 |\n\n*بررسی نصب .Net Framework از طریق Control Panel*\n\nدر صورت نصب نبودن Microsoft .NET Framework V.4 ، فایل نصبی که در پکیج نصب نرم‎افزار مانیتورینگ و پوشه‎ای به نام .Net Framework 4.0.30319.1 قرار دارد را اجرا و آن را نصب کنید.\n\n* **وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید.**\n\nدرصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.\n\nkeywords: Microsoft. NET Framework V, رجیستری ویندوز, Control Panel, n v, n. NET Framework Platform\n\ncustomer_name: general",
+    "metadata": {
+      "doc_id": "doc_3876d8f695b7a7ed",
+      "section_id": "sec_6f4f1d3dd55ef543",
+      "date": "خرداد 1404",
+      "version": "2-IT0403-503-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "اقدامات پیش از نصب نرم‎افزار مانیتورینگ",
+      "keywords": [
+        "Microsoft. NET Framework V",
+        "رجیستری ویندوز",
+        "Control Panel",
+        "n v",
+        "n. NET Framework Platform"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "general"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0403-503-00_MonitoringAgent-WINCOR_4.2.0.5.md",
+      "heading_path": "اقدامات پیش از نصب نرم‎افزار مانیتورینگ",
+      "chunk_index": 0,
+      "token_count": 282,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: اقدامات پیش از نصب نرم‎افزار مانیتورینگ \n\n level: 1 \n\n content: * **قبل از اجرای عملیات نصب نرم‌افزار، لازم است از نصب بودن .NET4 اطمینان حاصل نمایید.**\n\nبه‌منظور بررسی وضعیت نصب .NET4 از یکی از دو روش زیر استفاده کنید:\n\n* به رجیستری ویندوز و مسیر زیر مراجعه کنید:\n\n**HKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\Microsoft\\.NET Framework**\n\n**\"ocr_text\": \"Registry Editor\\nFile Edit View Favorites Help\\nMicrosoft\\n  .NET Framework Platform\\n  .NETFramework\\n    AssemblyFolders\\n    v1.0\\n    v2.0.50727\\n    v3.0\\n    v3.5\\n    v4.0.30319\\n  Active Setup\\n  ADs\\n  Advanced INF Setup\\n  ALG\\nName Type Data\\n(Default) REG_SZ (value not set)\\nAspNetEnforceViewState... REG_DWORD 0x00000001 (1)\\nComputer\\\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\.NETFramework\\\\v4.0.30319\",\n  \"caption\": \"نمایی از ویرایشگر رجیستری ویندوز با پوشه v4.0.30319\",\n  \"visual_description\": \"این تصویر یک اسکرین‌شات از ویرایشگر رجیستری ویندوز است که شاخه Microsoft\\\\.NETFramework و زیرشاخه v4.0.30319 انتخاب شده است. در سمت راست، دو مقدار رجیستری نمایش داده شده که یکی مقدار پیش‌فرض و دیگری AspNetEnforceViewState با مقدار 1 است. یک فلش قرمز و کادر دور پوشه v4.0.30319 کشیده شده است تا توجه را به این بخش جلب کند.\"**\n\n*بررسی نصب .Net Framework از طریق رجیستری*\n\n* به Control Panel بروید و از مسیر زیر در فهرست برنامه‎های نصب‌شده، .NET4 را جستجو نمایید:\n\n|  |  |\n| --- | --- |\n| مسیر برنامه‌های نصب‌شده | نوع ویندوز |\n| Start 🡪 Control Panel 🡪 Programs and Features | 7 |\n\n*بررسی نصب .Net Framework از طریق Control Panel*\n\nدر صورت نصب نبودن Microsoft .NET Framework V.4 ، فایل نصبی که در پکیج نصب نرم‎افزار مانیتورینگ و پوشه‎ای به نام .Net Framework 4.0.30319.1 قرار دارد را اجرا و آن را نصب کنید.\n\n* **وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید.**\n\nدرصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "2",
+    "main_text": "به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.5.exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.5\\n(جهت نصب در دستگاه های خودپرداز WINCOR بانک سپه)\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nCopyright © 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر مربوط به پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.5 است. در بالای پنجره، عنوان و توضیحات مربوط به توافق‌نامه مجوز نمایش داده شده است. بخشی از متن توافق‌نامه به زبان فارسی و انگلیسی قابل مشاهده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. این تصویر مربوط به محیط نصب نرم‌افزار روی سیستم‌عامل ویندوز است.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back    Install    Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار در سیستم‌عامل ویندوز را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، مسیر نصب نرم‌افزار مشخص شده و دکمه‌های 'Install'، 'Back' و 'Cancel' در پایین قرار دارند. دکمه Install با کادر قرمز مشخص شده است. اطلاعات کپی‌رایت در پایین تصویر دیده می‌شود.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: ReceiptPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، فرایند نصب در حال انجام بوده و یک نوار پیشرفت برای کپی فایل ReceiptPrinter.pdb نمایش داده می‌شود. گزینه‌های کنترلی مانند Back، Next (غیرفعال) و Cancel در پایین پنجره قرار دارند. همچنین اطلاعات کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر دیده می‌شود.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:\n\n\"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیم مقادیر IP کلاینت، IP سرور و شناسه ترمینال استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. در پایین فرم یک دکمه سبز رنگ با عنوان Submit وجود دارد که با کادر قرمز مشخص شده است.\"",
+    "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.5.exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.5\\n(جهت نصب در دستگاه های خودپرداز WINCOR بانک سپه)\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nCopyright © 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر مربوط به پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.5 است. در بالای پنجره، عنوان و توضیحات مربوط به توافق‌نامه مجوز نمایش داده شده است. بخشی از متن توافق‌نامه به زبان فارسی و انگلیسی قابل مشاهده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. این تصویر مربوط به محیط نصب نرم‌افزار روی سیستم‌عامل ویندوز است.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back    Install    Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار در سیستم‌عامل ویندوز را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، مسیر نصب نرم‌افزار مشخص شده و دکمه‌های 'Install'، 'Back' و 'Cancel' در پایین قرار دارند. دکمه Install با کادر قرمز مشخص شده است. اطلاعات کپی‌رایت در پایین تصویر دیده می‌شود.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: ReceiptPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، فرایند نصب در حال انجام بوده و یک نوار پیشرفت برای کپی فایل ReceiptPrinter.pdb نمایش داده می‌شود. گزینه‌های کنترلی مانند Back، Next (غیرفعال) و Cancel در پایین پنجره قرار دارند. همچنین اطلاعات کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر دیده می‌شود.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:\n\n\"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیم مقادیر IP کلاینت، IP سرور و شناسه ترمینال استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. در پایین فرم یک دکمه سبز رنگ با عنوان Submit وجود دارد که با کادر قرمز مشخص شده است.\"\n\nkeywords: nPlease wait while MonitoringAgent WINCOR is being installed, WINCOR on your computer, WINCOR نسخه, WINCOR ۴, خودپرداز WINCOR\n\ncustomer_name: general",
+    "metadata": {
+      "doc_id": "doc_3876d8f695b7a7ed",
+      "section_id": "sec_64b6f55e1abd06ff",
+      "date": "خرداد 1404",
+      "version": "2-IT0403-503-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "نصب نرم‌افزار مانیتورینگ",
+      "keywords": [
+        "nPlease wait while MonitoringAgent WINCOR is being installed",
+        "WINCOR on your computer",
+        "WINCOR نسخه",
+        "WINCOR ۴",
+        "خودپرداز WINCOR"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "general"
+      ],
+      "step_number": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0403-503-00_MonitoringAgent-WINCOR_4.2.0.5.md",
+      "heading_path": "نصب نرم‌افزار مانیتورینگ",
+      "chunk_index": 0,
+      "token_count": 484,
+      "is_leaf": true,
+      "chunk_continue": true,
+      "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.5.exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.5\\n(جهت نصب در دستگاه های خودپرداز WINCOR بانک سپه)\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nCopyright © 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر مربوط به پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.5 است. در بالای پنجره، عنوان و توضیحات مربوط به توافق‌نامه مجوز نمایش داده شده است. بخشی از متن توافق‌نامه به زبان فارسی و انگلیسی قابل مشاهده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. این تصویر مربوط به محیط نصب نرم‌افزار روی سیستم‌عامل ویندوز است.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back    Install    Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار در سیستم‌عامل ویندوز را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، مسیر نصب نرم‌افزار مشخص شده و دکمه‌های 'Install'، 'Back' و 'Cancel' در پایین قرار دارند. دکمه Install با کادر قرمز مشخص شده است. اطلاعات کپی‌رایت در پایین تصویر دیده می‌شود.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.5 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: ReceiptPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار را نشان می‌دهد که مربوط به برنامه MonitoringAgent WINCOR نسخه 4.2.0.5 است. در این پنجره، فرایند نصب در حال انجام بوده و یک نوار پیشرفت برای کپی فایل ReceiptPrinter.pdb نمایش داده می‌شود. گزینه‌های کنترلی مانند Back، Next (غیرفعال) و Cancel در پایین پنجره قرار دارند. همچنین اطلاعات کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر دیده می‌شود.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:\n\n\"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیم مقادیر IP کلاینت، IP سرور و شناسه ترمینال استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. در پایین فرم یک دکمه سبز رنگ با عنوان Submit وجود دارد که با کادر قرمز مشخص شده است.\"",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "3",
+    "main_text": "|  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک سپه به شماره **02142375728** و **02142375729** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن HKLM\\Software\\Adonis می‎باشد.\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)",
+    "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: |  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک سپه به شماره **02142375728** و **02142375729** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن HKLM\\Software\\Adonis می‎باشد.\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)\n\nkeywords: Server IP, شرکت آدونیس, مسیر نصب, Terminal ID, دستگاه Restart\n\ncustomer_name: general",
+    "metadata": {
+      "doc_id": "doc_3876d8f695b7a7ed",
+      "section_id": "sec_64b6f55e1abd06ff",
+      "date": "خرداد 1404",
+      "version": "2-IT0403-503-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "نصب نرم‌افزار مانیتورینگ",
+      "keywords": [
+        "Server IP",
+        "شرکت آدونیس",
+        "مسیر نصب",
+        "Terminal ID",
+        "دستگاه Restart"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "general"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0403-503-00_MonitoringAgent-WINCOR_4.2.0.5.md",
+      "heading_path": "نصب نرم‌افزار مانیتورینگ",
+      "chunk_index": 1,
+      "token_count": 148,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: |  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک سپه به شماره **02142375728** و **02142375729** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن HKLM\\Software\\Adonis می‎باشد.\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)",
+      "level": 1,
+      "imgs_info": []
+    }
+  }
+]

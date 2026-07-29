@@ -1,0 +1,1243 @@
+[
+  {
+    "id": "1",
+    "main_text": "img_description_rId5: [caption: \"جلد سند با لوگوی شرکت و طرح خودپرداز\", visual_description: [\"صفحه جلد با زمینه سفید و نوار عمودی آبی در سمت راست\", \"طرح خطی دستگاه خودپرداز در گوشه پایین چپ\", \"لوگوی شرکت در پایین صفحه همراه با متن فارسی\"]]\n\n**دستورالعمل**\n\n**نصب نرمافزار بانک توسعه تعاون**\n\n**خودپرداز** **NCR** **-** **KAL Software**\n\n**شماره نسخه: 1-IT9409-124-08**\n\n**خرداد 1400**\n\nimg_description_rId6: [caption: \"لوگوی شرکت توسعه خدمات الکترونیکی آدونیس\", visual_description: [\"متن فارسی شامل «شرکت توسعه خدمات الکترونیکی» و «آدونیس»\", \"لوگوی گرافیکی با نماد حرف A در سمت راست\", \"چیدمان افقی متن و نشان شرکت روی زمینه ساده\"]]\n\nاین سند با عنوان «دستورالعمل نصب نرمافزار بانک توسعه تعاون بر روی NCR» در آذرماه 1394 در گروه پشتیبانی فنی لایه دوم شرکت توسعه خدمات الکترونیکی آدونیس توسط آقای حامد کامیاب تهیه و تنظیمشده است.\n\nاین دستورالعمل در واحد آموزش امور فناوری اطلاعات توسط آرش تیغبر ویرایش و منتشر گردید.\n\nسابقه ویرایش:\n\n| | | | |\n| --- | --- | --- | --- |\n| **نام** **ویرایشگر** | **تاریخ** | **نام / سمت تاییدکننده** | **شماره نسخه قبلی\\*** |\n| آرش تیغبر | دیماه 94 | حامد کامیاب/کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-00 |\n| فروردین 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-01 |\n| خرداد 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-02 |\n| خرداد 96 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-03 |\n| اسفند 96 | حمید اکرمی / کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-04 |\n| خرداد98 | 1-IT9409-124-05 |\n| مهر 98 | 1-IT9409-124-06 |\n| | خرداد 1400 | 1-IT9409-124-07 |\n\n\\* با انتشار نسخه جدید، کلیه شماره نسخههای قبلی سند جاری فاقد اعتبار خواهند بود.\n\nفهرست\n\n[1. پیش از نصب 1](#_Toc72827958)\n\n[2. نصب ایمیج با Acronis 2012 1](#_Toc72827959)\n\n[3. تنظیم IP 5](#_Toc72827960)\n\n[4. ثبت Computer Name 5](#_Toc72827961)\n\n[5. اجرای فایلTose'e Ta'avon Hotfix.exe 6](#_Toc72827962)\n\n[6. منوی سوپروایزری 7](#_Toc72827963)\n\n[7. Learning 7](#_Toc72827964)\n\n[8. EPP INIT 8](#_Toc72827965)\n\n[9. تنظیم Line رسید مشتری 9](#_Toc72827966)\n\n[10. نصب درایور دوربین 9](#_Toc72827967)\n\n[11. نصب نرمافزار دوربین 10](#_Toc72827968)\n\n[چکلیست نصب نرمافزار 13](#_Toc72827969)\n\nimg_description_rId10: [caption: \"عبارت «به نام خدا» در متن فارسی\", visual_description: [\"متن فارسی دست‌نویس یا تایپی با سه واژه\", \"فقط نوشته روی زمینه سفید دیده می‌شود\", \"هیچ نمودار، جدول یا ابزار فنی در تصویر نیست\"]]\n\nنرمافزار بهکاررفته در بانک توسعه تعاون KAL Software به همراه Aptra 5.0.1 میباشد که بر روی سیستمعامل ویندوز XP SP3 نصب گردیده است.\n\nاین مجموعه نرمافزاری در قالب یک Image ارایه گردیده است که با Acronis 2012 قابلنصب میباشد.",
+    "embedding_text": "heading_path: INTRO \n\n level: 1 \n\n content: img_description_rId5: [caption: \"جلد سند با لوگوی شرکت و طرح خودپرداز\", visual_description: [\"صفحه جلد با زمینه سفید و نوار عمودی آبی در سمت راست\", \"طرح خطی دستگاه خودپرداز در گوشه پایین چپ\", \"لوگوی شرکت در پایین صفحه همراه با متن فارسی\"]]\n\n**دستورالعمل**\n\n**نصب نرمافزار بانک توسعه تعاون**\n\n**خودپرداز** **NCR** **-** **KAL Software**\n\n**شماره نسخه: 1-IT9409-124-08**\n\n**خرداد 1400**\n\nimg_description_rId6: [caption: \"لوگوی شرکت توسعه خدمات الکترونیکی آدونیس\", visual_description: [\"متن فارسی شامل «شرکت توسعه خدمات الکترونیکی» و «آدونیس»\", \"لوگوی گرافیکی با نماد حرف A در سمت راست\", \"چیدمان افقی متن و نشان شرکت روی زمینه ساده\"]]\n\nاین سند با عنوان «دستورالعمل نصب نرمافزار بانک توسعه تعاون بر روی NCR» در آذرماه 1394 در گروه پشتیبانی فنی لایه دوم شرکت توسعه خدمات الکترونیکی آدونیس توسط آقای حامد کامیاب تهیه و تنظیمشده است.\n\nاین دستورالعمل در واحد آموزش امور فناوری اطلاعات توسط آرش تیغبر ویرایش و منتشر گردید.\n\nسابقه ویرایش:\n\n| | | | |\n| --- | --- | --- | --- |\n| **نام** **ویرایشگر** | **تاریخ** | **نام / سمت تاییدکننده** | **شماره نسخه قبلی\\*** |\n| آرش تیغبر | دیماه 94 | حامد کامیاب/کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-00 |\n| فروردین 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-01 |\n| خرداد 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-02 |\n| خرداد 96 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-03 |\n| اسفند 96 | حمید اکرمی / کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-04 |\n| خرداد98 | 1-IT9409-124-05 |\n| مهر 98 | 1-IT9409-124-06 |\n| | خرداد 1400 | 1-IT9409-124-07 |\n\n\\* با انتشار نسخه جدید، کلیه شماره نسخههای قبلی سند جاری فاقد اعتبار خواهند بود.\n\nفهرست\n\n[1. پیش از نصب 1](#_Toc72827958)\n\n[2. نصب ایمیج با Acronis 2012 1](#_Toc72827959)\n\n[3. تنظیم IP 5](#_Toc72827960)\n\n[4. ثبت Computer Name 5](#_Toc72827961)\n\n[5. اجرای فایلTose'e Ta'avon Hotfix.exe 6](#_Toc72827962)\n\n[6. منوی سوپروایزری 7](#_Toc72827963)\n\n[7. Learning 7](#_Toc72827964)\n\n[8. EPP INIT 8](#_Toc72827965)\n\n[9. تنظیم Line رسید مشتری 9](#_Toc72827966)\n\n[10. نصب درایور دوربین 9](#_Toc72827967)\n\n[11. نصب نرمافزار دوربین 10](#_Toc72827968)\n\n[چکلیست نصب نرمافزار 13](#_Toc72827969)\n\nimg_description_rId10: [caption: \"عبارت «به نام خدا» در متن فارسی\", visual_description: [\"متن فارسی دست‌نویس یا تایپی با سه واژه\", \"فقط نوشته روی زمینه سفید دیده می‌شود\", \"هیچ نمودار، جدول یا ابزار فنی در تصویر نیست\"]]\n\nنرمافزار بهکاررفته در بانک توسعه تعاون KAL Software به همراه Aptra 5.0.1 میباشد که بر روی سیستمعامل ویندوز XP SP3 نصب گردیده است.\n\nاین مجموعه نرمافزاری در قالب یک Image ارایه گردیده است که با Acronis 2012 قابلنصب میباشد.\n\nkeywords: IT ۹۴۰۹, پشتیبانی فنی, فنی لایه, الکترونیکی آدونیس, Acronis ۲۰۱۲\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_b34005740dd8e8e5",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "INTRO",
+      "keywords": [
+        "IT ۹۴۰۹",
+        "پشتیبانی فنی",
+        "فنی لایه",
+        "الکترونیکی آدونیس",
+        "Acronis ۲۰۱۲"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "INTRO",
+      "chunk_index": 0,
+      "token_count": 419,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: INTRO \n\n level: 1 \n\n content: img_description_rId5: [caption: \"جلد سند با لوگوی شرکت و طرح خودپرداز\", visual_description: [\"صفحه جلد با زمینه سفید و نوار عمودی آبی در سمت راست\", \"طرح خطی دستگاه خودپرداز در گوشه پایین چپ\", \"لوگوی شرکت در پایین صفحه همراه با متن فارسی\"]]\n\n**دستورالعمل**\n\n**نصب نرمافزار بانک توسعه تعاون**\n\n**خودپرداز** **NCR** **-** **KAL Software**\n\n**شماره نسخه: 1-IT9409-124-08**\n\n**خرداد 1400**\n\nimg_description_rId6: [caption: \"لوگوی شرکت توسعه خدمات الکترونیکی آدونیس\", visual_description: [\"متن فارسی شامل «شرکت توسعه خدمات الکترونیکی» و «آدونیس»\", \"لوگوی گرافیکی با نماد حرف A در سمت راست\", \"چیدمان افقی متن و نشان شرکت روی زمینه ساده\"]]\n\nاین سند با عنوان «دستورالعمل نصب نرمافزار بانک توسعه تعاون بر روی NCR» در آذرماه 1394 در گروه پشتیبانی فنی لایه دوم شرکت توسعه خدمات الکترونیکی آدونیس توسط آقای حامد کامیاب تهیه و تنظیمشده است.\n\nاین دستورالعمل در واحد آموزش امور فناوری اطلاعات توسط آرش تیغبر ویرایش و منتشر گردید.\n\nسابقه ویرایش:\n\n| | | | |\n| --- | --- | --- | --- |\n| **نام** **ویرایشگر** | **تاریخ** | **نام / سمت تاییدکننده** | **شماره نسخه قبلی\\*** |\n| آرش تیغبر | دیماه 94 | حامد کامیاب/کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-00 |\n| فروردین 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-01 |\n| خرداد 95 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-02 |\n| خرداد 96 | رسول محمد میرزایی/ کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-03 |\n| اسفند 96 | حمید اکرمی / کارشناس گروه پشتیبانی فنی لایه دوم | 1-IT9409-124-04 |\n| خرداد98 | 1-IT9409-124-05 |\n| مهر 98 | 1-IT9409-124-06 |\n| | خرداد 1400 | 1-IT9409-124-07 |\n\n\\* با انتشار نسخه جدید، کلیه شماره نسخههای قبلی سند جاری فاقد اعتبار خواهند بود.\n\nفهرست\n\n[1. پیش از نصب 1](#_Toc72827958)\n\n[2. نصب ایمیج با Acronis 2012 1](#_Toc72827959)\n\n[3. تنظیم IP 5](#_Toc72827960)\n\n[4. ثبت Computer Name 5](#_Toc72827961)\n\n[5. اجرای فایلTose'e Ta'avon Hotfix.exe 6](#_Toc72827962)\n\n[6. منوی سوپروایزری 7](#_Toc72827963)\n\n[7. Learning 7](#_Toc72827964)\n\n[8. EPP INIT 8](#_Toc72827965)\n\n[9. تنظیم Line رسید مشتری 9](#_Toc72827966)\n\n[10. نصب درایور دوربین 9](#_Toc72827967)\n\n[11. نصب نرمافزار دوربین 10](#_Toc72827968)\n\n[چکلیست نصب نرمافزار 13](#_Toc72827969)\n\nimg_description_rId10: [caption: \"عبارت «به نام خدا» در متن فارسی\", visual_description: [\"متن فارسی دست‌نویس یا تایپی با سه واژه\", \"فقط نوشته روی زمینه سفید دیده می‌شود\", \"هیچ نمودار، جدول یا ابزار فنی در تصویر نیست\"]]\n\nنرمافزار بهکاررفته در بانک توسعه تعاون KAL Software به همراه Aptra 5.0.1 میباشد که بر روی سیستمعامل ویندوز XP SP3 نصب گردیده است.\n\nاین مجموعه نرمافزاری در قالب یک Image ارایه گردیده است که با Acronis 2012 قابلنصب میباشد.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image1.jpg",
+          "rId": "rId5",
+          "caption": "جلد سند با لوگوی شرکت و طرح خودپرداز",
+          "visual_description": [
+            "صفحه جلد با زمینه سفید و نوار عمودی آبی در سمت راست",
+            "طرح خطی دستگاه خودپرداز در گوشه پایین چپ",
+            "لوگوی شرکت در پایین صفحه همراه با متن فارسی"
+          ]
+        },
+        {
+          "image_name": "image2.png",
+          "rId": "rId6",
+          "caption": "لوگوی شرکت توسعه خدمات الکترونیکی آدونیس",
+          "visual_description": [
+            "متن فارسی شامل «شرکت توسعه خدمات الکترونیکی» و «آدونیس»",
+            "لوگوی گرافیکی با نماد حرف A در سمت راست",
+            "چیدمان افقی متن و نشان شرکت روی زمینه ساده"
+          ]
+        },
+        {
+          "image_name": "image4.png",
+          "rId": "rId10",
+          "caption": "عبارت «به نام خدا» در متن فارسی",
+          "visual_description": [
+            "متن فارسی دست‌نویس یا تایپی با سه واژه",
+            "فقط نوشته روی زمینه سفید دیده می‌شود",
+            "هیچ نمودار، جدول یا ابزار فنی در تصویر نیست"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "main_text": "اگر دستگاه عملیاتی است از مانده دستگاه پرینت بگیرید:\n\n**4.Replenish … 4.PRNT CNTRS**\n\n* از فایلهای ژورنال و تصاویر کپی بگیرید:\n + فایل ژورنال: با مراجعه به مسیر D:\\journal ، از فایلهای ژورنال کپی بگیرید؛ بعد از نصب نرمافزار میباید فایلهای مذکور را در پوشهی ژورنال واقع در درایو D کپی نمایید.\n + فایلهای تصاویر: تصاویر دوربین را از مسیر D:\\CAMPIC کپی و ذخیره نمایید؛ بعد از نصب نرمافزار، تصاویر را مجدداً در همان آدرس کپی کنید.",
+    "embedding_text": "heading_path: پیش از نصب \n\n level: 1 \n\n content: اگر دستگاه عملیاتی است از مانده دستگاه پرینت بگیرید:\n\n**4.Replenish … 4.PRNT CNTRS**\n\n* از فایلهای ژورنال و تصاویر کپی بگیرید:\n + فایل ژورنال: با مراجعه به مسیر D:\\journal ، از فایلهای ژورنال کپی بگیرید؛ بعد از نصب نرمافزار میباید فایلهای مذکور را در پوشهی ژورنال واقع در درایو D کپی نمایید.\n + فایلهای تصاویر: تصاویر دوربین را از مسیر D:\\CAMPIC کپی و ذخیره نمایید؛ بعد از نصب نرمافزار، تصاویر را مجدداً در همان آدرس کپی کنید.\n\nkeywords: فایلهای ژورنال, PRNT CNTRS, نصب نرمافزار, پرینت بگیرید, CAMPIC کپی\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_c7615e636dc7a34f",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "پیش از نصب",
+      "keywords": [
+        "فایلهای ژورنال",
+        "PRNT CNTRS",
+        "نصب نرمافزار",
+        "پرینت بگیرید",
+        "CAMPIC کپی"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "پیش از نصب",
+      "chunk_index": 0,
+      "token_count": 77,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: پیش از نصب \n\n level: 1 \n\n content: اگر دستگاه عملیاتی است از مانده دستگاه پرینت بگیرید:\n\n**4.Replenish … 4.PRNT CNTRS**\n\n* از فایلهای ژورنال و تصاویر کپی بگیرید:\n + فایل ژورنال: با مراجعه به مسیر D:\\journal ، از فایلهای ژورنال کپی بگیرید؛ بعد از نصب نرمافزار میباید فایلهای مذکور را در پوشهی ژورنال واقع در درایو D کپی نمایید.\n + فایلهای تصاویر: تصاویر دوربین را از مسیر D:\\CAMPIC کپی و ذخیره نمایید؛ بعد از نصب نرمافزار، تصاویر را مجدداً در همان آدرس کپی کنید.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "3",
+    "main_text": "تنظیمات بایوس را به نحوی تنظیم کنید تا دستگاه از روی DVD بوت شود و درنتیجه Acronis 2012 به اجرا درآید:\n\nimg_description_rId11: [caption: \"منوی بوت Acronis True Image Home 2012\", visual_description: [\"صفحه انتخاب راه‌اندازی Acronis True Image Home 2012\", \"سه گزینه قابل انتخاب: Acronis True Image Home (Full version)، Acronis System Report، Windows\", \"دکمه Turn Off Computer در نوار پایین سمت چپ\", \"پیام راهنما درباره MouseKeys و میانبرهای ALT + SHIFT + NUM LOCK، CTRL + M و F10\", \"نشانگر زبان EN در گوشه پایین راست\"]]\n\nimg_description_rId12: [caption: \"نمای نرم‌افزار پشتیبان‌گیری و بازیابی Acronis\", visual_description: [\"رابط کاربری Acronis True Image Home 2012 با صفحه Home باز است.\", \"در ستون چپ گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.\", \"در بخش اصلی دو عمل Back Up و Recover با زیرگزینه My Disks | Files & Folders نمایش داده شده‌اند.\", \"بالای پنجره منوی File و Help، نوار ابزار Backup، Recovery و Tools & Utilities و کادر Search دیده می‌شود.\", \"در پایین راست بخش My favorites با گزینه‌های Help، Options و Tools & Utilit نمایش دارد.\"]]\n\nپس از اجرای برنامه آکرونیس، مطابق شکل زیر، با کلیک بر روی دکمه Browse ، فایل tt\\_bank\\_kal5887.tib یا tt\\_bank\\_kal5877.tib را انتخاب نمایید:\n\nimg_description_rId13: [caption: \"پنجره بازیابی با انتخاب فایل پشتیبان\", visual_description: [\"پنجره نرم‌افزاری Recovery Wizard برای انتخاب نسخه پشتیبان نمایش داده شده است.\", \"در ستون کناری، مراحل Required steps شامل Archive selection، Recovery method، What to recover و Finish دیده می‌شود.\", \"در بخش اصلی، جدول Comments خالی است و متن No items to display نمایش داده می‌شود.\", \"فیلد Path و دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند.\"]]\n\nimg_description_rId14: [caption: \"پنجره انتخاب محل برای فایل پشتیبان در Acronis\", visual_description: [\"رابط کاربری نرم‌افزار Acronis True Image Home 2012 نمایش داده شده است.\", \"پنجره \\\\\", \" برای انتخاب مسیر فایل باز است.\", \"فهرست فایل‌ها شامل دو آرشیو با نام‌های TT_Bank_KAL5887.tib و TT_Bank_KAL5877.tib است.\", \"فیلد File name مقدار C:\\\\\\\\tt_bank_kal.tib را نشان می‌دهد.\", \"نوع فایل روی Backup Archives (*.tib) تنظیم شده و دکمه‌های OK و Cancel دیده می‌شوند.\"]]\n\nimg_description_rId15: [caption: \"انتخاب روش بازیابی در ویزارد\", visual_description: [\"پنجره ویزارد بازیابی با نوار مراحل در سمت چپ\", \"گزینه رادیویی انتخاب‌شده برای بازیابی کل دیسک‌ها و پارتیشن‌ها\", \"چک‌باکس فعال برای تغییر اندازه دیسک یا پارتیشن در حالت پیشرفته\", \"گزینه جایگزین برای بازیابی فایل‌ها و پوشه‌های انتخابی\", \"دکمه‌های Next > و Cancel در پایین پنجره\"]]\n\nDisk1 را بهطور کامل انتخاب نمایید:\n\nimg_description_rId16: [caption: \"پنجره انتخاب پارتیشن‌ها در ویزارد بازیابی\", visual_description: [\"پنجره ویزارد بازیابی با عنوان Select the items to recover دیده می‌شود.\", \"جدول پارتیشن‌های Disk 1 شامل NTFS (Unlabeled) (C:)، NTFS (Unlabeled) (D:) و MBR and Track 0 است.\", \"ستون‌های Partition، Flags، Capa...، Used S... و Type نمایش داده شده‌اند و برای C و D کادر انتخاب تیک‌خورده دیده می‌شود.\", \"متن راهنمای فارسی قرمز در مرکز پنجره و دکمه‌های Next > و Cancel در پایین دیده می‌شوند.\"]]",
+    "embedding_text": "heading_path: نصب ایمیج با Acronis 2012 \n\n level: 1 \n\n content: تنظیمات بایوس را به نحوی تنظیم کنید تا دستگاه از روی DVD بوت شود و درنتیجه Acronis 2012 به اجرا درآید:\n\nimg_description_rId11: [caption: \"منوی بوت Acronis True Image Home 2012\", visual_description: [\"صفحه انتخاب راه‌اندازی Acronis True Image Home 2012\", \"سه گزینه قابل انتخاب: Acronis True Image Home (Full version)، Acronis System Report، Windows\", \"دکمه Turn Off Computer در نوار پایین سمت چپ\", \"پیام راهنما درباره MouseKeys و میانبرهای ALT + SHIFT + NUM LOCK، CTRL + M و F10\", \"نشانگر زبان EN در گوشه پایین راست\"]]\n\nimg_description_rId12: [caption: \"نمای نرم‌افزار پشتیبان‌گیری و بازیابی Acronis\", visual_description: [\"رابط کاربری Acronis True Image Home 2012 با صفحه Home باز است.\", \"در ستون چپ گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.\", \"در بخش اصلی دو عمل Back Up و Recover با زیرگزینه My Disks | Files & Folders نمایش داده شده‌اند.\", \"بالای پنجره منوی File و Help، نوار ابزار Backup، Recovery و Tools & Utilities و کادر Search دیده می‌شود.\", \"در پایین راست بخش My favorites با گزینه‌های Help، Options و Tools & Utilit نمایش دارد.\"]]\n\nپس از اجرای برنامه آکرونیس، مطابق شکل زیر، با کلیک بر روی دکمه Browse ، فایل tt\\_bank\\_kal5887.tib یا tt\\_bank\\_kal5877.tib را انتخاب نمایید:\n\nimg_description_rId13: [caption: \"پنجره بازیابی با انتخاب فایل پشتیبان\", visual_description: [\"پنجره نرم‌افزاری Recovery Wizard برای انتخاب نسخه پشتیبان نمایش داده شده است.\", \"در ستون کناری، مراحل Required steps شامل Archive selection، Recovery method، What to recover و Finish دیده می‌شود.\", \"در بخش اصلی، جدول Comments خالی است و متن No items to display نمایش داده می‌شود.\", \"فیلد Path و دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند.\"]]\n\nimg_description_rId14: [caption: \"پنجره انتخاب محل برای فایل پشتیبان در Acronis\", visual_description: [\"رابط کاربری نرم‌افزار Acronis True Image Home 2012 نمایش داده شده است.\", \"پنجره \\\\\", \" برای انتخاب مسیر فایل باز است.\", \"فهرست فایل‌ها شامل دو آرشیو با نام‌های TT_Bank_KAL5887.tib و TT_Bank_KAL5877.tib است.\", \"فیلد File name مقدار C:\\\\\\\\tt_bank_kal.tib را نشان می‌دهد.\", \"نوع فایل روی Backup Archives (*.tib) تنظیم شده و دکمه‌های OK و Cancel دیده می‌شوند.\"]]\n\nimg_description_rId15: [caption: \"انتخاب روش بازیابی در ویزارد\", visual_description: [\"پنجره ویزارد بازیابی با نوار مراحل در سمت چپ\", \"گزینه رادیویی انتخاب‌شده برای بازیابی کل دیسک‌ها و پارتیشن‌ها\", \"چک‌باکس فعال برای تغییر اندازه دیسک یا پارتیشن در حالت پیشرفته\", \"گزینه جایگزین برای بازیابی فایل‌ها و پوشه‌های انتخابی\", \"دکمه‌های Next > و Cancel در پایین پنجره\"]]\n\nDisk1 را بهطور کامل انتخاب نمایید:\n\nimg_description_rId16: [caption: \"پنجره انتخاب پارتیشن‌ها در ویزارد بازیابی\", visual_description: [\"پنجره ویزارد بازیابی با عنوان Select the items to recover دیده می‌شود.\", \"جدول پارتیشن‌های Disk 1 شامل NTFS (Unlabeled) (C:)، NTFS (Unlabeled) (D:) و MBR and Track 0 است.\", \"ستون‌های Partition، Flags، Capa...، Used S... و Type نمایش داده شده‌اند و برای C و D کادر انتخاب تیک‌خورده دیده می‌شود.\", \"متن راهنمای فارسی قرمز در مرکز پنجره و دکمه‌های Next > و Cancel در پایین دیده می‌شوند.\"]]\n\nkeywords: Acronis True Image Home, Acronis ۲۰۱۲, Home ۲۰۱۲, Acronis System Report, بازیابی Acronis\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_704063a367246bcd",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب ایمیج با Acronis 2012",
+      "keywords": [
+        "Acronis True Image Home",
+        "Acronis ۲۰۱۲",
+        "Home ۲۰۱۲",
+        "Acronis System Report",
+        "بازیابی Acronis"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب ایمیج با Acronis 2012",
+      "chunk_index": 0,
+      "token_count": 468,
+      "is_leaf": true,
+      "chunk_continue": true,
+      "embedding_text": "heading_path: نصب ایمیج با Acronis 2012 \n\n level: 1 \n\n content: تنظیمات بایوس را به نحوی تنظیم کنید تا دستگاه از روی DVD بوت شود و درنتیجه Acronis 2012 به اجرا درآید:\n\nimg_description_rId11: [caption: \"منوی بوت Acronis True Image Home 2012\", visual_description: [\"صفحه انتخاب راه‌اندازی Acronis True Image Home 2012\", \"سه گزینه قابل انتخاب: Acronis True Image Home (Full version)، Acronis System Report، Windows\", \"دکمه Turn Off Computer در نوار پایین سمت چپ\", \"پیام راهنما درباره MouseKeys و میانبرهای ALT + SHIFT + NUM LOCK، CTRL + M و F10\", \"نشانگر زبان EN در گوشه پایین راست\"]]\n\nimg_description_rId12: [caption: \"نمای نرم‌افزار پشتیبان‌گیری و بازیابی Acronis\", visual_description: [\"رابط کاربری Acronis True Image Home 2012 با صفحه Home باز است.\", \"در ستون چپ گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.\", \"در بخش اصلی دو عمل Back Up و Recover با زیرگزینه My Disks | Files & Folders نمایش داده شده‌اند.\", \"بالای پنجره منوی File و Help، نوار ابزار Backup، Recovery و Tools & Utilities و کادر Search دیده می‌شود.\", \"در پایین راست بخش My favorites با گزینه‌های Help، Options و Tools & Utilit نمایش دارد.\"]]\n\nپس از اجرای برنامه آکرونیس، مطابق شکل زیر، با کلیک بر روی دکمه Browse ، فایل tt\\_bank\\_kal5887.tib یا tt\\_bank\\_kal5877.tib را انتخاب نمایید:\n\nimg_description_rId13: [caption: \"پنجره بازیابی با انتخاب فایل پشتیبان\", visual_description: [\"پنجره نرم‌افزاری Recovery Wizard برای انتخاب نسخه پشتیبان نمایش داده شده است.\", \"در ستون کناری، مراحل Required steps شامل Archive selection، Recovery method، What to recover و Finish دیده می‌شود.\", \"در بخش اصلی، جدول Comments خالی است و متن No items to display نمایش داده می‌شود.\", \"فیلد Path و دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند.\"]]\n\nimg_description_rId14: [caption: \"پنجره انتخاب محل برای فایل پشتیبان در Acronis\", visual_description: [\"رابط کاربری نرم‌افزار Acronis True Image Home 2012 نمایش داده شده است.\", \"پنجره \\\\\", \" برای انتخاب مسیر فایل باز است.\", \"فهرست فایل‌ها شامل دو آرشیو با نام‌های TT_Bank_KAL5887.tib و TT_Bank_KAL5877.tib است.\", \"فیلد File name مقدار C:\\\\\\\\tt_bank_kal.tib را نشان می‌دهد.\", \"نوع فایل روی Backup Archives (*.tib) تنظیم شده و دکمه‌های OK و Cancel دیده می‌شوند.\"]]\n\nimg_description_rId15: [caption: \"انتخاب روش بازیابی در ویزارد\", visual_description: [\"پنجره ویزارد بازیابی با نوار مراحل در سمت چپ\", \"گزینه رادیویی انتخاب‌شده برای بازیابی کل دیسک‌ها و پارتیشن‌ها\", \"چک‌باکس فعال برای تغییر اندازه دیسک یا پارتیشن در حالت پیشرفته\", \"گزینه جایگزین برای بازیابی فایل‌ها و پوشه‌های انتخابی\", \"دکمه‌های Next > و Cancel در پایین پنجره\"]]\n\nDisk1 را بهطور کامل انتخاب نمایید:\n\nimg_description_rId16: [caption: \"پنجره انتخاب پارتیشن‌ها در ویزارد بازیابی\", visual_description: [\"پنجره ویزارد بازیابی با عنوان Select the items to recover دیده می‌شود.\", \"جدول پارتیشن‌های Disk 1 شامل NTFS (Unlabeled) (C:)، NTFS (Unlabeled) (D:) و MBR and Track 0 است.\", \"ستون‌های Partition، Flags، Capa...، Used S... و Type نمایش داده شده‌اند و برای C و D کادر انتخاب تیک‌خورده دیده می‌شود.\", \"متن راهنمای فارسی قرمز در مرکز پنجره و دکمه‌های Next > و Cancel در پایین دیده می‌شوند.\"]]",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image5.png",
+          "rId": "rId11",
+          "caption": "منوی بوت Acronis True Image Home 2012",
+          "visual_description": [
+            "صفحه انتخاب راه‌اندازی Acronis True Image Home 2012",
+            "سه گزینه قابل انتخاب: Acronis True Image Home (Full version)، Acronis System Report، Windows",
+            "دکمه Turn Off Computer در نوار پایین سمت چپ",
+            "پیام راهنما درباره MouseKeys و میانبرهای ALT + SHIFT + NUM LOCK، CTRL + M و F10",
+            "نشانگر زبان EN در گوشه پایین راست"
+          ]
+        },
+        {
+          "image_name": "image6.png",
+          "rId": "rId12",
+          "caption": "نمای نرم‌افزار پشتیبان‌گیری و بازیابی Acronis",
+          "visual_description": [
+            "رابط کاربری Acronis True Image Home 2012 با صفحه Home باز است.",
+            "در ستون چپ گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.",
+            "در بخش اصلی دو عمل Back Up و Recover با زیرگزینه My Disks | Files & Folders نمایش داده شده‌اند.",
+            "بالای پنجره منوی File و Help، نوار ابزار Backup، Recovery و Tools & Utilities و کادر Search دیده می‌شود.",
+            "در پایین راست بخش My favorites با گزینه‌های Help، Options و Tools & Utilit نمایش دارد."
+          ]
+        },
+        {
+          "image_name": "image7.png",
+          "rId": "rId13",
+          "caption": "پنجره بازیابی با انتخاب فایل پشتیبان",
+          "visual_description": [
+            "پنجره نرم‌افزاری Recovery Wizard برای انتخاب نسخه پشتیبان نمایش داده شده است.",
+            "در ستون کناری، مراحل Required steps شامل Archive selection، Recovery method، What to recover و Finish دیده می‌شود.",
+            "در بخش اصلی، جدول Comments خالی است و متن No items to display نمایش داده می‌شود.",
+            "فیلد Path و دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image8.jpg",
+          "rId": "rId14",
+          "caption": "پنجره انتخاب محل برای فایل پشتیبان در Acronis",
+          "visual_description": [
+            "رابط کاربری نرم‌افزار Acronis True Image Home 2012 نمایش داده شده است.",
+            "پنجره \\",
+            " برای انتخاب مسیر فایل باز است.",
+            "فهرست فایل‌ها شامل دو آرشیو با نام‌های TT_Bank_KAL5887.tib و TT_Bank_KAL5877.tib است.",
+            "فیلد File name مقدار C:\\\\tt_bank_kal.tib را نشان می‌دهد.",
+            "نوع فایل روی Backup Archives (*.tib) تنظیم شده و دکمه‌های OK و Cancel دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image9.png",
+          "rId": "rId15",
+          "caption": "انتخاب روش بازیابی در ویزارد",
+          "visual_description": [
+            "پنجره ویزارد بازیابی با نوار مراحل در سمت چپ",
+            "گزینه رادیویی انتخاب‌شده برای بازیابی کل دیسک‌ها و پارتیشن‌ها",
+            "چک‌باکس فعال برای تغییر اندازه دیسک یا پارتیشن در حالت پیشرفته",
+            "گزینه جایگزین برای بازیابی فایل‌ها و پوشه‌های انتخابی",
+            "دکمه‌های Next > و Cancel در پایین پنجره"
+          ]
+        },
+        {
+          "image_name": "image10.jpg",
+          "rId": "rId16",
+          "caption": "پنجره انتخاب پارتیشن‌ها در ویزارد بازیابی",
+          "visual_description": [
+            "پنجره ویزارد بازیابی با عنوان Select the items to recover دیده می‌شود.",
+            "جدول پارتیشن‌های Disk 1 شامل NTFS (Unlabeled) (C:)، NTFS (Unlabeled) (D:) و MBR and Track 0 است.",
+            "ستون‌های Partition، Flags، Capa...، Used S... و Type نمایش داده شده‌اند و برای C و D کادر انتخاب تیک‌خورده دیده می‌شود.",
+            "متن راهنمای فارسی قرمز در مرکز پنجره و دکمه‌های Next > و Cancel در پایین دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image11.jpg",
+          "rId": "rId17",
+          "caption": "انتخاب پارتیشن‌های قابل بازیابی در نرم‌افزار ریکاوری",
+          "visual_description": [
+            "ویزارد بازیابی با فهرست مراحل در ستون چپ نمایش داده شده است",
+            "جدول Disk properties برای Disk 1 با چک‌باکس‌های انتخاب پارتیشن‌ها دیده می‌شود",
+            "پارتیشن‌های NTFS (Unlabeled) (C:) و NTFS (Unlabeled) (D:) همراه با ستون‌های Flags، Capacity، Used Space و Type نمایش دارند",
+            "ردیف MBR and Track 0 نیز در فهرست وجود دارد",
+            "دکمه‌های Next > و Cancel در پایین پنجره دیده می‌شوند",
+            "یک یادداشت فارسی قرمز درباره وجود درایو D و نصب فقط روی درایو C در مرکز صفحه قرار دارد"
+          ]
+        },
+        {
+          "image_name": "image12.png",
+          "rId": "rId18",
+          "caption": "انتخاب مقصد دیسک در ویزارد بازیابی",
+          "visual_description": [
+            "رابط کاربری ویزارد بازیابی با مرحله «Destination of Disk 1»",
+            "جدول انتخاب دیسک شامل Disk 1 با ظرفیت 20 GB، مدل VMware Virtual IDE Hard Drive و رابط ATA(1) Primary Master",
+            "گزینه «Recover disk signature» به‌صورت چک‌باکس و نمایش پارتیشن C: با 19.99 GB NTFS",
+            "دکمه‌های ناوبری «Next >» و «Cancel» و راهنمای مراحل در ستون کناری"
+          ]
+        },
+        {
+          "image_name": "image13.png",
+          "rId": "rId19",
+          "caption": "پنجره بازیابی دیسک با هشدار حذف پارتیشن‌ها",
+          "visual_description": [
+            "رابط کاربری \\",
+            " برای انتخاب مقصد بازیابی دیسک 1",
+            "جدول دیسک با ستون‌های Drive، Cap...، Model و Interface",
+            "دیالوگ Confirmation با دکمه‌های OK و Cancel و هشدار درباره حذف همه پارتیشن‌ها",
+            "گزینه Recover disk signature و نوار/برچسب پارتیشن C: با 19.99 GB NTFS",
+            "راهنمای رنگ/نوع پارتیشن شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported"
+          ]
+        },
+        {
+          "image_name": "image14.png",
+          "rId": "rId20",
+          "caption": "نمای خلاصه عملیات در ویزارد بازیابی دیسک",
+          "visual_description": [
+            "پنجره نرم‌افزار با عنوان Recovery Wizard و بخش Summary",
+            "فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition D و Finish",
+            "بخش Operations با Number of operations: 2 و مورد 1. Deleting partition",
+            "جزئیات پارتیشن: Hard disk: 1، Drive letter: C:، File system: NTFS، Size: 80 GB",
+            "دکمه‌های Options، Proceed و Cancel در پایین پنجره"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "main_text": "img_description_rId17: [caption: \"انتخاب پارتیشن‌های قابل بازیابی در نرم‌افزار ریکاوری\", visual_description: [\"ویزارد بازیابی با فهرست مراحل در ستون چپ نمایش داده شده است\", \"جدول Disk properties برای Disk 1 با چک‌باکس‌های انتخاب پارتیشن‌ها دیده می‌شود\", \"پارتیشن‌های NTFS (Unlabeled) (C:) و NTFS (Unlabeled) (D:) همراه با ستون‌های Flags، Capacity، Used Space و Type نمایش دارند\", \"ردیف MBR and Track 0 نیز در فهرست وجود دارد\", \"دکمه‌های Next > و Cancel در پایین پنجره دیده می‌شوند\", \"یک یادداشت فارسی قرمز درباره وجود درایو D و نصب فقط روی درایو C در مرکز صفحه قرار دارد\"]]\n\nimg_description_rId18: [caption: \"انتخاب مقصد دیسک در ویزارد بازیابی\", visual_description: [\"رابط کاربری ویزارد بازیابی با مرحله «Destination of Disk 1»\", \"جدول انتخاب دیسک شامل Disk 1 با ظرفیت 20 GB، مدل VMware Virtual IDE Hard Drive و رابط ATA(1) Primary Master\", \"گزینه «Recover disk signature» به‌صورت چک‌باکس و نمایش پارتیشن C: با 19.99 GB NTFS\", \"دکمه‌های ناوبری «Next >» و «Cancel» و راهنمای مراحل در ستون کناری\"]]\n\nimg_description_rId19: [caption: \"پنجره بازیابی دیسک با هشدار حذف پارتیشن‌ها\", visual_description: [\"رابط کاربری \\\\\", \" برای انتخاب مقصد بازیابی دیسک 1\", \"جدول دیسک با ستون‌های Drive، Cap...، Model و Interface\", \"دیالوگ Confirmation با دکمه‌های OK و Cancel و هشدار درباره حذف همه پارتیشن‌ها\", \"گزینه Recover disk signature و نوار/برچسب پارتیشن C: با 19.99 GB NTFS\", \"راهنمای رنگ/نوع پارتیشن شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported\"]]\n\nimg_description_rId20: [caption: \"نمای خلاصه عملیات در ویزارد بازیابی دیسک\", visual_description: [\"پنجره نرم‌افزار با عنوان Recovery Wizard و بخش Summary\", \"فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition D و Finish\", \"بخش Operations با Number of operations: 2 و مورد 1. Deleting partition\", \"جزئیات پارتیشن: Hard disk: 1، Drive letter: C:، File system: NTFS، Size: 80 GB\", \"دکمه‌های Options، Proceed و Cancel در پایین پنجره\"]]",
+    "embedding_text": "heading_path: نصب ایمیج با Acronis 2012 \n\n level: 1 \n\n content: img_description_rId17: [caption: \"انتخاب پارتیشن‌های قابل بازیابی در نرم‌افزار ریکاوری\", visual_description: [\"ویزارد بازیابی با فهرست مراحل در ستون چپ نمایش داده شده است\", \"جدول Disk properties برای Disk 1 با چک‌باکس‌های انتخاب پارتیشن‌ها دیده می‌شود\", \"پارتیشن‌های NTFS (Unlabeled) (C:) و NTFS (Unlabeled) (D:) همراه با ستون‌های Flags، Capacity، Used Space و Type نمایش دارند\", \"ردیف MBR and Track 0 نیز در فهرست وجود دارد\", \"دکمه‌های Next > و Cancel در پایین پنجره دیده می‌شوند\", \"یک یادداشت فارسی قرمز درباره وجود درایو D و نصب فقط روی درایو C در مرکز صفحه قرار دارد\"]]\n\nimg_description_rId18: [caption: \"انتخاب مقصد دیسک در ویزارد بازیابی\", visual_description: [\"رابط کاربری ویزارد بازیابی با مرحله «Destination of Disk 1»\", \"جدول انتخاب دیسک شامل Disk 1 با ظرفیت 20 GB، مدل VMware Virtual IDE Hard Drive و رابط ATA(1) Primary Master\", \"گزینه «Recover disk signature» به‌صورت چک‌باکس و نمایش پارتیشن C: با 19.99 GB NTFS\", \"دکمه‌های ناوبری «Next >» و «Cancel» و راهنمای مراحل در ستون کناری\"]]\n\nimg_description_rId19: [caption: \"پنجره بازیابی دیسک با هشدار حذف پارتیشن‌ها\", visual_description: [\"رابط کاربری \\\\\", \" برای انتخاب مقصد بازیابی دیسک 1\", \"جدول دیسک با ستون‌های Drive، Cap...، Model و Interface\", \"دیالوگ Confirmation با دکمه‌های OK و Cancel و هشدار درباره حذف همه پارتیشن‌ها\", \"گزینه Recover disk signature و نوار/برچسب پارتیشن C: با 19.99 GB NTFS\", \"راهنمای رنگ/نوع پارتیشن شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported\"]]\n\nimg_description_rId20: [caption: \"نمای خلاصه عملیات در ویزارد بازیابی دیسک\", visual_description: [\"پنجره نرم‌افزار با عنوان Recovery Wizard و بخش Summary\", \"فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition D و Finish\", \"بخش Operations با Number of operations: 2 و مورد 1. Deleting partition\", \"جزئیات پارتیشن: Hard disk: 1، Drive letter: C:، File system: NTFS، Size: 80 GB\", \"دکمه‌های Options، Proceed و Cancel در پایین پنجره\"]]\n\nkeywords: ویزارد بازیابی, بازیابی دیسک, Recover disk signature, VMware Virtual IDE Hard Drive, Recovery Wizard\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_704063a367246bcd",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب ایمیج با Acronis 2012",
+      "keywords": [
+        "ویزارد بازیابی",
+        "بازیابی دیسک",
+        "Recover disk signature",
+        "VMware Virtual IDE Hard Drive",
+        "Recovery Wizard"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب ایمیج با Acronis 2012",
+      "chunk_index": 1,
+      "token_count": 300,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: نصب ایمیج با Acronis 2012 \n\n level: 1 \n\n content: img_description_rId17: [caption: \"انتخاب پارتیشن‌های قابل بازیابی در نرم‌افزار ریکاوری\", visual_description: [\"ویزارد بازیابی با فهرست مراحل در ستون چپ نمایش داده شده است\", \"جدول Disk properties برای Disk 1 با چک‌باکس‌های انتخاب پارتیشن‌ها دیده می‌شود\", \"پارتیشن‌های NTFS (Unlabeled) (C:) و NTFS (Unlabeled) (D:) همراه با ستون‌های Flags، Capacity، Used Space و Type نمایش دارند\", \"ردیف MBR and Track 0 نیز در فهرست وجود دارد\", \"دکمه‌های Next > و Cancel در پایین پنجره دیده می‌شوند\", \"یک یادداشت فارسی قرمز درباره وجود درایو D و نصب فقط روی درایو C در مرکز صفحه قرار دارد\"]]\n\nimg_description_rId18: [caption: \"انتخاب مقصد دیسک در ویزارد بازیابی\", visual_description: [\"رابط کاربری ویزارد بازیابی با مرحله «Destination of Disk 1»\", \"جدول انتخاب دیسک شامل Disk 1 با ظرفیت 20 GB، مدل VMware Virtual IDE Hard Drive و رابط ATA(1) Primary Master\", \"گزینه «Recover disk signature» به‌صورت چک‌باکس و نمایش پارتیشن C: با 19.99 GB NTFS\", \"دکمه‌های ناوبری «Next >» و «Cancel» و راهنمای مراحل در ستون کناری\"]]\n\nimg_description_rId19: [caption: \"پنجره بازیابی دیسک با هشدار حذف پارتیشن‌ها\", visual_description: [\"رابط کاربری \\\\\", \" برای انتخاب مقصد بازیابی دیسک 1\", \"جدول دیسک با ستون‌های Drive، Cap...، Model و Interface\", \"دیالوگ Confirmation با دکمه‌های OK و Cancel و هشدار درباره حذف همه پارتیشن‌ها\", \"گزینه Recover disk signature و نوار/برچسب پارتیشن C: با 19.99 GB NTFS\", \"راهنمای رنگ/نوع پارتیشن شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported\"]]\n\nimg_description_rId20: [caption: \"نمای خلاصه عملیات در ویزارد بازیابی دیسک\", visual_description: [\"پنجره نرم‌افزار با عنوان Recovery Wizard و بخش Summary\", \"فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition D و Finish\", \"بخش Operations با Number of operations: 2 و مورد 1. Deleting partition\", \"جزئیات پارتیشن: Hard disk: 1، Drive letter: C:، File system: NTFS، Size: 80 GB\", \"دکمه‌های Options، Proceed و Cancel در پایین پنجره\"]]",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image5.png",
+          "rId": "rId11",
+          "caption": "منوی بوت Acronis True Image Home 2012",
+          "visual_description": [
+            "صفحه انتخاب راه‌اندازی Acronis True Image Home 2012",
+            "سه گزینه قابل انتخاب: Acronis True Image Home (Full version)، Acronis System Report، Windows",
+            "دکمه Turn Off Computer در نوار پایین سمت چپ",
+            "پیام راهنما درباره MouseKeys و میانبرهای ALT + SHIFT + NUM LOCK، CTRL + M و F10",
+            "نشانگر زبان EN در گوشه پایین راست"
+          ]
+        },
+        {
+          "image_name": "image6.png",
+          "rId": "rId12",
+          "caption": "نمای نرم‌افزار پشتیبان‌گیری و بازیابی Acronis",
+          "visual_description": [
+            "رابط کاربری Acronis True Image Home 2012 با صفحه Home باز است.",
+            "در ستون چپ گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.",
+            "در بخش اصلی دو عمل Back Up و Recover با زیرگزینه My Disks | Files & Folders نمایش داده شده‌اند.",
+            "بالای پنجره منوی File و Help، نوار ابزار Backup، Recovery و Tools & Utilities و کادر Search دیده می‌شود.",
+            "در پایین راست بخش My favorites با گزینه‌های Help، Options و Tools & Utilit نمایش دارد."
+          ]
+        },
+        {
+          "image_name": "image7.png",
+          "rId": "rId13",
+          "caption": "پنجره بازیابی با انتخاب فایل پشتیبان",
+          "visual_description": [
+            "پنجره نرم‌افزاری Recovery Wizard برای انتخاب نسخه پشتیبان نمایش داده شده است.",
+            "در ستون کناری، مراحل Required steps شامل Archive selection، Recovery method، What to recover و Finish دیده می‌شود.",
+            "در بخش اصلی، جدول Comments خالی است و متن No items to display نمایش داده می‌شود.",
+            "فیلد Path و دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image8.jpg",
+          "rId": "rId14",
+          "caption": "پنجره انتخاب محل برای فایل پشتیبان در Acronis",
+          "visual_description": [
+            "رابط کاربری نرم‌افزار Acronis True Image Home 2012 نمایش داده شده است.",
+            "پنجره \\",
+            " برای انتخاب مسیر فایل باز است.",
+            "فهرست فایل‌ها شامل دو آرشیو با نام‌های TT_Bank_KAL5887.tib و TT_Bank_KAL5877.tib است.",
+            "فیلد File name مقدار C:\\\\tt_bank_kal.tib را نشان می‌دهد.",
+            "نوع فایل روی Backup Archives (*.tib) تنظیم شده و دکمه‌های OK و Cancel دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image9.png",
+          "rId": "rId15",
+          "caption": "انتخاب روش بازیابی در ویزارد",
+          "visual_description": [
+            "پنجره ویزارد بازیابی با نوار مراحل در سمت چپ",
+            "گزینه رادیویی انتخاب‌شده برای بازیابی کل دیسک‌ها و پارتیشن‌ها",
+            "چک‌باکس فعال برای تغییر اندازه دیسک یا پارتیشن در حالت پیشرفته",
+            "گزینه جایگزین برای بازیابی فایل‌ها و پوشه‌های انتخابی",
+            "دکمه‌های Next > و Cancel در پایین پنجره"
+          ]
+        },
+        {
+          "image_name": "image10.jpg",
+          "rId": "rId16",
+          "caption": "پنجره انتخاب پارتیشن‌ها در ویزارد بازیابی",
+          "visual_description": [
+            "پنجره ویزارد بازیابی با عنوان Select the items to recover دیده می‌شود.",
+            "جدول پارتیشن‌های Disk 1 شامل NTFS (Unlabeled) (C:)، NTFS (Unlabeled) (D:) و MBR and Track 0 است.",
+            "ستون‌های Partition، Flags، Capa...، Used S... و Type نمایش داده شده‌اند و برای C و D کادر انتخاب تیک‌خورده دیده می‌شود.",
+            "متن راهنمای فارسی قرمز در مرکز پنجره و دکمه‌های Next > و Cancel در پایین دیده می‌شوند."
+          ]
+        },
+        {
+          "image_name": "image11.jpg",
+          "rId": "rId17",
+          "caption": "انتخاب پارتیشن‌های قابل بازیابی در نرم‌افزار ریکاوری",
+          "visual_description": [
+            "ویزارد بازیابی با فهرست مراحل در ستون چپ نمایش داده شده است",
+            "جدول Disk properties برای Disk 1 با چک‌باکس‌های انتخاب پارتیشن‌ها دیده می‌شود",
+            "پارتیشن‌های NTFS (Unlabeled) (C:) و NTFS (Unlabeled) (D:) همراه با ستون‌های Flags، Capacity، Used Space و Type نمایش دارند",
+            "ردیف MBR and Track 0 نیز در فهرست وجود دارد",
+            "دکمه‌های Next > و Cancel در پایین پنجره دیده می‌شوند",
+            "یک یادداشت فارسی قرمز درباره وجود درایو D و نصب فقط روی درایو C در مرکز صفحه قرار دارد"
+          ]
+        },
+        {
+          "image_name": "image12.png",
+          "rId": "rId18",
+          "caption": "انتخاب مقصد دیسک در ویزارد بازیابی",
+          "visual_description": [
+            "رابط کاربری ویزارد بازیابی با مرحله «Destination of Disk 1»",
+            "جدول انتخاب دیسک شامل Disk 1 با ظرفیت 20 GB، مدل VMware Virtual IDE Hard Drive و رابط ATA(1) Primary Master",
+            "گزینه «Recover disk signature» به‌صورت چک‌باکس و نمایش پارتیشن C: با 19.99 GB NTFS",
+            "دکمه‌های ناوبری «Next >» و «Cancel» و راهنمای مراحل در ستون کناری"
+          ]
+        },
+        {
+          "image_name": "image13.png",
+          "rId": "rId19",
+          "caption": "پنجره بازیابی دیسک با هشدار حذف پارتیشن‌ها",
+          "visual_description": [
+            "رابط کاربری \\",
+            " برای انتخاب مقصد بازیابی دیسک 1",
+            "جدول دیسک با ستون‌های Drive، Cap...، Model و Interface",
+            "دیالوگ Confirmation با دکمه‌های OK و Cancel و هشدار درباره حذف همه پارتیشن‌ها",
+            "گزینه Recover disk signature و نوار/برچسب پارتیشن C: با 19.99 GB NTFS",
+            "راهنمای رنگ/نوع پارتیشن شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported"
+          ]
+        },
+        {
+          "image_name": "image14.png",
+          "rId": "rId20",
+          "caption": "نمای خلاصه عملیات در ویزارد بازیابی دیسک",
+          "visual_description": [
+            "پنجره نرم‌افزار با عنوان Recovery Wizard و بخش Summary",
+            "فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition D و Finish",
+            "بخش Operations با Number of operations: 2 و مورد 1. Deleting partition",
+            "جزئیات پارتیشن: Hard disk: 1، Drive letter: C:، File system: NTFS، Size: 80 GB",
+            "دکمه‌های Options، Proceed و Cancel در پایین پنجره"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "main_text": "به کنترلپنل بروید و در قسمت Network Connections ، تنظیمات مربوط به IP را انجام دهید.\n\nتنظیمات IP DNS را نیز همانند شکل زیر انجام دهید:\n\nimg_description_rId21: [caption: \"پنجره تنظیمات IPv4 و DNS در ویندوز\", visual_description: [\"پنجره Properties برای Internet Protocol Version 4 (TCP/IPv4) در ویندوز\", \"گزینه Use the following IP address انتخاب شده و فیلدهای IP address، Subnet mask و Default gateway خالی هستند\", \"گزینه Use the following DNS server addresses انتخاب شده است\", \"مقادیر Preferred DNS server برابر 10.140.18.110 و Alternate DNS server برابر 10.140.18.111 است\", \"چک‌باکس Validate settings upon exit و دکمه‌های Advanced...، OK و Cancel دیده می‌شوند\"]]",
+    "embedding_text": "heading_path: تنظیم IP \n\n level: 1 \n\n content: به کنترلپنل بروید و در قسمت Network Connections ، تنظیمات مربوط به IP را انجام دهید.\n\nتنظیمات IP DNS را نیز همانند شکل زیر انجام دهید:\n\nimg_description_rId21: [caption: \"پنجره تنظیمات IPv4 و DNS در ویندوز\", visual_description: [\"پنجره Properties برای Internet Protocol Version 4 (TCP/IPv4) در ویندوز\", \"گزینه Use the following IP address انتخاب شده و فیلدهای IP address، Subnet mask و Default gateway خالی هستند\", \"گزینه Use the following DNS server addresses انتخاب شده است\", \"مقادیر Preferred DNS server برابر 10.140.18.110 و Alternate DNS server برابر 10.140.18.111 است\", \"چک‌باکس Validate settings upon exit و دکمه‌های Advanced...، OK و Cancel دیده می‌شوند\"]]\n\nkeywords: IP کنترلپنل, IP DNS, Use the following DNS server addresses, Preferred DNS server, Internet Protocol Version\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_1c9c4552382e5106",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "تنظیم IP",
+      "keywords": [
+        "IP کنترلپنل",
+        "IP DNS",
+        "Use the following DNS server addresses",
+        "Preferred DNS server",
+        "Internet Protocol Version"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "تنظیم IP",
+      "chunk_index": 0,
+      "token_count": 101,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: تنظیم IP \n\n level: 1 \n\n content: به کنترلپنل بروید و در قسمت Network Connections ، تنظیمات مربوط به IP را انجام دهید.\n\nتنظیمات IP DNS را نیز همانند شکل زیر انجام دهید:\n\nimg_description_rId21: [caption: \"پنجره تنظیمات IPv4 و DNS در ویندوز\", visual_description: [\"پنجره Properties برای Internet Protocol Version 4 (TCP/IPv4) در ویندوز\", \"گزینه Use the following IP address انتخاب شده و فیلدهای IP address، Subnet mask و Default gateway خالی هستند\", \"گزینه Use the following DNS server addresses انتخاب شده است\", \"مقادیر Preferred DNS server برابر 10.140.18.110 و Alternate DNS server برابر 10.140.18.111 است\", \"چک‌باکس Validate settings upon exit و دکمه‌های Advanced...، OK و Cancel دیده می‌شوند\"]]",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image15.jpg",
+          "rId": "rId21",
+          "caption": "پنجره تنظیمات IPv4 و DNS در ویندوز",
+          "visual_description": [
+            "پنجره Properties برای Internet Protocol Version 4 (TCP/IPv4) در ویندوز",
+            "گزینه Use the following IP address انتخاب شده و فیلدهای IP address، Subnet mask و Default gateway خالی هستند",
+            "گزینه Use the following DNS server addresses انتخاب شده است",
+            "مقادیر Preferred DNS server برابر 10.140.18.110 و Alternate DNS server برابر 10.140.18.111 است",
+            "چک‌باکس Validate settings upon exit و دکمه‌های Advanced...، OK و Cancel دیده می‌شوند"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "6",
+    "main_text": "بهمنظور تغییر نام کامپیوتر، مراحل زیر را انجام دهید:\n\n1. روی آیکون My Computer راست کلیک کنید و از منویی که گشوده میشود گزینهی Properties را انتخاب کنید:\n\n| | |\n| --- | --- |\n| ![\"image_name\" : \"image16.png\", \"rId\" : \"rId22\", \"caption\" : \"پنجره تغییر نام و عضویت کامپیوتر در ویندوز\", \"visual_description\" : [\"اسکرین‌شات پنجره Windows System Properties با زیرپنجره Computer Name Changes\", \"فیلد Computer name مقدار ATM-1003 و Full computer name مقدار ATM-1003. را نشان می‌دهد\", \"بخش Member of با گزینه‌های Domain و Workgroup و مقدار WORKGROUP دیده می‌شود\", \"دکمه‌های More..., OK, Cancel, Network ID, Change..., Apply و تب‌های Remote و Advanced قابل مشاهده‌اند\"]] | ![\"image_name\" : \"image17.png\", \"rId\" : \"rId23\", \"caption\" : \"منوی راست‌کلیک ویندوز برای درایو/کامپیوتر\", \"visual_description\" : [\"منوی زمینه‌ای ویندوز با گزینه‌های Open، Explore، Search...، Manage\", \"گزینه‌های Map Network Drive... و Disconnect Network Drive... برای اتصال/قطع درایو شبکه\", \"گزینه‌های Create Shortcut، Delete، Rename و Properties\", \"گزینه Properties در پایین منو هایلایت شده است\"]] |\n\n2. در پنجرهای که گشوده میشود، از Tab اول و در قسمت Computer Name روی دکمهی Change کلیک کنید.\n\nدر نرمافزار بانک توسعه تعاون، Computer Name دارای قالب زیر میباشد:\n\nشماره ششرقمی ترمینال دستگاه ATM-\n\nبهعنوانمثال: ATM-123456\n\nدر صورت استفاده از قالبی غیر از قالب فوق، وقوع خطاهای پیدرپی اجتنابناپذیر خواهد بود.",
+    "embedding_text": "heading_path: ثبت Computer Name \n\n level: 1 \n\n content: بهمنظور تغییر نام کامپیوتر، مراحل زیر را انجام دهید:\n\n1. روی آیکون My Computer راست کلیک کنید و از منویی که گشوده میشود گزینهی Properties را انتخاب کنید:\n\n| | |\n| --- | --- |\n| ![\"image_name\" : \"image16.png\", \"rId\" : \"rId22\", \"caption\" : \"پنجره تغییر نام و عضویت کامپیوتر در ویندوز\", \"visual_description\" : [\"اسکرین‌شات پنجره Windows System Properties با زیرپنجره Computer Name Changes\", \"فیلد Computer name مقدار ATM-1003 و Full computer name مقدار ATM-1003. را نشان می‌دهد\", \"بخش Member of با گزینه‌های Domain و Workgroup و مقدار WORKGROUP دیده می‌شود\", \"دکمه‌های More..., OK, Cancel, Network ID, Change..., Apply و تب‌های Remote و Advanced قابل مشاهده‌اند\"]] | ![\"image_name\" : \"image17.png\", \"rId\" : \"rId23\", \"caption\" : \"منوی راست‌کلیک ویندوز برای درایو/کامپیوتر\", \"visual_description\" : [\"منوی زمینه‌ای ویندوز با گزینه‌های Open، Explore، Search...، Manage\", \"گزینه‌های Map Network Drive... و Disconnect Network Drive... برای اتصال/قطع درایو شبکه\", \"گزینه‌های Create Shortcut، Delete، Rename و Properties\", \"گزینه Properties در پایین منو هایلایت شده است\"]] |\n\n2. در پنجرهای که گشوده میشود، از Tab اول و در قسمت Computer Name روی دکمهی Change کلیک کنید.\n\nدر نرمافزار بانک توسعه تعاون، Computer Name دارای قالب زیر میباشد:\n\nشماره ششرقمی ترمینال دستگاه ATM-\n\nبهعنوانمثال: ATM-123456\n\nدر صورت استفاده از قالبی غیر از قالب فوق، وقوع خطاهای پیدرپی اجتنابناپذیر خواهد بود.\n\nkeywords: Computer Name Changes, Windows System Properties, ثبت Computer, ATM- ۱۰۰۳, Rename Properties\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_3b985b31b8007a43",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "ثبت Computer Name",
+      "keywords": [
+        "Computer Name Changes",
+        "Windows System Properties",
+        "ثبت Computer",
+        "ATM- ۱۰۰۳",
+        "Rename Properties"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": [
+        1,
+        2
+      ],
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "ثبت Computer Name",
+      "chunk_index": 0,
+      "token_count": 212,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: ثبت Computer Name \n\n level: 1 \n\n content: بهمنظور تغییر نام کامپیوتر، مراحل زیر را انجام دهید:\n\n1. روی آیکون My Computer راست کلیک کنید و از منویی که گشوده میشود گزینهی Properties را انتخاب کنید:\n\n| | |\n| --- | --- |\n| ![\"image_name\" : \"image16.png\", \"rId\" : \"rId22\", \"caption\" : \"پنجره تغییر نام و عضویت کامپیوتر در ویندوز\", \"visual_description\" : [\"اسکرین‌شات پنجره Windows System Properties با زیرپنجره Computer Name Changes\", \"فیلد Computer name مقدار ATM-1003 و Full computer name مقدار ATM-1003. را نشان می‌دهد\", \"بخش Member of با گزینه‌های Domain و Workgroup و مقدار WORKGROUP دیده می‌شود\", \"دکمه‌های More..., OK, Cancel, Network ID, Change..., Apply و تب‌های Remote و Advanced قابل مشاهده‌اند\"]] | ![\"image_name\" : \"image17.png\", \"rId\" : \"rId23\", \"caption\" : \"منوی راست‌کلیک ویندوز برای درایو/کامپیوتر\", \"visual_description\" : [\"منوی زمینه‌ای ویندوز با گزینه‌های Open، Explore، Search...، Manage\", \"گزینه‌های Map Network Drive... و Disconnect Network Drive... برای اتصال/قطع درایو شبکه\", \"گزینه‌های Create Shortcut، Delete، Rename و Properties\", \"گزینه Properties در پایین منو هایلایت شده است\"]] |\n\n2. در پنجرهای که گشوده میشود، از Tab اول و در قسمت Computer Name روی دکمهی Change کلیک کنید.\n\nدر نرمافزار بانک توسعه تعاون، Computer Name دارای قالب زیر میباشد:\n\nشماره ششرقمی ترمینال دستگاه ATM-\n\nبهعنوانمثال: ATM-123456\n\nدر صورت استفاده از قالبی غیر از قالب فوق، وقوع خطاهای پیدرپی اجتنابناپذیر خواهد بود.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "7",
+    "main_text": "1. به مسیر زیر بروید:\n\n**Flash or HDD:\\Hotfix**\n\n1. فایل Tose'e Ta'avon Hotfix.exe را در یکی از درایوهای PC ذخیره کنید.\n2. روی فایل Tose'e Ta'avon Hotfix.exe دو کلیک نمایید.\n3. در پنجرهای که نمایان میشود، **به منظور انجام تنظیمات مربوط به دسترسی های پوشه ها** ، عدد 1 را وارد کنید:\n\nimg_description_rId24: [caption: \"نمایشگر متنی هات‌فیکس با گزینه‌های تعمیر دسترسی و غیرفعال‌سازی ژورنال\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن ASCII شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"نسخه v 1.0 برای Tose'e Ta'avon Hotfix نمایش داده شده است\", \"دو گزینه ورودی: 1- Repair Accessibility و 2- Disable Journal\", \"دستور خروج: For exit hotfix press X and clicking Enter.\", \"پرامپت ورود: Type Number and Press Enter:\"]]\n\n5. مقدار مربوط به ترمینال دستگاه را تایپ کنید:\n\nimg_description_rId25: [caption: \"اسکرین‌شات پنجره ابزار پشتیبانی فنی\", visual_description: [\"پنجره نرم‌افزاری با نوار عنوان «Administrator: Tose'e Ta'avon Hotfix»\", \"متن مرکزی شامل «ADONIS ESD COMPANY» و «SECOND LEVEL Technical Support Group»\", \"عبارت «Tose'e Ta'avon Hotfix» و نسخه «v 1.0» نمایش داده شده است\", \"در پایین صفحه برچسب «Terminal: xxxxxx» دیده می‌شود\"]]\n\n6. **برای غیر فعال سازی پرینتر ژورنال**، عدد 2 را وارد کنید:\n\nimg_description_rId26: [caption: \"پنجره هات‌فیکس با منوی انتخابی و دستور خروج\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن سربرگ شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"منوی دو گزینه‌ای: 1- Repair Accessibility و 2- Disable Journal\", \"دستور: For exit hotfix press X and clicking Enter.\", \"فیلد/پرامپت ورود: Type Number and Press Enter:\"]]\n\n7. عدد مربوط به نوع دستگاه جاری را انتخاب نمایید:\n\nimg_description_rId27: [caption: \"منوی متنی انتخاب گزینه‌های پشتیبانی فنی\", visual_description: [\"پنجره برنامه ویندوز با نوار عنوان Administrator: Tose'e Ta'avon Hotfix\", \"منوی متنی شامل سه گزینه: NCR 5886، NCR 5877 و Wincor Nixdorf\", \"دستور بازگشت به منوی اصلی با X و Enter نمایش داده شده است\", \"پرامپت ورود شماره و فشار Enter در پایین صفحه دیده می‌شود\"]]\n\n8. پنجره را ببندید.\n9. دستگاه را Restart کنید.",
+    "embedding_text": "heading_path: اجرای فایلTose'e Ta'avon Hotfix.exe \n\n level: 1 \n\n content: 1. به مسیر زیر بروید:\n\n**Flash or HDD:\\Hotfix**\n\n1. فایل Tose'e Ta'avon Hotfix.exe را در یکی از درایوهای PC ذخیره کنید.\n2. روی فایل Tose'e Ta'avon Hotfix.exe دو کلیک نمایید.\n3. در پنجرهای که نمایان میشود، **به منظور انجام تنظیمات مربوط به دسترسی های پوشه ها** ، عدد 1 را وارد کنید:\n\nimg_description_rId24: [caption: \"نمایشگر متنی هات‌فیکس با گزینه‌های تعمیر دسترسی و غیرفعال‌سازی ژورنال\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن ASCII شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"نسخه v 1.0 برای Tose'e Ta'avon Hotfix نمایش داده شده است\", \"دو گزینه ورودی: 1- Repair Accessibility و 2- Disable Journal\", \"دستور خروج: For exit hotfix press X and clicking Enter.\", \"پرامپت ورود: Type Number and Press Enter:\"]]\n\n5. مقدار مربوط به ترمینال دستگاه را تایپ کنید:\n\nimg_description_rId25: [caption: \"اسکرین‌شات پنجره ابزار پشتیبانی فنی\", visual_description: [\"پنجره نرم‌افزاری با نوار عنوان «Administrator: Tose'e Ta'avon Hotfix»\", \"متن مرکزی شامل «ADONIS ESD COMPANY» و «SECOND LEVEL Technical Support Group»\", \"عبارت «Tose'e Ta'avon Hotfix» و نسخه «v 1.0» نمایش داده شده است\", \"در پایین صفحه برچسب «Terminal: xxxxxx» دیده می‌شود\"]]\n\n6. **برای غیر فعال سازی پرینتر ژورنال**، عدد 2 را وارد کنید:\n\nimg_description_rId26: [caption: \"پنجره هات‌فیکس با منوی انتخابی و دستور خروج\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن سربرگ شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"منوی دو گزینه‌ای: 1- Repair Accessibility و 2- Disable Journal\", \"دستور: For exit hotfix press X and clicking Enter.\", \"فیلد/پرامپت ورود: Type Number and Press Enter:\"]]\n\n7. عدد مربوط به نوع دستگاه جاری را انتخاب نمایید:\n\nimg_description_rId27: [caption: \"منوی متنی انتخاب گزینه‌های پشتیبانی فنی\", visual_description: [\"پنجره برنامه ویندوز با نوار عنوان Administrator: Tose'e Ta'avon Hotfix\", \"منوی متنی شامل سه گزینه: NCR 5886، NCR 5877 و Wincor Nixdorf\", \"دستور بازگشت به منوی اصلی با X و Enter نمایش داده شده است\", \"پرامپت ورود شماره و فشار Enter در پایین صفحه دیده می‌شود\"]]\n\n8. پنجره را ببندید.\n9. دستگاه را Restart کنید.\n\nkeywords: For exit hotfix press X and clicking Enter, avon Hotfix. exe, e Ta, ADONIS ESD COMPANY, Type Number and Press Enter\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_a0836584e94e49e8",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "اجرای فایلTose'e Ta'avon Hotfix.exe",
+      "keywords": [
+        "For exit hotfix press X and clicking Enter",
+        "avon Hotfix. exe",
+        "e Ta",
+        "ADONIS ESD COMPANY",
+        "Type Number and Press Enter"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "اجرای فایلTose'e Ta'avon Hotfix.exe",
+      "chunk_index": 0,
+      "token_count": 324,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: اجرای فایلTose'e Ta'avon Hotfix.exe \n\n level: 1 \n\n content: 1. به مسیر زیر بروید:\n\n**Flash or HDD:\\Hotfix**\n\n1. فایل Tose'e Ta'avon Hotfix.exe را در یکی از درایوهای PC ذخیره کنید.\n2. روی فایل Tose'e Ta'avon Hotfix.exe دو کلیک نمایید.\n3. در پنجرهای که نمایان میشود، **به منظور انجام تنظیمات مربوط به دسترسی های پوشه ها** ، عدد 1 را وارد کنید:\n\nimg_description_rId24: [caption: \"نمایشگر متنی هات‌فیکس با گزینه‌های تعمیر دسترسی و غیرفعال‌سازی ژورنال\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن ASCII شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"نسخه v 1.0 برای Tose'e Ta'avon Hotfix نمایش داده شده است\", \"دو گزینه ورودی: 1- Repair Accessibility و 2- Disable Journal\", \"دستور خروج: For exit hotfix press X and clicking Enter.\", \"پرامپت ورود: Type Number and Press Enter:\"]]\n\n5. مقدار مربوط به ترمینال دستگاه را تایپ کنید:\n\nimg_description_rId25: [caption: \"اسکرین‌شات پنجره ابزار پشتیبانی فنی\", visual_description: [\"پنجره نرم‌افزاری با نوار عنوان «Administrator: Tose'e Ta'avon Hotfix»\", \"متن مرکزی شامل «ADONIS ESD COMPANY» و «SECOND LEVEL Technical Support Group»\", \"عبارت «Tose'e Ta'avon Hotfix» و نسخه «v 1.0» نمایش داده شده است\", \"در پایین صفحه برچسب «Terminal: xxxxxx» دیده می‌شود\"]]\n\n6. **برای غیر فعال سازی پرینتر ژورنال**، عدد 2 را وارد کنید:\n\nimg_description_rId26: [caption: \"پنجره هات‌فیکس با منوی انتخابی و دستور خروج\", visual_description: [\"پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix\", \"متن سربرگ شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group\", \"منوی دو گزینه‌ای: 1- Repair Accessibility و 2- Disable Journal\", \"دستور: For exit hotfix press X and clicking Enter.\", \"فیلد/پرامپت ورود: Type Number and Press Enter:\"]]\n\n7. عدد مربوط به نوع دستگاه جاری را انتخاب نمایید:\n\nimg_description_rId27: [caption: \"منوی متنی انتخاب گزینه‌های پشتیبانی فنی\", visual_description: [\"پنجره برنامه ویندوز با نوار عنوان Administrator: Tose'e Ta'avon Hotfix\", \"منوی متنی شامل سه گزینه: NCR 5886، NCR 5877 و Wincor Nixdorf\", \"دستور بازگشت به منوی اصلی با X و Enter نمایش داده شده است\", \"پرامپت ورود شماره و فشار Enter در پایین صفحه دیده می‌شود\"]]\n\n8. پنجره را ببندید.\n9. دستگاه را Restart کنید.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image18.tmp",
+          "rId": "rId24",
+          "caption": "نمایشگر متنی هات‌فیکس با گزینه‌های تعمیر دسترسی و غیرفعال‌سازی ژورنال",
+          "visual_description": [
+            "پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix",
+            "متن ASCII شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group",
+            "نسخه v 1.0 برای Tose'e Ta'avon Hotfix نمایش داده شده است",
+            "دو گزینه ورودی: 1- Repair Accessibility و 2- Disable Journal",
+            "دستور خروج: For exit hotfix press X and clicking Enter.",
+            "پرامپت ورود: Type Number and Press Enter:"
+          ]
+        },
+        {
+          "image_name": "image19.tmp",
+          "rId": "rId25",
+          "caption": "اسکرین‌شات پنجره ابزار پشتیبانی فنی",
+          "visual_description": [
+            "پنجره نرم‌افزاری با نوار عنوان «Administrator: Tose'e Ta'avon Hotfix»",
+            "متن مرکزی شامل «ADONIS ESD COMPANY» و «SECOND LEVEL Technical Support Group»",
+            "عبارت «Tose'e Ta'avon Hotfix» و نسخه «v 1.0» نمایش داده شده است",
+            "در پایین صفحه برچسب «Terminal: xxxxxx» دیده می‌شود"
+          ]
+        },
+        {
+          "image_name": "image20.tmp",
+          "rId": "rId26",
+          "caption": "پنجره هات‌فیکس با منوی انتخابی و دستور خروج",
+          "visual_description": [
+            "پنجره برنامه با عنوان Administrator: Tose'e Ta'avon Hotfix",
+            "متن سربرگ شامل ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group",
+            "منوی دو گزینه‌ای: 1- Repair Accessibility و 2- Disable Journal",
+            "دستور: For exit hotfix press X and clicking Enter.",
+            "فیلد/پرامپت ورود: Type Number and Press Enter:"
+          ]
+        },
+        {
+          "image_name": "image21.tmp",
+          "rId": "rId27",
+          "caption": "منوی متنی انتخاب گزینه‌های پشتیبانی فنی",
+          "visual_description": [
+            "پنجره برنامه ویندوز با نوار عنوان Administrator: Tose'e Ta'avon Hotfix",
+            "منوی متنی شامل سه گزینه: NCR 5886، NCR 5877 و Wincor Nixdorf",
+            "دستور بازگشت به منوی اصلی با X و Enter نمایش داده شده است",
+            "پرامپت ورود شماره و فشار Enter در پایین صفحه دیده می‌شود"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "8",
+    "main_text": "بعد از بالا آمدن نرمافزار، کلید سوپروایزری عمل نمیکند و با یکبار تغییر حالت از شما درخواست پسورد میکند؛ پسورد سوپروایزری 4 عدد 1 میباشد.\n\nimg_description_rId28: [caption: \"نمایش منوی انتخاب و کلیدهای کنترلی دستگاه\", visual_description: [\"نمایشگر سبز با عنوان SELECT و فهرست گزینه‌های شماره‌دار 04 REPLENISH، 05 CONFIGURE، 06 ACCESS، 07 DIAGNOSTIC، 08 TRANSFER، 09 EXIT، 20 START APTRA، 50 VENDOR MENU، 99 SOH\", \"پیام پایین نمایشگر: SELECT FUNCTION - _\", \"صفحه‌کلید عددی با کلیدهای 1 تا 9، 0 و کلیدهای CLR، CNL، ENT، COR\", \"کلیدهای کنترلی Normal/Supervisor و Reset در مرکز پایین\", \"چراغ‌های وضعیت با برچسب‌های In Service، Supervisor، Power، Error، Comm در سمت راست\"]]\n\nدرصورتیکه دستگاه برای اولین بار راهاندازی میگردد، لازم است عملیات تنظیم کاستها و Learn اسکناسها به اجرا درآید. اما اگر نرمافزار را بر روی دستگاه عملیاتی نصب میکنید، تنها کافی است EPP Init انجام شود. بدیهی است مراحل پول گذاری و تعیین مبالغ میباید توسط مسیول دستگاه انجام شود.",
+    "embedding_text": "heading_path: منوی سوپروایزری \n\n level: 1 \n\n content: بعد از بالا آمدن نرمافزار، کلید سوپروایزری عمل نمیکند و با یکبار تغییر حالت از شما درخواست پسورد میکند؛ پسورد سوپروایزری 4 عدد 1 میباشد.\n\nimg_description_rId28: [caption: \"نمایش منوی انتخاب و کلیدهای کنترلی دستگاه\", visual_description: [\"نمایشگر سبز با عنوان SELECT و فهرست گزینه‌های شماره‌دار 04 REPLENISH، 05 CONFIGURE، 06 ACCESS، 07 DIAGNOSTIC، 08 TRANSFER، 09 EXIT، 20 START APTRA، 50 VENDOR MENU، 99 SOH\", \"پیام پایین نمایشگر: SELECT FUNCTION - _\", \"صفحه‌کلید عددی با کلیدهای 1 تا 9، 0 و کلیدهای CLR، CNL، ENT، COR\", \"کلیدهای کنترلی Normal/Supervisor و Reset در مرکز پایین\", \"چراغ‌های وضعیت با برچسب‌های In Service، Supervisor، Power، Error، Comm در سمت راست\"]]\n\nدرصورتیکه دستگاه برای اولین بار راهاندازی میگردد، لازم است عملیات تنظیم کاستها و Learn اسکناسها به اجرا درآید. اما اگر نرمافزار را بر روی دستگاه عملیاتی نصب میکنید، تنها کافی است EPP Init انجام شود. بدیهی است مراحل پول گذاری و تعیین مبالغ میباید توسط مسیول دستگاه انجام شود.\n\nkeywords: کلیدهای کنترلی, کنترلی دستگاه, منوی سوپروایزری, کلید سوپروایزری, Supervisor Reset\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_5f861df1b38176bf",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "منوی سوپروایزری",
+      "keywords": [
+        "کلیدهای کنترلی",
+        "کنترلی دستگاه",
+        "منوی سوپروایزری",
+        "کلید سوپروایزری",
+        "Supervisor Reset"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "منوی سوپروایزری",
+      "chunk_index": 0,
+      "token_count": 155,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: منوی سوپروایزری \n\n level: 1 \n\n content: بعد از بالا آمدن نرمافزار، کلید سوپروایزری عمل نمیکند و با یکبار تغییر حالت از شما درخواست پسورد میکند؛ پسورد سوپروایزری 4 عدد 1 میباشد.\n\nimg_description_rId28: [caption: \"نمایش منوی انتخاب و کلیدهای کنترلی دستگاه\", visual_description: [\"نمایشگر سبز با عنوان SELECT و فهرست گزینه‌های شماره‌دار 04 REPLENISH، 05 CONFIGURE، 06 ACCESS، 07 DIAGNOSTIC، 08 TRANSFER، 09 EXIT، 20 START APTRA، 50 VENDOR MENU، 99 SOH\", \"پیام پایین نمایشگر: SELECT FUNCTION - _\", \"صفحه‌کلید عددی با کلیدهای 1 تا 9، 0 و کلیدهای CLR، CNL، ENT، COR\", \"کلیدهای کنترلی Normal/Supervisor و Reset در مرکز پایین\", \"چراغ‌های وضعیت با برچسب‌های In Service، Supervisor، Power، Error، Comm در سمت راست\"]]\n\nدرصورتیکه دستگاه برای اولین بار راهاندازی میگردد، لازم است عملیات تنظیم کاستها و Learn اسکناسها به اجرا درآید. اما اگر نرمافزار را بر روی دستگاه عملیاتی نصب میکنید، تنها کافی است EPP Init انجام شود. بدیهی است مراحل پول گذاری و تعیین مبالغ میباید توسط مسیول دستگاه انجام شود.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image22.jpg",
+          "rId": "rId28",
+          "caption": "نمایش منوی انتخاب و کلیدهای کنترلی دستگاه",
+          "visual_description": [
+            "نمایشگر سبز با عنوان SELECT و فهرست گزینه‌های شماره‌دار 04 REPLENISH، 05 CONFIGURE، 06 ACCESS، 07 DIAGNOSTIC، 08 TRANSFER، 09 EXIT، 20 START APTRA، 50 VENDOR MENU، 99 SOH",
+            "پیام پایین نمایشگر: SELECT FUNCTION - _",
+            "صفحه‌کلید عددی با کلیدهای 1 تا 9، 0 و کلیدهای CLR، CNL، ENT، COR",
+            "کلیدهای کنترلی Normal/Supervisor و Reset در مرکز پایین",
+            "چراغ‌های وضعیت با برچسب‌های In Service، Supervisor، Power، Error، Comm در سمت راست"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "9",
+    "main_text": "برای انجام عملیات لرن، از منوی سوپروایزری، گزینهی 20.START APTRA را بزنید تا وارد منوی وندور اپترا شوید. با انتخاب گزینههای زیر وارد قسمت لرنینگ خواهید شد:\n\n**8.self-service Configuration**\n\n**3.set device Config**\n\n**4.cash handler**\n\nبه درخواست انفورماتیک، مقادیر تایپ کاستها حتماً میباید به ترتیب زیر باشد:\n\n* کاست شماره یک: پنجاه هزارتومانی\n* کاست شماره دو: دههزارتومانی\n* کاست شماره سه: دههزارتومانی\n* کاست شماره چهار: پنجهزارتومانی\n\nمگنتهای کاستها میباید مطابق شکل زیر باشند:\n\nimg_description_rId29: [caption: \"نمای چهار نوع قرارگیری مگنت‌ها\", visual_description: [\"چهار نمونه از یک مجموعه فلزی مستطیلی در چهار حالت TYPE 1 تا TYPE 4 نمایش داده شده است.\", \"در هر نمونه شیارهای عمودی و نشانگرهای باریک با بخش قرمز داخل بدنه دیده می‌شود.\", \"در سمت راست هر قطعه یک زبانه یا اتصال بیرون‌زده دیده می‌شود.\", \"چیدمان قطعات و محل مگنت‌ها بین TYPE 1 تا TYPE 4 متفاوت است.\"]]\n\nتوجه داشته باشید که مگنت کاست شماره دو و کاست شماره سه میباید مانند هم باشند\n\nتصویر شماره یک قرار داده شود\n\nتوجه داشته باشید که هرگونه تغییر و مغایرت باید با هماهنگی و درخواست رسمی انفورماتیک بانک انجام شود.\n\nدرصورتیکه دستگاه از قبل فعال بوده است، نیازی به انجام مرحلهی الف و ب قسمت بعدی (EPP INIT) نخواهد بود.",
+    "embedding_text": "heading_path: Learning \n\n level: 1 \n\n content: برای انجام عملیات لرن، از منوی سوپروایزری، گزینهی 20.START APTRA را بزنید تا وارد منوی وندور اپترا شوید. با انتخاب گزینههای زیر وارد قسمت لرنینگ خواهید شد:\n\n**8.self-service Configuration**\n\n**3.set device Config**\n\n**4.cash handler**\n\nبه درخواست انفورماتیک، مقادیر تایپ کاستها حتماً میباید به ترتیب زیر باشد:\n\n* کاست شماره یک: پنجاه هزارتومانی\n* کاست شماره دو: دههزارتومانی\n* کاست شماره سه: دههزارتومانی\n* کاست شماره چهار: پنجهزارتومانی\n\nمگنتهای کاستها میباید مطابق شکل زیر باشند:\n\nimg_description_rId29: [caption: \"نمای چهار نوع قرارگیری مگنت‌ها\", visual_description: [\"چهار نمونه از یک مجموعه فلزی مستطیلی در چهار حالت TYPE 1 تا TYPE 4 نمایش داده شده است.\", \"در هر نمونه شیارهای عمودی و نشانگرهای باریک با بخش قرمز داخل بدنه دیده می‌شود.\", \"در سمت راست هر قطعه یک زبانه یا اتصال بیرون‌زده دیده می‌شود.\", \"چیدمان قطعات و محل مگنت‌ها بین TYPE 1 تا TYPE 4 متفاوت است.\"]]\n\nتوجه داشته باشید که مگنت کاست شماره دو و کاست شماره سه میباید مانند هم باشند\n\nتصویر شماره یک قرار داده شود\n\nتوجه داشته باشید که هرگونه تغییر و مغایرت باید با هماهنگی و درخواست رسمی انفورماتیک بانک انجام شود.\n\nدرصورتیکه دستگاه از قبل فعال بوده است، نیازی به انجام مرحلهی الف و ب قسمت بعدی (EPP INIT) نخواهد بود.\n\nkeywords: self-service Configuration, set device Config, TYPE ۴, START APTRA, قسمت لرنینگ\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_327069410615fbaa",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "Learning",
+      "keywords": [
+        "self-service Configuration",
+        "set device Config",
+        "TYPE ۴",
+        "START APTRA",
+        "قسمت لرنینگ"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "Learning",
+      "chunk_index": 0,
+      "token_count": 201,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: Learning \n\n level: 1 \n\n content: برای انجام عملیات لرن، از منوی سوپروایزری، گزینهی 20.START APTRA را بزنید تا وارد منوی وندور اپترا شوید. با انتخاب گزینههای زیر وارد قسمت لرنینگ خواهید شد:\n\n**8.self-service Configuration**\n\n**3.set device Config**\n\n**4.cash handler**\n\nبه درخواست انفورماتیک، مقادیر تایپ کاستها حتماً میباید به ترتیب زیر باشد:\n\n* کاست شماره یک: پنجاه هزارتومانی\n* کاست شماره دو: دههزارتومانی\n* کاست شماره سه: دههزارتومانی\n* کاست شماره چهار: پنجهزارتومانی\n\nمگنتهای کاستها میباید مطابق شکل زیر باشند:\n\nimg_description_rId29: [caption: \"نمای چهار نوع قرارگیری مگنت‌ها\", visual_description: [\"چهار نمونه از یک مجموعه فلزی مستطیلی در چهار حالت TYPE 1 تا TYPE 4 نمایش داده شده است.\", \"در هر نمونه شیارهای عمودی و نشانگرهای باریک با بخش قرمز داخل بدنه دیده می‌شود.\", \"در سمت راست هر قطعه یک زبانه یا اتصال بیرون‌زده دیده می‌شود.\", \"چیدمان قطعات و محل مگنت‌ها بین TYPE 1 تا TYPE 4 متفاوت است.\"]]\n\nتوجه داشته باشید که مگنت کاست شماره دو و کاست شماره سه میباید مانند هم باشند\n\nتصویر شماره یک قرار داده شود\n\nتوجه داشته باشید که هرگونه تغییر و مغایرت باید با هماهنگی و درخواست رسمی انفورماتیک بانک انجام شود.\n\nدرصورتیکه دستگاه از قبل فعال بوده است، نیازی به انجام مرحلهی الف و ب قسمت بعدی (EPP INIT) نخواهد بود.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image23.jpg",
+          "rId": "rId29",
+          "caption": "نمای چهار نوع قرارگیری مگنت‌ها",
+          "visual_description": [
+            "چهار نمونه از یک مجموعه فلزی مستطیلی در چهار حالت TYPE 1 تا TYPE 4 نمایش داده شده است.",
+            "در هر نمونه شیارهای عمودی و نشانگرهای باریک با بخش قرمز داخل بدنه دیده می‌شود.",
+            "در سمت راست هر قطعه یک زبانه یا اتصال بیرون‌زده دیده می‌شود.",
+            "چیدمان قطعات و محل مگنت‌ها بین TYPE 1 تا TYPE 4 متفاوت است."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "10",
+    "main_text": "**الف)** برای انجام این کار به منوی 50 VENDOR MENU - 00 EPP FCTS وارد شوید و 00 EPP INIT را اجرا کنید؛ سپس با انتخاب YES از این بخش خارج شوید.\n\n**ب)** وارد منوی 06 ACCESS شوید و KEY A و KEY B را وارد نمایید؛ در این بخش هشت بار عدد 20 را پشت سر هم وارد کنید.\n\n**ج)** برای واردکردن MAC NUMBER به منوی 06 ACCESS - 12 ENTER MAC بروید و\nMAC NUMBER را وارد نمایید. این عدد ترکیبی از Machine Number و ده رقم 1100000100 میباشد.\n\n**د)** برای تنظیم Machine Number وارد منوی 05 CONFIGURE - 04 MACHINE NO شوید و مقدار Machine Number که یک عدد 6 رقمی ست و از شماره ترمینال دستگاه استخراج میگردد را وارد نمایید.",
+    "embedding_text": "heading_path: EPP INIT \n\n level: 1 \n\n content: **الف)** برای انجام این کار به منوی 50 VENDOR MENU - 00 EPP FCTS وارد شوید و 00 EPP INIT را اجرا کنید؛ سپس با انتخاب YES از این بخش خارج شوید.\n\n**ب)** وارد منوی 06 ACCESS شوید و KEY A و KEY B را وارد نمایید؛ در این بخش هشت بار عدد 20 را پشت سر هم وارد کنید.\n\n**ج)** برای واردکردن MAC NUMBER به منوی 06 ACCESS - 12 ENTER MAC بروید و\nMAC NUMBER را وارد نمایید. این عدد ترکیبی از Machine Number و ده رقم 1100000100 میباشد.\n\n**د)** برای تنظیم Machine Number وارد منوی 05 CONFIGURE - 04 MACHINE NO شوید و مقدار Machine Number که یک عدد 6 رقمی ست و از شماره ترمینال دستگاه استخراج میگردد را وارد نمایید.\n\nkeywords: EPP INIT, MAC NUMBER, Machine Number, ENTER MAC, EPP FCTS\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_20639b33d960f77c",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "EPP INIT",
+      "keywords": [
+        "EPP INIT",
+        "MAC NUMBER",
+        "Machine Number",
+        "ENTER MAC",
+        "EPP FCTS"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "EPP INIT",
+      "chunk_index": 0,
+      "token_count": 125,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: EPP INIT \n\n level: 1 \n\n content: **الف)** برای انجام این کار به منوی 50 VENDOR MENU - 00 EPP FCTS وارد شوید و 00 EPP INIT را اجرا کنید؛ سپس با انتخاب YES از این بخش خارج شوید.\n\n**ب)** وارد منوی 06 ACCESS شوید و KEY A و KEY B را وارد نمایید؛ در این بخش هشت بار عدد 20 را پشت سر هم وارد کنید.\n\n**ج)** برای واردکردن MAC NUMBER به منوی 06 ACCESS - 12 ENTER MAC بروید و\nMAC NUMBER را وارد نمایید. این عدد ترکیبی از Machine Number و ده رقم 1100000100 میباشد.\n\n**د)** برای تنظیم Machine Number وارد منوی 05 CONFIGURE - 04 MACHINE NO شوید و مقدار Machine Number که یک عدد 6 رقمی ست و از شماره ترمینال دستگاه استخراج میگردد را وارد نمایید.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "11",
+    "main_text": "سوییچ 6 و 4 روی برد رسید مشتری را On کنید و دکمه RESET روی برد را یکبار بزنید تا چهار چراغ LED قرمز رنگ به حالت چشمکزن درآیند؛ سپس دکمه SET را بزنید.\n\nد![\"image_name\" : \"image24.jpg\", \"rId\" : \"rId30\", \"caption\" : \"جدول تنظیم سوئیچ برای LINE CHANE IN TOSE TAVON\", \"visual_description\" : [\"جدول تنظیم سوئیچ با ستون‌های 8 تا 1.\", \"ردیف «LINE CHANE IN TOSE TAVON» با مقادیر 0 0 1 0 1 0 0 0.\", \"یادداشت پایین: «0 = off, 1 = ON.»\"]]\n\nسوییچها را به حالت نرمال خود برگردانید و دکمه RESET را بزنید. سپس دکمه سبز رنگ تست را نگهدارید تا کاغذی حاوی اطلاعات چاپ شود.\n\nimg_description_rId31: [caption: \"جدول تنظیمات سوئیچ حالت عادی\", visual_description: [\"جدول Function و Switch Setting با ستون‌های 8 تا 1\", \"ردیف NORMAL MODE IN TOSE TAVON با مقادیر 0 0 0 0 1 1 1 1\", \"یادداشت: 0 = off و 1 = ON\"]]\n\nمقدار LINE میباید به 32 تغییر یافته باشد؛ دستگاه را ریست کنید و بعد از In-service شدن، تراکنش انجام دهید.\n\n*![\"image_name\" : \"image26.jpg\", \"rId\" : \"rId32\", \"caption\" : \"برگه تنظیمات پرینتر رسید\", \"visual_description\" : [\"عنوان \\\"Receipt printer\\\" و اطلاعات نسخه میان‌افزار/کاراکترگرافی\", \"جدول Sensor level با ستون‌های ON، OFF و TH و مقدار BDS\", \"فهرست DIP switch شامل گزینه‌های 1، 2 و 3,4\", \"تنظیمات Form length، Interface، Character set و Datascope mode\"]]*\n\nاگر دستگاه برای بار اول است که راهاندازی میشود، بهمنظور In-service نمودن آن، باید هماهنگیهای لازم را با انفورماتیک بانک به عملآورید؛ در غیر این صورت میتوانید دستگاه را In-service نمایید.",
+    "embedding_text": "heading_path: تنظیم Line رسید مشتری \n\n level: 1 \n\n content: سوییچ 6 و 4 روی برد رسید مشتری را On کنید و دکمه RESET روی برد را یکبار بزنید تا چهار چراغ LED قرمز رنگ به حالت چشمکزن درآیند؛ سپس دکمه SET را بزنید.\n\nد![\"image_name\" : \"image24.jpg\", \"rId\" : \"rId30\", \"caption\" : \"جدول تنظیم سوئیچ برای LINE CHANE IN TOSE TAVON\", \"visual_description\" : [\"جدول تنظیم سوئیچ با ستون‌های 8 تا 1.\", \"ردیف «LINE CHANE IN TOSE TAVON» با مقادیر 0 0 1 0 1 0 0 0.\", \"یادداشت پایین: «0 = off, 1 = ON.»\"]]\n\nسوییچها را به حالت نرمال خود برگردانید و دکمه RESET را بزنید. سپس دکمه سبز رنگ تست را نگهدارید تا کاغذی حاوی اطلاعات چاپ شود.\n\nimg_description_rId31: [caption: \"جدول تنظیمات سوئیچ حالت عادی\", visual_description: [\"جدول Function و Switch Setting با ستون‌های 8 تا 1\", \"ردیف NORMAL MODE IN TOSE TAVON با مقادیر 0 0 0 0 1 1 1 1\", \"یادداشت: 0 = off و 1 = ON\"]]\n\nمقدار LINE میباید به 32 تغییر یافته باشد؛ دستگاه را ریست کنید و بعد از In-service شدن، تراکنش انجام دهید.\n\n*![\"image_name\" : \"image26.jpg\", \"rId\" : \"rId32\", \"caption\" : \"برگه تنظیمات پرینتر رسید\", \"visual_description\" : [\"عنوان \\\"Receipt printer\\\" و اطلاعات نسخه میان‌افزار/کاراکترگرافی\", \"جدول Sensor level با ستون‌های ON، OFF و TH و مقدار BDS\", \"فهرست DIP switch شامل گزینه‌های 1، 2 و 3,4\", \"تنظیمات Form length، Interface، Character set و Datascope mode\"]]*\n\nاگر دستگاه برای بار اول است که راهاندازی میشود، بهمنظور In-service نمودن آن، باید هماهنگیهای لازم را با انفورماتیک بانک به عملآورید؛ در غیر این صورت میتوانید دستگاه را In-service نمایید.\n\nkeywords: LINE CHANE IN TOSE TAVON, NORMAL MODE IN TOSE TAVON, DIP switch, Receipt printer, چراغ LED\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_8767439b6b1207f3",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "تنظیم Line رسید مشتری",
+      "keywords": [
+        "LINE CHANE IN TOSE TAVON",
+        "NORMAL MODE IN TOSE TAVON",
+        "DIP switch",
+        "Receipt printer",
+        "چراغ LED"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "تنظیم Line رسید مشتری",
+      "chunk_index": 0,
+      "token_count": 254,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: تنظیم Line رسید مشتری \n\n level: 1 \n\n content: سوییچ 6 و 4 روی برد رسید مشتری را On کنید و دکمه RESET روی برد را یکبار بزنید تا چهار چراغ LED قرمز رنگ به حالت چشمکزن درآیند؛ سپس دکمه SET را بزنید.\n\nد![\"image_name\" : \"image24.jpg\", \"rId\" : \"rId30\", \"caption\" : \"جدول تنظیم سوئیچ برای LINE CHANE IN TOSE TAVON\", \"visual_description\" : [\"جدول تنظیم سوئیچ با ستون‌های 8 تا 1.\", \"ردیف «LINE CHANE IN TOSE TAVON» با مقادیر 0 0 1 0 1 0 0 0.\", \"یادداشت پایین: «0 = off, 1 = ON.»\"]]\n\nسوییچها را به حالت نرمال خود برگردانید و دکمه RESET را بزنید. سپس دکمه سبز رنگ تست را نگهدارید تا کاغذی حاوی اطلاعات چاپ شود.\n\nimg_description_rId31: [caption: \"جدول تنظیمات سوئیچ حالت عادی\", visual_description: [\"جدول Function و Switch Setting با ستون‌های 8 تا 1\", \"ردیف NORMAL MODE IN TOSE TAVON با مقادیر 0 0 0 0 1 1 1 1\", \"یادداشت: 0 = off و 1 = ON\"]]\n\nمقدار LINE میباید به 32 تغییر یافته باشد؛ دستگاه را ریست کنید و بعد از In-service شدن، تراکنش انجام دهید.\n\n*![\"image_name\" : \"image26.jpg\", \"rId\" : \"rId32\", \"caption\" : \"برگه تنظیمات پرینتر رسید\", \"visual_description\" : [\"عنوان \\\"Receipt printer\\\" و اطلاعات نسخه میان‌افزار/کاراکترگرافی\", \"جدول Sensor level با ستون‌های ON، OFF و TH و مقدار BDS\", \"فهرست DIP switch شامل گزینه‌های 1، 2 و 3,4\", \"تنظیمات Form length، Interface، Character set و Datascope mode\"]]*\n\nاگر دستگاه برای بار اول است که راهاندازی میشود، بهمنظور In-service نمودن آن، باید هماهنگیهای لازم را با انفورماتیک بانک به عملآورید؛ در غیر این صورت میتوانید دستگاه را In-service نمایید.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image25.png",
+          "rId": "rId31",
+          "caption": "جدول تنظیمات سوئیچ حالت عادی",
+          "visual_description": [
+            "جدول Function و Switch Setting با ستون‌های 8 تا 1",
+            "ردیف NORMAL MODE IN TOSE TAVON با مقادیر 0 0 0 0 1 1 1 1",
+            "یادداشت: 0 = off و 1 = ON"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12",
+    "main_text": "بسته به نوع دوربینهای متصل به دستگاه درایور مناسب را که در فلش وجود دارد نصب نمایید.\n\nابتدا اجرای Application را از مسیر C:\\Protopas\\Tools\\cfmanag.exe متوقف کنید.\n\nپس از نصب درایور فایل WebcamViewer V1.0.exe که در پوشه Camera Viewers وجود دار را اجرا کنید تا از صحت نمایش تصویر دوربین مطمین شوید.",
+    "embedding_text": "heading_path: نصب درایور دوربین \n\n level: 1 \n\n content: بسته به نوع دوربینهای متصل به دستگاه درایور مناسب را که در فلش وجود دارد نصب نمایید.\n\nابتدا اجرای Application را از مسیر C:\\Protopas\\Tools\\cfmanag.exe متوقف کنید.\n\nپس از نصب درایور فایل WebcamViewer V1.0.exe که در پوشه Camera Viewers وجود دار را اجرا کنید تا از صحت نمایش تصویر دوربین مطمین شوید.\n\nkeywords: نصب درایور, WebcamViewer V, cfmanag. exe, Camera Viewers, نوع دوربینهای\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_fd064b03b5dd08e8",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب درایور دوربین",
+      "keywords": [
+        "نصب درایور",
+        "WebcamViewer V",
+        "cfmanag. exe",
+        "Camera Viewers",
+        "نوع دوربینهای"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب درایور دوربین",
+      "chunk_index": 0,
+      "token_count": 51,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: نصب درایور دوربین \n\n level: 1 \n\n content: بسته به نوع دوربینهای متصل به دستگاه درایور مناسب را که در فلش وجود دارد نصب نمایید.\n\nابتدا اجرای Application را از مسیر C:\\Protopas\\Tools\\cfmanag.exe متوقف کنید.\n\nپس از نصب درایور فایل WebcamViewer V1.0.exe که در پوشه Camera Viewers وجود دار را اجرا کنید تا از صحت نمایش تصویر دوربین مطمین شوید.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "13",
+    "main_text": "بهمنظور نصب نرمافزار دوربین مراحل زیر را انجام دهید:\n\n1. ابتدا Application را از منوی Configuration Manager متوقف نمایید.\n2. فایل نصبی AD-CAM 2.2.4.1.exe را اجرا کنید:\n\nimg_description_rId33: [caption: \"پنجره نصب AD-CAM با نوار پیشرفت\", visual_description: [\"پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing\", \"نوار پیشرفت نصب در پایین پنجره\", \"نمایش فایل در حال کپی: mfc120deu.dll\", \"دکمه‌های Back، Next و Cancel در پایین پنجره\"]]\n\nimg_description_rId34: [caption: \"پنجره پایان نصب AD-CAM\", visual_description: [\"پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1\", \"مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard\", \"دکمه‌های Finish و Cancel در پایین پنجره\", \"تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود\"]]\n\n3. روی دکمهی Finish کلیک کنید.\n4. منتظر بمانید تا پنجرهای که فایلCustom را درخواست مینماید، نمایش یابد. به آدرس زیر بروید دارد:\n\n**tools/camera/camera config files/ ToseeTaavon/**\n\nimg_description_rId35: [caption: \"پنجره انتخاب فایل در کتابخانه‌های ویندوز\", visual_description: [\"پنجره Open ویندوز با مسیر Libraries در نوار آدرس\", \"فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:\", \"بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد\", \"فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود\", \"دکمه‌های Open و Cancel در پایین سمت راست قرار دارند\"]]\n\n5. بسته به مدل دوربین، فایل Custom مناسب را انتخاب کنید:\n\nimg_description_rId36: [caption: \"پنجره تنظیمات دوربین با فهرست موقعیت‌ها\", visual_description: [\"یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.\", \"متن 1 camera was found. نمایش داده شده است.\", \"رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.\", \"فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد.\"]]\n\nدرصورتیکه دوربین متصل به دستگاه بهدرستی توسط سیستمعامل شناساییشده باشد با نمایش تصویر زنده دوربین امکان انتخاب نوع دوربین به کاربر داده میشود.\n\n6. از منوی کشویی نوع دوربین را انتخاب (CAMPERSON برای تصویر شخص) و روی دکمهی Next کلیک کنید.\n\nپس از تنظیم دوربین شناساییشده توضیحاتی توسط نرمافزار جهت اطلاع کاربر و تایید نهایی نمایش داده میشود.\n\n7. روی دکمهی Finish کلیک کنید تا تنظیمات انتخابشده ثبت شوند\n8. در کادر پیغام راهاندازی مجدد سیستم، روی دکمه OK کلیک کنید تا دستگاه مجدداً راهاندازی شود.\n\nبعد از بالا آمدن دستگاه و عملیاتی شدن آن با انجام تراکنش از وجود تصاویر ذخیرهشده در درایو D اطمینان حاصل نمایید و جهت اخذ تاییدیه با واحد انفورماتیک بانک تماس بگیرید.\n\n| | |\n| --- | --- |\n| **شمارههای تماس با انفورماتیک بانک** | |\n| **02164380150** | **02164380145** |\n\nنکته مهم\n\nدر صورت تماس با انفورماتیک بانک، اگر به شما اعلام شد که دسترسی به پوشهی تصاویر و یا پوشههای دیگر وجود ندارد، مراحل زیر را انجام دهید و سپس دوباره جهت اخذ تاییدیه با انفورماتیک بانک تماس بگیرید:\n\n1. بر روی پوشهی موردنظر راست کلیک و از منویی که گشوده میشود Properties را انتخاب نمایید.\n2. روی زبانهیSharing کلیک کنید.\n3. در تب Sharing روی دکمهی Permissions کلیک نمایید.\n4. در پنجرهای که گشوده میشود، روی Add کلیک کنید:",
+    "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: بهمنظور نصب نرمافزار دوربین مراحل زیر را انجام دهید:\n\n1. ابتدا Application را از منوی Configuration Manager متوقف نمایید.\n2. فایل نصبی AD-CAM 2.2.4.1.exe را اجرا کنید:\n\nimg_description_rId33: [caption: \"پنجره نصب AD-CAM با نوار پیشرفت\", visual_description: [\"پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing\", \"نوار پیشرفت نصب در پایین پنجره\", \"نمایش فایل در حال کپی: mfc120deu.dll\", \"دکمه‌های Back، Next و Cancel در پایین پنجره\"]]\n\nimg_description_rId34: [caption: \"پنجره پایان نصب AD-CAM\", visual_description: [\"پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1\", \"مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard\", \"دکمه‌های Finish و Cancel در پایین پنجره\", \"تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود\"]]\n\n3. روی دکمهی Finish کلیک کنید.\n4. منتظر بمانید تا پنجرهای که فایلCustom را درخواست مینماید، نمایش یابد. به آدرس زیر بروید دارد:\n\n**tools/camera/camera config files/ ToseeTaavon/**\n\nimg_description_rId35: [caption: \"پنجره انتخاب فایل در کتابخانه‌های ویندوز\", visual_description: [\"پنجره Open ویندوز با مسیر Libraries در نوار آدرس\", \"فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:\", \"بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد\", \"فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود\", \"دکمه‌های Open و Cancel در پایین سمت راست قرار دارند\"]]\n\n5. بسته به مدل دوربین، فایل Custom مناسب را انتخاب کنید:\n\nimg_description_rId36: [caption: \"پنجره تنظیمات دوربین با فهرست موقعیت‌ها\", visual_description: [\"یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.\", \"متن 1 camera was found. نمایش داده شده است.\", \"رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.\", \"فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد.\"]]\n\nدرصورتیکه دوربین متصل به دستگاه بهدرستی توسط سیستمعامل شناساییشده باشد با نمایش تصویر زنده دوربین امکان انتخاب نوع دوربین به کاربر داده میشود.\n\n6. از منوی کشویی نوع دوربین را انتخاب (CAMPERSON برای تصویر شخص) و روی دکمهی Next کلیک کنید.\n\nپس از تنظیم دوربین شناساییشده توضیحاتی توسط نرمافزار جهت اطلاع کاربر و تایید نهایی نمایش داده میشود.\n\n7. روی دکمهی Finish کلیک کنید تا تنظیمات انتخابشده ثبت شوند\n8. در کادر پیغام راهاندازی مجدد سیستم، روی دکمه OK کلیک کنید تا دستگاه مجدداً راهاندازی شود.\n\nبعد از بالا آمدن دستگاه و عملیاتی شدن آن با انجام تراکنش از وجود تصاویر ذخیرهشده در درایو D اطمینان حاصل نمایید و جهت اخذ تاییدیه با واحد انفورماتیک بانک تماس بگیرید.\n\n| | |\n| --- | --- |\n| **شمارههای تماس با انفورماتیک بانک** | |\n| **02164380150** | **02164380145** |\n\nنکته مهم\n\nدر صورت تماس با انفورماتیک بانک، اگر به شما اعلام شد که دسترسی به پوشهی تصاویر و یا پوشههای دیگر وجود ندارد، مراحل زیر را انجام دهید و سپس دوباره جهت اخذ تاییدیه با انفورماتیک بانک تماس بگیرید:\n\n1. بر روی پوشهی موردنظر راست کلیک و از منویی که گشوده میشود Properties را انتخاب نمایید.\n2. روی زبانهیSharing کلیک کنید.\n3. در تب Sharing روی دکمهی Permissions کلیک نمایید.\n4. در پنجرهای که گشوده میشود، روی Add کلیک کنید:\n\nkeywords: نصب AD-CAM, نرمافزار دوربین, نصب نرمافزار, camera config files, Setup Wizard\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_da5e0f8df50e604e",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب نرمافزار دوربین",
+      "keywords": [
+        "نصب AD-CAM",
+        "نرمافزار دوربین",
+        "نصب نرمافزار",
+        "camera config files",
+        "Setup Wizard"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب نرمافزار دوربین",
+      "chunk_index": 0,
+      "token_count": 478,
+      "is_leaf": true,
+      "chunk_continue": true,
+      "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: بهمنظور نصب نرمافزار دوربین مراحل زیر را انجام دهید:\n\n1. ابتدا Application را از منوی Configuration Manager متوقف نمایید.\n2. فایل نصبی AD-CAM 2.2.4.1.exe را اجرا کنید:\n\nimg_description_rId33: [caption: \"پنجره نصب AD-CAM با نوار پیشرفت\", visual_description: [\"پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing\", \"نوار پیشرفت نصب در پایین پنجره\", \"نمایش فایل در حال کپی: mfc120deu.dll\", \"دکمه‌های Back، Next و Cancel در پایین پنجره\"]]\n\nimg_description_rId34: [caption: \"پنجره پایان نصب AD-CAM\", visual_description: [\"پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1\", \"مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard\", \"دکمه‌های Finish و Cancel در پایین پنجره\", \"تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود\"]]\n\n3. روی دکمهی Finish کلیک کنید.\n4. منتظر بمانید تا پنجرهای که فایلCustom را درخواست مینماید، نمایش یابد. به آدرس زیر بروید دارد:\n\n**tools/camera/camera config files/ ToseeTaavon/**\n\nimg_description_rId35: [caption: \"پنجره انتخاب فایل در کتابخانه‌های ویندوز\", visual_description: [\"پنجره Open ویندوز با مسیر Libraries در نوار آدرس\", \"فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:\", \"بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد\", \"فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود\", \"دکمه‌های Open و Cancel در پایین سمت راست قرار دارند\"]]\n\n5. بسته به مدل دوربین، فایل Custom مناسب را انتخاب کنید:\n\nimg_description_rId36: [caption: \"پنجره تنظیمات دوربین با فهرست موقعیت‌ها\", visual_description: [\"یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.\", \"متن 1 camera was found. نمایش داده شده است.\", \"رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.\", \"فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد.\"]]\n\nدرصورتیکه دوربین متصل به دستگاه بهدرستی توسط سیستمعامل شناساییشده باشد با نمایش تصویر زنده دوربین امکان انتخاب نوع دوربین به کاربر داده میشود.\n\n6. از منوی کشویی نوع دوربین را انتخاب (CAMPERSON برای تصویر شخص) و روی دکمهی Next کلیک کنید.\n\nپس از تنظیم دوربین شناساییشده توضیحاتی توسط نرمافزار جهت اطلاع کاربر و تایید نهایی نمایش داده میشود.\n\n7. روی دکمهی Finish کلیک کنید تا تنظیمات انتخابشده ثبت شوند\n8. در کادر پیغام راهاندازی مجدد سیستم، روی دکمه OK کلیک کنید تا دستگاه مجدداً راهاندازی شود.\n\nبعد از بالا آمدن دستگاه و عملیاتی شدن آن با انجام تراکنش از وجود تصاویر ذخیرهشده در درایو D اطمینان حاصل نمایید و جهت اخذ تاییدیه با واحد انفورماتیک بانک تماس بگیرید.\n\n| | |\n| --- | --- |\n| **شمارههای تماس با انفورماتیک بانک** | |\n| **02164380150** | **02164380145** |\n\nنکته مهم\n\nدر صورت تماس با انفورماتیک بانک، اگر به شما اعلام شد که دسترسی به پوشهی تصاویر و یا پوشههای دیگر وجود ندارد، مراحل زیر را انجام دهید و سپس دوباره جهت اخذ تاییدیه با انفورماتیک بانک تماس بگیرید:\n\n1. بر روی پوشهی موردنظر راست کلیک و از منویی که گشوده میشود Properties را انتخاب نمایید.\n2. روی زبانهیSharing کلیک کنید.\n3. در تب Sharing روی دکمهی Permissions کلیک نمایید.\n4. در پنجرهای که گشوده میشود، روی Add کلیک کنید:",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image27.jpeg",
+          "rId": "rId33",
+          "caption": "پنجره نصب AD-CAM با نوار پیشرفت",
+          "visual_description": [
+            "پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing",
+            "نوار پیشرفت نصب در پایین پنجره",
+            "نمایش فایل در حال کپی: mfc120deu.dll",
+            "دکمه‌های Back، Next و Cancel در پایین پنجره"
+          ]
+        },
+        {
+          "image_name": "image28.jpeg",
+          "rId": "rId34",
+          "caption": "پنجره پایان نصب AD-CAM",
+          "visual_description": [
+            "پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1",
+            "مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard",
+            "دکمه‌های Finish و Cancel در پایین پنجره",
+            "تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود"
+          ]
+        },
+        {
+          "image_name": "image29.png",
+          "rId": "rId35",
+          "caption": "پنجره انتخاب فایل در کتابخانه‌های ویندوز",
+          "visual_description": [
+            "پنجره Open ویندوز با مسیر Libraries در نوار آدرس",
+            "فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:",
+            "بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد",
+            "فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود",
+            "دکمه‌های Open و Cancel در پایین سمت راست قرار دارند"
+          ]
+        },
+        {
+          "image_name": "image30.png",
+          "rId": "rId36",
+          "caption": "پنجره تنظیمات دوربین با فهرست موقعیت‌ها",
+          "visual_description": [
+            "یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.",
+            "متن 1 camera was found. نمایش داده شده است.",
+            "رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.",
+            "فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد."
+          ]
+        },
+        {
+          "image_name": "image33.jpg",
+          "rId": "rId39",
+          "caption": "پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone",
+          "visual_description": [
+            "دیالوگ ویندوز با عنوان Select Users or Groups",
+            "فیلد نام شیء شامل عبارت everyone است",
+            "دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند",
+            "فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند"
+          ]
+        },
+        {
+          "image_name": "image34.jpg",
+          "rId": "rId40",
+          "caption": "پنجره تنظیم مجوزهای اشتراک برای CAMERA",
+          "visual_description": [
+            "پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions",
+            "فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone",
+            "بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read",
+            "تیک Allow برای Read فعال است",
+            "دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند"
+          ]
+        },
+        {
+          "image_name": "image31.jpg",
+          "rId": "rId37",
+          "caption": "پنجره مجوزهای اشتراک برای CAMERA در ویندوز",
+          "visual_description": [
+            "پنجره تنظیمات Windows با عنوان Permissions for CAMERA",
+            "فهرست Group or user names شامل Administrator و atmadmin",
+            "دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها",
+            "بخش Permissions for Administrator با ستون‌های Allow و Deny",
+            "گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند",
+            "دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند",
+            "دکمه Add... با کادر قرمز برجسته شده است"
+          ]
+        },
+        {
+          "image_name": "image32.jpg",
+          "rId": "rId38",
+          "caption": "پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز",
+          "visual_description": [
+            "دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize",
+            "زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است",
+            "نام اشتراک در فیلد Share name برابر CAMERA است",
+            "دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند",
+            "پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره",
+            "دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "14",
+    "main_text": "| | |\n| --- | --- |\n| ![\"image_name\" : \"image31.jpg\", \"rId\" : \"rId37\", \"caption\" : \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", \"visual_description\" : [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]] | ![\"image_name\" : \"image32.jpg\", \"rId\" : \"rId38\", \"caption\" : \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", \"visual_description\" : [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]] |\n\n5. کلمه everyone را در کادری که در شکل زیر مشخصشده است تایپ کنید:\n\nimg_description_rId39: [caption: \"پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone\", visual_description: [\"دیالوگ ویندوز با عنوان Select Users or Groups\", \"فیلد نام شیء شامل عبارت everyone است\", \"دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند\", \"فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند\"]]\n\n6. روی دکمهی OK کلیک نمایید تا همانند شکل زیر یوزر Everyone اضافه شود:\n\nimg_description_rId40: [caption: \"پنجره تنظیم مجوزهای اشتراک برای CAMERA\", visual_description: [\"پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions\", \"فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone\", \"بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read\", \"تیک Allow برای Read فعال است\", \"دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند\"]]\n\n7. روی دکمهی OK کلیک کنید.\n\nدر پایان میباید پرینتر ژورنال را غیرفعال کنید؛ برای این منظور دستگاه را خاموش و سپس کابلهایی که در تصویر شماره یک نشان دادهشدهاند را جدا نمایید. توجه داشته باشید که فقط سوییچ شماره3 (تصویر شماره دو) میباید فعال باشد:\n\nimg_description_rId37: [caption: \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", visual_description: [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]]\nتصویر 1",
+    "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: | | |\n| --- | --- |\n| ![\"image_name\" : \"image31.jpg\", \"rId\" : \"rId37\", \"caption\" : \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", \"visual_description\" : [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]] | ![\"image_name\" : \"image32.jpg\", \"rId\" : \"rId38\", \"caption\" : \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", \"visual_description\" : [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]] |\n\n5. کلمه everyone را در کادری که در شکل زیر مشخصشده است تایپ کنید:\n\nimg_description_rId39: [caption: \"پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone\", visual_description: [\"دیالوگ ویندوز با عنوان Select Users or Groups\", \"فیلد نام شیء شامل عبارت everyone است\", \"دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند\", \"فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند\"]]\n\n6. روی دکمهی OK کلیک نمایید تا همانند شکل زیر یوزر Everyone اضافه شود:\n\nimg_description_rId40: [caption: \"پنجره تنظیم مجوزهای اشتراک برای CAMERA\", visual_description: [\"پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions\", \"فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone\", \"بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read\", \"تیک Allow برای Read فعال است\", \"دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند\"]]\n\n7. روی دکمهی OK کلیک کنید.\n\nدر پایان میباید پرینتر ژورنال را غیرفعال کنید؛ برای این منظور دستگاه را خاموش و سپس کابلهایی که در تصویر شماره یک نشان دادهشدهاند را جدا نمایید. توجه داشته باشید که فقط سوییچ شماره3 (تصویر شماره دو) میباید فعال باشد:\n\nimg_description_rId37: [caption: \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", visual_description: [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]]\nتصویر 1\n\nkeywords: Permissions for CAMERA, Permissions for Administrator, View your Windows Firewall settings, Share Permissions, Share this folder\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_da5e0f8df50e604e",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب نرمافزار دوربین",
+      "keywords": [
+        "Permissions for CAMERA",
+        "Permissions for Administrator",
+        "View your Windows Firewall settings",
+        "Share Permissions",
+        "Share this folder"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": [
+        5,
+        6,
+        7
+      ],
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب نرمافزار دوربین",
+      "chunk_index": 1,
+      "token_count": 430,
+      "is_leaf": true,
+      "chunk_continue": true,
+      "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: | | |\n| --- | --- |\n| ![\"image_name\" : \"image31.jpg\", \"rId\" : \"rId37\", \"caption\" : \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", \"visual_description\" : [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]] | ![\"image_name\" : \"image32.jpg\", \"rId\" : \"rId38\", \"caption\" : \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", \"visual_description\" : [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]] |\n\n5. کلمه everyone را در کادری که در شکل زیر مشخصشده است تایپ کنید:\n\nimg_description_rId39: [caption: \"پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone\", visual_description: [\"دیالوگ ویندوز با عنوان Select Users or Groups\", \"فیلد نام شیء شامل عبارت everyone است\", \"دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند\", \"فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند\"]]\n\n6. روی دکمهی OK کلیک نمایید تا همانند شکل زیر یوزر Everyone اضافه شود:\n\nimg_description_rId40: [caption: \"پنجره تنظیم مجوزهای اشتراک برای CAMERA\", visual_description: [\"پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions\", \"فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone\", \"بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read\", \"تیک Allow برای Read فعال است\", \"دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند\"]]\n\n7. روی دکمهی OK کلیک کنید.\n\nدر پایان میباید پرینتر ژورنال را غیرفعال کنید؛ برای این منظور دستگاه را خاموش و سپس کابلهایی که در تصویر شماره یک نشان دادهشدهاند را جدا نمایید. توجه داشته باشید که فقط سوییچ شماره3 (تصویر شماره دو) میباید فعال باشد:\n\nimg_description_rId37: [caption: \"پنجره مجوزهای اشتراک برای CAMERA در ویندوز\", visual_description: [\"پنجره تنظیمات Windows با عنوان Permissions for CAMERA\", \"فهرست Group or user names شامل Administrator و atmadmin\", \"دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها\", \"بخش Permissions for Administrator با ستون‌های Allow و Deny\", \"گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند\", \"دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند\", \"دکمه Add... با کادر قرمز برجسته شده است\"]]\nتصویر 1",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image27.jpeg",
+          "rId": "rId33",
+          "caption": "پنجره نصب AD-CAM با نوار پیشرفت",
+          "visual_description": [
+            "پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing",
+            "نوار پیشرفت نصب در پایین پنجره",
+            "نمایش فایل در حال کپی: mfc120deu.dll",
+            "دکمه‌های Back، Next و Cancel در پایین پنجره"
+          ]
+        },
+        {
+          "image_name": "image28.jpeg",
+          "rId": "rId34",
+          "caption": "پنجره پایان نصب AD-CAM",
+          "visual_description": [
+            "پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1",
+            "مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard",
+            "دکمه‌های Finish و Cancel در پایین پنجره",
+            "تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود"
+          ]
+        },
+        {
+          "image_name": "image29.png",
+          "rId": "rId35",
+          "caption": "پنجره انتخاب فایل در کتابخانه‌های ویندوز",
+          "visual_description": [
+            "پنجره Open ویندوز با مسیر Libraries در نوار آدرس",
+            "فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:",
+            "بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد",
+            "فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود",
+            "دکمه‌های Open و Cancel در پایین سمت راست قرار دارند"
+          ]
+        },
+        {
+          "image_name": "image30.png",
+          "rId": "rId36",
+          "caption": "پنجره تنظیمات دوربین با فهرست موقعیت‌ها",
+          "visual_description": [
+            "یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.",
+            "متن 1 camera was found. نمایش داده شده است.",
+            "رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.",
+            "فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد."
+          ]
+        },
+        {
+          "image_name": "image33.jpg",
+          "rId": "rId39",
+          "caption": "پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone",
+          "visual_description": [
+            "دیالوگ ویندوز با عنوان Select Users or Groups",
+            "فیلد نام شیء شامل عبارت everyone است",
+            "دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند",
+            "فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند"
+          ]
+        },
+        {
+          "image_name": "image34.jpg",
+          "rId": "rId40",
+          "caption": "پنجره تنظیم مجوزهای اشتراک برای CAMERA",
+          "visual_description": [
+            "پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions",
+            "فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone",
+            "بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read",
+            "تیک Allow برای Read فعال است",
+            "دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند"
+          ]
+        },
+        {
+          "image_name": "image31.jpg",
+          "rId": "rId37",
+          "caption": "پنجره مجوزهای اشتراک برای CAMERA در ویندوز",
+          "visual_description": [
+            "پنجره تنظیمات Windows با عنوان Permissions for CAMERA",
+            "فهرست Group or user names شامل Administrator و atmadmin",
+            "دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها",
+            "بخش Permissions for Administrator با ستون‌های Allow و Deny",
+            "گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند",
+            "دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند",
+            "دکمه Add... با کادر قرمز برجسته شده است"
+          ]
+        },
+        {
+          "image_name": "image32.jpg",
+          "rId": "rId38",
+          "caption": "پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز",
+          "visual_description": [
+            "دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize",
+            "زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است",
+            "نام اشتراک در فیلد Share name برابر CAMERA است",
+            "دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند",
+            "پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره",
+            "دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "15",
+    "main_text": "img_description_rId38: [caption: \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", visual_description: [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]]\nتصویر 2\n\nدر صورت بروز هرگونه اشکال در انجام مراحل فوق با واحد پشتیبانی سطح دو تماس بگیرید.",
+    "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: img_description_rId38: [caption: \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", visual_description: [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]]\nتصویر 2\n\nدر صورت بروز هرگونه اشکال در انجام مراحل فوق با واحد پشتیبانی سطح دو تماس بگیرید.\n\nkeywords: Share this folder, View your Windows Firewall settings, نرمافزار دوربین, نصب نرمافزار, اشتراک فیلد\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_da5e0f8df50e604e",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "نصب نرمافزار دوربین",
+      "keywords": [
+        "Share this folder",
+        "View your Windows Firewall settings",
+        "نرمافزار دوربین",
+        "نصب نرمافزار",
+        "اشتراک فیلد"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "نصب نرمافزار دوربین",
+      "chunk_index": 2,
+      "token_count": 93,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: نصب نرمافزار دوربین \n\n level: 1 \n\n content: img_description_rId38: [caption: \"پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز\", visual_description: [\"دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize\", \"زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است\", \"نام اشتراک در فیلد Share name برابر CAMERA است\", \"دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند\", \"پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره\", \"دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند\"]]\nتصویر 2\n\nدر صورت بروز هرگونه اشکال در انجام مراحل فوق با واحد پشتیبانی سطح دو تماس بگیرید.",
+      "level": 1,
+      "imgs_info": [
+        {
+          "image_name": "image27.jpeg",
+          "rId": "rId33",
+          "caption": "پنجره نصب AD-CAM با نوار پیشرفت",
+          "visual_description": [
+            "پنجره نصب AD-CAM 2.2.4.1 با وضعیت Installing",
+            "نوار پیشرفت نصب در پایین پنجره",
+            "نمایش فایل در حال کپی: mfc120deu.dll",
+            "دکمه‌های Back، Next و Cancel در پایین پنجره"
+          ]
+        },
+        {
+          "image_name": "image28.jpeg",
+          "rId": "rId34",
+          "caption": "پنجره پایان نصب AD-CAM",
+          "visual_description": [
+            "پنجره نصب نرم‌افزار AD-CAM با عنوان نسخه 2.2.4.1",
+            "مرحله نهایی نصب با پیام تکمیل شدن Setup Wizard",
+            "دکمه‌های Finish و Cancel در پایین پنجره",
+            "تصویر دستگاه/پایانه در سمت چپ پنجره دیده می‌شود"
+          ]
+        },
+        {
+          "image_name": "image29.png",
+          "rId": "rId35",
+          "caption": "پنجره انتخاب فایل در کتابخانه‌های ویندوز",
+          "visual_description": [
+            "پنجره Open ویندوز با مسیر Libraries در نوار آدرس",
+            "فهرست سمت چپ شامل Favorites، Libraries و Computer با درایوهای C: و D:",
+            "بخش اصلی چهار کتابخانه Documents، Music، Pictures و Videos را نشان می‌دهد",
+            "فیلد File name و نوع فایل Text Files (*.txt) در پایین پنجره دیده می‌شود",
+            "دکمه‌های Open و Cancel در پایین سمت راست قرار دارند"
+          ]
+        },
+        {
+          "image_name": "image30.png",
+          "rId": "rId36",
+          "caption": "پنجره تنظیمات دوربین با فهرست موقعیت‌ها",
+          "visual_description": [
+            "یک پنجره نرم‌افزاری با عنوان Camera Configuration دیده می‌شود.",
+            "متن 1 camera was found. نمایش داده شده است.",
+            "رشته DevicePath: vid_1871pid_0306mi_00 نمایش دارد.",
+            "فهرست کشویی CamLocation باز است و گزینه‌های CAMPERSON، CAMROOM، EXITSLOT، FIFTH، FORTH، SEVENTH، SIXTH و THIRD را نشان می‌دهد."
+          ]
+        },
+        {
+          "image_name": "image33.jpg",
+          "rId": "rId39",
+          "caption": "پنجره انتخاب کاربران یا گروه‌ها با عبارت everyone",
+          "visual_description": [
+            "دیالوگ ویندوز با عنوان Select Users or Groups",
+            "فیلد نام شیء شامل عبارت everyone است",
+            "دکمه‌های Object Types...، Locations...، Check Names، Advanced...، OK و Cancel دیده می‌شوند",
+            "فلش و کادر قرمز روی everyone و دکمه OK تاکید کرده‌اند"
+          ]
+        },
+        {
+          "image_name": "image34.jpg",
+          "rId": "rId40",
+          "caption": "پنجره تنظیم مجوزهای اشتراک برای CAMERA",
+          "visual_description": [
+            "پنجره Windows با عنوان Permissions for CAMERA و تب Share Permissions",
+            "فهرست گروه/کاربر شامل Administrator، atmadmin و Everyone",
+            "بخش Permissions for Everyone با ستون‌های Allow و Deny برای Full Control، Change و Read",
+            "تیک Allow برای Read فعال است",
+            "دکمه‌های Add...، Remove، OK، Cancel و Apply دیده می‌شوند"
+          ]
+        },
+        {
+          "image_name": "image31.jpg",
+          "rId": "rId37",
+          "caption": "پنجره مجوزهای اشتراک برای CAMERA در ویندوز",
+          "visual_description": [
+            "پنجره تنظیمات Windows با عنوان Permissions for CAMERA",
+            "فهرست Group or user names شامل Administrator و atmadmin",
+            "دکمه‌های Add... و Remove برای مدیریت کاربران/گروه‌ها",
+            "بخش Permissions for Administrator با ستون‌های Allow و Deny",
+            "گزینه Read در ستون Allow تیک خورده است و گزینه‌های دیگر خالی هستند",
+            "دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند",
+            "دکمه Add... با کادر قرمز برجسته شده است"
+          ]
+        },
+        {
+          "image_name": "image32.jpg",
+          "rId": "rId38",
+          "caption": "پنجره تنظیمات اشتراک‌گذاری پوشه در ویندوز",
+          "visual_description": [
+            "دیالوگ Properties برای پوشه با زبانه‌های General، Sharing، Security و Customize",
+            "زبانه Sharing فعال است و گزینه Share this folder انتخاب شده است",
+            "نام اشتراک در فیلد Share name برابر CAMERA است",
+            "دکمه‌های Permissions، Caching و New Share در بخش اشتراک‌گذاری دیده می‌شوند",
+            "پیام Windows Firewall و لینک View your Windows Firewall settings در پایین پنجره",
+            "دکمه‌های OK، Cancel و Apply در پایین دیالوگ قرار دارند"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "16",
+    "main_text": "| | | |\n| --- | --- | --- |\n| **1** | **اقدامات پیش از نصب** | 🞏 |\n| **2** | **نصب ایمیج با Acronis 2012** | 🞏 |\n| **3** | **تنظیم IP** | 🞏 |\n| **4** | **ثبت Computer Name** | 🞏 |\n| **5** | **اجرای فایل Tose'e Ta'avon Hotfix.exe** | 🞏 |\n| **6** | **منوی سوپروایزری** | 🞏 |\n| **7** | **Learning** | 🞏 |\n| **8** | **EPP INIT** | 🞏 |\n| **9** | **تنظیم Line رسید مشتری** | 🞏 |\n| **10** | **نصب درایور دوربین** | 🞏 |\n| **11** | **نصب نرمافزار دوربین** | 🞏 |",
+    "embedding_text": "heading_path: چکلیست نصب نرمافزار \n\n level: 1 \n\n content: | | | |\n| --- | --- | --- |\n| **1** | **اقدامات پیش از نصب** | 🞏 |\n| **2** | **نصب ایمیج با Acronis 2012** | 🞏 |\n| **3** | **تنظیم IP** | 🞏 |\n| **4** | **ثبت Computer Name** | 🞏 |\n| **5** | **اجرای فایل Tose'e Ta'avon Hotfix.exe** | 🞏 |\n| **6** | **منوی سوپروایزری** | 🞏 |\n| **7** | **Learning** | 🞏 |\n| **8** | **EPP INIT** | 🞏 |\n| **9** | **تنظیم Line رسید مشتری** | 🞏 |\n| **10** | **نصب درایور دوربین** | 🞏 |\n| **11** | **نصب نرمافزار دوربین** | 🞏 |\n\nkeywords: Acronis ۲۰۱۲, نصب نرمافزار, avon Hotfix. exe, چکلیست نصب, ایمیج Acronis\n\ncustomer_name: tose'e_ta'avon",
+    "metadata": {
+      "doc_id": "doc_127c475dffc51591",
+      "section_id": "sec_946104c63603cd5f",
+      "date": "خرداد 1400",
+      "version": "1-IT9409-124-08",
+      "title": "دستورالعمل - نصب نرمافزار بانک توسعه تعاون",
+      "heading": "چکلیست نصب نرمافزار",
+      "keywords": [
+        "Acronis ۲۰۱۲",
+        "نصب نرمافزار",
+        "avon Hotfix. exe",
+        "چکلیست نصب",
+        "ایمیج Acronis"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "tose'e_ta'avon"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\1-IT9409-124-08_ToseTaavonSoft-NCR_converted.md",
+      "heading_path": "چکلیست نصب نرمافزار",
+      "chunk_index": 0,
+      "token_count": 111,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: چکلیست نصب نرمافزار \n\n level: 1 \n\n content: | | | |\n| --- | --- | --- |\n| **1** | **اقدامات پیش از نصب** | 🞏 |\n| **2** | **نصب ایمیج با Acronis 2012** | 🞏 |\n| **3** | **تنظیم IP** | 🞏 |\n| **4** | **ثبت Computer Name** | 🞏 |\n| **5** | **اجرای فایل Tose'e Ta'avon Hotfix.exe** | 🞏 |\n| **6** | **منوی سوپروایزری** | 🞏 |\n| **7** | **Learning** | 🞏 |\n| **8** | **EPP INIT** | 🞏 |\n| **9** | **تنظیم Line رسید مشتری** | 🞏 |\n| **10** | **نصب درایور دوربین** | 🞏 |\n| **11** | **نصب نرمافزار دوربین** | 🞏 |",
+      "level": 1,
+      "imgs_info": []
+    }
+  }
+]

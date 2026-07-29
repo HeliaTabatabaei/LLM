@@ -6,31 +6,17 @@ from fastapi import Depends, FastAPI, HTTPException
 
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi_swagger import patch_fastapi
-from pydantic import BaseModel, Field
-from typing import List, Optional
-# from openai import OpenAI
-# from QdrantManagment import init_history_collection
-# from config import OPENAI_API_KEY, EMBED_MODEL, LLM_MODEL, COLLECTION_NAME, QDRANT_HOST, QDRANT_PORT,connection_string
-# from db import DatabaseConnection
-# from log import log_message
-# from prompts_config import SYSTEM_PROMPT, USER_PROMPT
-# from qdrant_client import QdrantClient
-# from qdrant_client import models
-# from qdrant_client import QdrantClient
-# from qdrant_client.models import (
-#     VectorParams,
-#     Distance,
-#     SparseVectorParams,
-#     SparseIndexParams,
-#     Modifier
-# )
+
+from API.admin_routes import router as admin_router
+
 from Models.mainModels import QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
 from LLM.OpenAIManagment import detect_intent, embed_query, rerank_results
 from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
 from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
 from Utility.utiliy import get_current_user_payload
-from bm25 import PersianBM25Encoder
+from RAG_Management.bm25 import PersianBM25Encoder
 import uvicorn
 # import os
 from config import LLM_MODEL, OPENAI_API_KEY
@@ -42,7 +28,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import BackgroundTasks
 from typing import Tuple
 import uuid
-from jose import jwt, JWTError, ExpiredSignatureError  
+from jose import  JWTError, ExpiredSignatureError  
 from providers.factory import create_provider
 app = FastAPI(
     docs_url=None,
@@ -60,11 +46,13 @@ app.add_middleware(
     allow_headers=["*"],  # اجازه به تمام هدرها
 )
 security = HTTPBearer()
+from pathlib import Path, PureWindowsPath
 
-#qdrant = QdrantClient("http://localhost:6333")
+BASE_DIR = Path(__file__).resolve().parent # تعریف مسیر پایه پروژه
+MEDIA_ROOT = BASE_DIR / "data"  # مسیر دقیق پوشه داده‌ها
 
-
-#==============================Qdrant History
+app.mount("/media", StaticFiles(directory=str(MEDIA_ROOT)), name="media")
+app.include_router(admin_router)
 # ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
 init_history_collection()
 from fastapi import BackgroundTasks

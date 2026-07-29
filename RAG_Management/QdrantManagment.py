@@ -15,7 +15,7 @@ from qdrant_client.models import (
     Distance
 )
 from Models.mainModels import SearchFilters
-from bm25 import PersianBM25Encoder
+from RAG_Management.bm25 import PersianBM25Encoder
 from config import COLLECTION_NAME, QDRANT_HOST, QDRANT_PORT
 from LLM.OpenAIManagment import embed_query
 COLLECTION_HISTORY = "chat_memory"
