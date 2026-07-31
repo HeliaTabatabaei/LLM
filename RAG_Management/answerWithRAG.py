@@ -6,7 +6,7 @@ import uuid
 
 from fastapi import BackgroundTasks
 
-from LLM.OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseStreamGeneral, CreateResponseWithInput, embed_query
+from LLM.OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseStreamGeneral, CreateResponseStreamWithMeta, CreateResponseWithInput, embed_query
 from RAG_Management.QdrantManagment import build_context, save_message_to_qdrant, search_chat_history
 from SQlDB.db import DatabaseConnection
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_assistant_message_task, save_conversation, save_message, update_conversation_summary_task
@@ -440,7 +440,7 @@ def answer_with_rag_stream(
     
     context = build_context(results)
 
-    yield from CreateResponseStream(
+    yield from CreateResponseStreamWithMeta(
         context=context,
         query=query,
         history="-",

@@ -16,6 +16,7 @@ from LLM.OpenAIManagment import detect_intent, embed_query, rerank_results
 from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
 from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
 from SQlDB.IngestionQuery import bulk_charge_transactions
+from SQlDB.wallet import InsertIntoWallet
 from Utility.utiliy import get_current_user_payload
 from RAG_Management.bm25 import PersianBM25Encoder
 import uvicorn
@@ -311,8 +312,8 @@ def api_querySummeryHistory(
         raise HTTPException(status_code=500, detail=f"Request processing failed: {str(e)}")
 
 #https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
-@app.post("/api/query", response_model=QueryResponse)
-async def query_endpoint(request: QueryRequest):
+@app.post("/api/query1", response_model=QueryResponse)
+async def query1_endpoint(request: QueryRequest):
     """
     پردازش سوال فنی و بازگشت پاسخ RAG-based
 
@@ -494,6 +495,113 @@ async def query_stream_endpoint(
             status_code=500,
             detail=f"خطا در جست‌وجو: {str(error)}"
         )
+
+import json
+import uuid
+from fastapi import HTTPException
+from fastapi.responses import StreamingResponse
+
+
+@app.post("/api/query/streamWithMeta")
+async def query_streamWithMeta_endpoint(request: QueryRequestStream,background_tasks: BackgroundTasks):
+    try:
+        user_key = "9a6b7ba9-abfe-4207-97fe-02a1da750cb7"
+
+        intent = detect_intent(request.query)
+        print(intent, flush=True)
+
+        if intent == "general":
+            return StreamingResponse(
+                answer_general_stream(request.query),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no",
+                },
+            )
+
+        query_vector = embed_query(request.query)
+        results = search(
+            query_vector=query_vector,
+            limit=5,
+            filters=None,
+        )
+        if not results:
+            raise HTTPException(status_code=404, detail="هیچ سند مرتبطی یافت نشد")
+
+        reranked_results = rerank_results(request.query, results)
+        request_id = str(uuid.uuid4())
+
+        async def event_stream():
+            llm_response_id = None
+            input_tokens = 0
+            output_tokens = 0
+            total_tokens = 0
+
+            try:
+                yield (
+                    "event: request_id\n"
+                    f"data: {json.dumps({'request_id': request_id}, ensure_ascii=False)}\n\n"
+                )
+
+                for chunk in answer_with_rag_stream(
+                    query=request.query,
+                    results=reranked_results,
+                    temperature=0.1,
+                ):
+                    if not chunk:
+                        continue
+
+                    if chunk.get("type") == "token":
+                        text = chunk.get("content", "")
+                        yield (
+                            "event: token\n"
+                            f"data: {json.dumps({'text': text}, ensure_ascii=False)}\n\n"
+                        )
+
+                    elif chunk.get("type") == "meta":
+                        llm_response_id = chunk.get("response_id")
+                        usage = chunk.get("usage", {})
+                        input_tokens = usage.get("input_tokens", 0)
+                        output_tokens = usage.get("output_tokens", 0)
+                        total_tokens = usage.get("total_tokens", 0)
+
+                yield "event: done\ndata: [DONE]\n\n"
+
+            except Exception as error:
+                yield (
+                    "event: error\n"
+                    f"data: {json.dumps({'error': str(error)}, ensure_ascii=False)}\n\n"
+                )
+
+            finally:
+                
+                    background_tasks.add_task(
+                     
+                                         InsertIntoWallet,
+                                         total_tokens,
+                                         output_tokens,
+                                         input_tokens,
+                                         user_key,
+                                         llm_response_id,
+                                     )
+                   
+
+        return StreamingResponse(
+            event_stream(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no",
+            },
+        )
+
+    except HTTPException:
+        raise
+    except Exception as error:
+        raise HTTPException(status_code=500, detail=f"خطا در جست‌وجو: {str(error)}")
 
 @app.get('/api/ingestion')
 async def get_ingestion():
