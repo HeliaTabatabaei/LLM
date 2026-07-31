@@ -502,8 +502,8 @@ from fastapi import HTTPException
 from fastapi.responses import StreamingResponse
 
 
-@app.post("/api/query/streamWithMeta")
-async def query_streamWithMeta_endpoint(request: QueryRequestStream,background_tasks: BackgroundTasks):
+@app.post("/api/query/streamWithMeta2")
+async def query_streamWithMeta2_endpoint(request: QueryRequestStream,background_tasks: BackgroundTasks):
     try:
         user_key = "9a6b7ba9-abfe-4207-97fe-02a1da750cb7"
 
