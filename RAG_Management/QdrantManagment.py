@@ -223,7 +223,8 @@ def build_context(results) -> str:
         else:
             payload = r.payload
 
-        text = payload.get("text", "")
+        text = payload.get("maintext", "")
+        maintext=payload.get("maintext", "")
         doc_id = payload.get("doc_id", "نامشخص")
         title = payload.get("title", "")
         heading = payload.get("heading", "")
@@ -241,7 +242,7 @@ def build_context(results) -> str:
 
         header += "]"
 
-        chunks.append(f"{header}\n{text}")
+        chunks.append(f"{header}\n{maintext}")
 
     return "\n\n".join(chunks)
 

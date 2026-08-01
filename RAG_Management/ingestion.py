@@ -209,6 +209,7 @@ def ingestQdrant(docid):
    
     for chunk in tqdm(chunks, desc="Ingesting chunks"):
         text = chunk["embedding_text"].strip()
+        maintext= chunk["main_text"].strip()
         if not text:
             continue
 
@@ -263,6 +264,7 @@ def ingestQdrant(docid):
  
         payload = {
                 "text": text, 
+                "maintext":maintext,
                 "text_hash": h, 
                 **metadata  # تمام اطلاعات متادیتا + imgs_info اصلاح‌شده در اینجا هست
             }
