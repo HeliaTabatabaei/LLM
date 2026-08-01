@@ -1,17 +1,21 @@
 
 import json
+import re
 import time
+import traceback
 from typing import Any, Dict, List, Optional, Tuple
 import uuid
 
 from fastapi import BackgroundTasks
 
 from LLM.OpenAIManagment import CreateResponse, CreateResponseStream, CreateResponseStreamGeneral, CreateResponseStreamWithMeta, CreateResponseWithInput, embed_query
-from RAG_Management.QdrantManagment import build_context, save_message_to_qdrant, search_chat_history
+from RAG_Management.QdrantManagment import build_context, build_contextWithImage, save_message_to_qdrant, search_chat_history
 from SQlDB.db import DatabaseConnection
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_assistant_message_task, save_conversation, save_message, update_conversation_summary_task
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from fastapi import BackgroundTasks
+
+from prompts_config_WithImageInAnswer import SYSTEM_PROMPTWithImage, USER_PROMPTWithImage
 def normalize_conversation_id(conversation_id: Optional[str]) -> Tuple[str, bool]:
     """
     اگر conversation_id معتبر باشد:
@@ -429,8 +433,11 @@ def answer_general_stream(query: str):
             "event: error\n"
             f"data: {json.dumps(error_data, ensure_ascii=False)}\n\n"
         )
+
 def answer_with_rag_stream(
     query: str,
+    userKey: any,
+    background_tasks: BackgroundTasks,
     results,
     temperature: float = 0.1
 ):
@@ -442,8 +449,98 @@ def answer_with_rag_stream(
 
     yield from CreateResponseStreamWithMeta(
         context=context,
+        userKey=userKey,  # <--- اینجا اصلاح شد (userKey)
+        background_tasks=background_tasks,
         query=query,
         history="-",
         temperature=temperature
     )
+def answer_with_rag_WithImage(query: str, results, temperature: float = 0.1):
+    context = build_contextWithImage(results)
+    messages = [
+        {
+            "role": "system",
+            "content": SYSTEM_PROMPTWithImage
+        },
+        {
+            "role": "user",
+            "content": USER_PROMPTWithImage.format(
+                query=query,
+                context=context
+            )
+        }
+    ]
+    
+    response = CreateResponseWithInput(messages, temperature)
+
+    raw_content = response.output_text
+    
+    #  response = client.responses.create(
+        
+    #     model=LLM_MODEL,
+    #     temperature=temperature,
+    #     input=[
+    #         {
+    #             "role": "system",
+    #             "content": SYSTEM_PROMPTWithImage
+    #         },
+    #         {
+    #             "role": "user",
+    #             "content": USER_PROMPTWithImage.format(
+    #                 query=query,
+    #                 context=context
+    #             )
+    #         }
+    #     ]
+    # )
+
+    # raw_content = response.output_text
+
+    print("response", flush=True)
+    print(response, flush=True)
+
+    try:
+        if not raw_content or not raw_content.strip():
+            raise ValueError("Model returned empty output.")
+
+        clean_json = re.sub(r"^```(?:json)?\s*|\s*```$","",raw_content.strip(),flags=re.MULTILINE)
+
+        data = json.loads(clean_json)
+
+        if "summary" not in data:
+            data["summary"] = ""
+
+        if "technical_details" not in data:
+            data["technical_details"] = ""
+
+        if "image_info" not in data or not isinstance(data["image_info"], list):
+            data["image_info"] = []
+
+        data["image_list"] = [
+            item.get("url")
+            for item in data["image_info"]
+            if isinstance(item, dict) and item.get("url")
+        ]
+
+        data["image_ids"] = [
+            item.get("rId")
+            for item in data["image_info"]
+            if isinstance(item, dict) and item.get("rId")
+        ]
+
+        return (
+            json.dumps(data, ensure_ascii=False),
+            response.usage.input_tokens,
+            response.usage.output_tokens,
+            response.usage.total_tokens,
+            response.id
+        )
+
+    except Exception as e:
+        print(f"ERROR: Failed to parse LLM output. Raw: {raw_content}", flush=True)
+        print(traceback.format_exc(), flush=True)
+        raise ValueError(f"LLM returned invalid JSON: {str(e)}")
+
+
+  
     

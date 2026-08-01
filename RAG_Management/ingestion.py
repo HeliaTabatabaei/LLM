@@ -372,19 +372,17 @@ def flush_batchSparse(qdrant, batch_texts, batch_points, sparse_encoder):
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
      
 def flush_batchBachQdrantInsert(docid,qdrant, batch_texts, batch_points):
-    total_chars = "".join(text for text in batch_texts if text)
-    first_1000_chars = total_chars[:19000]
-    print(f"Total character count: {total_chars}", flush=True)
+   
     LogStatus(
             _DocID=docid,_ActionName='flush_batchBachQdrantInsert', _FileName='', _Step="flush_batchBachQdrantInsert  step 1",
-            _Status="doing",_ErrorMessage=str(total_chars), _Timestamp=datetime.now()
+            _Status="doing",_ErrorMessage=str(batch_texts), _Timestamp=datetime.now()
             )
    
-    dense_embeddings = embed_batch(first_1000_chars)
+    dense_embeddings = embed_batch(batch_texts)
     
     LogStatus(
                 _DocID=docid,_ActionName='flush_batchBachQdrantInsert', _FileName='', _Step="flush_batchBachQdrantInsert  step 2",
-                _Status="doing",_ErrorMessage=str(first_1000_chars), _Timestamp=datetime.now()
+                _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
                 )
     
     points = [

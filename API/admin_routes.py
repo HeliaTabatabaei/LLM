@@ -26,7 +26,7 @@ sys.excepthook = exception_handler
 
 
 logger = logging.getLogger(__name__)
-router = APIRouter(prefix="/api/admin", tags=["Admin / Vector Store Management"])
+router = APIRouter(prefix="/api/admin", tags=["02-Admin / Vector Store Management"])
 
 ingest_progress = {"status": "idle", "message": "No task running"}
 

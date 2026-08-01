@@ -3,6 +3,7 @@ from typing import List
 
 from openai import OpenAI
 
+from SQlDB.wallet import InsertIntoWallet
 from config import EMBED_MODEL, LLM_MODEL, OPENAI_API_KEY
 
 from typing import List, Optional
@@ -67,7 +68,7 @@ def CreateResponse(context,query,history,temperature):
 
     answer = response.output_text
     return response
-def CreateResponseStreamWithMeta(context, query, history, temperature):
+def CreateResponseStreamWithMeta(context,userKey,background_tasks, query, history, temperature):
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {
@@ -104,16 +105,26 @@ def CreateResponseStreamWithMeta(context, query, history, temperature):
         # استخراج متادیتا در صورت وجود
         response_id = getattr(final_response, "id", None) if final_response else None
         usage = getattr(final_response, "usage", None) if final_response else None
-        print("META yyyyyyyyyyyyyyyyyyyyyyyyyyyyyy", response_id, usage, flush=True)
-        yield {
-            "type": "meta",
-            "response_id": response_id,
-            "usage": {
-                "input_tokens": getattr(usage, "input_tokens", 0) if usage else 0,
-                "output_tokens": getattr(usage, "output_tokens", 0) if usage else 0,
-                "total_tokens": getattr(usage, "total_tokens", 0) if usage else 0
-            }
-        }
+        print("MMMMMMMMMM,",flush=True)
+        background_tasks.add_task(
+                     
+                    InsertIntoWallet,
+                                         getattr(usage, "total_tokens", 0) if usage else 0,
+                                         getattr(usage, "output_tokens", 0) if usage else 0,
+                                         getattr(usage, "input_tokens", 0) if usage else 0,
+                                         userKey,
+                                         response_id,
+                                     )
+                   
+        # yield {
+        #     "type": "meta",
+        #     "response_id": response_id,
+        #     "usage": {
+        #         "input_tokens": getattr(usage, "input_tokens", 0) if usage else 0,
+        #         "output_tokens": getattr(usage, "output_tokens", 0) if usage else 0,
+        #         "total_tokens": getattr(usage, "total_tokens", 0) if usage else 0
+        #     }
+        # }
 
 def CreateResponseStream(context, query, history, temperature):
     messages = [

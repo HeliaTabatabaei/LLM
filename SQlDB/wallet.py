@@ -17,7 +17,7 @@ def InsertIntoWallet(total_tokens, output_tokens, input_tokens, user_key, llm_re
                     ,[inputToken]
                     ,[userkey]
                     ,[createdTime]
-                    ,[TypeTranasaction]
+                    ,[TypeTransaction]
                     ,[requstid])
                 VALUES (?, ?, ?, CAST(? AS uniqueidentifier), ?, ?, ?)
             """

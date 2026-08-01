@@ -244,6 +244,53 @@ def build_context(results) -> str:
         chunks.append(f"{header}\n{text}")
 
     return "\n\n".join(chunks)
+
+def build_contextWithImage(results) -> str:
+    chunks = []
+    for i, r in enumerate(results, start=1):
+        if isinstance(r, dict):
+            payload = r.get("payload", r)
+        else:
+            payload = getattr(r, "payload", {})
+
+        text = payload.get("text", "")
+        # استخراج doc_id از payload
+        doc_id = payload.get("doc_id", "نامشخص")
+        title = payload.get("title", "")
+        heading = payload.get("heading", "")
+
+        # اضافه کردن مشخصات سند به متن کانتکست جهت خوانش LLM
+        chunk_header = f"=== DOCUMENT_START ===\ndoc_id: {doc_id}\ntitle: {title}\nheading: {heading}\n"
+        #######################14050430
+        #chunk_body = f"content:\n{text}\n=== DOCUMENT_END ==="
+        #######################14050430
+        chunk_body = f"content:\n{text}\n"
+        imgs_info = payload.get("imgs_info", [])
+        #resolved_imgs_info = payload.get("resolved_imgs_info", [])
+        if isinstance(imgs_info, list) and imgs_info:
+            chunk_body += "images:\n"
+            for img in imgs_info:
+                r_id = img.get("rId", "")
+                url = img.get("url", "")
+                caption = img.get("caption", "")
+                visual_description = img.get("visual_description", "")
+
+                chunk_body += (
+                    f"- img_description_{r_id}\n"
+                    f"  rId: {r_id}\n"
+                    f"  url: {url}\n"
+                    f"  caption: {caption}\n"
+                    f"  visual_description: {visual_description}\n"
+                )
+
+        chunk_body += "=== DOCUMENT_END ==="
+        #chunks.append(f"{chunk_header}{chunk_body}")
+        
+        
+        #################################
+        chunks.append(f"{chunk_header}{chunk_body}")
+    
+    return "\n\n".join(chunks)
 def checkQudrant():    
     
         qdrant.get_collections()

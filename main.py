@@ -1,5 +1,7 @@
 import json
+import sys
 import time
+import traceback
 
 
 from fastapi import Depends, FastAPI, HTTPException
@@ -14,7 +16,7 @@ from API.admin_routes import router as admin_router
 from Models.mainModels import BulkChargeRequest, QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
 from LLM.OpenAIManagment import detect_intent, embed_query, rerank_results
 from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_history_collection, search
-from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
+from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_WithImage, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
 from SQlDB.IngestionQuery import bulk_charge_transactions
 from SQlDB.wallet import InsertIntoWallet
 from Utility.utiliy import get_current_user_payload
@@ -31,7 +33,12 @@ from fastapi import BackgroundTasks
 from typing import Tuple
 import uuid
 from jose import  JWTError, ExpiredSignatureError  
+from API.Wallet_routes import router as wallet_router
 from providers.factory import create_provider
+import json
+import uuid
+from fastapi import HTTPException
+from fastapi.responses import StreamingResponse
 app = FastAPI(
     docs_url=None,
     swagger_ui_oauth2_redirect_url=None,
@@ -55,6 +62,7 @@ MEDIA_ROOT = BASE_DIR / "data"  # مسیر دقیق پوشه داده‌ها
 
 app.mount("/media", StaticFiles(directory=str(MEDIA_ROOT)), name="media")
 app.include_router(admin_router)
+app.include_router(wallet_router)
 # ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
 init_history_collection()
 from fastapi import BackgroundTasks
@@ -396,6 +404,7 @@ async def query1_endpoint(request: QueryRequest):
 @app.post("/api/query/stream")
 async def query_stream_endpoint(
     request: QueryRequestStream,
+    background_tasks: BackgroundTasks,
     credentials: HTTPAuthorizationCredentials = Depends(security)
 ):
     try:
@@ -452,6 +461,9 @@ async def query_stream_endpoint(
             try:
                 for chunk in answer_with_rag_stream(
                     query=request.query,
+                    userKey=user_key,
+                    background_tasks=background_tasks,
+                    
                     results=reranked_results,
                     temperature=0.1
                 ):
@@ -496,10 +508,7 @@ async def query_stream_endpoint(
             detail=f"خطا در جست‌وجو: {str(error)}"
         )
 
-import json
-import uuid
-from fastapi import HTTPException
-from fastapi.responses import StreamingResponse
+
 
 
 @app.post("/api/query/streamWithMeta2")
@@ -603,38 +612,146 @@ async def query_streamWithMeta2_endpoint(request: QueryRequestStream,background_
     except Exception as error:
         raise HTTPException(status_code=500, detail=f"خطا در جست‌وجو: {str(error)}")
 
-@app.get('/api/ingestion')
-async def get_ingestion():
-    ingest()
+@app.post("/api/QueryWithRerank_WithImage")
+async def query_endpointWithRerank_WithImage(request: QueryRequest):
+    print("STEP 1: endpoint entered", flush=True)
 
-@app.post("/api/bulk-charge")
-async def bulk_charge_tokens(
-    request: BulkChargeRequest,
-    credentials: HTTPAuthorizationCredentials = Depends(security) # احراز هویت توکن سوییگر
-):
-    # بررسی احراز هویت کاربر لاگین شده در Swagger
-    token = credentials.credentials
     try:
-        is_valid = get_current_user_payload(token)
-        if not is_valid:
-            raise HTTPException(status_code=401, detail="عدم دسترسی: توکن نامعتبر است")
-    except Exception:
-        raise HTTPException(status_code=401, detail="خطا در احراز هویت")
-    
-    try:
-        
-        result = bulk_charge_transactions(
-            user_keys=request.user_keys,
-            amount=request.amount
-                       
+        print("STEP 2: request received", flush=True)
+        print("QUERY:", request.query, flush=True)
+        print("USE HYBRID:", request.use_hybrid, flush=True)
+
+        if request.use_hybrid:
+            print("STEP 3: before hybrid_search", flush=True)
+
+            results = hybrid_search(
+                query=request.query,
+                limit=request.limit,
+                filters=request.filters
+            )
+
+            print("STEP 4: hybrid_search completed", flush=True)
+            search_mode = "hybrid"
+
+        else:
+            print("STEP 3: before dense search", flush=True)
+
+            query_vector = embed_query(request.query)
+
+            print("STEP 4: embedding completed", flush=True)
+
+            results = search(
+                query_vector=query_vector,
+                limit=request.limit,
+                filters=request.filters
+            )
+
+            print("STEP 5: dense search completed", flush=True)
+            search_mode = "dense"
+
+        print("RESULT TYPE:", type(results), flush=True)
+        print("RESULT COUNT:", len(results), flush=True)
+
+        if not results:
+            print("No search results", flush=True)
+            raise HTTPException(
+                status_code=404,
+                detail="هیچ سند مرتبطی یافت نشد"
+            )
+
+        print("STEP 6: before rerank", flush=True)
+
+        reranked_results = rerank_results(
+            request.query,
+            results
         )
-        return {
-            "success": True,
-            "message": f"تعداد {result['inserted_count']} رکورد با موفقیت ثبت شد.",
-            "total_tokens_charged": result['total_amount']
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"خطا در ثبت اطلاعات: {str(e)}")
+
+        print("STEP 7: rerank completed", flush=True)
+        print(
+            "RERANKED COUNT:",
+            len(reranked_results),
+            flush=True
+        )
+
+        print("STEP 8: before answer_with_rag", flush=True)
+        
+       
+
+        # answer = answer_with_rag_WithImage(
+        #     request.query,
+        #     reranked_results,
+        #     temperature=request.temperature
+        # )
+        answer, input_tokens, output_tokens, total_tokens, response_id = answer_with_rag_WithImage(
+    request.query,
+    reranked_results,
+    temperature=request.temperature
+)
+
+       
+        print("STEP 9: answer generated", flush=True)
+        print("ANSWER TYPE:", type(answer), flush=True)
+        print("ANSWER:", answer, flush=True)
+        
+        print("STEP 10: before response", flush=True)
+        
+        
+       
+        sources = []
+        
+        for r in reranked_results:
+            if isinstance(r, dict):
+                payload = r.get("payload", {}) or {}
+                rid = r.get("id")
+                score = r.get("score")
+            else:
+                payload = getattr(r, "payload", {}) or {}
+                rid = getattr(r, "id", None)
+                score = getattr(r, "score", None)
+              
+            
+            sources.append(
+                SearchResult(
+                    id=str(rid) if rid is not None else "",
+                    score=score,
+                    text=payload.get("text", ""),
+                    doc_id=payload.get("doc_id"),
+                    title=payload.get("title"),
+                    heading=payload.get("heading"),
+                    date=payload.get("date"),
+                    tags=payload.get("tags"),
+                    keywords=payload.get("keywords"),
+                    source_file=payload.get("source_file"),
+                    
+                )
+            )
+        return QueryResponse(
+             
+            answer=answer,
+            
+            sources=sources,
+            query=request.query,
+            search_mode=search_mode,
+           
+        )
+    except HTTPException:
+        print("HTTPException occurred", flush=True)
+        traceback.print_exc(file=sys.stderr)
+        raise
+
+    except Exception as exc:
+        print("========== FULL ERROR ==========", flush=True)
+        print("ERROR TYPE:", type(exc).__name__, flush=True)
+        print("ERROR MESSAGE:", str(exc), flush=True)
+        traceback.print_exc(file=sys.stderr)
+        print("================================", flush=True)
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"{type(exc).__name__}: {str(exc)}"
+        )
+        
+      
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
