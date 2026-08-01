@@ -432,7 +432,10 @@ async def query_stream_endpoint(
 
         if intent == "general":
             return StreamingResponse(
-                answer_general_stream(request.query),
+             
+                answer_general_stream(query=request.query,
+                                    userKey=user_key,
+                                    background_tasks=background_tasks),
                 media_type="text/event-stream",
                 headers={
                     "Cache-Control": "no-cache",

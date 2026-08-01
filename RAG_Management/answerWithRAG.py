@@ -409,9 +409,10 @@ def answer_stream_only_llm(
         history="-",
         temperature=temperature
     )
-def answer_general_stream(query: str):
+def answer_general_stream(query: str , userKey: any,
+    background_tasks: BackgroundTasks):
     try:
-        for chunk in CreateResponseStreamGeneral(query=query):
+        for chunk in CreateResponseStreamGeneral(query=query,userKey=userKey,background_tasks=background_tasks):
             if chunk:
                 chunk_data = {
                     "text": chunk

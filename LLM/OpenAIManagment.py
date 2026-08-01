@@ -105,11 +105,11 @@ def CreateResponseStreamWithMeta(context,userKey,background_tasks, query, histor
         # استخراج متادیتا در صورت وجود
         response_id = getattr(final_response, "id", None) if final_response else None
         usage = getattr(final_response, "usage", None) if final_response else None
-        print("MMMMMMMMMM,",flush=True)
+      
         background_tasks.add_task(
                      
                     InsertIntoWallet,
-                                         getattr(usage, "total_tokens", 0) if usage else 0,
+                                         getattr(usage, "total_tokens", 0)*-1 if usage else 0,
                                          getattr(usage, "output_tokens", 0) if usage else 0,
                                          getattr(usage, "input_tokens", 0) if usage else 0,
                                          userKey,
@@ -287,7 +287,7 @@ Return only JSON like:
     except Exception as e:
         print(f"Rerank failed: {e}")
         return results
-def CreateResponseStreamGeneral(query: str):
+def CreateResponseStreamGeneral(query,userKey, background_tasks):
     messages = [
         {
             "role": "system",
@@ -305,19 +305,51 @@ def CreateResponseStreamGeneral(query: str):
         },
     ]
 
-    full_text = ""
-
+    # استفاده از context manager برای مدیریت صحیح اتصال استریم
     with client.responses.stream(
         model=LLM_MODEL,
         input=messages,
         temperature=0.1
     ) as stream:
+        
+        # ۱. ارسال فریم‌های متنی به صورت زنده
         for event in stream:
             if event.type == "response.output_text.delta":
-                full_text += event.delta
-                yield event.delta
+                if event.delta:
+                    yield {"type": "token", "content": event.delta}
+        
+        # ۲. پس از پایان دریافت متن، دریافت متادیتا از پاسخ نهایی
+        final_response = None
+        if hasattr(stream, "get_final_response"):
+            final_response = stream.get_final_response()
+        elif hasattr(stream, "response"):
+            final_response = stream.response
 
-    print("FINAL STREAMED TEXT:", repr(full_text), flush=True)
+        # استخراج متادیتا در صورت وجود
+        response_id = getattr(final_response, "id", None) if final_response else None
+        usage = getattr(final_response, "usage", None) if final_response else None
+      
+        # اضافه کردن تسک ثبت تراکنش به پس‌زمینه
+        background_tasks.add_task(
+            InsertIntoWallet,
+            getattr(usage, "total_tokens", 0) * -1 if usage else 0,
+            getattr(usage, "output_tokens", 0) if usage else 0,
+            getattr(usage, "input_tokens", 0) if usage else 0,
+            userKey,
+            response_id,
+        )
+        
+        # در صورت نیاز به ارسال متادیتا به کلاینت در انتهای استریم، می‌توانید کامنت زیر را باز کنید:
+        # yield {
+        #     "type": "meta",
+        #     "response_id": response_id,
+        #     "usage": {
+        #         "input_tokens": getattr(usage, "input_tokens", 0) if usage else 0,
+        #         "output_tokens": getattr(usage, "output_tokens", 0) if usage else 0,
+        #         "total_tokens": getattr(usage, "total_tokens", 0) if usage else 0
+        #     }
+        # }
+
 
 def detect_intent(query: str) -> str:
     resp =client.chat.completions.create(
