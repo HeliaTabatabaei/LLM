@@ -223,7 +223,7 @@ def build_context(results) -> str:
         else:
             payload = r.payload
 
-        text = payload.get("maintext", "")
+        # text = payload.get("text", "")
         maintext=payload.get("maintext", "")
         doc_id = payload.get("doc_id", "نامشخص")
         title = payload.get("title", "")

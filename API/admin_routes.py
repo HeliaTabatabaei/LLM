@@ -182,12 +182,17 @@ async def ingest_document_by_path(file_path: str, background_tasks: BackgroundTa
             )
         #return Doc_id
 
-        background_tasks.add_task(InsertDocsPipeLine, file_path,Doc_id)
+        background_tasks.add_task( InsertDocsPipeLine, file_path,Doc_id)
 
         return {
             "message": f"Document with ID:{Doc_id}  has been successfully processed and stored in SQL and Qdrant.",
 
         }
+        # return {
+        #     "status": "processing",
+        #     "DocID": Doc_id,
+        #     "message": f"Document with ID:{Doc_id} is being processed in the background (doing)."
+        # }
 
     except Exception as e:
         error_message = str(e)

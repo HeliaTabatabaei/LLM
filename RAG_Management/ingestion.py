@@ -615,6 +615,35 @@ def InsertDocsPipeLine(target_file_path, Doc_id):
         )
         return -1 # توقف عملیات
 
+# def wrapper_pipeline(file_path: str, doc_id: int):
+#     try:
+#         # اجرای پایپ‌لاین اصلی پردازش متن و وکتورها
+#         InsertDocsPipeLine(file_path, doc_id)
+        
+#         # ثبت لاگ موفقیت پس از اتمام کار پایپ‌لاین
+#         LogStatus(
+#             _DocID=doc_id,
+#             _ActionName='Insert',
+#             _FileName=file_path,
+#             _Step='Pipeline Finished',
+#             _Status='Success', # تغییر وضعیت به موفقیت پس از اتمام پردازش Qdrant
+#             _ErrorMessage=None,
+#             _Timestamp=None
+#         )
+#         print(f"✅ Document with ID:{doc_id} has been successfully processed and stored in SQL and Qdrant.")
+        
+#     except Exception as e:
+#         # ثبت لاگ خطا در صورت بروز مشکل در فرآیند پس‌زمینه
+#         LogStatus(
+#             _DocID=doc_id,
+#             _ActionName='Insert',
+#             _FileName=file_path,
+#             _Step='Pipeline Failed',
+#             _Status='FAILED',
+#             _ErrorMessage=str(e),
+#             _Timestamp=None
+#         )
+#         print(f"❌ Pipeline failed for DocID {doc_id}: {str(e)}")
 
 if __name__ == "__main__":
 
