@@ -1,0 +1,16 @@
+﻿{
+  "contains_text": true,
+  "ocr_text": "ATM PC\nAMP\nSPEAKER",
+  "caption": "نمودار اتصال ATM PC به آمپلی‌فایر و بلندگو",
+  "visual_description": [
+    "نمودار بلوکی با پیکان از «ATM PC» به «AMP» و سپس به «SPEAKER»",
+    "بلوک «AMP» به شکل نماد مثلثی تقویت‌کننده نمایش داده شده است",
+    "بلوک «SPEAKER» با نماد بلندگو داخل یک مستطیل نمایش داده شده است"
+  ],
+  "image_type": "diagram",
+  "ImageCount": "39",
+  "UsageCount": 1,
+  "Positions": [
+    4
+  ]
+}

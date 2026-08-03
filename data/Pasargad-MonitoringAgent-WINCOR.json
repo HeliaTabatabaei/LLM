@@ -1,0 +1,115 @@
+[
+  {
+    "id": "1",
+    "main_text": "پیش از نصب نرم‎افزار مانیتورینگ لازم است وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید؛ درصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.",
+    "embedding_text": "heading_path: اقدام لازم پیش از نصب نرم‎افزار مانیتورینگ \n\n level: 1 \n\n content: پیش از نصب نرم‎افزار مانیتورینگ لازم است وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید؛ درصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.\n\nkeywords: UninstallAD-AgentTerminal. exe, MonitoringAgent. exe, مانیتورینگ پیش, Windows Task Manager, عملیات Uninstall\n\ncustomer_name: pasargaad",
+    "metadata": {
+      "doc_id": "doc_c583f56c0ad9bb22",
+      "section_id": "sec_0dfe51836d6d0ae7",
+      "date": "مهر 1404",
+      "version": "2-IT0407-512-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "اقدام لازم پیش از نصب نرم‎افزار مانیتورینگ",
+      "keywords": [
+        "UninstallAD-AgentTerminal. exe",
+        "MonitoringAgent. exe",
+        "مانیتورینگ پیش",
+        "Windows Task Manager",
+        "عملیات Uninstall"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "pasargaad"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0407-512-00_Pasargad-MonitoringAgent-WINCOR-EASTCOM_4.2.0.0 (X64).md",
+      "heading_path": "اقدام لازم پیش از نصب نرم‎افزار مانیتورینگ",
+      "chunk_index": 0,
+      "token_count": 55,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: اقدام لازم پیش از نصب نرم‎افزار مانیتورینگ \n\n level: 1 \n\n content: پیش از نصب نرم‎افزار مانیتورینگ لازم است وضعیت نصب نرم‌افزار مانیتورینگ را بررسی کنید؛ درصورتی‌که نرم‎افزار مانیتورینگ از قبل روی ترمینال نصب بوده است، ابتدا ProcessهایAppstart.exe ، MonitoringService.exe و MonitoringAgent.exe را از Windows Task Manager ببندید. سپس از مسیر C:\\Adonis\\SSTApplication فایل اجرایی UninstallAD-AgentTerminal.exe را اجرا و منتظر بمانید تا عملیات Uninstall به‌صورت کامل انجام شود.",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "2",
+    "main_text": "به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.0(x64).exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.0 (x64)\\nجهت نصب بر روی دستگاه های خودپرداز WINCOR و Eastcom بانک پاسارگاد\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nشرکت توسعه خدمات الکترونیکی ادونیس\\nCopyright (c) 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار (Setup Wizard) برای برنامه MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، عنوان برنامه و نسخه آن نوشته شده است. بخش میانی شامل توافق‌نامه مجوز (License Agreement) به زبان انگلیسی و فارسی است. در متن فارسی، توضیحاتی درباره نصب نرم‌افزار روی دستگاه‌های خودپرداز WINCOR و Eastcom بانک پاسارگاد آمده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. لوگوی نرم‌افزار در سمت چپ بالای پنجره دیده می‌شود.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back Install Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. بخش اصلی پنجره شامل توضیحاتی درباره آماده بودن نصب و مسیر مقصد نصب (C:\\\\Adonis\\\\SSTApplication) است. در پایین پنجره سه دکمه با عنوان‌های Back، Install و Cancel دیده می‌شود که دکمه Install با کادر قرمز مشخص شده است.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: JournalPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه ۴.۲.۰.۰ را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. یک نوار پیشرفت سبز رنگ وجود دارد که نشان‌دهنده کپی شدن فایل JournalPrinter.pdb است. در پایین پنجره، گزینه‌های Back، Next و Cancel دیده می‌شوند که فقط گزینه Cancel فعال است. همچنین، متن کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر درج شده است.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:",
+    "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.0(x64).exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.0 (x64)\\nجهت نصب بر روی دستگاه های خودپرداز WINCOR و Eastcom بانک پاسارگاد\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nشرکت توسعه خدمات الکترونیکی ادونیس\\nCopyright (c) 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار (Setup Wizard) برای برنامه MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، عنوان برنامه و نسخه آن نوشته شده است. بخش میانی شامل توافق‌نامه مجوز (License Agreement) به زبان انگلیسی و فارسی است. در متن فارسی، توضیحاتی درباره نصب نرم‌افزار روی دستگاه‌های خودپرداز WINCOR و Eastcom بانک پاسارگاد آمده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. لوگوی نرم‌افزار در سمت چپ بالای پنجره دیده می‌شود.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back Install Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. بخش اصلی پنجره شامل توضیحاتی درباره آماده بودن نصب و مسیر مقصد نصب (C:\\\\Adonis\\\\SSTApplication) است. در پایین پنجره سه دکمه با عنوان‌های Back، Install و Cancel دیده می‌شود که دکمه Install با کادر قرمز مشخص شده است.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: JournalPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه ۴.۲.۰.۰ را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. یک نوار پیشرفت سبز رنگ وجود دارد که نشان‌دهنده کپی شدن فایل JournalPrinter.pdb است. در پایین پنجره، گزینه‌های Back، Next و Cancel دیده می‌شوند که فقط گزینه Cancel فعال است. همچنین، متن کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر درج شده است.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:\n\nkeywords: nPlease wait while MonitoringAgent WINCOR is being installed, WINCOR on your computer, WINCOR Eastcom, WINCOR ۴, WINCOR نسخه\n\ncustomer_name: pasargaad",
+    "metadata": {
+      "doc_id": "doc_c583f56c0ad9bb22",
+      "section_id": "sec_6eafcbda02321307",
+      "date": "مهر 1404",
+      "version": "2-IT0407-512-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "نصب نرم‌افزار مانیتورینگ",
+      "keywords": [
+        "nPlease wait while MonitoringAgent WINCOR is being installed",
+        "WINCOR on your computer",
+        "WINCOR Eastcom",
+        "WINCOR ۴",
+        "WINCOR نسخه"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "pasargaad"
+      ],
+      "step_number": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0407-512-00_Pasargad-MonitoringAgent-WINCOR-EASTCOM_4.2.0.0 (X64).md",
+      "heading_path": "نصب نرم‌افزار مانیتورینگ",
+      "chunk_index": 0,
+      "token_count": 447,
+      "is_leaf": true,
+      "chunk_continue": true,
+      "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: به‌منظور نصب نرم‌افزار مانیتورینگ مراحل زیر را انجام دهید:\n\n1. روی فایل MonitoringAgent\\_WINCOR\\_4.2.0.0(x64).exe دو کلیک کنید.\n2. در پنجره‎ای که گشوده می‎شود روی دکمه‎ی I Agree کلیک کنید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nLicense Agreement\\nPlease review the license terms before installing MonitoringAgent WINCOR.\\nIf you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install MonitoringAgent WINCOR.\\nاجنت مانیتورینگ نسخه 4.2.0.0 (x64)\\nجهت نصب بر روی دستگاه های خودپرداز WINCOR و Eastcom بانک پاسارگاد\\nتوجه:\\nلطفا پیش از شروع فرآیند نصب، از بسته بودن نرم افزار ترمینال و اجنت مانیتورینگ اطمینان حاصل فرمایید.\\nشرکت توسعه خدمات الکترونیکی ادونیس\\nCopyright (c) 2025, Adonis ESD Co.\",\n  \"caption\": \"پنجره نصب نرم‌افزار مانیتورینگ WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار (Setup Wizard) برای برنامه MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، عنوان برنامه و نسخه آن نوشته شده است. بخش میانی شامل توافق‌نامه مجوز (License Agreement) به زبان انگلیسی و فارسی است. در متن فارسی، توضیحاتی درباره نصب نرم‌افزار روی دستگاه‌های خودپرداز WINCOR و Eastcom بانک پاسارگاد آمده است. در پایین پنجره، سه دکمه 'Back'، 'I Agree' (که با کادر قرمز مشخص شده) و 'Cancel' وجود دارد. لوگوی نرم‌افزار در سمت چپ بالای پنجره دیده می‌شود.\"\n\n3. روی دکمه‎ی Install کلیک نمایید:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nReady to Install\\nSetup is now ready to begin installing MonitoringAgent WINCOR on your computer.\\nClick Install to continue with the installation, or click Back if you want to review or change any settings.\\nDestination folder:\\nC:\\\\Adonis\\\\SSTApplication\\nCopyright © 2025, Adonis ESD Co.\\n< Back Install Cancel\",\n  \"caption\": \"پنجره نصب نرم‌افزار MonitoringAgent WINCOR\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه 4.2.0.0 را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. بخش اصلی پنجره شامل توضیحاتی درباره آماده بودن نصب و مسیر مقصد نصب (C:\\\\Adonis\\\\SSTApplication) است. در پایین پنجره سه دکمه با عنوان‌های Back، Install و Cancel دیده می‌شود که دکمه Install با کادر قرمز مشخص شده است.\"\n\nعملیات نصب با نمایش پنجره‎ی زیر آغاز خواهد شد:\n\n\"ocr_text\": \"MonitoringAgent WINCOR 4.2.0.0 Installation\\nInstalling\\nPlease wait while MonitoringAgent WINCOR is being installed.\\nPlease wait while MonitoringAgent WINCOR is being installed. The installation will take several minutes.\\nCopy: JournalPrinter.pdb\\nCopyright © 2025, Adonis ESD Co.\\n< Back Next > Cancel\",\n  \"caption\": \"نصب نرم‌افزار MonitoringAgent WINCOR در حال انجام است.\",\n  \"visual_description\": \"این تصویر یک پنجره نصب نرم‌افزار MonitoringAgent WINCOR نسخه ۴.۲.۰.۰ را نشان می‌دهد. در بالای پنجره، نام نرم‌افزار و نسخه آن نوشته شده است. یک نوار پیشرفت سبز رنگ وجود دارد که نشان‌دهنده کپی شدن فایل JournalPrinter.pdb است. در پایین پنجره، گزینه‌های Back، Next و Cancel دیده می‌شوند که فقط گزینه Cancel فعال است. همچنین، متن کپی‌رایت شرکت Adonis ESD Co. در پایین تصویر درج شده است.\"\n\n4. اطلاعات موردنیاز را با دقت در پنجره‎ی زیر درج نمایید:",
+      "level": 1,
+      "imgs_info": []
+    }
+  },
+  {
+    "id": "3",
+    "main_text": "\"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیمات رجیستری استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. سه فیلد برای وارد کردن Client IP، Server IP و Terminal ID وجود دارد. در پایین فرم یک دکمه سبز رنگ با عنوان Submit قرار دارد که با کادر قرمز مشخص شده است.\"\n\n|  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک پاسارگاد به شماره **82898134-021** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن به شرح زیر می‎باشد:\n\nHKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\WOW6432Node\\Adonis\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)",
+    "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: \"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیمات رجیستری استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. سه فیلد برای وارد کردن Client IP، Server IP و Terminal ID وجود دارد. در پایین فرم یک دکمه سبز رنگ با عنوان Submit قرار دارد که با کادر قرمز مشخص شده است.\"\n\n|  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک پاسارگاد به شماره **82898134-021** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن به شرح زیر می‎باشد:\n\nHKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\WOW6432Node\\Adonis\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)\n\nkeywords: Server IP, nClient IP, IP Terminal, شرکت آدونیس, nTerminal ID\n\ncustomer_name: pasargaad",
+    "metadata": {
+      "doc_id": "doc_c583f56c0ad9bb22",
+      "section_id": "sec_6eafcbda02321307",
+      "date": "مهر 1404",
+      "version": "2-IT0407-512-00",
+      "title": "دستورالعمل - نصب ایجنت نرم‎افزار مانیتورینگ",
+      "heading": "نصب نرم‌افزار مانیتورینگ",
+      "keywords": [
+        "Server IP",
+        "nClient IP",
+        "IP Terminal",
+        "شرکت آدونیس",
+        "nTerminal ID"
+      ],
+      "faq_related": [],
+      "tags": [],
+      "type": [],
+      "customer_name": [
+        "pasargaad"
+      ],
+      "step_number": null,
+      "source_file": "C:\\Users\\aa.eskandari\\Desktop\\all_docs\\md_source\\2-IT0407-512-00_Pasargad-MonitoringAgent-WINCOR-EASTCOM_4.2.0.0 (X64).md",
+      "heading_path": "نصب نرم‌افزار مانیتورینگ",
+      "chunk_index": 1,
+      "token_count": 230,
+      "is_leaf": true,
+      "chunk_continue": false,
+      "embedding_text": "heading_path: نصب نرم‌افزار مانیتورینگ \n\n level: 1 \n\n content: \"ocr_text\": \"SetRegistryConfigs\\nشرکت توسعه خدمات الکترونیک\\nآدونیس\\nADONIS\\nClient IP\\nServer IP\\nTerminal ID\\nSubmit\",\n  \"caption\": \"فرم تنظیمات رجیستری نرم‌افزار آدونیس\",\n  \"visual_description\": \"این تصویر یک فرم نرم‌افزاری با عنوان SetRegistryConfigs را نشان می‌دهد که برای تنظیمات رجیستری استفاده می‌شود. در بالای فرم، لوگو و نام شرکت آدونیس به دو زبان فارسی و انگلیسی دیده می‌شود. سه فیلد برای وارد کردن Client IP، Server IP و Terminal ID وجود دارد. در پایین فرم یک دکمه سبز رنگ با عنوان Submit قرار دارد که با کادر قرمز مشخص شده است.\"\n\n|  |  |  |\n| --- | --- | --- |\n| **IP دستگاه** | = | **Client IP** |\n| **شماره ترمینال دستگاه** | = | **Terminal ID** |\n| **IP سرور مانیتورینگ** | = | **Server IP** |\n\n5. در پنجره‎ی فوق روی دکمه‎ی Submit کلیک کنید؛ بعد از گذشت 5 ثانیه، فرم به‌طور اتوماتیک بسته خواهد شد.\n6. دستگاه را Restart نمایید.\n7. پس از Inservice شدن وضعیت دستگاه با کارشناسان مستقر در بانک پاسارگاد به شماره **82898134-021** تماس حاصل نمایید.\n\nمسیر نصب نرم‎افزار مانیتورینگ C:\\Adonis و مسیر رجیستری آن به شرح زیر می‎باشد:\n\nHKEY\\_LOCAL\\_MACHINE\\SOFTWARE\\WOW6432Node\\Adonis\n\nعملیات نصب تنها با دریافت تأییدیه از کارشناسان مستقر در بانک،\nتمام‌شده در نظر گرفته خواهد شد.\n\n1. **این سند در شرکت آدونيس تهیه و تنظیم گردیده است و انتشار محتویات آن و یا استفاده از آن در سایر مستندات، بدون کسب اجازه کتبی از شرکت آدونيس به‌هیچ‌عنوان مجاز نمی‌باشد.** [↑](#footnote-ref-1)",
+      "level": 1,
+      "imgs_info": []
+    }
+  }
+]
