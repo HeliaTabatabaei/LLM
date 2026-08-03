@@ -202,7 +202,7 @@ def ingestQdrant(docid):
   
     ensure_collection(qdrant)# چک می‌کند که آیا کالکشن (میز) مورد نظر در Qdrant وجود دارد یا خیر (اگر نبود می‌سازد).
    
-    chunks,t = load_chunks_from_dbByDocId(docid)
+    chunks,t,path = load_chunks_from_dbByDocId(docid)
     print(len(chunks))
     #all_texts = [c["embedding_text"].strip() for c in chunks if c["embedding_text"].strip()]
     
@@ -237,10 +237,10 @@ def ingestQdrant(docid):
                     )
         metadata = chunk.get("metadata", {}).copy()
         imgs_info = metadata.get("imgs_info", [])
-
+        #"media/2-IT9411-138-00_AudioSystem/img_folder"
         image_base_url = (
-         "http://10.100.52.7:8000/"
-         "media/2-IT9411-138-00_AudioSystem/img_folder"
+         "http://10.100.52.7:8000/"+path
+      
         )
 
         maintext_with_links = append_image_urls_to_maintext(
