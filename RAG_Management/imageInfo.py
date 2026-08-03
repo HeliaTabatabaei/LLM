@@ -1,46 +1,45 @@
-import re
-
+import os
 
 def append_image_urls_to_maintext(
     maintext: str,
     imgs_info: list,
-    image_base_url: str,
-    image_extension: str = ".png",
+    image_base_url: str
 ) -> str:
     """
-    image_base_url نمونه:
-    http://10.100.52.7:8000/data/2-IT9411-138-00_AudioSystem/img_folder
+    متن اصلی را بدون تغییر حفظ می‌کند و فقط لینک تصاویر را به انتهای آن اضافه می‌کند.
+    پسوند تصاویر به صورت داینامیک از 'image_name' استخراج می‌شود.
     """
-
-    if not maintext or not imgs_info or not image_base_url:
+    if not maintext or not imgs_info:
         return maintext
 
-    image_base_url = image_base_url.rstrip("/")
+    base_url = image_base_url.rstrip("/")
+    image_links = []
+    added_rids = set()
 
-    images_by_rid = {
-        image.get("rId"): image
-        for image in imgs_info
-        if image.get("rId")
-    }
+    for img in imgs_info:
+        r_id = img.get("rId")
+        image_name = img.get("image_name", "")
 
-    def add_image_link(match: re.Match) -> str:
-        r_id = match.group(1)
-        image_info = images_by_rid.get(r_id)
+        if not r_id or r_id in added_rids:
+            continue
+        
+        # استخراج پسوند از image_name (مثال: image1.jpg -> .jpg)
+        _, ext = os.path.splitext(image_name)
+        
+        # اگر به هر دلیلی پسوندی پیدا نشد، یک مقدار پیش‌فرض در نظر بگیرید (یا خالی بگذارید)
+        if not ext:
+            ext = ".png" # مقدار پیش‌فرض ایمن
 
-        if not image_info:
-            return match.group(0)
+        # ساخت URL با rId و پسوند استخراج شده
+        # فرض بر این است که نام فایل روی سرور با rId مطابقت دارد
+        url = f"{base_url}/{r_id}{ext}"
+        caption = img.get("caption") or f"تصویر {r_id}"
 
-        caption = image_info.get("caption") or f"تصویر {r_id}"
-        image_url = f"{image_base_url}/{r_id}{image_extension}"
+        image_links.append(f"[{caption}]: {url}")
+        added_rids.add(r_id)
 
-        return (
-            f"img_description_{r_id}:\n"
-            f"![{caption}]({image_url})\n"
-            f"[نمایش / دانلود تصویر]({image_url})\n"
-        )
+    if not image_links:
+        return maintext
 
-    return re.sub(
-        r"img_description_(rId\d+)\s*:",
-        add_image_link,
-        maintext
-    )
+    # الحاق به انتهای متن بدون دستکاری OCR قبلی
+    return f"{maintext}\n\n---\n\n### لینک تصاویر:\n\n" + "\n".join(image_links)

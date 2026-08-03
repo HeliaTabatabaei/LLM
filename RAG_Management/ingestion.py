@@ -246,10 +246,10 @@ def ingestQdrant(docid):
         maintext_with_links = append_image_urls_to_maintext(
         maintext=maintext,
         imgs_info=imgs_info,
-        image_base_url=image_base_url,
-        image_extension=".png",
+        image_base_url=image_base_url
+      
         )  
-        print(maintext_with_links,flush=True)
+       
         payload = {
                 "text": text, 
                 "maintext":maintext_with_links,
