@@ -15,7 +15,7 @@ from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 # Initialize clients
 client = OpenAI(
     api_key=OPENAI_API_KEY,
-    base_url="https://api.gapgpt.app/v1"
+    base_url="https://api.gapgpt.app/v111"
 )
 
 def embed_query(text: str) -> List[float]:
