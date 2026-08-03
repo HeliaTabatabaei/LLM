@@ -36,6 +36,7 @@ class QueryRequestWithHistory(BaseModel):
 class SearchResult(BaseModel):
     id: str
     score: float
+    score_diff:float=0
     text: str
     doc_id: Optional[str] = None
     title: Optional[str] = None

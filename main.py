@@ -370,15 +370,17 @@ async def queryScore_endpoint(request: QueryRequest):
                 payload = r["payload"]
                 rid = r["id"]
                 score = r["score"]
+                score_diff=r["score_diff"]
             else:
                 payload = r.payload
                 rid = r.id
                 score = r.score
-
+                score_diff=r["score_diff"]
             sources.append(
                 SearchResult(
                     id=str(rid),
                     score=score,
+                    score_diff=score_diff,
                     text=payload.get("text", "")[:200] + "...",
                     doc_id=payload.get("doc_id"),
                     title=payload.get("title"),
