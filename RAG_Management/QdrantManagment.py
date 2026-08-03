@@ -115,13 +115,13 @@ def build_filter(filters: Optional[SearchFilters]) -> Optional[models.Filter]:
             )
         )
 
-    if filters.keywords:
-        conditions.append(
-            models.FieldCondition(
-                key="keywords",
-                match=models.MatchAny(any=filters.keywords)
-            )
-        )
+    # if filters.keywords:
+    #     conditions.append(
+    #         models.FieldCondition(
+    #             key="keywords",
+    #             match=models.MatchAny(any=filters.keywords)
+    #         )
+    #     )
 
     if filters.date_from:
         conditions.append(

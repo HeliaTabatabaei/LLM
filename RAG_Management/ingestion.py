@@ -5,6 +5,7 @@ import os
 import sys
 from tqdm import tqdm
 from qdrant_client.models import PointStruct, Filter, FieldCondition, MatchValue
+from RAG_Management.imageInfo import append_image_urls_to_maintext
 from RAG_Management.vectorstore   import get_client, ensure_collection
 
 from SQlDB.IngestionQuery import Deactivate_doc_from_sql, InsertDocsToSql, LogStatus, SetALLRecord_IsActiveFalse, SetIsActiveFalse, SetIsActiveTrue, load_chunks_from_db, load_chunks_from_dbByDocId
@@ -228,46 +229,34 @@ def ingestQdrant(docid):
         #############14050430
         # # --- بخش جدید برای پردازش عکس‌ها ---
         metadata = chunk.get("metadata", {}).copy()
-        source_file = metadata.get("source_file", "")
-        imgs_info = metadata.get("imgs_info", [])#لیست تصاویر ثبت شده در این چانک را استخراج می‌کند.
+        # source_file = metadata.get("source_file", "")
+        imgs_info = chunk.get("imgs_info", []) or metadata.get("imgs_info", [])
         LogStatus(
-                        _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 1",
-                        _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
-                        )
-       # resolved_imgs_info  = []
-        if isinstance(imgs_info, list) and source_file:
-            # یک آرایه جدید برای پر کردن مجدد تصاویر با آدرس وب می‌سازیم
-            updated_imgs_info = []
-            for img in imgs_info:
-                rid = img.get("rId")
-                if rid:
-                    # پیدا کردن نام واقعی فایل روی دیسک (مثلاً rId5.jpeg)
-                    actual_name = get_actual_filename_from_rid(source_file, rid)
-                    
-                    if actual_name:
-                        # تولید URL صحیح
-                        img_url = get_resolved_image_url(source_file, actual_name)
-                        
-                        # ساخت دیتای جدید تصویر همراه با URL
-                        # img_with_url = {**img, "url": img_url}
-                        # resolved_imgs_info.append(img_with_url)
-                        updated_img = {**img, "url": img_url}
-                        updated_imgs_info.append(updated_img)
-                    else:
-                        updated_img = {**img, "url": None}
-                        updated_imgs_info.append(updated_img)
-                        print(f"--- [!] Warning: File for {rid} not found in {source_file}")
+                    _DocID=docid,_ActionName='InsertQudrant', _FileName='', _Step="image info start",
+                    _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
+                    )
+        metadata = chunk.get("metadata", {}).copy()
+        imgs_info = metadata.get("imgs_info", [])
 
-        
+        image_base_url = (
+         "http://10.100.52.7:8000/"
+         "media/2-IT9411-138-00_AudioSystem/img_folder"
+        )
 
-        metadata["imgs_info"] = updated_imgs_info
- 
+        maintext_with_links = append_image_urls_to_maintext(
+        maintext=maintext,
+        imgs_info=imgs_info,
+        image_base_url=image_base_url,
+        image_extension=".png",
+        )  
+        print(maintext_with_links,flush=True)
         payload = {
                 "text": text, 
-                "maintext":maintext,
+                "maintext":maintext_with_links,
                 "text_hash": h, 
                 **metadata  # تمام اطلاعات متادیتا + imgs_info اصلاح‌شده در اینجا هست
             }
+        
         ###############################################################
         batch_texts.append(text)
         batch_points.append((chunk["id"], payload))
