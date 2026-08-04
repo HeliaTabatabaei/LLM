@@ -11,6 +11,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_swagger import patch_fastapi
 
+from API import query_routes
 from API.admin_routes import router as admin_router
 
 from Models.mainModels import BulkChargeRequest, QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
@@ -60,9 +61,11 @@ from pathlib import Path, PureWindowsPath
 BASE_DIR = Path(__file__).resolve().parent # تعریف مسیر پایه پروژه
 MEDIA_ROOT = BASE_DIR / "data"  # مسیر دقیق پوشه داده‌ها
 
+
 app.mount("/media", StaticFiles(directory=str(MEDIA_ROOT)), name="media")
 app.include_router(admin_router)
 app.include_router(wallet_router)
+app.include_router(query_routes)
 # ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
 init_history_collection()
 from fastapi import BackgroundTasks
