@@ -40,6 +40,7 @@ import json
 import uuid
 from fastapi import HTTPException
 from fastapi.responses import StreamingResponse
+from score.caculate_score_final import normalize_results,rerank_and_cut
 app = FastAPI(
     docs_url=None,
     swagger_ui_oauth2_redirect_url=None,
@@ -321,7 +322,91 @@ def api_querySummeryHistory(
     except Exception as e:
         print(f"Exception Get2! {e} ")
         raise HTTPException(status_code=500, detail=f"Request processing failed: {str(e)}")
+#https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
+@app.post("/api/queryScore", response_model=QueryResponse)
+async def queryScore_endpoint(request: QueryRequest):
+    """
+    پردازش سوال فنی و بازگشت پاسخ RAG-based
 
+    - **query**: سوال فنی تکنسین
+    - **limit**: تعداد اسناد مرتبط (پیش‌فرض: 5)
+    - **temperature**: دمای مدل (پیش‌فرض: 0.1)
+    - **use_hybrid**: استفاده از hybrid search (dense + sparse)
+    - **filters**: فیلترهای metadata (doc_ids, tags, keywords, date)
+    """
+    try:
+        # انتخاب نوع جستجو
+        if request.use_hybrid:
+            results = hybrid_search(
+                query=request.query,
+                limit=request.limit,
+                filters=request.filters
+            )
+            search_mode = "hybrid"
+        else:
+            query_vector = embed_query(request.query)
+            results = search(
+                query_vector=query_vector,
+                limit=request.limit,
+                filters=request.filters
+            )
+            print("QrantResult:  ",type(results))
+            search_mode = "dense"
+  
+        if not results:
+            raise HTTPException(
+                status_code=404,
+                detail="هیچ سند مرتبطی یافت نشد"
+            )
+        normalized = normalize_results(results)
+
+        # rerank و انتخاب 5 تای برتر
+        scored_results = rerank_and_cut(query=request.query, results=normalized, top_k=5)
+        # تولید پاسخ
+        answer = answer_with_rag(request.query, scored_results, temperature=request.temperature)
+
+        # فرمت sources با metadata
+        sources = []
+        for r in scored_results:
+
+            if isinstance(r, dict):
+                payload = r["payload"]
+                rid = r["id"]
+                score = r["score"]
+            else:
+                payload = r.payload
+                rid = r.id
+                score = r.score
+
+            sources.append(
+                SearchResult(
+                    id=str(rid),
+                    score=score,
+                    text=payload.get("text", "")[:200] + "...",
+                    doc_id=payload.get("doc_id"),
+                    title=payload.get("title"),
+                    heading=payload.get("heading"),
+                    date=payload.get("date"),
+                    tags=payload.get("tags"),
+                    keywords=payload.get("keywords"),
+                    source_file=payload.get("source_file")
+                )
+            )
+
+        return QueryResponse(
+            answer=answer,
+            sources=sources,
+            query=request.query,
+            search_mode=search_mode
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"خطا در پردازش درخواست: {str(e)}"
+        )
 #https://gapgpt.app/api/v1/get_chat/token/0c48c8c8-f054-420b-ae8f-070479e92789
 @app.post("/api/query1", response_model=QueryResponse)
 async def query1_endpoint(request: QueryRequest):
@@ -404,6 +489,87 @@ async def query1_endpoint(request: QueryRequest):
             status_code=500,
             detail=f"خطا در پردازش درخواست: {str(e)}"
         )
+@app.post("/api/queryWithRank", response_model=QueryResponse)
+async def queryWithRank_endpoint(request: QueryRequest):
+    """
+    پردازش سوال فنی و بازگشت پاسخ RAG-based
+
+    - **query**: سوال فنی تکنسین
+    - **limit**: تعداد اسناد مرتبط (پیش‌فرض: 5)
+    - **temperature**: دمای مدل (پیش‌فرض: 0.1)
+    - **use_hybrid**: استفاده از hybrid search (dense + sparse)
+    - **filters**: فیلترهای metadata (doc_ids, tags, keywords, date)
+    """
+    try:
+        # انتخاب نوع جستجو
+        if request.use_hybrid:
+            results = hybrid_search(
+                query=request.query,
+                limit=request.limit,
+                filters=request.filters
+            )
+            search_mode = "hybrid"
+        else:
+            query_vector = embed_query(request.query)
+            results = search(
+                query_vector=query_vector,
+                limit=request.limit,
+                filters=request.filters
+            )
+            print("QrantResult:  ",type(results))
+            search_mode = "dense"
+  
+        if not results:
+            raise HTTPException(
+                status_code=404,
+                detail="هیچ سند مرتبطی یافت نشد"
+            )
+        reranked_results = rerank_results(request.query, results)
+        # تولید پاسخ
+        answer = answer_with_rag(request.query, reranked_results, temperature=request.temperature)
+         
+        # فرمت sources با metadata
+        sources = []
+        for r in results:
+
+            if isinstance(r, dict):
+                payload = r["payload"]
+                rid = r["id"]
+                score = r["score"]
+            else:
+                payload = r.payload
+                rid = r.id
+                score = r.score
+
+            sources.append(
+                SearchResult(
+                    id=str(rid),
+                    score=score,
+                    text=payload.get("text", "")[:200] + "...",
+                    doc_id=payload.get("doc_id"),
+                    title=payload.get("title"),
+                    heading=payload.get("heading"),
+                    date=payload.get("date"),
+                    tags=payload.get("tags"),
+                    keywords=payload.get("keywords"),
+                    source_file=payload.get("source_file")
+                )
+            )
+
+        return QueryResponse(
+            answer=answer,
+            sources=sources,
+            query=request.query,
+            search_mode=search_mode
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"خطا در پردازش درخواست: {str(e)}"
+        )        
 @app.post("/api/query/stream")
 async def query_stream_endpoint(
     request: QueryRequestStream,

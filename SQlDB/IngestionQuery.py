@@ -202,13 +202,15 @@ def load_chunks_from_dbByDocId(docId):
     conn_str =connection_string
 
     query = f"""
-        SELECT id, JsonData
+        SELECT id, JsonData,
+       replace(replace(LEFT(path, LEN(path) - CHARINDEX('/', REVERSE(path))),'data','media'),'/app/','')+'/img_folder'  AS folder_path
         FROM dbo.LLM_Documnts
         WHERE  id = ? 
         """
     #{docId}
     chunks = []
     table_id=0
+    imagepath=''
     try:
         with DatabaseConnection(conn_str) as cursor:
     #with pyodbc.connect(conn_str) as conn:
@@ -218,7 +220,7 @@ def load_chunks_from_dbByDocId(docId):
             for row in cursor:
                 table_id = row.id
                 json_data = row.JsonData
-
+                imagepath=row.folder_path
                 # اگر JSON به صورت string ذخیره شده
                 data = json.loads(json_data)
 
@@ -231,11 +233,11 @@ def load_chunks_from_dbByDocId(docId):
                 chunks.append(chunk)
              
               
-        return chunks,table_id
+        return chunks,table_id,imagepath
     except Exception as e:
         print(f"Error in load_chunks_from_dbByDocId: {e}")
         traceback.print_exc()
-        return [], table_id
+        return [], table_id,imagepath
 def SetIsActiveTrue(target_file_path, Doc_id): 
     file_name = os.path.basename(target_file_path)
     # conn = None

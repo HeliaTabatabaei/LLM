@@ -1,6 +1,10 @@
+from typing import Any, Dict, List
+
+
 def calculate_final_scores(
     query: str,
-    results: list,
+    results: list
+ 
 
 ):
 
@@ -98,3 +102,44 @@ def calculate_final_scores(
 
 
     return scored_results
+
+def rerank_and_cut(query: str, results: List[Dict[str, Any]], top_k: int = 5) -> List[Dict[str, Any]]:
+    scored = calculate_final_scores(query=query, results=results)
+    return scored[:top_k]
+def normalize_results(results: List[Any]) -> List[Dict[str, Any]]:
+    """
+    خروجی‌های Qdrant (ScoredPoint) یا خروجی hybrid (dict) را
+    به dict استاندارد تبدیل می‌کند.
+    خروجی هر آیتم:
+      {
+        "id": ...,
+        "score": float,
+        "payload": dict,
+        "text": str,
+        "heading": str,
+        "keywords": list[str]
+      }
+    """
+    normalized: List[Dict[str, Any]] = []
+
+    for r in results:
+        if isinstance(r, dict):
+            rid = r.get("id")
+            score = float(r.get("score", 0) or 0)
+            payload = r.get("payload") or {}
+        else:
+            # ScoredPoint
+            rid = getattr(r, "id", None)
+            score = float(getattr(r, "score", 0) or 0)
+            payload = getattr(r, "payload", None) or {}
+
+        normalized.append({
+            "id": rid,
+            "score": score,
+            "payload": payload,
+            "text": (payload.get("text") or ""),
+            "heading": (payload.get("heading") or ""),
+            "keywords": (payload.get("keywords") or []),
+        })
+
+    return normalized
