@@ -112,11 +112,11 @@ class DocumentAgent:
             messages=messages,
             temperature=0,
         )
-
+        print(F"response: {response}",flush=True)
         raw_content = (
             response.content or ""
         ).strip()
-
+      
 
         # اگر مدل markdown json برگرداند
         if raw_content.startswith("```"):
@@ -169,6 +169,40 @@ class DocumentAgent:
         # =====================
 
 
+    def prepare_chunks(
+        self,
+        chunks: list[Any],
+        ) -> list[dict[str, Any]]:
+
+        output = []
+
+        for chunk in chunks:
+            output.append(
+                {
+                    "id": str(chunk.id),
+                    "score": chunk.score,
+                    "text": chunk.payload.get(
+                        "text",
+                        ""
+                    ),
+                    "title": chunk.payload.get(
+                        "title",
+                        ""
+                    ),
+                    "heading": chunk.payload.get(
+                        "heading",
+                        ""
+                    ),
+                    "source_file": chunk.payload.get(
+                        "source_file",
+                        ""
+                    ),
+                }
+            )
+
+        return output
+
+
 
     def handle_stream(
         self,
@@ -187,41 +221,41 @@ class DocumentAgent:
             limit=20,
             filters=None,
         )
-
+        print("HH0",flush=True)
         if not results:
             on_chunk(
                 "هیچ سند مرتبطی یافت نشد."
             )
             return
+        print("HH1",flush=True)
 
-
-        reranked_results = self.rag_service.rerank_results(
-            message,
-            results,
-        )
+        # reranked_results = self.rag_service.rerank_results(
+        #     message,
+        #     results,
+        # )
 
 
         analysis = self.analyze(
             message=message,
-            chunks=reranked_results,
+            chunks=self.prepare_chunks(results),
             history=history,
         )
-
+        print("HH2",flush=True)
 
         decision = analysis.get(
             "decision"
         )
-
+        print("HH3",flush=True)
 
         if decision == "answer":
 
             self.rag_service.answer_with_rag_stream(
                 query=message,
-                results=reranked_results,
+                results=results,
                 temperature=temperature,
                 on_chunk=on_chunk,
             )
-
+            print("HH4",flush=True)
             return
 
 
@@ -237,6 +271,9 @@ class DocumentAgent:
                 on_chunk(
                     "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
                 )
+
+            print("HH4")
+
 
             return
 
