@@ -1,13 +1,11 @@
+from openai import OpenAI
 
 from .openai_provider import OpenAIProvider
 
-from .generic_provider import GenericProvider
 
 
 PROVIDER_MAP = {
     "openai": OpenAIProvider,
- 
-   
 }
 
 
@@ -16,16 +14,28 @@ def create_provider(
     base_uri: str,
     api_key: str,
     model: str,
-    auth_header_name: str,
-    auth_token_prefix: str,
-    api_path: str,
+    embed_model: str,
 ):
-    provider_cls = PROVIDER_MAP.get(provider_name.lower(), GenericProvider)
+    provider_cls = PROVIDER_MAP.get(
+        provider_name.lower(),
+        OpenAIProvider,
+    )
+
+    if provider_cls is OpenAIProvider:
+        client = OpenAI(
+            base_url=base_uri,
+            api_key=api_key,
+        )
+
+        return provider_cls(
+            client=client,
+            chat_model=model,
+            embedding_model=embed_model,
+        )
+
     return provider_cls(
         base_uri=base_uri,
         api_key=api_key,
         model=model,
-        auth_header_name=auth_header_name,
-        auth_token_prefix=auth_token_prefix,
-        api_path=api_path,
+        embed_model=embed_model,
     )
