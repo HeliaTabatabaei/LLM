@@ -208,7 +208,7 @@ Each item must contain:
 - score
 
 Scoring rules:
-- score must be a float between 0.0 and 1.0 
+- score must be a float between 0.0 and 1.0
 - higher score means more relevant
 - first identify the single most relevant document/source for answering the query
 - strongly prefer chunks from that same document/source if they are relevant to the query

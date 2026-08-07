@@ -4,6 +4,7 @@ import time
 import traceback
 
 
+
 from fastapi import Depends, FastAPI, HTTPException
 
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -34,7 +35,8 @@ from typing import Tuple
 import uuid
 from jose import  JWTError, ExpiredSignatureError  
 from API.Wallet_routes import router as wallet_router
-from providers.factory import create_provider
+
+from API.query_routes import router as query_router
 import json
 import uuid
 from fastapi import HTTPException
@@ -64,6 +66,7 @@ MEDIA_ROOT = BASE_DIR / "data"  # مسیر دقیق پوشه داده‌ها
 app.mount("/media", StaticFiles(directory=str(MEDIA_ROOT)), name="media")
 app.include_router(admin_router)
 app.include_router(wallet_router)
+app.include_router(query_router)
 # ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
 init_history_collection()
 from fastapi import BackgroundTasks

@@ -1,45 +1,64 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
-from typing import Callable
+from dataclasses import dataclass, field
+from typing import Any, Callable
+
+
+@dataclass
+class ChatResponse:
+    """
+    پاسخ استاندارد متد chat.
+    """
+
+    content: str
+    usage: dict[str, int] = field(default_factory=dict)
+    meta: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class StreamEvent:
+    """
+    رویداد استاندارد برای streaming.
+    """
+
+    type: str
+    content: Any = None
+    meta: dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "type": self.type,
+            "content": self.content,
+        }
+
+        if self.meta:
+            payload["meta"] = self.meta
+
+        return payload
+
+
+StreamCallback = Callable[[dict[str, Any]], None]
 
 
 class LLMProvider(ABC):
-    def __init__(
-        self,
-        base_uri: str,
-        api_key: str,
-        model: str,
-        auth_header_name: str,
-        auth_token_prefix: str,
-        api_path: str,
-    ):
-        self.base_uri = base_uri.rstrip("/") if base_uri else ""
-        self.api_key = api_key
-        self.model = model
-        self.auth_header_name = auth_header_name
-        self.auth_token_prefix = auth_token_prefix
-        self.api_path = api_path
-
-    def _build_auth_value(self) -> str:
-        prefix = self.auth_token_prefix or ""
-        if prefix.lower() == "bearer" and not prefix.endswith(" "):
-            prefix = f"{prefix} "
-        return f"{prefix}{self.api_key}" if prefix else self.api_key
-
     @abstractmethod
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float) -> str:
+    def chat(
+        self,
+        messages: list[dict[str, str]],
+        temperature: float = 0.3,
+    ) -> ChatResponse:
         raise NotImplementedError
-    
+
     @abstractmethod
     def chat_stream(
         self,
-        system_prompt: str,
-        user_prompt: str,
-        temperature: float,
-        on_chunk: Callable[[str], None],
+        messages: list[dict[str, str]],
+        on_chunk: StreamCallback,
+        temperature: float = 0.3,
     ) -> None:
-        """
-        Stream the chat response. Call `on_chunk(chunk)` for every received text chunk.
-        Implementations should perform network streaming and invoke the callback
-        as soon as each piece of text is available.
-        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def embed_query(self, text: str) -> list[float]:
         raise NotImplementedError
