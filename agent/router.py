@@ -1,55 +1,64 @@
-from fastapi import BackgroundTasks
-from fastapi.responses import StreamingResponse
+from __future__ import annotations
+
+from typing import Any, Callable
+
+from providers.base import LLMProvider
+from .chat_agent import ChatAgent
+from .document_agent import DocumentAgent
+
+
+ChunkCallback = Callable[[Any], None]
 
 
 class RouterAgent:
-    STREAM_HEADERS = {
-        "Cache-Control": "no-cache",
-        "Connection": "keep-alive",
-        "X-Accel-Buffering": "no",
-    }
-
     def __init__(
         self,
-        llm,
-        chat_agent,
-        document_agent,
+        llm: LLMProvider,
+        chat_agent: ChatAgent,
+        document_agent: DocumentAgent,
     ):
         self.llm = llm
         self.chat_agent = chat_agent
         self.document_agent = document_agent
 
     def classify(self, query: str) -> str:
-        system_prompt = """
-You are a classifier.
+        """
+        تشخیص می‌دهد پرسش عمومی است یا فنی.
+        خروجی فقط یکی از دو مقدار زیر است:
 
-Classify the user's query as exactly one of these two labels:
+        technical
+        general
+        """
 
-1. technical
-   Use this label only if the query is related to banking equipment
-   or its software/services, including:
+        messages = [
+            {
+                "role": "system",
+                "content": (
+                    "Classify the user query as exactly one label.\n\n"
 
-   ATM, kiosk, self-service banking machines, card reader, pinpad,
-   printer, dispenser, recycler, cash handling, device errors,
-   troubleshooting, installation, setup, configuration, maintenance,
-   monitoring, or operation.
+                    "technical: ATM, banking equipment, device errors, "
+                    "troubleshooting, installation, configuration, maintenance, "
+                    "printer, pinpad, dispenser, card reader, cash handling, "
+                    "or operation.\n\n"
 
-2. general
-   Use this label for anything else, including:
-   greetings, small talk, thanks, goodbyes, and any query not related
-   to banking equipment.
+                    "general: greetings, small talk, unrelated questions, "
+                    "or anything not technical.\n\n"
 
-Reply with one word only:
-technical
-or
-general
-"""
+                    "Return exactly one word: technical or general."
+                ),
+            },
+            {
+                "role": "user",
+                "content": query,
+            },
+        ]
 
-        result = self.llm.chat(
-            system_prompt=system_prompt,
-            user_prompt=query,
+        response = self.llm.chat(
+            messages=messages,
             temperature=0,
-        ).strip().lower()
+        )
+
+        result = (response.content or "").strip().lower()
 
         if result not in {"technical", "general"}:
             return "technical"
@@ -59,43 +68,28 @@ general
     def handle_stream(
         self,
         query: str,
-        user_key: str,
-        background_tasks: BackgroundTasks,
+        on_chunk: ChunkCallback,
         temperature: float = 0.1,
-    ) -> StreamingResponse:
-        stream = self._route_stream(
-            query=query,
-            user_key=user_key,
-            background_tasks=background_tasks,
-            temperature=temperature,
-        )
+    ) -> None:
+        """
+        پرسش را به Agent مناسب هدایت می‌کند.
 
-        return StreamingResponse(
-            stream,
-            media_type="text/event-stream",
-            headers=self.STREAM_HEADERS,
-        )
+        این متد دیگر StreamingResponse نمی‌سازد.
+        تمام chunkها از طریق on_chunk به endpoint ارسال می‌شوند.
+        """
 
-    def _route_stream(
-        self,
-        query: str,
-        user_key: str,
-        background_tasks: BackgroundTasks,
-        temperature: float,
-    ):
         intent = self.classify(query)
 
         if intent == "general":
-            return self.chat_agent.handle_stream(
-                query=query,
-                user_key=user_key,
-                background_tasks=background_tasks,
+            self.chat_agent.answer_stream(
+                message=query,
+                on_chunk=on_chunk,
                 temperature=temperature,
             )
+            return
 
-        return self.document_agent.handle_stream(
-            query=query,
-            user_key=user_key,
-            background_tasks=background_tasks,
+        self.document_agent.handle_stream(
+            message=query,
+            on_chunk=on_chunk,
             temperature=temperature,
         )

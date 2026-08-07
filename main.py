@@ -4,6 +4,7 @@ import time
 import traceback
 
 
+
 from fastapi import Depends, FastAPI, HTTPException
 
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -11,7 +12,6 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_swagger import patch_fastapi
 
-from API import query_routes
 from API.admin_routes import router as admin_router
 
 from Models.mainModels import BulkChargeRequest, QueryRequest, QueryRequestStream, QueryRequestWithHistory, QueryResponse, QueryResponseHistory, SearchResult
@@ -35,7 +35,8 @@ from typing import Tuple
 import uuid
 from jose import  JWTError, ExpiredSignatureError  
 from API.Wallet_routes import router as wallet_router
-from providers.factory import create_provider
+
+from API.query_routes import router as query_router
 import json
 import uuid
 from fastapi import HTTPException
@@ -62,11 +63,10 @@ from pathlib import Path, PureWindowsPath
 BASE_DIR = Path(__file__).resolve().parent # تعریف مسیر پایه پروژه
 MEDIA_ROOT = BASE_DIR / "data"  # مسیر دقیق پوشه داده‌ها
 
-
 app.mount("/media", StaticFiles(directory=str(MEDIA_ROOT)), name="media")
 app.include_router(admin_router)
 app.include_router(wallet_router)
-app.include_router(query_routes)
+app.include_router(query_router)
 # ایجاد کالکشن تاریخچه اگر وجود نداشته باشد
 init_history_collection()
 from fastapi import BackgroundTasks
@@ -373,15 +373,17 @@ async def queryScore_endpoint(request: QueryRequest):
                 payload = r["payload"]
                 rid = r["id"]
                 score = r["score"]
+                score_diff=r["score_diff"]
             else:
                 payload = r.payload
                 rid = r.id
                 score = r.score
-
+                score_diff=r["score_diff"]
             sources.append(
                 SearchResult(
                     id=str(rid),
                     score=score,
+                    score_diff=score_diff,
                     text=payload.get("text", "")[:200] + "...",
                     doc_id=payload.get("doc_id"),
                     title=payload.get("title"),
