@@ -59,7 +59,8 @@ class RouterAgent:
         )
 
         result = (response.content or "").strip().lower()
-
+        print("Resuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuut",flush=True)
+        print(result,flush=True)
         if result not in {"technical", "general"}:
             return "technical"
 

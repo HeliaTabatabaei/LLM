@@ -165,14 +165,14 @@ async def stream_query_endpoint(
                 continue
 
             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
-            if isinstance(chunk, dict) and chunk.get("type") == "meta":
-                final_response_id = chunk.get("response_id")
-                final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
-                yield (
-                    "event: meta\n"
-                    f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
-                )
-                continue
+            # if isinstance(chunk, dict) and chunk.get("type") == "meta":
+            #     # final_response_id = chunk.get("response_id")
+            #     # final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
+            #     # yield (
+            #     #     "event: meta\n"
+            #     #     f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
+            #     # )
+            #     continue
 
             # ۳. مدیریت توکن‌های متنی (Tokens)
             if isinstance(chunk, dict) and chunk.get("type") == "token":
@@ -187,15 +187,15 @@ async def stream_query_endpoint(
                 "event: token\n"
                 f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
             )
-        if final_usage and final_response_id:
-            background_tasks.add_task(
-                InsertIntoWallet,
-                final_usage.get("total_tokens", 0) * -1,
-                final_usage.get("output_tokens", 0), # output_tokens
-                final_usage.get("input_tokens", 0),     # input_tokens
-                user_key,
-                final_response_id
-            )
+        # if final_usage and final_response_id:
+        #     background_tasks.add_task(
+        #         InsertIntoWallet,
+        #         final_usage.get("total_tokens", 0) * -1,
+        #         final_usage.get("output_tokens", 0), # output_tokens
+        #         final_usage.get("input_tokens", 0),     # input_tokens
+        #         user_key,
+        #         final_response_id
+        #     )
                                
         # ارسال پایان قطعی استریم
         yield "event: done\ndata: [DONE]\n\n"

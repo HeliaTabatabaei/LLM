@@ -1,21 +1,46 @@
-from __future__ import annotations
+سوال کاربر:
+{query}
 
-import json
-from typing import Any
-
-from providers.base import LLMProvider, StreamCallback
-
-
-class DocumentAgent:
-    def __init__(self, llm_provider: LLMProvider, rag_service):
-        self.llm_provider = llm_provider
-        self.rag_service = rag_service
-
-    # -------------------
+اسناد بازیابی شده:
+{chunks}
 
 
+شما یک تصمیم‌گیرنده فنی برای پشتیبانی تجهیزات بانکی هستید.
 
-    
+سوال کاربر و اسناد بازیابی شده را تحلیل کنید.
+
+وظایف شما:
+
+1. بررسی کنید آیا اسناد بازیابی شده اطلاعات کافی برای پاسخ‌دهی ایمن و دقیق دارند یا خیر.
+2. تشخیص دهید آیا قبل از پاسخ دادن، نیاز است از کاربر اطلاعات بیشتری درخواست شود یا خیر.
+3. اگر نیاز به پرسیدن سوال تکمیلی وجود دارد، فقط حداقل اطلاعات فنی ضروری را درخواست کنید.
+
+
+قوانین:
+
+- اگر اسناد مستقیماً مشکل کاربر را توضیح می‌دهند، تصمیم را روی "answer" قرار دهید.
+- اگر اسناد مرتبط هستند اما برای پاسخ دقیق اطلاعات مهمی مانند مدل دستگاه، کد خطا یا نوع تجهیز کم است، از کاربر اطلاعات تکمیلی بخواهید.
+- اگر سوال کاربر کوتاه یا کلی است ولی اسناد بازیابی شده تطابق قوی با موضوع دارند، سوال تکمیلی نپرسید و پاسخ دهید.
+- فقط به دلیل کوتاه بودن سوال کاربر درخواست توضیح بیشتر نکنید.
+- در مشکلات مربوط به ATM/POS، نبود اطلاعاتی مثل مدل دستگاه یا کد خطا ممکن است نیاز به پرسیدن سوال تکمیلی داشته باشد.
+- هرگز راهکار فنی یا علت خرابی را بدون داشتن شواهد کافی حدس نزنید.
+
+
+فقط JSON برگردانید:
+
+{
+  "decision": "answer | clarify | insufficient",
+  "confidence": 0-100,
+  "missing_information": [
+    "اطلاعات ضروری که وجود ندارد"
+  ],
+  "clarification_question": "سوال تکمیلی از کاربر یا null"
+}
+
+
+
+
+
 
 def analyze(
     self,
@@ -159,53 +184,3 @@ Return JSON only:
             "missing_information": [],
             "clarification_question": None,
         }
-
-
-
-
-
-
-
-    # =====================
-
-
-
-    def handle_stream(
-        self,
-        message: str,
-        on_chunk: StreamCallback,
-        history: list[dict[str, Any]] | None = None,
-        temperature: float = 0.1,
-    ) -> None:
-
-        query_vector = self.llm_provider.embed_query(message)
-        results = self.rag_service.search(
-            query_vector=query_vector,
-            limit=20,
-            filters=None,
-        )
-
-        # if not results:
-        #     on_chunk("هیچ سند مرتبطی یافت نشد.")
-        #     return
-
-        reranked_results = self.rag_service.rerank_results(
-            message,
-            results,
-        )
-
-        analys=self.analyze(message,reranked_results,history)
-        if analyze.get("desiction")== "answer":
-             self.rag_service.answer_with_rag_stream(
-                        query=message,
-                        results=reranked_results,
-                        temperature=temperature,
-                        on_chunk=on_chunk,
-                    )
-        elif analyze.get("desiction")=="clarify":
-            return clarification_question
-        else :
-            return "not found"
-
-        # فراخوانی با الگوی استاندارد callback-based بدون پارامترهای اضافه
-      
