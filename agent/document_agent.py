@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 from providers.base import LLMProvider, StreamCallback
@@ -75,14 +76,14 @@ class DocumentAgent:
     
     Return JSON only:
     
-    {
+    {{
       "decision": "answer | clarify | insufficient",
       "confidence": 0-100,
       "missing_information": [
           "missing technical information"
       ],
       "clarification_question": "question for user or null"
-    }
+    }}
     """
 
         messages = [
@@ -112,59 +113,52 @@ class DocumentAgent:
             messages=messages,
             temperature=0,
         )
-        print(F"response: {response}",flush=True)
-        raw_content = (
-            response.content or ""
-        ).strip()
-      
-
-        # اگر مدل markdown json برگرداند
-        if raw_content.startswith("```"):
-            raw_content = (
-                raw_content
-                .replace("```json", "")
-                .replace("```", "")
-                .strip()
-            )
-
+        print(f"response: {response}", flush=True)
+        raw_content = (response.content or "").strip()
+        usage = getattr(response, "usage", {}) or {}
+        # تلاش برای استخراج دقیق بلاک JSON
+        json_match = re.search(r'\{.*\}', raw_content, re.DOTALL)
+        if json_match:
+            raw_content = json_match.group(0)
+        else:
+            print(f"Failed to extract JSON from response: {raw_content}", flush=True)
+            raw_content = ""
 
         try:
             result = json.loads(raw_content)
+            
+            valid_decisions = {"answer", "clarify", "insufficient"}
+            decision = result.get("decision")
+            print(f"Parsed decision: {decision}", flush=True)
+            
+            if decision not in valid_decisions:
+                decision = "insufficient"
 
             return {
-                "decision": result.get(
-                    "decision",
-                    "insufficient"
-                ),
-
-                "confidence": result.get(
-                    "confidence",
-                    0
-                ),
-
-                "missing_information": result.get(
-                    "missing_information",
-                    []
-                ),
-
-                "clarification_question": result.get(
-                    "clarification_question"
-                ),
+                "decision": decision,
+                "confidence": result.get("confidence", 0),
+                "missing_information": result.get("missing_information", []),
+                "clarification_question": result.get("clarification_question"),
+                "usage": {
+                "input_tokens": usage.get("input_tokens", 0),
+                "output_tokens": usage.get("output_tokens", 0),
+                "total_tokens": usage.get("total_tokens", 0),
+    },
             }
 
-        except Exception:
+        except (json.JSONDecodeError, Exception) as e:
+            print(f"Parsing error: {e}", flush=True)
             return {
                 "decision": "insufficient",
                 "confidence": 0,
                 "missing_information": [],
                 "clarification_question": None,
+                "usage": {
+                "input_tokens": usage.get("input_tokens", 0),
+                "output_tokens": usage.get("output_tokens", 0),
+                "total_tokens": usage.get("total_tokens", 0),
+    },
             }
-
-
-
-
-
-
 
         # =====================
 
@@ -229,10 +223,11 @@ class DocumentAgent:
             return
         print("HH1",flush=True)
 
-        # reranked_results = self.rag_service.rerank_results(
-        #     message,
-        #     results,
-        # )
+        # # reranked_results
+        # #= self.rag_service.rerank_results(
+        # #     message,
+        # #     results,
+        # # )
 
 
         analysis = self.analyze(
@@ -258,7 +253,13 @@ class DocumentAgent:
             print("HH4",flush=True)
             return
 
-
+        usage_data = analysis.get("usage")
+        if usage_data:
+            on_chunk({
+                "type": "meta",
+                "response_id": "1111",
+                "usage": usage_data
+            })
         if decision == "clarify":
 
             question = analysis.get(
@@ -266,11 +267,11 @@ class DocumentAgent:
             )
 
             if question:
-                on_chunk(question)
+                on_chunk({"type": "token", "content": question })
             else:
-                on_chunk(
-                    "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
-                )
+                on_chunk({"type": "token", "content":  "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
+                })
+            
 
             print("HH4")
 
@@ -278,8 +279,7 @@ class DocumentAgent:
             return
 
 
-        on_chunk(
-            "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
-        )
+        on_chunk({"type": "token", "content":  "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
+                })
 
         return

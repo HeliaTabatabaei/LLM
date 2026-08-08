@@ -72,13 +72,7 @@ class RouterAgent:
         on_chunk: ChunkCallback,
         temperature: float = 0.1,
     ) -> None:
-        """
-        پرسش را به Agent مناسب هدایت می‌کند.
-
-        این متد دیگر StreamingResponse نمی‌سازد.
-        تمام chunkها از طریق on_chunk به endpoint ارسال می‌شوند.
-        """
-
+      
         intent = self.classify(query)
 
         if intent == "general":

@@ -20,7 +20,7 @@ from RAG_Management.QdrantManagment import checkQudrant, hybrid_search, init_his
 from RAG_Management.answerWithRAG import answer_general_stream, answer_stream_only_llm, answer_with_rag, answer_with_rag_WithImage, answer_with_rag_stream, answer_with_rag_with_summary, answer_with_rag_withHistory, answer_with_rag_withHistoryAndVectorDB
 from SQlDB.IngestionQuery import bulk_charge_transactions
 from SQlDB.wallet import InsertIntoWallet
-from Utility.utiliy import get_current_user_payload
+from Utility.utiliy import  get_current_user_payload
 from RAG_Management.bm25 import PersianBM25Encoder
 import uvicorn
 # import os
@@ -929,3 +929,4 @@ async def query_endpointWithRerank_WithImage(request: QueryRequest):
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+   
