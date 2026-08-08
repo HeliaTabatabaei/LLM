@@ -1,14 +1,28 @@
 import datetime
 import os
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+LOG_DIR = BASE_DIR / "logs"
+LOG_FILE = LOG_DIR / "qa_log.txt"
+
+def append_qa_to_file(question: str, answer: str) -> None:
+    try:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        with LOG_FILE.open("a", encoding="utf-8") as f:
+            f.write("=" * 80 + "\n")
+            f.write(f"Time: {timestamp}\n")
+            f.write(f"Q: {question}\n")
+            f.write(f"A: {answer}\n\n")
+
+        print(f"QA log saved at: {LOG_FILE}", flush=True)
+
+    except Exception as e:
+        print(f"Failed to save QA log: {repr(e)}", flush=True)  
 def log_message(message: str, log_file: str = "app_log.txt"):
-    """
-    یک پیام را به همراه تاریخ و زمان در یک فایل متنی ثبت می‌کند.
-
-    Args:
-        message (str): پیامی که می‌خواهید لاگ شود.
-        log_file (str, optional): نام فایل لاگ. پیش‌فرض "app_log.txt" است.
-    """
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_entry = f"[{timestamp}] {message}\n"
     
@@ -27,15 +41,4 @@ def log_message(message: str, log_file: str = "app_log.txt"):
 
 # --- مثال نحوه استفاده ---
 if __name__ == "__main__":
-    # برای ثبت خطا
-    log_message("خطا: اتصال به پایگاه داده برقرار نشد.", log_file="error_log.txt")
-    
-    # برای ثبت یک رویداد عادی
-    log_message("عملیات ذخیره پیام با موفقیت انجام شد.", log_file="activity_log.txt")
-    
-    # استفاده از نام فایل پیش‌فرض
-    log_message("برنامه شروع به کار کرد.")
-
-    # مثال با شناسه مکالمه
-    conversation_id = "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d"
-    log_message(f"شروع مکالمه با شناسه: {conversation_id}", log_file="chat_log.txt")
+   append_qa_to_file("tttttt", "mmmmmmm")

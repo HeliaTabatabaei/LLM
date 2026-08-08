@@ -6,6 +6,7 @@ from queue import Queue
 from threading import Thread
 from typing import Any
 
+
 from fastapi import APIRouter, BackgroundTasks
 from fastapi.responses import StreamingResponse
 from qdrant_client import QdrantClient
@@ -14,6 +15,7 @@ from Models.mainModels import QueryRequestStream
 from SQlDB.wallet import InsertIntoWallet
 from config import QDRANT_HOST, QDRANT_PORT
 
+from log import append_qa_to_file
 from providers.factory import create_provider
 
 from agent.chat_agent import ChatAgent
@@ -96,30 +98,14 @@ async def stream_query_endpoint(
     request: QueryRequestStream,
     background_tasks: BackgroundTasks
 ):
-    """
-    Endpoint نهایی SSE.
-
-    چون router دارای prefix="/api" است،
-    مسیر نهایی این endpoint برابر است با:
-
-    POST /api/StreamQuery
-    """
+   
     user_key='9a6b7ba9-abfe-4207-97fe-02a1da750cb7'
     chunks: Queue[Any] = Queue()
     
-    def on_chunk(chunk: Any) -> None:
-        """
-        دریافت chunk از ChatAgent یا DocumentAgent
-        و قرار دادن آن در صف SSE.
-        """
-
+    def on_chunk(chunk: Any) -> None:    
         chunks.put(chunk)
 
     def produce() -> None:
-        """
-        اجرای RouterAgent در thread جداگانه.
-        """
-
         try:
             router_agent.handle_stream(
                 query=request.query,
@@ -146,9 +132,11 @@ async def stream_query_endpoint(
     ).start()
 
     def event_stream():
+        
         """
         تبدیل chunkهای صف به فرمت SSE با تفکیک نوع رویداد.
         """
+        answer_parts = []
         while True:
             chunk = chunks.get()
 
@@ -165,38 +153,63 @@ async def stream_query_endpoint(
                 continue
 
             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
-            # if isinstance(chunk, dict) and chunk.get("type") == "meta":
-            #     # final_response_id = chunk.get("response_id")
-            #     # final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
-            #     # yield (
-            #     #     "event: meta\n"
-            #     #     f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
-            #     # )
-            #     continue
+            if isinstance(chunk, dict) and chunk.get("type") == "meta":
+                print("ssssssssssssssssss",flush=True)
+                final_response_id = chunk.get("response_id")
+                final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
+                print(final_usage,flush=True)
+                yield (
+                    "event: meta\n"
+                    f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
+                )
+                continue
 
             # ۳. مدیریت توکن‌های متنی (Tokens)
             if isinstance(chunk, dict) and chunk.get("type") == "token":
-                # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)
+                print("ttttttttttttttttt",flush=True)
+                text = chunk.get("content", "")
+                answer_parts.append(text)
                 payload = {"text": chunk.get("content", "")}
+                # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)
+             
             elif isinstance(chunk, dict):
-                payload = chunk
+                print("hhhhhhhhhhh",flush=True)
+                text = chunk.get("text")
+                if text:
+                    answer_parts.append(str(text))
+                    payload = chunk
             else:
-                payload = {"text": str(chunk)}
+                print("eeeeeeeeeeeeeeeeeee",flush=True)
+                text = str(chunk)
+                answer_parts.append(text)
+                payload = {"text": text}
 
             yield (
                 "event: token\n"
                 f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
             )
-        # if final_usage and final_response_id:
-        #     background_tasks.add_task(
-        #         InsertIntoWallet,
-        #         final_usage.get("total_tokens", 0) * -1,
-        #         final_usage.get("output_tokens", 0), # output_tokens
-        #         final_usage.get("input_tokens", 0),     # input_tokens
-        #         user_key,
-        #         final_response_id
-        #     )
-                               
+        final_answer = "".join(answer_parts).strip()
+        print(f"append_qa_to_file", flush=True)   
+      
+    # ذخیره سؤال و جواب در فایل
+        try:
+           
+            append_qa_to_file(
+            question=request.query,
+            answer=final_answer         
+        )
+        except Exception as e:
+            print(f"Failed to save QA log: {e}", flush=True)    
+        if final_usage and final_response_id:
+            print("ssssssssssssssssss2222",flush=True)          
+            background_tasks.add_task(
+                InsertIntoWallet,
+                final_usage.get("total_tokens", 0) * -1,
+                final_usage.get("output_tokens", 0), # output_tokens
+                final_usage.get("input_tokens", 0),     # input_tokens
+                user_key,
+                final_response_id
+            )                              
         # ارسال پایان قطعی استریم
         yield "event: done\ndata: [DONE]\n\n"
     return StreamingResponse(
