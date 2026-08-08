@@ -20,9 +20,9 @@ class DocumentAgent:
 
     def analyze(
         self,
-        message: str,
+        message: str,     
         chunks: list[dict[str, Any]],
-        history: list[dict[str, Any]] | None = None,
+        history : str | None = None
     ) -> dict[str, Any]:
 
         system_prompt = """
@@ -202,8 +202,8 @@ class DocumentAgent:
         self,
         message: str,
         on_chunk: StreamCallback,
-        history: list[dict[str, Any]] | None = None,
         temperature: float = 0.1,
+        history: str | None = None,
     ) -> None:
 
         query_vector = self.llm_provider.embed_query(
@@ -211,7 +211,7 @@ class DocumentAgent:
         )
 
         results = self.rag_service.search(
-            query_vector=query_vector,
+            query_vector=query_vector,        
             limit=20,
             filters=None,
         )
@@ -223,16 +223,17 @@ class DocumentAgent:
             return
         print("HH1",flush=True)
 
-        # # reranked_results
-        # #= self.rag_service.rerank_results(
-        # #     message,
-        # #     results,
-        # # )
+        reranked_results= self.rag_service.rerank_results(
+             query=message,
+             results=results,
+             history=history,
+        
+        )
 
 
         analysis = self.analyze(
             message=message,
-            chunks=self.prepare_chunks(results),
+            chunks=self.prepare_chunks(reranked_results),
             history=history,
         )
         print("HH2",flush=True)
@@ -249,6 +250,7 @@ class DocumentAgent:
                 results=results,
                 temperature=temperature,
                 on_chunk=on_chunk,
+                history=history
             )
             print("HH4",flush=True)
             return

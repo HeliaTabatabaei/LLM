@@ -7,7 +7,10 @@ from pydantic import BaseModel, Field
 class QueryRequestStream(BaseModel):
     query: str
     temperature: float = 0.1
-
+class QueryRequestStreamٌwithConversionId(BaseModel):
+    query: str
+    temperature: float = 0.1
+    conversation_id: Optional[str] = None  # اضافه شد
 class SearchFilters(BaseModel):
     """فیلترهای metadata برای جستجو"""
     doc_ids: Optional[List[str]] = Field(None, description="فیلتر بر اساس doc_id")
