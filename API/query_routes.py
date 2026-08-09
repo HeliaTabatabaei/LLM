@@ -352,35 +352,32 @@ async def stream_queryHistory_endpoint(
                     f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
                 )
                 continue
-
+            if isinstance(chunk, dict) and chunk.get("type") == "source_chunks":
+                continue       
             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
             if isinstance(chunk, dict) and chunk.get("type") == "meta":
                 print("ssssssssssssssssss",flush=True)
                 final_response_id = chunk.get("response_id")
                 final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
-                print(final_usage,flush=True)
-                yield (
-                    "event: meta\n"
-                    f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
-                )
+                meta_payload = {
+                    **chunk,
+                    "conversation_id": c_id,}
+                yield ("event: meta\n"f"data: {json.dumps(meta_payload, ensure_ascii=False)}\n\n")
                 continue
-
             # ۳. مدیریت توکن‌های متنی (Tokens)
             if isinstance(chunk, dict) and chunk.get("type") == "token":
-                print("ttttttttttttttttt",flush=True)
                 text = chunk.get("content", "")
                 answer_parts.append(text)
                 payload = {"text": chunk.get("content", "")}
-                # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)
-             
-            elif isinstance(chunk, dict):
-                print("hhhhhhhhhhh",flush=True)
+                # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)            
+            elif isinstance(chunk, dict): 
                 text = chunk.get("text")
                 if text:
                     answer_parts.append(str(text))
                     payload = chunk
+           
             else:
-                print("eeeeeeeeeeeeeeeeeee",flush=True)
+              
                 text = str(chunk)
                 answer_parts.append(text)
                 payload = {"text": text}
@@ -409,7 +406,7 @@ async def stream_queryHistory_endpoint(
         except Exception as e:
             print(f"Failed to save QA log: {e}", flush=True)    
         if final_usage and final_response_id:
-            print("ssssssssssssssssss2222",flush=True)          
+            
             background_tasks.add_task(
                 InsertIntoWallet,
                 final_usage.get("total_tokens", 0) * -1,
@@ -425,3 +422,94 @@ async def stream_queryHistory_endpoint(
         media_type="text/event-stream",
         headers=STREAM_HEADERS,
     )
+@router.post("/QueryHistory")
+async def query_history_endpoint(
+    request: QueryRequestStreamٌwithConversionId,
+    background_tasks: BackgroundTasks
+):
+    user_key = '9a6b7ba9-abfe-4207-97fe-02a1da750cb7'
+
+    history, c_id = get_recent_history(
+        conversation_id=request.conversation_id,
+        query=request.query,
+        user_key=user_key,
+        limit=3
+    )
+
+    answer_parts = []
+    final_usage = {}
+    final_response_id = "1111"
+    source_payload = {"chunks": [], "conversation_id": c_id}
+
+    def on_chunk(chunk: Any) -> None:
+        nonlocal final_usage, final_response_id, source_payload
+
+        if not isinstance(chunk, dict):
+            return
+
+        if chunk.get("type") == "token":
+            content = chunk.get("content", "")
+            if content:
+                answer_parts.append(content)
+
+        elif chunk.get("type") == "meta":
+            final_usage = chunk.get("usage", {})
+            final_response_id = chunk.get("response_id", final_response_id)
+
+        elif chunk.get("type") == "source_chunks":
+            source_payload = {
+                "chunks": chunk.get("chunks", []),
+                "conversation_id": c_id,
+            }
+
+    try:
+        router_agent.handle_stream(
+            query=request.query,
+            user_key=user_key,
+            on_chunk=on_chunk,
+            history=history,
+            temperature=request.temperature,
+        )
+    except Exception as error:
+        return {"status": "error", "message": str(error)}
+
+    final_answer = "".join(answer_parts).strip()
+
+    try:
+        with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
+            save_message(
+                cursor=cursor,
+                conversation_id=c_id,
+                role="assistant",
+                content=final_answer,
+                provider_response_id=final_response_id
+            )
+    except Exception as e:
+        print(f"Database save error: {e}", flush=True)
+
+    try:
+        append_qa_to_file(
+            question=request.query,
+            answer=final_answer
+        )
+    except Exception as e:
+        print(f"Failed to save QA log: {e}", flush=True)
+
+    if final_usage:
+        background_tasks.add_task(
+            InsertIntoWallet,
+            final_usage.get("total_tokens", 0) * -1,
+            final_usage.get("output_tokens", 0),
+            final_usage.get("input_tokens", 0),
+            user_key,
+            final_response_id
+        )
+
+    return {
+        "status": "success",
+        "conversation_id": c_id,
+        "answer": final_answer,
+        "usage": final_usage,
+        "response_id": final_response_id,
+        "source": source_payload
+    }

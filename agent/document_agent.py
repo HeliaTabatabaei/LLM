@@ -198,61 +198,148 @@ class DocumentAgent:
 
 
 
+    # def handle_stream(
+    #     self,
+    #     message: str,
+    #     on_chunk: StreamCallback,
+    #     temperature: float = 0.1,
+    #     history: str | None = None,
+    # ) -> None:
+
+    #     query_vector = self.llm_provider.embed_query(
+    #         message
+    #     )
+
+    #     results = self.rag_service.search(
+    #         query_vector=query_vector,        
+    #         limit=20,
+    #         filters=None,
+    #     )
+    #     print("HH0",flush=True)
+    #     if not results:
+    #         on_chunk(
+    #             "هیچ سند مرتبطی یافت نشد."
+    #         )
+    #         return
+    #     print("HH1",flush=True)
+
+    #     reranked_results= self.rag_service.rerank_results(
+    #          query=message,
+    #          results=results,
+    #          history=history,
+        
+    #     )
+
+
+    #     analysis = self.analyze(
+    #         message=message,
+    #         chunks=self.prepare_chunks(reranked_results),
+    #         history=history,
+    #     )
+    #     print("HH2",flush=True)
+
+    #     decision = analysis.get(
+    #         "decision"
+    #     )
+    #     print("HH3",flush=True)
+
+    #     if decision == "answer":
+
+    #         self.rag_service.answer_with_rag_stream(
+    #             query=message,
+    #             results=results,
+    #             temperature=temperature,
+    #             on_chunk=on_chunk,
+    #             history=history
+    #         )
+    #         print("HH4",flush=True)
+    #         return
+
+    #     usage_data = analysis.get("usage")
+    #     if usage_data:
+    #         on_chunk({
+    #             "type": "meta",
+    #             "response_id": "1111",
+    #             "usage": usage_data
+    #         })
+            
+    #     prepared_chunks = self.prepare_chunks(reranked_results) 
+    #     on_chunk({
+    #         "type": "source_chunks",
+    #         "chunks": prepared_chunks,
+    #           })
+    #     if decision == "clarify":
+
+    #         question = analysis.get(
+    #             "clarification_question"
+    #         )
+
+    #         if question:
+    #             on_chunk({"type": "token", "content": question })
+    #         else:
+    #             on_chunk({"type": "token", "content":  "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
+    #             })
+            
+
+    #         print("HH4")
+
+
+    #         return
+        
+        
+    #     on_chunk({"type": "token", "content":  "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
+    #             })
+
+    #     return
     def handle_stream(
         self,
         message: str,
         on_chunk: StreamCallback,
         temperature: float = 0.1,
-        history: str | None = None,
+        history: list[dict[str, Any]] | None = None,
     ) -> None:
 
-        query_vector = self.llm_provider.embed_query(
-            message
-        )
+        query_vector = self.llm_provider.embed_query(message)
 
         results = self.rag_service.search(
-            query_vector=query_vector,        
+            query_vector=query_vector,
             limit=20,
             filters=None,
         )
-        print("HH0",flush=True)
-        if not results:
-            on_chunk(
-                "هیچ سند مرتبطی یافت نشد."
-            )
-            return
-        print("HH1",flush=True)
 
-        reranked_results= self.rag_service.rerank_results(
-             query=message,
-             results=results,
-             history=history,
-        
+        if not results:
+            on_chunk({"type": "token", "content": "هیچ سند مرتبطی یافت نشد."})
+            return
+
+        reranked_results = self.rag_service.rerank_results(
+            query=message,
+            results=results,
+            history=history,
         )
 
+        prepared_chunks = self.prepare_chunks(reranked_results)
+
+        on_chunk({
+            "type": "source_chunks",
+            "chunks": prepared_chunks,
+        })
 
         analysis = self.analyze(
             message=message,
-            chunks=self.prepare_chunks(reranked_results),
+            chunks=prepared_chunks,
             history=history,
         )
-        print("HH2",flush=True)
 
-        decision = analysis.get(
-            "decision"
-        )
-        print("HH3",flush=True)
+        decision = analysis.get("decision")
 
         if decision == "answer":
-
             self.rag_service.answer_with_rag_stream(
                 query=message,
-                results=results,
+                results=reranked_results,
                 temperature=temperature,
                 on_chunk=on_chunk,
                 history=history
             )
-            print("HH4",flush=True)
             return
 
         usage_data = analysis.get("usage")
@@ -262,26 +349,16 @@ class DocumentAgent:
                 "response_id": "1111",
                 "usage": usage_data
             })
+
         if decision == "clarify":
-
-            question = analysis.get(
-                "clarification_question"
-            )
-
-            if question:
-                on_chunk({"type": "token", "content": question })
-            else:
-                on_chunk({"type": "token", "content":  "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
-                })
-            
-
-            print("HH4")
-
-
+            question = analysis.get("clarification_question")
+            on_chunk({
+                "type": "token",
+                "content": question or "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
+            })
             return
 
-
-        on_chunk({"type": "token", "content":  "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
-                })
-
-        return
+        on_chunk({
+            "type": "token",
+            "content": "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
+        })
