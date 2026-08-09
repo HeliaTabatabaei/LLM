@@ -93,6 +93,7 @@ class RAGService:
         self,
         query: str,
         results: list[Any],
+        history: str | None = None,
     ) -> list[Any]:
         if not results:
             return results
@@ -129,10 +130,12 @@ class RAGService:
             "- do not prefer a result only because it contains generic technical words\n"
             "- if multiple chunks are from the same source and are all relevant, you may score them similarly\n"
             "- do not return explanations\n\n"
+            "- return score higher than 0.7\n\n"
             "Return only valid JSON."
         )
-
+        history_text = history.strip() if history else "No previous conversation."
         user_prompt = (
+            f"Conversation History:\n{history_text}\n\n"
             f"Query:\n{query}\n\n"
             f"Results:\n{json.dumps(candidates, ensure_ascii=False, indent=2)}\n\n"
             "Return only JSON in this format:\n"
@@ -190,7 +193,7 @@ class RAGService:
         results: list[Any],
         on_chunk: StreamCallback,
         temperature: float = 0.1,
-        history: str = "-",
+        history: str | None = None,
     ) -> None:
         context = self._build_context(results)
 
