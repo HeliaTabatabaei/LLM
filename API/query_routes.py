@@ -6,8 +6,8 @@ from queue import Queue
 from threading import Thread
 from typing import Any, Optional, Tuple
 import uuid
-
-
+import time
+import datetime
 from fastapi import APIRouter, BackgroundTasks
 from fastapi.responses import StreamingResponse
 from qdrant_client import QdrantClient
@@ -157,130 +157,9 @@ def build_router_agent() -> RouterAgent:
 router_agent = build_router_agent()
 
 
-# @router.post("/StreamQuery")
-# async def stream_query_endpoint(
-#     request: QueryRequestStream,
-#     background_tasks: BackgroundTasks
-# ):
+
    
-#     user_key='9a6b7ba9-abfe-4207-97fe-02a1da750cb7'
-#     chunks: Queue[Any] = Queue()
-    
-#     def on_chunk(chunk: Any) -> None:    
-#         chunks.put(chunk)
 
-#     def produce() -> None:
-#         try:
-#             router_agent.handle_stream(
-#                 query=request.query,
-#                 on_chunk=on_chunk,
-#                 temperature=request.temperature,
-#             )
-
-#         except Exception as error:
-#             chunks.put(
-#                 {
-#                     "type": "error",
-#                     "error": str(error),
-#                 }
-#             )
-
-#         finally:
-#             # علامت پایان stream
-#             chunks.put(None)
-
-#     # شروع تولید پاسخ در پس‌زمینه
-#     Thread(
-#         target=produce,
-#         daemon=True,
-#     ).start()
-
-#     def event_stream():
-        
-#         """
-#         تبدیل chunkهای صف به فرمت SSE با تفکیک نوع رویداد.
-#         """
-#         answer_parts = []
-#         while True:
-#             chunk = chunks.get()
-
-#             # پایان stream
-#             if chunk is None:
-#                 break
-
-#             # ۱. مدیریت خطاها
-#             if isinstance(chunk, dict) and chunk.get("type") == "error":
-#                 yield (
-#                     "event: error\n"
-#                     f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
-#                 )
-#                 continue
-
-#             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
-#             if isinstance(chunk, dict) and chunk.get("type") == "meta":
-#                 print("ssssssssssssssssss",flush=True)
-#                 final_response_id = chunk.get("response_id")
-#                 final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
-#                 print(final_usage,flush=True)
-#                 yield (
-#                     "event: meta\n"
-#                     f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
-#                 )
-#                 continue
-
-#             # ۳. مدیریت توکن‌های متنی (Tokens)
-#             if isinstance(chunk, dict) and chunk.get("type") == "token":
-#                 print("ttttttttttttttttt",flush=True)
-#                 text = chunk.get("content", "")
-#                 answer_parts.append(text)
-#                 payload = {"text": chunk.get("content", "")}
-#                 # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)
-             
-#             elif isinstance(chunk, dict):
-#                 print("hhhhhhhhhhh",flush=True)
-#                 text = chunk.get("text")
-#                 if text:
-#                     answer_parts.append(str(text))
-#                     payload = chunk
-#             else:
-#                 print("eeeeeeeeeeeeeeeeeee",flush=True)
-#                 text = str(chunk)
-#                 answer_parts.append(text)
-#                 payload = {"text": text}
-
-#             yield (
-#                 "event: token\n"
-#                 f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
-#             )
-#         final_answer = "".join(answer_parts).strip()
-#         print(f"append_qa_to_file", flush=True)   
-      
-#     # ذخیره سؤال و جواب در فایل
-#         try:
-           
-#             append_qa_to_file(
-#             question=request.query,
-#             answer=final_answer         
-#         )
-#         except Exception as e:
-#             print(f"Failed to save QA log: {e}", flush=True)    
-#         if final_usage and final_response_id:
-#             print("ssssssssssssssssss2222",flush=True)          
-#             background_tasks.add_task(
-#                 InsertIntoWallet,
-#                 final_usage.get("total_tokens", 0) * -1,
-#                 final_usage.get("output_tokens", 0), # output_tokens
-#                 final_usage.get("input_tokens", 0),     # input_tokens
-#                 user_key,
-#                 final_response_id
-#             )                              
-#         # ارسال پایان قطعی استریم
-#         yield "event: done\ndata: [DONE]\n\n"
-#     return StreamingResponse(
-#         event_stream(),
-#         media_type="text/event-stream",
-#         headers=STREAM_HEADERS,
-#     )
 
 @router.post("/StreamQueryHistory")
 async def stream_queryHistory_endpoint(
@@ -397,12 +276,12 @@ async def stream_queryHistory_endpoint(
                     provider_response_id="1111"
                 )
     # ذخیره سؤال و جواب در فایل
-        try:
-           
-            append_qa_to_file(
-            question=request.query,
-            answer=final_answer         
+        try:         
+            append_qa_to_file(request.query            
         )
+            append_qa_to_file(
+                        final_answer                            
+                    )
         except Exception as e:
             print(f"Failed to save QA log: {e}", flush=True)    
         if final_usage and final_response_id:
@@ -427,15 +306,24 @@ async def query_history_endpoint(
     request: QueryRequestStreamٌwithConversionId,
     background_tasks: BackgroundTasks
 ):
+   
     user_key = '9a6b7ba9-abfe-4207-97fe-02a1da750cb7'
-
+    start = time.time()
+    append_qa_to_file(f"===================================================")
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    append_qa_to_file(
+                question=request.query         
+            )
+    append_qa_to_file(f"Time: {timestamp}\n")
+      # f.write()
+                # f.write(f"Time: {timestamp}\n")
     history, c_id = get_recent_history(
         conversation_id=request.conversation_id,
         query=request.query,
         user_key=user_key,
         limit=3
     )
-
+    append_qa_to_file(f"GetHistory Time: {time.time() - start:.2f} seconds")
     answer_parts = []
     final_usage = {}
     final_response_id = "1111"
@@ -488,10 +376,11 @@ async def query_history_endpoint(
         print(f"Database save error: {e}", flush=True)
 
     try:
+       
         append_qa_to_file(
-            question=request.query,
-            answer=final_answer
-        )
+                    question=final_answer                
+                )
+        append_qa_to_file(f"TotalTime: {time.time() - start:.2f} seconds")
     except Exception as e:
         print(f"Failed to save QA log: {e}", flush=True)
 

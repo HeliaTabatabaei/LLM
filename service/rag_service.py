@@ -184,14 +184,14 @@ Rules:
             # ۱. مرتب‌سازی بر اساس امتیاز جدید (LLM Score)
             processed_results.sort(key=lambda r: score_map.get(str(self._get_result_id(r)), 0.0), reverse=True)
 
-            # ۲. اعمال فیلتر 0.7 و محدودیت 5 عدد
-            filtered_results = [r for r in processed_results if score_map.get(str(self._get_result_id(r)), 0.0) >= 0.7]
-            final_output = filtered_results[:5]
+            #۲. اعمال فیلتر 0.7 و محدودیت 5 عدد
+            filtered_results = [r for r in processed_results if score_map.get(str(self._get_result_id(r)), 0.0) >= 0.2]
+            final_output = filtered_results[:10]
 
-            # فال‌بک در صورتی که هیچکدام بالای 0.7 نبودند (برای خالی نماندن پاسخ)
+           # فال‌بک در صورتی که هیچکدام بالای 0.7 نبودند (برای خالی نماندن پاسخ)
             if not final_output and processed_results:
                 final_output = processed_results[:3]
-
+           
             print(f"[RERANK] Expected: {len(results)}, Received: {len(score_map)}, Filtered (>=0.7): {len(filtered_results)}")
             return final_output
 
@@ -199,151 +199,7 @@ Rules:
             print(f"Rerank failed: {exc}")
             # در صورت خطا، همان لیست اولیه را بر اساس امتیاز اولیه مرتب و برگردان
             return sorted(results, key=self._get_result_score, reverse=True)[:5]
-    
-    ###########################################
-    
-    # def rerank_results(
-    #         self,
-    #         query: str,
-    #         results: list[Any],
-    #         history: str | None = None,
-    #             ) -> list[Any]:
-        
-    #         print(f"[RERANK] received candidate count: {len(results)}")
-    #         print(
-    #             "[RERANK] received candidates:",
-    #             [
-    #                 {
-    #                     "id": self._get_result_id(result),
-    #                     "qdrant_score": self._get_result_score(result),
-    #                 }
-    #                 for result in results
-    #             ],
-    #         )
-    #         if not results:
-    #             return results
-
-    #         candidates: list[dict[str, Any]] = []
-    #         for result in results:
-    #             payload = self._get_payload(result)
-    #             candidates.append(
-    #                 {
-    #                     "id": self._get_result_id(result),
-    #                     "text": payload.get("text", ""),
-    #                     "title": payload.get("title", ""),
-    #                     "heading": payload.get("heading", ""),
-    #                     "keywords": payload.get("keywords", []),
-    #                     "source_file": payload.get("source_file", ""),
-    #                     "score": self._get_result_score(result),
-    #                 }
-    #             )
-
-    #         system_prompt = (
-    #             "You are a reranking assistant.\n\n"
-    #         "Given a user query and a list of retrieved results, return ONLY a valid JSON array.\n\n"
-    #         "You MUST return one item for EVERY provided result.\n"
-    #         "Do NOT omit any result.\n"
-    #         "Use the exact same id values from the input.\n"
-    #         "The output array length MUST equal the input results length.\n\n"
-    #         "Each item must contain exactly:\n"
-    #         "- id\n"
-    #         "- score\n\n"
-    #         "Scoring rules:\n"
-    #         "- score must be a float between 0.0 and 1.0\n"
-    #         "- higher score means more relevant\n"
-    #         "- prefer chunks that directly answer the user's intent\n"
-    #         "- penalize irrelevant or weakly related chunks\n"
-    #         "- assign low scores such as 0.0, 0.1, or 0.2 to irrelevant results\n"
-    #         "- do NOT filter results yourself; only assign scores\n\n"
-    #         "Return only valid JSON."
-    #         )
-    #         history_text = history.strip() if history else "No previous conversation."
-    #         user_prompt = (
-    #             f"Conversation History:\n{history_text}\n\n"
-    #             f"Query:\n{query}\n\n"
-    #             f"Results:\n{json.dumps(candidates, ensure_ascii=False, indent=2)}\n\n"
-    #             f"Return exactly {len(candidates)} JSON items, one per input result.\n"
-    #             "Return only JSON in this format:\n"
-    #             '[{"id": "26200006", "score": 0.95}, {"id": "26400015", "score": 0.40}]'
-    #             )
-
-    #         try:
-    #             response = self.llm.chat(
-    #                 messages=[
-    #                     {"role": "system", "content": system_prompt},
-    #                     {"role": "user", "content": user_prompt},
-    #                 ],
-    #                 temperature=0,
-    #             )
-
-    #             content = (response.content or "").strip()
-    #             scored_items = self._parse_json_array(content)
-
-    #             score_map: dict[str, float] = {}
-    #             for item in scored_items:
-    #                 if not isinstance(item, dict):
-    #                     continue
-    #                 result_id = item.get("id")
-    #                 if result_id is None:
-    #                     continue
-    #                 try:
-    #                     score = float(item.get("score", 0.0))
-    #                 except (TypeError, ValueError):
-    #                     score = 0.0
-    #                 score_map[str(result_id)] = max(0.0, min(1.0, score))
-
-    #             sorted_results = sorted(
-    #                 results,
-    #                 key=lambda r: score_map.get(self._get_result_id(r), 0.0),
-    #                 reverse=True,
-    #             )
-    #             print(f"[RERANK] llm score_map: {score_map}",flush=True)
-    #             print(f"[RERANK] expected scores: {len(candidates)}, received scores: {len(score_map)}")
-
-    #         # فیلتر بر اساس امتیاز LLM (آستانه سخت‌گیرانه 0.7)
-    #             filtered_results = [
-    #                 r for r in sorted_results 
-    #                 if score_map.get(self._get_result_id(r), 0.0) >= 0.7
-    #             ][:5]
-            
-    #         # اگر هیچ چانکی بالای 0.7 نبود، برای خالی نماندن دست مدل،
-    #         # تا حداکثر 3 چانک برتر از خروجی‌های LLM (حتی با امتیاز کمتر) را برمی‌گردانیم.
-    #             if not filtered_results and sorted_results:
-    #                 filtered_results = sorted_results[:3]
-    #             print(f"[RERANK] filtered count: {len(filtered_results)}",flush=True)
-    #             print(f"[RERANK] filtered original scores: {[self._get_result_score(r) for r in filtered_results]}",flush=True)
-
-    #             return filtered_results
-
-    #         except Exception as exc:
-    #         # لاگ کردن خطا برای اینکه متوجه شوید چرا Rerank خطا می‌دهد
-    #             print(f"[RERANK ERROR] Fallback triggered. Error: {exc}")
-            
-    #             sorted_default = sorted(
-    #                 results,
-    #                 key=self._get_result_score,
-    #                 reverse=True,
-    #             )
-            
-    #         # در حالت خطا و Fallback، چانک‌های با امتیاز بالای 0.4 را برمی‌گردانیم تا سیستم از کار نیفتد
-    #             filtered_default = []
-    #             for r in sorted_default:
-    #                 if self._get_result_score(r) >= 0.4:
-    #                     filtered_default.append(r)
-    #                 if len(filtered_default) == 5:
-    #                     break
-                        
-    #             # اگر باز هم خالی بود، حداقل اولین چانک برتر را بفرست
-    #             if not filtered_default and sorted_default:
-    #                 return [sorted_default[0]]
-                    
-    #             return filtered_default
-
-    
-    
-    
-    
-    ###############################################
+  
     def answer_with_rag_stream(
         self,
         query: str,

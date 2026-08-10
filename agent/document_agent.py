@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from typing import Any
 
+from log import append_qa_to_file
 from providers.base import LLMProvider, StreamCallback
 
 
@@ -176,17 +178,14 @@ class DocumentAgent:
                     "id": str(chunk.id),
                     "score": chunk.score,
                     "text": chunk.payload.get(
-                        "maintext",
+                        "text",
                         ""
                     ),
                     "title": chunk.payload.get(
                         "title",
                         ""
                     ),
-                    "heading": chunk.payload.get(
-                        "heading",
-                        ""
-                    ),
+                  
                     "source_file": chunk.payload.get(
                         "source_file",
                         ""
@@ -204,25 +203,29 @@ class DocumentAgent:
         temperature: float = 0.1,
         history: list[dict[str, Any]] | None = None,
     ) -> None:
-
+        start=time.time()
         query_vector = self.llm_provider.embed_query(message)
-
+        append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
+        start=time.time()
         results = self.rag_service.search(
             query_vector=query_vector,
             limit=20,
             filters=None,
         )
-
+       
+        append_qa_to_file(f"Rag search: {time.time() - start:.2f} seconds")
+        start=time.time()
         if not results:
             on_chunk({"type": "token", "content": "هیچ سند مرتبطی یافت نشد."})
             return
-
+       
         reranked_results = self.rag_service.rerank_results(
             query=message,
             results=results,
             history=history,
         )
-
+        append_qa_to_file(f"Rank Query Time: {time.time() - start:.2f} seconds")
+        start=time.time()
         prepared_chunks = self.prepare_chunks(reranked_results)
 
         on_chunk({
@@ -235,10 +238,11 @@ class DocumentAgent:
             chunks=prepared_chunks,
             history=history,
         )
-
+        append_qa_to_file(f"analysis time: {time.time() - start:.2f} seconds")
         decision = analysis.get("decision")
 
         if decision == "answer":
+            append_qa_to_file(f"start genrate stream: {time.time():.2f} ")
             self.rag_service.answer_with_rag_stream(
                 query=message,
                 results=reranked_results,
