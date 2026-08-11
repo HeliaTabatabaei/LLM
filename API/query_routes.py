@@ -246,10 +246,10 @@ async def stream_queryHistory_endpoint(
                 answer_parts.append(text)
                 payload = {"text": chunk.get("content", "")}
             #ht14050520
-            elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
-                            text = chunk.get("content", "")
-                            answer_parts.append(text)
-                            payload = {"text": chunk.get("content", "")}   
+            # elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
+            #                 text = chunk.get("content", "")
+            #                 answer_parts.append(text)
+            #                 payload = {"text": chunk.get("content", "")}   
                 
             elif isinstance(chunk, dict): 
                 text = chunk.get("text")
@@ -341,11 +341,11 @@ async def query_history_endpoint(
             content = chunk.get("content", "")
             if content:
                 answer_parts.append(content)
-        elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
-                content = chunk.get("content", "")
-                if content:
-                    answer_parts.append(content)
-                   # updateClarifyMessage(content,c_id)
+        # elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
+        #         content = chunk.get("content", "")
+        #         if content:
+        #             answer_parts.append(content)
+                
                 
         elif chunk.get("type") == "meta":
             final_usage = chunk.get("usage", {})

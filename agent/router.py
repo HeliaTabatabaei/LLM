@@ -25,43 +25,43 @@ class RouterAgent:
         self.llm = llm
         self.chat_agent = chat_agent
         self.document_agent = document_agent
-    def prepare_final_query(self, history, current_user_message):
-        if not isinstance(history, list):
-         return current_user_message
+    # def prepare_final_query(self, history, current_user_message):
+    #     if not isinstance(history, list):
+    #      return current_user_message
 
-    # ۱. پیدا کردن آخرین پیام دستیار و موقعیت (Index) آن در تاریخچه
-        last_assistant_idx = -1
-        last_assistant_msg = None
+    # # ۱. پیدا کردن آخرین پیام دستیار و موقعیت (Index) آن در تاریخچه
+    #     last_assistant_idx = -1
+    #     last_assistant_msg = None
         
-        for idx, msg in enumerate(history):
-            if isinstance(msg, dict) and msg.get("role") == "assistant":
-                last_assistant_idx = idx
-                last_assistant_msg = msg
+    #     for idx, msg in enumerate(history):
+    #         if isinstance(msg, dict) and msg.get("role") == "assistant":
+    #             last_assistant_idx = idx
+    #             last_assistant_msg = msg
 
-        # اگر پیام دستیاری پیدا نشد، همان پیام فعلی را برگردان
-        if not last_assistant_msg:
-                return current_user_message
+    #     # اگر پیام دستیاری پیدا نشد، همان پیام فعلی را برگردان
+    #     if not last_assistant_msg:
+    #             return current_user_message
 
-        assistant_content = str(last_assistant_msg.get("content") or "").strip()
+    #     assistant_content = str(last_assistant_msg.get("content") or "").strip()
         
-        # بررسی اینکه آیا دستیار سوال پرسیده بود (پشتیبانی از هر دو علامت سوال فارسی و انگلیسی)
-        is_question = "؟" in assistant_content or "?" in assistant_content
-        is_short_answer = len(current_user_message.strip().split()) < 5
+    #     # بررسی اینکه آیا دستیار سوال پرسیده بود (پشتیبانی از هر دو علامت سوال فارسی و انگلیسی)
+    #     is_question = "؟" in assistant_content or "?" in assistant_content
+    #     is_short_answer = len(current_user_message.strip().split()) < 5
 
-        if is_question and is_short_answer:
-            # ۲. پیدا کردن سوال اصلی کاربر (اولین پیامِ کاربرِ قبل از پیام دستیار)
-            original_user_msg = None
-            for idx in range(last_assistant_idx - 1, -1, -1):
-                if isinstance(history[idx], dict) and history[idx].get("role") == "user":
-                    original_user_msg = history[idx]
-                    break
+    #     if is_question and is_short_answer:
+    #         # ۲. پیدا کردن سوال اصلی کاربر (اولین پیامِ کاربرِ قبل از پیام دستیار)
+    #         original_user_msg = None
+    #         for idx in range(last_assistant_idx - 1, -1, -1):
+    #             if isinstance(history[idx], dict) and history[idx].get("role") == "user":
+    #                 original_user_msg = history[idx]
+    #                 break
 
-            if original_user_msg:
-                previous_query = str(original_user_msg.get("content") or "").strip()
-                # ترکیب سوال اصلی با پاسخ شفاف‌سازی کاربر
-                return f"{previous_query} {current_user_message}".strip()
+    #         if original_user_msg:
+    #             previous_query = str(original_user_msg.get("content") or "").strip()
+    #             # ترکیب سوال اصلی با پاسخ شفاف‌سازی کاربر
+    #             return f"{previous_query} {current_user_message}".strip()
 
-        return current_user_message
+    #     return current_user_message
 
     def classify(self, query: str, history: str | None = None) -> str:
          
@@ -118,6 +118,45 @@ class RouterAgent:
             return "no_authorize" 
 
         return result
+    # def resolve_customer_name(self, user_text: str) -> str | None:
+        
+    #     user_text = str(user_text or "").strip()
+    #     if not user_text:
+    #         return None
+
+    #     try:
+            
+    #         query_vector = self.llm_provider.embed_query(user_text)
+    #         append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
+    #                 start=time.time()
+    #                 results = self.rag_service.search(
+    #                     query_vector=query_vector,
+    #                     limit=20,
+    #                     filters=None,
+    #                 )
+
+    #         # ۲. جستجو در کالکشن BankName
+    #         search_result = self.qdrant.query_points(
+    #             collection_name="BankName",
+    #             query=query_vector,
+    #             using="dense",
+    #             limit=1,
+    #             with_payload=True,
+    #             score_threshold=0.80  # آستانه شباهت (قابل تنظیم)
+    #         )
+
+    #         if not search_result.points:
+    #             return None
+
+    #         # ۳. استخراج نام بانک از Payload (فیلد text در تصویر شما موجود است)
+    #         payload = search_result.points[0].payload
+    #         bank_name = payload.get("text")
+            
+    #         return bank_name.strip() if bank_name else None
+
+    #     except Exception as e:
+    #         print(f"Error in resolve_customer_name: {e}", flush=True)
+    #         return None
 
     
     def handle_stream(
@@ -132,8 +171,8 @@ class RouterAgent:
         history_text= "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
         append_qa_to_file(f" history_text : {history_text} ")
         start=time.time()
-        query = self.prepare_final_query(history,query)
-        append_qa_to_file(f"new Query : {query} ")
+        # query = self.prepare_final_query(history,query)
+        # append_qa_to_file(f"new Query : {query} ")
         intent = self.classify(query,history_text)
         append_qa_to_file(f"check question type Time: {time.time() - start:.2f} seconds")
         append_qa_to_file(f"intent: {intent} ")
