@@ -105,7 +105,7 @@ class RAGService:
             candidates.append(
                 {
                     "id": str(self._get_result_id(result)), # تبدیل به رشته برای تطابق با JSON
-                    "text": payload.get("maintext", ""),
+                    "text": payload.get("text", ""),
                     "title": payload.get("title", ""),
                     "heading": payload.get("heading", ""),
                     "source_file": payload.get("source_file", ""),

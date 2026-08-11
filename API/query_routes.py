@@ -66,7 +66,7 @@ def get_recent_history(
         conversation_id: str,
         query:str,
         user_key:str,
-        limit: int = 3
+        limit: int = 6
     ):
         conversation_id, is_new_chat = normalize_conversation_id(conversation_id)
 
@@ -102,7 +102,8 @@ def get_recent_history(
                 role="user",
                 content=query
             )
-            return "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history]),conversation_id
+            # "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
+            return history,conversation_id
 
 def build_router_agent() -> RouterAgent:
     """
