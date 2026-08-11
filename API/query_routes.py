@@ -8,6 +8,7 @@ from typing import Any, Optional, Tuple
 import uuid
 import time
 import datetime
+from SQlDB.QueryDB import updateClarifyMessage
 from fastapi import APIRouter, BackgroundTasks
 from fastapi.responses import StreamingResponse
 from qdrant_client import QdrantClient
@@ -167,14 +168,12 @@ async def stream_queryHistory_endpoint(
     request: QueryRequestStreamٌwithConversionId,
     background_tasks: BackgroundTasks
 ):
-   
     user_key='9a6b7ba9-abfe-4207-97fe-02a1da750cb7'
     history,c_id= get_recent_history( conversation_id= request.conversation_id,
                 query=request.query,
                 user_key=user_key,
                 limit = 3)
-    print (history,flush=True)
-    print (request.conversation_id,flush=True)
+
     chunks: Queue[Any] = Queue()
     
     def on_chunk(chunk: Any) -> None:    
@@ -187,9 +186,7 @@ async def stream_queryHistory_endpoint(
                 user_key=user_key,
                 on_chunk=on_chunk,
                 history=history,
-                temperature=request.temperature,
-              
-              
+                temperature=request.temperature,           
             )
 
         except Exception as error:
@@ -235,8 +232,7 @@ async def stream_queryHistory_endpoint(
             if isinstance(chunk, dict) and chunk.get("type") == "source_chunks":
                 continue       
             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
-            if isinstance(chunk, dict) and chunk.get("type") == "meta":
-                print("ssssssssssssssssss",flush=True)
+            if isinstance(chunk, dict) and chunk.get("type") == "meta":             
                 final_response_id = chunk.get("response_id")
                 final_usage = chunk.get("usage", {}) # دریافت دیکشنری usage
                 meta_payload = {
@@ -249,7 +245,12 @@ async def stream_queryHistory_endpoint(
                 text = chunk.get("content", "")
                 answer_parts.append(text)
                 payload = {"text": chunk.get("content", "")}
-                # تبدیل ساختار OpenAIProvider به ساختار مورد انتظار فرانت (text)            
+            #ht14050520
+            elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
+                            text = chunk.get("content", "")
+                            answer_parts.append(text)
+                            payload = {"text": chunk.get("content", "")}   
+                
             elif isinstance(chunk, dict): 
                 text = chunk.get("text")
                 if text:
@@ -267,7 +268,7 @@ async def stream_queryHistory_endpoint(
                 f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
             )
         final_answer = "".join(answer_parts).strip()
-        print(f"append_qa_to_file", flush=True)   
+      
         with DatabaseConnection(SQL_SERVER_CONNECTION_STRING) as cursor:
                 save_message(
                     cursor=cursor,
@@ -340,7 +341,12 @@ async def query_history_endpoint(
             content = chunk.get("content", "")
             if content:
                 answer_parts.append(content)
-
+        elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
+                content = chunk.get("content", "")
+                if content:
+                    answer_parts.append(content)
+                   # updateClarifyMessage(content,c_id)
+                
         elif chunk.get("type") == "meta":
             final_usage = chunk.get("usage", {})
             final_response_id = chunk.get("response_id", final_response_id)

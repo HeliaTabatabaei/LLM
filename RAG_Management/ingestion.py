@@ -14,7 +14,7 @@ from RAG_Management.bm25 import PersianBM25Encoder
 from openai import OpenAI
 import pyodbc
 
-print("--- LOADING INGESTION ---")
+
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,

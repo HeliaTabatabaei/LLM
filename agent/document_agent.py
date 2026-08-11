@@ -184,8 +184,7 @@ Example for missing bank:
                     "title": chunk.payload.get(
                         "title",
                         ""
-                    ),
-                  
+                    ),                
                     "source_file": chunk.payload.get(
                         "source_file",
                         ""
@@ -263,7 +262,7 @@ Example for missing bank:
         if decision == "clarify":
             question = analysis.get("clarification_question")
             on_chunk({
-                "type": "token",
+                "type": "clarify",
                 "content": question or "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
             })
             return
