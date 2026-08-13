@@ -62,7 +62,7 @@ def answer_with_rag_withHistoryAndVectorDB(
     except Exception as e:
         #log_message(f"embed_query failed in history retrieval: {e}")
         query_vector = None
-    print(f"2 build_context ( {time.time() - start:.2f} seconds")
+  
     # 2) جستجوی حافظه بلندمدت از Qdrant
     relevant_history_text = ""
     

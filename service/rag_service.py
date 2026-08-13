@@ -89,6 +89,7 @@ class RAGService:
 
         return getattr(hits, "points", []) or []
 
+  
     def rerank_results(
         self,
         query: str,
@@ -99,47 +100,44 @@ class RAGService:
             return results
 
         candidates: list[dict[str, Any]] = []
-
         for result in results:
             payload = self._get_payload(result)
-
             candidates.append(
                 {
-                    "id": self._get_result_id(result),
+                    "id": str(self._get_result_id(result)), # تبدیل به رشته برای تطابق با JSON
                     "text": payload.get("text", ""),
                     "title": payload.get("title", ""),
                     "heading": payload.get("heading", ""),
-                    "keywords": payload.get("keywords", []),
                     "source_file": payload.get("source_file", ""),
-                    "score": self._get_result_score(result),
                 }
             )
 
-        system_prompt = (
-            "You are a reranking assistant.\n\n"
-            "Given a user query and a list of retrieved results, return ONLY a valid JSON array.\n\n"
-            "Each item must contain exactly:\n"
-            "- id\n"
-            "- score\n\n"
-            "Scoring rules:\n"
-            "- score must be a float between 0.0 and 1.0\n"
-            "- higher score means more relevant\n"
-            "- identify the most relevant result(s) for answering the query\n"
-            "- prefer chunks that directly answer the user's intent\n"
-            "- penalize irrelevant or weakly related chunks\n"
-            "- do not prefer a result only because it contains generic technical words\n"
-            "- if multiple chunks are from the same source and are all relevant, you may score them similarly\n"
-            "- do not return explanations\n\n"
-            "- return score higher than 0.7\n\n"
-            "Return only valid JSON."
-        )
+        system_prompt = """
+You are a technical document reranker. Your job is to score relevance on a scale of 0.0 to 1.0.
+
+Instructions:
+- 1.0: The chunk contains the exact answer, error code explanation, or step-by-step solution.
+- 0.8-0.9: Highly relevant. Provides critical context or strong supporting evidence for the answer.
+- 0.5: Marginally relevant. Contains the right topic but lacks specific actionable details.
+- 0.0-0.3: Irrelevant. Wrong device, wrong topic, or gibberish.
+
+Examples:
+Query: "How to fix ATM error 404?"
+Chunk: "Error 404 indicates a network timeout in the X-500 module. Reset the router." -> Score: 1.0
+Chunk: "The X-500 module operates at 24V power supply." -> Score: 0.3
+
+Rules:
+- You MUST score every candidate.
+- Return ONLY valid JSON array: [{"id": "...", "score": ...}]
+- Do not add explanations.
+""".strip()
+
         history_text = history.strip() if history else "No previous conversation."
         user_prompt = (
             f"Conversation History:\n{history_text}\n\n"
             f"Query:\n{query}\n\n"
-            f"Results:\n{json.dumps(candidates, ensure_ascii=False, indent=2)}\n\n"
-            "Return only JSON in this format:\n"
-            '[{"id": "1", "score": 0.95}, {"id": "2", "score": 0.40}]'
+            f"Results to Score:\n{json.dumps(candidates, ensure_ascii=False, indent=2)}\n\n"
+            f"Return exactly {len(candidates)} JSON items. One score for each ID."
         )
 
         try:
@@ -154,39 +152,54 @@ class RAGService:
             content = (response.content or "").strip()
             scored_items = self._parse_json_array(content)
 
+            # استخراج امتیازها در یک دیکشنری
             score_map: dict[str, float] = {}
             for item in scored_items:
-                if not isinstance(item, dict):
-                    continue
+                if isinstance(item, dict) and "id" in item:
+                    try:
+                        score_map[str(item["id"])] = float(item.get("score", 0.0))
+                    except (TypeError, ValueError):
+                        continue
 
-                result_id = item.get("id")
-                if result_id is None:
-                    continue
+            # --- بخش مهم: آپدیت کردن امتیاز واقعی روی آبجکت‌ها ---
+            processed_results = []
+            for result in results:
+                res_id = str(self._get_result_id(result))
+                # گرفتن امتیاز از LLM، اگر نبود از امتیاز اولیه استفاده شود
+                llm_score = score_map.get(res_id, 0.0)
+                
+                # تزریق امتیاز ریرنک به فیلد اسکور (بسته به ساختار آبجکت Qdrant شما)
+                if hasattr(result, 'score'):
+                    result.score = llm_score
+                elif isinstance(result, dict):
+                    result['score'] = llm_score
+                
+                # همچنین ذخیره در payload برای اطمینان در مراحل بعدی
+                payload = self._get_payload(result)
+                payload["rerank_score"] = llm_score
+                payload["retrieval_score"] = self._get_result_score(result) # ذخیره امتیاز اولیه برای دیباگ
+                
+                processed_results.append(result)
 
-                try:
-                    score = float(item.get("score", 0.0))
-                except (TypeError, ValueError):
-                    score = 0.0
+            # ۱. مرتب‌سازی بر اساس امتیاز جدید (LLM Score)
+            processed_results.sort(key=lambda r: score_map.get(str(self._get_result_id(r)), 0.0), reverse=True)
 
-                score_map[str(result_id)] = max(0.0, min(1.0, score))
+            #۲. اعمال فیلتر 0.7 و محدودیت 5 عدد
+            filtered_results = [r for r in processed_results if score_map.get(str(self._get_result_id(r)), 0.0) >= 0.2]
+            final_output = filtered_results[:10]
 
-            return sorted(
-                results,
-                key=lambda result: score_map.get(
-                    self._get_result_id(result),
-                    self._get_result_score(result),
-                ),
-                reverse=True,
-            )
+           # فال‌بک در صورتی که هیچکدام بالای 0.7 نبودند (برای خالی نماندن پاسخ)
+            if not final_output and processed_results:
+                final_output = processed_results[:3]
+           
+            print(f"[RERANK] Expected: {len(results)}, Received: {len(score_map)}, Filtered (>=0.7): {len(filtered_results)}")
+            return final_output
 
         except Exception as exc:
             print(f"Rerank failed: {exc}")
-            return sorted(
-                results,
-                key=self._get_result_score,
-                reverse=True,
-            )
-
+            # در صورت خطا، همان لیست اولیه را بر اساس امتیاز اولیه مرتب و برگردان
+            return sorted(results, key=self._get_result_score, reverse=True)[:5]
+  
     def answer_with_rag_stream(
         self,
         query: str,
@@ -216,28 +229,28 @@ class RAGService:
         )
 
     def _build_context(self, results: list[Any]) -> str:
-        parts: list[str] = []
-
-        for index, result in enumerate(results, start=1):
-            payload = self._get_payload(result)
-
+        chunks = []   
+        for i, r in enumerate(results, start=1):
+            if isinstance(r, dict):
+                payload = r["payload"]
+            else:
+                payload = r.payload
+            # text = payload.get("text", "")
+            maintext=payload.get("maintext", "")
+            doc_id = payload.get("doc_id", "نامشخص")
             title = payload.get("title", "")
             heading = payload.get("heading", "")
-            text = payload.get("text", "")
-            source_file = payload.get("source_file", "")
-
-            block = [
-                f"[Chunk {index}]",
-                f"Source: {source_file}",
-                f"Title: {title}",
-                f"Heading: {heading}",
-                "Text:",
-                text,
-            ]
-            parts.append("\n".join(block).strip())
-
-        return "\n\n---\n\n".join(parts)
-
+            header = f"[سند {i}"
+            if doc_id:
+                header += f" - {doc_id}"
+            if title:
+                header += f" - {title}"
+            if heading:
+                header += f" > {heading}"
+    
+            header += "]"
+            chunks.append(f"{header}\n{maintext}")
+        return "\n\n".join(chunks)
     @staticmethod
     def _get_payload(result: Any) -> dict[str, Any]:
         if isinstance(result, dict):

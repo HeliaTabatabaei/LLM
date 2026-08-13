@@ -6,17 +6,17 @@ BASE_DIR = Path(__file__).resolve().parent
 LOG_DIR = BASE_DIR / "logs"
 LOG_FILE = LOG_DIR / "qa_log.txt"
 
-def append_qa_to_file(question: str, answer: str) -> None:
+def append_qa_to_file(question: str) -> None:
     try:
         LOG_DIR.mkdir(parents=True, exist_ok=True)
 
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         with LOG_FILE.open("a", encoding="utf-8") as f:
-            f.write("=" * 80 + "\n")
-            f.write(f"Time: {timestamp}\n")
+            # f.write("=" * 80 + "\n")
+            # f.write(f"Time: {timestamp}\n")
             f.write(f"Q: {question}\n")
-            f.write(f"A: {answer}\n\n")
+          
 
         print(f"QA log saved at: {LOG_FILE}", flush=True)
 
@@ -41,4 +41,4 @@ def log_message(message: str, log_file: str = "app_log.txt"):
 
 # --- مثال نحوه استفاده ---
 if __name__ == "__main__":
-   append_qa_to_file("tttttt", "mmmmmmm")
+   append_qa_to_file("tttttt")

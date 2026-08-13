@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from typing import Any
 
+from log import append_qa_to_file
 from providers.base import LLMProvider, StreamCallback
 
 
@@ -26,66 +28,66 @@ class DocumentAgent:
     ) -> dict[str, Any]:
 
         system_prompt = """
-    You are a technical support decision maker for banking equipment.
-    
-    You analyze:
-    1. Current user question
-    2. Previous conversation history
-    3. Retrieved documents from RAG system
-    
-    
-    Previous conversation:
-    {history}
-    
-    
-    User question:
-    {query}
-    
-    
-    Retrieved documents:
-    {chunks}
-    
-    
-    Your tasks:
-    
-    1. Decide whether the retrieved documents contain enough information to safely answer the user.
-    2. Decide whether the user needs clarification before answering.
-    3. If clarification is needed, ask only the minimum technical questions required.
-    
-    
-    Decision rules:
-    
-    - Return "answer" when retrieved documents clearly explain the issue.
-    - Return "clarify" when documents are related but important technical information is missing.
-    - Return "insufficient" when retrieved documents are irrelevant or do not contain useful information.
-    
-    Clarification examples:
-    - Missing ATM/POS model
-    - Missing error code
-    - Missing device type
-    - Missing important environment details
-    
-    Important rules:
-    
-    - Do NOT ask clarification only because the user question is short.
-    - If previous conversation contains the missing information, use it.
-    - If retrieved documents strongly match the issue, answer even if the question is brief.
-    - Never invent technical solutions without evidence.
-    - Prefer asking a technical question instead of guessing.
-    
-    
-    Return JSON only:
-    
-    {{
-      "decision": "answer | clarify | insufficient",
-      "confidence": 0-100,
-      "missing_information": [
-          "missing technical information"
-      ],
-      "clarification_question": "question for user or null"
-    }}
-    """
+You are a technical support decision-maker for banking equipment.
+Your goal is to decide whether to answer a technical query, ask for clarification, or reject the query based on provided documents.
 
+--- CONTEXT DATA ---
+
+1. Previous conversation history:
+{history}
+
+2. User question:
+{query}
+
+3. Retrieved documents (Chunks):
+{chunks}
+
+--- MANDATORY DECISION RULES ---
+
+1. Bank Specificity Check:
+   - A document is "Bank-Specific" if its `customer_name` (or metadata/text) identifies a specific bank (e.g., refaah, sepah, melli).
+   - A document is "General" if its `customer_name` is: General, All, Common, Unknown, None, or empty.
+   - RULE: If retrieved chunks are Bank-Specific, but the bank name is NOT mentioned in the current query or history, you MUST return "clarify" and ask for the bank name.
+   - EXCEPTION: If all relevant chunks are "General", do NOT ask for the bank name.
+
+2. Decision Labels:
+   - "answer": Use when documents clearly contain the solution and required technical context (model, bank, error code) is present in query, history, or chunks are general.
+   - "clarify": Use when:
+        a) Documents are bank-specific but bank is unknown.
+        b) Documents are relevant but lack specific details like device model or error code needed to distinguish between two solutions.
+        c) The query is ambiguous.
+   - "insufficient": Use when documents are irrelevant, or the query is non-technical (e.g., political, social, or unrelated to banking hardware).
+
+3. Handling OCR and Images:
+   - If a chunk contains `ocr_text` or `visual_description`, treat it as high-priority technical evidence.
+   - Do NOT ignore image-based data when making a decision.
+
+4. Constraints:
+   - Do NOT ask for clarification if the question is short but the solution is obvious from the documents.
+   - Never invent technical solutions. If the info isn't in the chunks, it's "insufficient".
+   - If the user asks for things like passwords, security bypasses, or political/economic opinions, return "insufficient" or ask for a technical context.
+
+--- OUTPUT FORMAT (JSON ONLY) ---
+
+Return a valid JSON object with these keys:
+
+{{
+  "decision": "answer | clarify | insufficient",
+  "confidence": 0-100,
+  "missing_information": [
+    "List specific missing technical info (e.g., bank name, ATM model, error code)"
+  ],
+  "clarification_question": "A polite, technical Persian question to get the missing info, or null."
+}}
+
+Example for missing bank:
+{{
+  "decision": "clarify",
+  "confidence": 95,
+  "missing_information": ["bank_name"],
+  "clarification_question": "لطفاً بفرمایید دستگاه یا سرویس مورد نظر مربوط به کدام بانک است؟"
+}}
+"""
         messages = [
             {
                 "role": "system",
@@ -182,11 +184,7 @@ class DocumentAgent:
                     "title": chunk.payload.get(
                         "title",
                         ""
-                    ),
-                    "heading": chunk.payload.get(
-                        "heading",
-                        ""
-                    ),
+                    ),                
                     "source_file": chunk.payload.get(
                         "source_file",
                         ""
@@ -197,62 +195,60 @@ class DocumentAgent:
         return output
 
 
-
     def handle_stream(
         self,
         message: str,
         on_chunk: StreamCallback,
         temperature: float = 0.1,
-        history: str | None = None,
+        history: list[dict[str, Any]] | None = None,
     ) -> None:
-
-        query_vector = self.llm_provider.embed_query(
-            message
-        )
-
+        start=time.time()
+        query_vector = self.llm_provider.embed_query(message)
+        append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
+        start=time.time()
         results = self.rag_service.search(
-            query_vector=query_vector,        
+            query_vector=query_vector,
             limit=20,
             filters=None,
         )
-        print("HH0",flush=True)
+       
+        append_qa_to_file(f"Rag search: {time.time() - start:.2f} seconds")
+        start=time.time()
         if not results:
-            on_chunk(
-                "هیچ سند مرتبطی یافت نشد."
-            )
+            on_chunk({"type": "token", "content": "هیچ سند مرتبطی یافت نشد."})
             return
-        print("HH1",flush=True)
-
-        reranked_results= self.rag_service.rerank_results(
-             query=message,
-             results=results,
-             history=history,
-        
+       
+        reranked_results = self.rag_service.rerank_results(
+            query=message,
+            results=results,
+            history=history,
         )
+        append_qa_to_file(f"Rank Query Time: {time.time() - start:.2f} seconds")
+        start=time.time()
+        prepared_chunks = self.prepare_chunks(reranked_results)
 
+        on_chunk({
+            "type": "source_chunks",
+            "chunks": prepared_chunks,
+        })
 
         analysis = self.analyze(
             message=message,
-            chunks=self.prepare_chunks(reranked_results),
+            chunks=prepared_chunks,
             history=history,
         )
-        print("HH2",flush=True)
-
-        decision = analysis.get(
-            "decision"
-        )
-        print("HH3",flush=True)
+        append_qa_to_file(f"analysis time: {time.time() - start:.2f} seconds")
+        decision = analysis.get("decision")
 
         if decision == "answer":
-
+            append_qa_to_file(f"start genrate stream: {time.time():.2f} ")
             self.rag_service.answer_with_rag_stream(
                 query=message,
-                results=results,
+                results=reranked_results,
                 temperature=temperature,
                 on_chunk=on_chunk,
                 history=history
             )
-            print("HH4",flush=True)
             return
 
         usage_data = analysis.get("usage")
@@ -262,26 +258,16 @@ class DocumentAgent:
                 "response_id": "1111",
                 "usage": usage_data
             })
+
         if decision == "clarify":
-
-            question = analysis.get(
-                "clarification_question"
-            )
-
-            if question:
-                on_chunk({"type": "token", "content": question })
-            else:
-                on_chunk({"type": "token", "content":  "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
-                })
-            
-
-            print("HH4")
-
-
+            question = analysis.get("clarification_question")
+            on_chunk({
+                "type": "token",
+                "content": question or "لطفاً اطلاعات بیشتری درباره مشکل دستگاه ارسال کنید."
+            })
             return
 
-
-        on_chunk({"type": "token", "content":  "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
-                })
-
-        return
+        on_chunk({
+            "type": "token",
+            "content": "اطلاعات کافی برای پاسخ دقیق پیدا نشد."
+        })
