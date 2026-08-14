@@ -6,7 +6,7 @@ from typing import Any, Optional
 from qdrant_client import models
 
 from Models.mainModels import SearchFilters
-from config import COLLECTION_NAME
+from config import COLLECTION_NAME,COLLECTION_NAME_Meta
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from providers.base import LLMProvider, StreamCallback
 
@@ -17,10 +17,12 @@ class RAGService:
         llm: LLMProvider,
         qdrant_client: Any,
         collection_name: Optional[str] = None,
+        collection_name_meta: Optional[str] = None,
     ) -> None:
         self.llm = llm
         self.qdrant_client = qdrant_client
         self.collection_name = collection_name or COLLECTION_NAME
+        self.collection_name_meta = collection_name_meta or COLLECTION_NAME_Meta
 
     def embed_query(self, text: str) -> list[float]:
         return self.llm.embed_query(text)
@@ -88,7 +90,25 @@ class RAGService:
         )
 
         return getattr(hits, "points", []) or []
-
+    def searchMetaData(
+            self,
+            query_vector: list[float],
+            limit: int = 1   
+           
+        ) -> list[Any]:
+          
+    
+            hits = self.qdrant_client.query_points(
+                collection_name=self.collection_name_meta,
+                query=query_vector,
+                using="dense",
+                limit=limit,
+                score_threshold=0.65
+             
+            )
+    
+            return getattr(hits, "points", []) or []
+    
   
     def rerank_results(
         self,

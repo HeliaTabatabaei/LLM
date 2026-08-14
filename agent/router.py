@@ -5,6 +5,7 @@ from typing import Any, Callable, Optional, Tuple
 import uuid
 
 from SQlDB.db import DatabaseConnection
+from SQlDB.message import update_and_get_bank_name
 from dbManagement import SQL_SERVER_CONNECTION_STRING, get_conversation_history, save_conversation, save_message
 from log import append_qa_to_file
 from providers.base import LLMProvider
@@ -21,6 +22,7 @@ class RouterAgent:
         llm: LLMProvider,
         chat_agent: ChatAgent,
         document_agent: DocumentAgent,
+
     ):
         self.llm = llm
         self.chat_agent = chat_agent
@@ -62,6 +64,34 @@ class RouterAgent:
     #             return f"{previous_query} {current_user_message}".strip()
 
     #     return current_user_message
+    def rewrite_query(self, query: str, history_text: str) -> str:
+       if not history_text:
+         return query
+       prompt = f"""
+       شما یک بازنویس کوئری هستید. وظیفه شما فقط شفاف‌سازی ضمیرها و الحاق نام بانک/موضوع به پیام کاربر است.
+       
+       قوانین:
+       - به هیچ وجه فرض نکن راهکارهای قبلی انجام شده یا شکست خورده است.
+       - اگر کاربر گفت "درست نشد" یا "نشد"، سوال را به صورت کلی بازنویسی کن.
+       - مثال: 
+           تاریخچه: "عکس زرد است" -> کاربر: "نشد" 
+           بازنویسی: "راه حل مشکل زرد بودن عکس در بانک فلان چیست؟" (فقط همین)
+       - از عباراتی مثل "چه راهکار دیگری وجود دارد" یا "با وجود انجام فلان کار" استفاده نکن.
+       
+       تاریخچه: {history_text}
+       آخرین پیام: {query}
+       کوئری مستقل:"""
+       
+       messages = [
+        {"role": "system", "content": prompt},
+    ]
+    
+       response = self.llm.chat(
+        messages=messages,
+        temperature=0, 
+    )
+       return response.content.strip()
+
 
     def classify(self, query: str, history: str | None = None) -> str:
          
@@ -162,24 +192,51 @@ class RouterAgent:
     def handle_stream(
         self,
         query: str,
-        user_key:str,
+        convertionId:str,
         on_chunk: ChunkCallback,
         history: any,
         temperature: float = 0.1,
         
     ) -> None:
         history_text= "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
-        append_qa_to_file(f" history_text : {history_text} ")
-        start=time.time()
-        # query = self.prepare_final_query(history,query)
-        # append_qa_to_file(f"new Query : {query} ")
-        intent = self.classify(query,history_text)
-        append_qa_to_file(f"check question type Time: {time.time() - start:.2f} seconds")
+        append_qa_to_file(history_text)
+        # start=time.time()
+        # query_vector = self.llm.embed_query(query)
+        # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
+        #meta_hits= self.document_agent.rag_service.searchMetaData(
+        #            query_vector=query_vector,
+        #            limit=1
+                  
+                  
+        #      )
+        # bank_name = None
+        # if meta_hits:
+        #    first_hit = meta_hits[0]
+        #    payload = getattr(first_hit, "payload", {}) or {}
+        #    bank_name = payload.get("text") or payload.get("text")
+
+        # # if bank_name:
+        # #    query = f"{query} ({bank_name})"
+        # bank_name=update_and_get_bank_name(chat_id=convertionId,bank_name=bank_name)
+        # query = f"{query} ({bank_name})"
+        # append_qa_to_file(f"new Query : {query}")
+
+
+        start1=time.time()
+        rewrite_query=self.rewrite_query(query,history_text)
+        append_qa_to_file(f"rewrite_query : {rewrite_query}")
+        append_qa_to_file(f"rewriteQuery: {time.time() - start1:.2f} seconds")
+
+        start1=time.time()
+        intent = self.classify(rewrite_query,history_text)
+        append_qa_to_file(f"check question type Time: {time.time() - start1:.2f} seconds")
         append_qa_to_file(f"intent: {intent} ")
         print (intent,flush=True)
+
+
         if intent == "general":
             self.chat_agent.answer_stream(
-                message=query,
+                message=rewrite_query,
                 on_chunk=on_chunk,
                 temperature=temperature,
                 history=history_text
@@ -191,10 +248,13 @@ class RouterAgent:
                             "content": "من تنها قادر به پاسخگویی از داکیومنت های شرکت آدونیس می باشم"
                         })
             return
+        start=time.time()
+        query_vector = self.llm.embed_query(rewrite_query)
+        append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
         self.document_agent.handle_stream(
-            message=query,
-           
+            message=query,        
             on_chunk=on_chunk,
+            query_vector=query_vector,
             temperature=temperature,
             history=history_text,
         )
