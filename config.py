@@ -26,6 +26,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+COLLECTION_NAME_Meta=os.getenv("COLLECTION_NAME_Meta")
 VECTOR_SIZE = int(os.getenv("VECTOR_SIZE"))
 EMBED_MODEL =os.getenv("EMBED_MODEL")
 LLM_MODEL = os.getenv("LLM_MODEL")

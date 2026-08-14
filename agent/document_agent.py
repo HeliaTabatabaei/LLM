@@ -199,13 +199,14 @@ Example for missing bank:
         self,
         message: str,
         on_chunk: StreamCallback,
+        query_vector: Any,
         temperature: float = 0.1,
         history: list[dict[str, Any]] | None = None,
     ) -> None:
         start=time.time()
-        query_vector = self.llm_provider.embed_query(message)
-        append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
-        start=time.time()
+        # query_vector = self.llm_provider.embed_query(message)
+        # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
+        # start=time.time()
         results = self.rag_service.search(
             query_vector=query_vector,
             limit=20,

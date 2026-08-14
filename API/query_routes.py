@@ -183,7 +183,7 @@ async def stream_queryHistory_endpoint(
         try:
             router_agent.handle_stream(
                 query=request.query,
-                user_key=user_key,
+                convertionId=c_id,
                 on_chunk=on_chunk,
                 history=history,
                 temperature=request.temperature,           
@@ -360,7 +360,7 @@ async def query_history_endpoint(
     try:
         router_agent.handle_stream(
             query=request.query,
-            user_key=user_key,
+            convertionId=c_id,
             on_chunk=on_chunk,
             history=history,
             temperature=request.temperature,
