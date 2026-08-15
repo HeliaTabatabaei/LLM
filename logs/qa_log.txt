@@ -54,3 +54,104 @@ Q: - خلاصه پاسخ: اگر پس از بررسی کامل کابل‌بند
 
 - ارجاع به تاریخچه: در پاسخ قبلی نیز تاکید شد که ابتدا کابل‌بندی و اتصالات و سپس نرم‌افزار دوربین بررسی شود، اما با توجه به عدم رفع مشکل، اکنون باید اقدامات تکمیلی انجام گردد.
 Q: TotalTime: 38.65 seconds
+Q: ===================================================
+Q: من در بانک پاسارگاد هستم
+Q: Time: 2026-08-15 05:36:18
+
+Q: ===================================================
+Q: من در بانک پاسارگاد هستم
+Q: Time: 2026-08-15 05:37:16
+
+Q: GetHistory Time: 0.10 seconds
+Q:  history_text :  
+Q: new Query : من در بانک پاسارگاد هستم 
+Q: check question type Time: 4.14 seconds
+Q: intent: general 
+Q: سلام! چگونه می‌توانم به شما کمک کنم؟ آیا سوال یا درخواست خاصی درباره بانک پاسارگاد دارید؟
+Q: TotalTime: 6.97 seconds
+Q: ===================================================
+Q: دوربین عکس زرد میگیره
+Q: Time: 2026-08-15 05:37:53
+
+Q: GetHistory Time: 0.07 seconds
+Q:  history_text :  
+Q: new Query : دوربین عکس زرد میگیره 
+Q: check question type Time: 32.74 seconds
+Q: intent: technical 
+Q: vector Query Time: 0.98 seconds
+Q: Rag search: 0.07 seconds
+Q: Rank Query Time: 6.61 seconds
+Q: ===================================================
+Q: دوربین عکس زرد میگیره
+Q: Time: 2026-08-15 05:50:19
+
+Q: GetHistory Time: 0.09 seconds
+Q:  history_text :  
+Q: new Query : دوربین عکس زرد میگیره 
+Q: check question type Time: 2.90 seconds
+Q: intent: technical 
+Q: vector Query Time: 1.97 seconds
+Q: Rag search: 0.02 seconds
+Q: Rank Query Time: 5.33 seconds
+Q: analysis time: 3.09 seconds
+Q: لطفاً بفرمایید دستگاه یا سرویس مورد نظر مربوط به کدام بانک است؟
+Q: TotalTime: 13.50 seconds
+Q: ===================================================
+Q: دوربین عکس زرد میگیره
+Q: Time: 2026-08-15 06:19:51
+
+Q: GetHistory Time: 0.12 seconds
+Q: 
+Q: rewrite_query : دوربین عکس زرد میگیره
+Q: rewriteQuery: 0.00 seconds
+Q: check question type Time: 3.77 seconds
+Q: intent: technical 
+Q: vector Query Time: 0.96 seconds
+Q: Rag search: 0.02 seconds
+Q: Rank Query Time: 4.88 seconds
+Q: analysis time: 2.42 seconds
+Q: لطفاً بفرمایید دستگاه یا سرویس مورد نظر مربوط به کدام بانک است؟
+Q: TotalTime: 12.30 seconds
+Q: ===================================================
+Q: بانک پاسارگاد
+Q: Time: 2026-08-15 06:20:23
+
+Q: GetHistory Time: 0.07 seconds
+Q: 
+Q: rewrite_query : بانک پاسارگاد
+Q: rewriteQuery: 0.00 seconds
+Q: check question type Time: 1.78 seconds
+Q: intent: no_authorize 
+Q: من تنها قادر به پاسخگویی از داکیومنت های شرکت آدونیس می باشم
+Q: TotalTime: 1.95 seconds
+Q: ===================================================
+Q: بانک پاسارگاد
+Q: Time: 2026-08-15 06:22:55
+
+Q: GetHistory Time: 0.07 seconds
+Q: User: دوربین عکس زرد میگیره
+Assistant: لطفاً بفرمایید دستگاه یا سرویس مورد نظر مربوط به کدام بانک است؟
+Q: rewrite_query : راه حل مشکل زرد بودن عکس در دوربین بانک پاسارگاد چیست؟
+Q: rewriteQuery: 2.42 seconds
+Q: check question type Time: 1.92 seconds
+Q: intent: technical 
+Q: vector Query Time: 0.80 seconds
+Q: Rag search: 0.04 seconds
+Q: Rank Query Time: 5.52 seconds
+Q: analysis time: 3.13 seconds
+Q: start genrate stream: 1786774989.41 
+Q: - خلاصه پاسخ:  
+برای رفع مشکل عکس زرد در دوربین خودپرداز بانک پاسارگاد ابتدا کابل‌بندی و اتصالات را به‌طور کامل بررسی کنید و در صورت عدم رفع مشکل، نرم‌افزار دوربین را تعویض نمایید.
+
+- توضیح فنی و جزئیات:  
+طبق سند 1، در صورت زرد بودن تصویر، ابتدا باید تمامی کابل‌بندی و اتصالات دوربین را به دقت کنترل کرد تا از صحت آنها اطمینان حاصل شود. اگر مشکل همچنان باقی بود، تعویض نرم‌افزار دوربین پیشنهاد شده است. این روش به دلیل احتمال اختلال در انتقال داده یا پردازش تصویر است که می‌تواند باعث تغییر رنگ تصویر شود.
+
+- تصاویر مرتبط:  
+اطلاعات مربوط به کابل‌بندی و اتصالات در سند 7 به صورت تصویری توضیح داده شده است که می‌تواند در بررسی فیزیکی به شما کمک کند.
+
+- ارجاع به کانتکست:  
+«عکس زرد است | پیشنهاد میشود در ابتدا تمامی کابل بندی و اتصالات را بررسی کنید و سپس نرمافزار دوربین را تعویض نمایید.» (سند 1)
+
+- ارجاع به تاریخچه:  
+در مکالمه قبلی شما اعلام کردید که دوربین عکس زرد می‌گیرد و بانک مربوطه را پاسارگاد ذکر کردید که مطابق با سندهای ارائه شده است.
+Q: TotalTime: 19.50 seconds
