@@ -210,7 +210,7 @@ Rules:
 
            # فال‌بک در صورتی که هیچکدام بالای 0.7 نبودند (برای خالی نماندن پاسخ)
             if not final_output and processed_results:
-                final_output = processed_results[:3]
+                final_output = processed_results[:10]
            
             print(f"[RERANK] Expected: {len(results)}, Received: {len(score_map)}, Filtered (>=0.7): {len(filtered_results)}")
             return final_output
@@ -218,7 +218,7 @@ Rules:
         except Exception as exc:
             print(f"Rerank failed: {exc}")
             # در صورت خطا، همان لیست اولیه را بر اساس امتیاز اولیه مرتب و برگردان
-            return sorted(results, key=self._get_result_score, reverse=True)[:5]
+            return sorted(results, key=self._get_result_score, reverse=True)[:10]
   
     def answer_with_rag_stream(
         self,

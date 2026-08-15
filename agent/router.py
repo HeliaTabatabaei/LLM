@@ -96,22 +96,43 @@ class RouterAgent:
     def classify(self, query: str, history: str | None = None) -> str:
          
       
+        # system_prompt = (
+        #     "You are a specialized classifier for a Banking Technical Support system.\n"
+        #     "Classify the user query into EXACTLY one of these three labels:\n\n"
+
+        #     "1. technical: Questions about ATM hardware, banking equipment, device errors, "
+        #     "troubleshooting, installation, maintenance, printer, pinpad, dispenser,camera "
+        #     "card reader, cash handling, or software configuration.\n\n"
+
+        #     "2. general: Greetings (hi, hello), thanks, and polite small talk.\n\n"
+            
+        #     "3. no_authorize: Any questions regarding politics, macroeconomics, "
+        #     "system security bypasses, or sensitive non-technical banking information.\n\n"
+
+        #     "Rules:\n"
+        #     "- Use the conversation history only to resolve pronouns or context.\n"
+        #     "- If the query is political or economic, it MUST be 'no_authorize'.\n"
+        #     "- Return ONLY the label: technical, general, or no_authorize."
+        # )
         system_prompt = (
             "You are a specialized classifier for a Banking Technical Support system.\n"
             "Classify the user query into EXACTLY one of these three labels:\n\n"
 
             "1. technical: Questions about ATM hardware, banking equipment, device errors, "
-            "troubleshooting, installation, maintenance, printer, pinpad, dispenser,camera "
-            "card reader, cash handling, or software configuration.\n\n"
+            "troubleshooting, installation, maintenance, printer, pinpad, dispenser, camera, "
+            "card reader, cash handling, software configuration, AND inquiries about "
+            "support contacts, help-desk numbers, and technical assistance procedures.\n\n"
 
             "2. general: Greetings (hi, hello), thanks, and polite small talk.\n\n"
             
             "3. no_authorize: Any questions regarding politics, macroeconomics, "
-            "system security bypasses, or sensitive non-technical banking information.\n\n"
+            "system security bypasses, sensitive non-technical banking account information, "
+            "or personal financial details.\n\n"
 
             "Rules:\n"
             "- Use the conversation history only to resolve pronouns or context.\n"
             "- If the query is political or economic, it MUST be 'no_authorize'.\n"
+            "- If the query is about support contact information, phone numbers, or how to get help for banking equipment, it MUST be 'technical'.\n"
             "- Return ONLY the label: technical, general, or no_authorize."
         )
 
@@ -204,22 +225,7 @@ class RouterAgent:
         # query_vector = self.llm.embed_query(query)
         # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
         #meta_hits= self.document_agent.rag_service.searchMetaData(
-        #            query_vector=query_vector,
-        #            limit=1
-                  
-                  
-        #      )
-        # bank_name = None
-        # if meta_hits:
-        #    first_hit = meta_hits[0]
-        #    payload = getattr(first_hit, "payload", {}) or {}
-        #    bank_name = payload.get("text") or payload.get("text")
-
-        # # if bank_name:
-        # #    query = f"{query} ({bank_name})"
-        # bank_name=update_and_get_bank_name(chat_id=convertionId,bank_name=bank_name)
-        # query = f"{query} ({bank_name})"
-        # append_qa_to_file(f"new Query : {query}")
+ 
 
 
         start1=time.time()
