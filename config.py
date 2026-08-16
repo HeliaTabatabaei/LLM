@@ -40,3 +40,4 @@ JSON_PATH = os.getenv("JSON_PATH")
     # ساخت کانکشن استرینگ در پایتون
 connection_string=os.getenv("connection_string")
 connection_string_Dashboard=os.getenv("connection_string_Dashboard")
+BaseUrl= os.getenv("BaseUrl")

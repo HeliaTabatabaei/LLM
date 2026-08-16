@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image7.jpeg",
+  "rId": "rId20",
+  "image_path": "img_folder/image_006_image7.jpg",
+  "caption": "اسکرین‌شات برنامه Acronis با گزینه‌های Tools & Utilities و Add New Disk مشخص‌شده.",
+  "ocr_text": "Acronis True Image Home 2011\nFile  Help\nBackup\nRecovery\nTools & Utilities\nSearch\nHome\nBackup\nRecovery\nLog\nTools & Utilities\nProtection tools\nAcronis Startup Recovery Manager\nAllows you to recover data at boot time.\nManage Acronis Secure Zone\nA special partition for storing backups on your disk.\nUtilities\nClone Disk\nCopy partitions from one disk to another.\nAdd New Disk\nAdd a new hard disk drive to your system.\nAcronis DriveCleanser",
+  "visual_description": [
+    "پنجره نرم‌افزار Acronis True Image Home 2011 نمایش داده شده است.",
+    "منوی بالایی شامل گزینه‌های Backup، Recovery و Tools & Utilities و کادر Search است.",
+    "در نوار کناری گزینه‌های Home، Backup، Recovery، Log و Tools & Utilities دیده می‌شود.",
+    "در بخش Protection tools گزینه‌های Acronis Startup Recovery Manager و Manage Acronis Secure Zone فهرست شده‌اند.",
+    "در بخش Utilities گزینه‌های Clone Disk، Add New Disk و Acronis DriveCleanser نمایش داده شده‌اند.",
+    "دو بیضی قرمز دور «Tools & Utilities» و «Add New Disk» کشیده شده است.",
+    "یک فلش قرمز به گزینه Clone Disk اشاره می‌کند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    5
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId20",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 5,
+    "page_number": 8,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      139.4,
+      135.97,
+      451.2,
+      317.57
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

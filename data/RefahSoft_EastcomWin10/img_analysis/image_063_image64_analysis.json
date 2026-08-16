@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image64.png",
+  "rId": "rId77",
+  "image_path": "img_folder/image_063_image64.png",
+  "caption": "پنجره New Simple Volume Wizard برای تعیین حرف درایو یا مسیر پارتیشن",
+  "ocr_text": "New Simple Volume Wizard\nAssign Drive Letter or Path\nFor easier access, you can assign a drive letter or drive path to your partition.\nAssign the following drive letter:\nD\nMount in the following empty NTFS folder:\nBrowse...\nDo not assign a drive letter or drive path\n< Back\nNext >\nCancel",
+  "visual_description": [
+    "پنجره ویزارد «New Simple Volume Wizard» در مرحله «Assign Drive Letter or Path» نمایش داده شده است",
+    "گزینه «Assign the following drive letter» انتخاب شده و حرف درایو روی D تنظیم است",
+    "دو گزینه دیگر شامل «Mount in the following empty NTFS folder» با دکمه Browse و «Do not assign a drive letter or drive path» وجود دارد",
+    "دکمه‌های ناوبری پایین شامل «< Back»، «Next >» و «Cancel» هستند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    64
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId77",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 64,
+    "page_number": 29,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      111.09,
+      425.19,
+      309.99
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

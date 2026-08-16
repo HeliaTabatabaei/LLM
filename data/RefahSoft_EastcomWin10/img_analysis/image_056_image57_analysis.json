@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image57.png",
+  "rId": "rId70",
+  "image_path": "img_folder/image_056_image57.png",
+  "caption": "صفحه About تنظیمات ویندوز با پیام تغییر نام رایانه و دکمه‌های Restart",
+  "ocr_text": "Settings\nHome\nFind a setting\nSystem\nDisplay\nSound\nNotifications & actions\nFocus assist\nPower & sleep\nStorage\nTablet\nMultitasking\nProjecting to this PC\nShared experiences\nClipboard\nAbout\nYour PC is monitored and protected.\nSee details in Windows Security\nRename your PC\nRename your PC\nAfter you restart, your PC name will change to: ATM-ترمینال\nRestart now\nRestart later\nSystem type\n32-bit operating system, x64-based processor\nPen and touch\nNo pen or touch input is available for this display\nCopy\nRename this PC\nWindows specifications\nEdition\nWindows 10 Enterprise LTSC\nVersion\n21H2\nInstalled on\n۱۴۰۳/۰۱/۲۱\nOS build\n19044.1288\nExperience\nWindows Feature Experience Pack 120.2212.3920.0\n03:35 ب.ظ",
+  "visual_description": [
+    "اسکرین‌شات از برنامه Settings ویندوز در بخش System > About",
+    "پنجره پاپ‌آپ «Rename your PC» نمایش داده شده و نام جدید «ATM-ترمینال» را پس از ری‌استارت اعلام می‌کند",
+    "دو دکمه در پاپ‌آپ: «Restart now» و «Restart later»",
+    "مشخصات سیستم نمایش داده شده: «32-bit operating system, x64-based processor»",
+    "Windows specifications شامل: Windows 10 Enterprise LTSC، Version 21H2، OS build 19044.1288"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    57
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId70",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 57,
+    "page_number": 26,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      184.4,
+      695.89,
+      411.15,
+      766.58
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

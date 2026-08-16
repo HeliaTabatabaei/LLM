@@ -1,0 +1,43 @@
+﻿{
+  "image_name": "image93.png",
+  "rId": "rId106",
+  "image_path": "img_folder/image_092_image93.png",
+  "caption": "پنجره Properties پوشه JOURNAL در ویندوز، تب Sharing با دکمه Advanced Sharing مشخص شده است.",
+  "ocr_text": "JOURNAL Properties\nGeneral  Sharing  Security  Previous Versions  Customize\nNetwork File and Folder Sharing\nJOURNAL\nNot Shared\nNetwork Path:\nNot Shared\nShare...\nAdvanced Sharing\nSet custom permissions, create multiple shares, and set other\nadvanced sharing options.\nAdvanced Sharing...\nPassword Protection\nPeople must have a user account and password for this\ncomputer to access shared folders.\nTo change this setting, use the Network and Sharing Center.\nOK  Cancel  Apply",
+  "visual_description": [
+    "پنجره JOURNAL Properties با تب Sharing باز است.",
+    "بخش Network File and Folder Sharing نشان می‌دهد پوشه JOURNAL در وضعیت Not Shared است.",
+    "فیلد Network Path مقدار Not Shared را نمایش می‌دهد.",
+    "دکمه Share... در بخش اشتراک‌گذاری شبکه وجود دارد.",
+    "بخش Advanced Sharing شامل دکمه Advanced Sharing... است که با کادر قرمز هایلایت شده.",
+    "بخش Password Protection توضیح نیاز به حساب کاربری و رمز عبور برای دسترسی به پوشه‌های اشتراک‌گذاری‌شده را نشان می‌دهد.",
+    "لینک Network and Sharing Center در متن پایین نمایش داده شده است.",
+    "دکمه‌های OK، Cancel و Apply در پایین پنجره قرار دارند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    96
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId106",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 96,
+    "page_number": 41,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.45,
+      481.58,
+      396.85,
+      739.48
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

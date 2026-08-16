@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image67.jpg",
+  "rId": "rId80",
+  "image_path": "img_folder/image_066_image67.jpg",
+  "caption": "تنظیم آدرس سرور KMS با دستور slmgr و نمایش پیام موفقیت",
+  "ocr_text": "C:\\Windows\\system32\\cmd.exe\n\nE:\\_Unprotected>cd c:\\windows\\system32\n\nE:\\_Unprotected>slmgr /skms 10.15.2.105\n\nWindows Script Host\n\nKey Management Service machine name set to 10.15.2.105 successfully.\n\nOK",
+  "visual_description": [
+    "پنجره Command Prompt در مسیر E:\\_Unprotected نمایش داده شده است",
+    "دستور cd c:\\windows\\system32 اجرا شده است",
+    "دستور slmgr /skms 10.15.2.105 برای تنظیم KMS اجرا شده است",
+    "کادر Windows Script Host پیام موفقیت تنظیم نام ماشین KMS به 10.15.2.105 را نشان می‌دهد",
+    "در کادر پیام یک دکمه OK وجود دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    67
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId80",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 67,
+    "page_number": 30,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      192.48,
+      475.97,
+      357.15,
+      527.12
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

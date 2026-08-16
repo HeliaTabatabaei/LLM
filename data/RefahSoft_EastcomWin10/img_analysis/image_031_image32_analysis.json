@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image32.png",
+  "rId": "rId45",
+  "image_path": "img_folder/image_031_image32.png",
+  "caption": "منوی تنظیمات ATM بانک رفاه با گزینه‌های Wincor، EastCom، EPP و ابزارها",
+  "ocr_text": "Mark Administrator  ::Bank Refah ATM Config::\n\n:::Set ATM Config::\n\n1- Wincor Config            2- EastCom Config\n\n3- EPP Config               4- Tools\n\n5- Set Config and Reset\n\nType Number and Press Enter:",
+  "visual_description": [
+    "پنجره کنسول با پس‌زمینه آبی و متن سفید نمایش داده شده است",
+    "عنوان پنجره: Mark Administrator  ::Bank Refah ATM Config::",
+    "سربرگ منو: :::Set ATM Config:::",
+    "گزینه‌های منو شامل 1- Wincor Config، 2- EastCom Config، 3- EPP Config، 4- Tools، 5- Set Config and Reset است",
+    "در پایین صفحه پیام ورودی: Type Number and Press Enter: نمایش داده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    30,
+    45
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId45",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 30,
+    "page_number": 17,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      106.13,
+      112.54,
+      446.2,
+      259.94
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

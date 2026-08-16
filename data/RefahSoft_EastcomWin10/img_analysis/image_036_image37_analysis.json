@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image37.png",
+  "rId": "rId50",
+  "image_path": "img_folder/image_036_image37.png",
+  "caption": "پنجره تنظیمات IPv4 ویندوز با تنظیم دستی DNS و نمایش آدرس‌های DNS",
+  "ocr_text": "Network Connections\nControl Panel > All Control Panel Items > Network Connections\nSearch Network Connections\nEthernet0 Properties\nNetworking\nInternet Protocol Version 4 (TCP/IPv4) Properties\nGeneral\nYou can get IP settings assigned automatically if your network supports this capability. Otherwise, you need to ask your network administrator for the appropriate IP settings.\nObtain an IP address automatically\nUse the following IP address:\nIP address:\nSubnet mask:\nDefault gateway:\nObtain DNS server address automatically\nUse the following DNS server addresses:\nPreferred DNS server:\n10 . 15 . 0 . 100\nAlternate DNS server:\n10 . 15 . 0 . 101\nValidate settings upon exit\nAdvanced...\nOK\nCancel",
+  "visual_description": [
+    "اسکرین‌شات پنجره Internet Protocol Version 4 (TCP/IPv4) Properties در ویندوز",
+    "گزینه Use the following IP address انتخاب شده اما فیلدهای IP/Subnet/Gateway خالی هستند",
+    "گزینه Use the following DNS server addresses فعال است",
+    "Preferred DNS server برابر 10.15.0.100 وارد شده است",
+    "Alternate DNS server برابر 10.15.0.101 وارد شده است",
+    "دکمه‌های Advanced..., OK و Cancel قابل مشاهده‌اند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    35
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId50",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 35,
+    "page_number": 18,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.4,
+      513.26,
+      467.55,
+      702.46
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

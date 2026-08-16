@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image74.jpeg",
+  "rId": "rId87",
+  "image_path": "img_folder/image_073_image74.jpg",
+  "caption": "منوی راست‌کلیک ویندوز با گزینه Run as administrator روی فایل bat",
+  "ocr_text": "RunChecker\n32-bit.bat\nOpen\nEdit\nPrint\nRun as administrator\nOpen in Media Player Classic\nOpen in MediaInfo",
+  "visual_description": [
+    "آیکون فایل با نام RunChecker 32-bit.bat روی دسکتاپ دیده می‌شود",
+    "منوی زمینه ویندوز باز است و گزینه Run as administrator با کادر قرمز مشخص شده",
+    "گزینه‌های قابل مشاهده شامل Open، Edit، Print، Open in Media Player Classic و Open in MediaInfo هستند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    75
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId87",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 75,
+    "page_number": 34,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      226.8,
+      300.48,
+      368.46,
+      382.98
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

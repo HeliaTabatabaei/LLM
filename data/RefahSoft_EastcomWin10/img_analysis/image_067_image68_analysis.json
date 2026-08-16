@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image68.jpg",
+  "rId": "rId81",
+  "image_path": "img_folder/image_067_image68.jpg",
+  "caption": "نمایش خطای فعال‌سازی ویندوز با slmgr /ato و عدم دسترسی به KMS",
+  "ocr_text": "C:\\Windows\\system32\\cmd.exe\n\nE:\\_Unprotected>cd c:\\windows\\system32\n\nE:\\_Unprotected>slmgr /ato\n\nWindows Script Host\n\nActivating Windows(R), EnterpriseS edition\n(32df2ab3-e4a8-42c2-923b-4bf4fd13e6ee) ...\nError: 0xC004F074 The Software Licensing Service reported that the\ncomputer could not be activated. No Key Management Service (KMS)\ncould be contacted. Please see the Application Event Log for additional\ninformation.\n\nOK",
+  "visual_description": [
+    "پنجره Command Prompt مسیر C:\\Windows\\system32 را باز کرده و دستور slmgr /ato اجرا شده است.",
+    "پنجره Windows Script Host خطای 0xC004F074 را نمایش می‌دهد: عدم امکان فعال‌سازی و عدم دسترسی به KMS.",
+    "یک دکمه OK در پنجره خطا وجود دارد."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    68
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId81",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 68,
+    "page_number": 30,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      190.98,
+      550.71,
+      358.38,
+      629.35
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

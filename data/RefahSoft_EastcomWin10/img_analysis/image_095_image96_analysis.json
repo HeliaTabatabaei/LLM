@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image96.png",
+  "rId": "rId109",
+  "image_path": "img_folder/image_095_image96.png",
+  "caption": "پنجره تنظیم مجوزهای Share برای JOURNAL و انتخاب گزینه Allow برای Read",
+  "ocr_text": "Permissions for JOURNAL\nShare Permissions\nGroup or user names:\nAdministrator [ADONISTECH\\Administrator]\nBANKUser [ADONISTECH\\BANKUser]\nAdd...\nRemove\nPermissions for Administrator\nAllow\nDeny\nFull Control\nChange\nRead\nLearn about access control and permissions\nOK\nCancel\nApply",
+  "visual_description": [
+    "اسکرین‌شات پنجره «Permissions for JOURNAL» در ویندوز",
+    "فهرست کاربران/گروه‌ها شامل Administrator و BANKUser نمایش داده شده است",
+    "جدول مجوزها با ستون‌های Allow و Deny و ردیف‌های Full Control، Change، Read وجود دارد",
+    "چک‌باکس Allow برای گزینه Read تیک خورده است",
+    "دکمه‌های Add..., Remove, OK, Cancel, Apply قابل مشاهده هستند",
+    "کادر قرمز دور ستون Allow و دکمه OK کشیده شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    99
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId109",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 99,
+    "page_number": 43,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.45,
+      111.09,
+      396.85,
+      351.14
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image42.png",
+  "rId": "rId55",
+  "image_path": "img_folder/image_041_image42.png",
+  "caption": "پنجره نصب Intel Graphics Driver با اطلاعات نسخه و سیستم‌عامل‌های پشتیبانی‌شده",
+  "ocr_text": "Intel® Installation Framework\nIntel® Graphics Driver\nReadme File Information\nRefer to the Readme file below to view the system requirements and installation information.\nRelease Version: Planned Release\nDriver Version: ١٥.٣٣.١٠.٤٠٣١\nBuild Date: Nov ٢, ٢٠١٤\nPlatform / Operating System(s):\n4th Generation Intel(R) Core(TM) processor family (codename Haswell)\nMicrosoft Windows* 10-64\n4th Generation Intel(R) Core(TM) processor family (codename Broadwell)\nMicrosoft Windows* 7-64\n< Back\nNext >\nCancel\nIntel® Installation Framework",
+  "visual_description": [
+    "پنجره «Intel® Graphics Driver» با عنوان «Readme File Information» نمایش داده شده است",
+    "کادر متنی اسکرول‌دار شامل نسخه انتشار، نسخه درایور و تاریخ بیلد است",
+    "دکمه‌های «< Back»، «Next >» و «Cancel» در پایین پنجره دیده می‌شوند",
+    "فهرست پلتفرم/سیستم‌عامل‌ها شامل نسل چهارم Intel Core با نام‌های Haswell و Broadwell است",
+    "لوگوی Intel در گوشه بالا-راست قرار دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    41
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId55",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 41,
+    "page_number": 21,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      191.15,
+      71.1,
+      403.7,
+      238.52
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image44.png",
+  "rId": "rId57",
+  "image_path": "img_folder/image_043_image44.png",
+  "caption": "پنجره نصب درایور گرافیک اینتل با نمایش عملیات حذف فایل‌ها",
+  "ocr_text": "Intel® Installation Framework\nIntel® Graphics Driver\nSetup Progress\nintel\nPlease wait while the following setup operations are performed:\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) Graphics and ...\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) Rapid ...\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) Graphics Control Panel.lnk\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) Graphics and Media Control Panel.lnk\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) iRST(R) ...\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) Rapid ...\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) Graphics and Media Control Panel.lnk\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) iRST(R) Graphics Control Panel.lnk\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) iRST(R) Graphics Control Panel.lnk\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) Graphics Control Panel.lnk\nDeleting File: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Intel(R) Graphics Control Panel.lnk\nDeleting File: C:\\Users\\Public\\Desktop\\Intel(R) Graphics Control Panel.lnk\nDeleting Fix: directory Key: HKLM\\SOFTWARE\\Intel\\GFX\\Internal\\AudioFix\nClick Next to continue.\n<\nNext >\nIntel® Installation Framework",
+  "visual_description": [
+    "پنجره Intel® Installation Framework برای Intel® Graphics Driver با عنوان Setup Progress نمایش داده شده است",
+    "یک ناحیه لاگ متنی شامل مسیرهای فایل در ویندوز (C:\\ProgramData و C:\\Users\\Public\\Desktop) و پیام‌های Deleting File دیده می‌شود",
+    "یک دکمه «Next >» در پایین سمت راست و نماد «intel» در بالای راست وجود دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    43
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId57",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 43,
+    "page_number": 21,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      191.15,
+      433.09,
+      403.7,
+      599.48
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

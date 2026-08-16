@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image47.jpeg",
+  "rId": "rId60",
+  "image_path": "img_folder/image_046_image47.jpg",
+  "caption": "صفحه ورود کاربر با نام کاربری operation و لوگوهای سازمانی",
+  "ocr_text": "بانک رفاه کارگران\nREFAH KARGARAN BANK\nشرکت توسعه خدمات الکترونیکی\nآدونیس\nADONIS\nOther user\noperation\nSign-in options",
+  "visual_description": [
+    "صفحه ورود سیستم با عنوان \"Other user\" نمایش داده شده است.",
+    "فیلد نام کاربری با مقدار \"operation\" قابل مشاهده است.",
+    "فیلد گذرواژه به صورت نقطه‌ای (پنهان) نمایش داده شده است.",
+    "گزینه \"Sign-in options\" در پایین فرم ورود دیده می‌شود.",
+    "دو لوگو/برند در بالای تصویر: \"REFAH KARGARAN BANK\" و \"ADONIS\"."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    47
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId60",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 47,
+    "page_number": 23,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      227.83,
+      439.34,
+      401.58
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

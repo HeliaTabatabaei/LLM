@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image19.jpeg",
+  "rId": "rId32",
+  "image_path": "img_folder/image_018_image19.jpg",
+  "caption": "پنجره Recovery Wizard برای تنظیمات بازیابی پارتیشن C و انتخاب مسیر جدید",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nSpecify recover settings of Partition C\nPartition location (required)\nNot selected\nNew location\nPartition type\nNot selected\nChange default\nPartition size\nFree space before: Not specified\nPartition size: Not specified\nFree space after: Not specified\nChange default\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات از پنجره نرم‌افزار Recovery Wizard با عنوان «Specify recover settings of Partition C».",
+    "نوار کناری مراحل شامل Archive selection، Recovery method و What to recover با تیک سبز است.",
+    "گزینه «New location» با یک بیضی قرمز هایلایت شده است.",
+    "فیلدهای Partition location و Partition type هر دو مقدار «Not selected» دارند.",
+    "بخش Partition size مقادیر Free space before/after و Partition size را «Not specified» نشان می‌دهد.",
+    "دکمه‌های پایین پنجره «Next >» (غیرفعال) و «Cancel» قابل مشاهده‌اند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    17
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId32",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 17,
+    "page_number": 12,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      83.66,
+      425.15,
+      240.36
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

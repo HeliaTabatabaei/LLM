@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image72.png",
+  "rId": "rId85",
+  "image_path": "img_folder/image_071_image72.png",
+  "caption": "پنجره نصب کسپرسکی با پیام نیاز به ری‌استارت و مشکل پشتیبانی امضای SHA-256",
+  "ocr_text": "Kaspersky Security Center 14\nRestart is required\nRestart the device.\n\nInstalling: Kaspersky Embedded Systems Security 3.2.0.200\n\nThe SHA-256 (SHA-2) digital signature support is missing on the computer, which may result in\nimproper functioning of the application. Please, install the operating system updates to ensure that\nthe SHA-256 digital signature is supported and run the Setup Wizard again. The list of required\nupdates can be found here: https://support.kaspersky.com/15728.\n\nClose",
+  "visual_description": [
+    "پنجره نرم‌افزار با عنوان «Kaspersky Security Center 14» نمایش داده شده است",
+    "پیام «Restart is required» و «Restart the device.» در بالای پنجره دیده می‌شود",
+    "وضعیت نصب: «Installing: Kaspersky Embedded Systems Security 3.2.0.200» نمایش داده شده است",
+    "هشدار درباره نبود پشتیبانی امضای دیجیتال SHA-256 (SHA-2) و نیاز به نصب آپدیت‌های سیستم‌عامل درج شده است",
+    "لینک «https://support.kaspersky.com/15728.» برای فهرست به‌روزرسانی‌های لازم نمایش داده شده است",
+    "دکمه «Close» در پایین پنجره وجود دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    73
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId85",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 73,
+    "page_number": 33,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      116.9,
+      339.38,
+      442.85,
+      522.78
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image39.png",
+  "rId": "rId52",
+  "image_path": "img_folder/image_038_image39.png",
+  "caption": "پنجره SetRegistryConfigs برای تنظیم IP کلاینت، IP سرور و شناسه ترمینال در نرم‌افزار ADONIS",
+  "ocr_text": "Administrator:  \"Bank Refah ATM Config...\"\nSetRegistryConfigs\nشرکت مهندسی داده پردازی\nآدونیس\nADONIS\nClient IP\n10.48.220.139\nServer IP\n10.15.45.10\nTerminal ID\n21169\nاطلاعات وارد شده با موفقیت ثبت شد\nپس از 5 ثانیه به صورت خودکار این پنجره بسته خواهد شد",
+  "visual_description": [
+    "اسکرین‌شات یک محیط شبیه کنسول آبی با پنجره تنظیمات روی آن",
+    "عنوان پنجره: SetRegistryConfigs",
+    "لوگوی ADONIS و متن فارسی «شرکت مهندسی داده پردازی آدونیس» نمایش داده شده است",
+    "سه فیلد ورودی با برچسب‌های Client IP، Server IP و Terminal ID وجود دارد",
+    "مقادیر فیلدها: Client IP=10.48.220.139، Server IP=10.15.45.10، Terminal ID=21169",
+    "پیام وضعیت سبز/قرمز در پایین پنجره درباره ثبت موفق اطلاعات و بسته شدن خودکار پس از 5 ثانیه"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    37
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId52",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 37,
+    "page_number": 19,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.4,
+      416.08,
+      467.54,
+      617.98
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image80.jpeg",
+  "rId": "rId93",
+  "image_path": "img_folder/image_079_image80.jpg",
+  "caption": "صفحه وضعیت سرویس و عملیات با خطاهای کارت‌خوان و خالی بودن کاست‌ها",
+  "ocr_text": "SERVICE & OPERATING\n\nSERVICE & OPERATING\nMODE: OUT OF SERVICE\nLINE: ONLINE\nCARD RDR: ERROR\nMOUTH PIECE: REMOVED\nCASSETTE 2: EMPTY\nCASSETTE 3: EMPTY\nCASSETTE 4: EMPTY\n\n01 OPERATING\n\n96 CANCEL\n\nSELECT:\n\nWINCOR\nNIXDORF",
+  "visual_description": [
+    "نمایش وضعیت: MODE: OUT OF SERVICE و LINE: ONLINE",
+    "پیغام خطا: CARD RDR: ERROR",
+    "وضعیت قطعه: MOUTH PIECE: REMOVED",
+    "وضعیت کاست‌ها: CASSETTE 2/3/4: EMPTY",
+    "گزینه‌های منو در سمت راست: 01 OPERATING و 96 CANCEL",
+    "لوگوی WINCOR NIXDORF در پایین سمت راست"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    81
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId93",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 81,
+    "page_number": 36,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      146.65,
+      439.32,
+      359.75
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

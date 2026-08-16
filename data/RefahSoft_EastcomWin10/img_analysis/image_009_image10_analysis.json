@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image10.jpeg",
+  "rId": "rId23",
+  "image_path": "img_folder/image_009_image10.jpg",
+  "caption": "پنجره Add New Disk Wizard با پیام تأیید حذف پارتیشن‌ها و دکمه OK مشخص‌شده",
+  "ocr_text": "Add New Disk Wizard\nRequired steps:\nDisk selection\nPartition creation\nFinish\nSelect your hard disk from the list below.\nDisk properties\nDrive\nCapacity\nModel\nInterface\nDisk 1\n40 GB ATA VMware Virtual I\nIDE(2) Primary Slave\nConfirmation\nThe destination hard disk drive you have chosen contains\nsome partitions that could contain useful data. Click OK to\nconfirm deletion of all the partitions on the destination hard\ndisk drive.\nOK\nCancel\n40 GB\nC:\n39.99 GB NTFS\nPrimary // Logical // Dynamic\nAcronis Secure Zone\nUnallocated // Unsupported\nNext >\nCancel",
+  "visual_description": [
+    "پنجره نرم‌افزاری «Add New Disk Wizard» با مراحل Disk selection، Partition creation و Finish نمایش داده شده است.",
+    "جدول Disk properties شامل Disk 1 با ظرفیت 40 GB، مدل «ATA VMware Virtual I» و رابط «IDE(2) Primary Slave» است.",
+    "پنجره Confirmation هشدار می‌دهد که دیسک مقصد دارای پارتیشن است و با OK حذف همه پارتیشن‌ها تأیید می‌شود.",
+    "دکمه OK با دایره قرمز مشخص شده و دکمه Cancel در کنار آن وجود دارد.",
+    "در پایین، پارتیشن C: با اندازه 39.99 GB و فایل‌سیستم NTFS نمایش داده شده است.",
+    "راهنمای رنگ/برچسب‌ها شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported است.",
+    "دکمه‌های «Next >» و «Cancel» در پایین پنجره دیده می‌شوند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    8
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId23",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 8,
+    "page_number": 9,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      139.4,
+      126.66,
+      451.19,
+      302.31
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

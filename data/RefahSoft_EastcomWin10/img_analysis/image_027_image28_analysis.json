@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image28.jpeg",
+  "rId": "rId41",
+  "image_path": "img_folder/image_027_image28.jpg",
+  "caption": "صفحه Summary در Recovery Wizard با دکمه Proceed مشخص‌شده برای ادامه عملیات بازیابی",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nSummary\nOperations\nNumber of operations: 4\n1. Recovering MBR\nHard disk: 1\n2. Deleting partition\nHard disk: 1\nDrive letter: C:\nFile system: NTFS\nVolume label:\nSize: 39.99 GB\n3. Recovering partition sector by sector\nHard disk: 1\nDrive letter: C:\nFile system: NTFS\nVolume label: System Reserved\nSize: 100 MB -> 101.9 MB\n4. Recovering partition sector by sector\nHard disk: 1\nDrive letter: D: -> E:\nFile system: NTFS\nVolume label:\nSize: 32 GB -> 32.01 GB\nOptional steps:\nOptions\nOptions\nProceed\nCancel",
+  "visual_description": [
+    "پنجره نرم‌افزار Recovery Wizard با نوار مراحل در سمت چپ و تیک سبز کنار مراحل",
+    "صفحه Summary فهرست 4 عملیات را نشان می‌دهد: Recovering MBR، Deleting partition، و دو مورد Recovering partition sector by sector",
+    "جزئیات قابل مشاهده شامل Hard disk: 1، درایو C: با NTFS و اندازه 39.99 GB",
+    "پارتیشن System Reserved با اندازه 100 MB -> 101.9 MB نمایش داده شده است",
+    "تغییر حرف درایو D: -> E: برای یک عملیات بازیابی نمایش داده شده است",
+    "دکمه Proceed در پایین با دایره قرمز مشخص شده و کنار آن Options و Cancel دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    26
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId41",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 26,
+    "page_number": 15,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      153.53,
+      312.69,
+      436.95,
+      518.44
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

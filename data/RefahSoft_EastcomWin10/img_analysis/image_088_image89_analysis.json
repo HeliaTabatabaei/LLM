@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image89.png",
+  "rId": "rId102",
+  "image_path": "img_folder/image_088_image89.png",
+  "caption": "مسیر منویی برای افزودن پول و صفحه «ADD BILLS» با ستون‌های REM و REJ",
+  "ocr_text": "04 REPLENISH\n08 ADD CASH\nADD BILLS\n#   REM   REJ\n> 01   1   0000   0000\n02   2   0000   0000\n03   3   0000   0000\n04   4   0000   0000\n05   OK",
+  "visual_description": [
+    "فلش‌ها مسیر «04 REPLENISH» به «08 ADD CASH» و سپس به جعبه «ADD BILLS» را نشان می‌دهند.",
+    "در پنجره «ADD BILLS» ستون‌های «#»، «REM»، «REJ» نمایش داده شده‌اند.",
+    "سطرهای 01 تا 04 با مقادیر REM=0000 و REJ=0000 فهرست شده‌اند.",
+    "نشانگر انتخاب «>» کنار «01» قرار دارد.",
+    "گزینه «05 OK» در انتهای فهرست دیده می‌شود."
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    90
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId102",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 90,
+    "page_number": 39,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      72.0,
+      580.93,
+      383.71,
+      712.83
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

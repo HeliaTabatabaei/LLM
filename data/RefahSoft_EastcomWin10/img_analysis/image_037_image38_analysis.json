@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image38.png",
+  "rId": "rId51",
+  "image_path": "img_folder/image_037_image38.png",
+  "caption": "پنجره تنظیم رجیستری با فیلدهای IP کلاینت، IP سرور و شناسه ترمینال",
+  "ocr_text": "Administrator:  \"Bank Refah ATM Config::\nSetRegistryConfigs\nشرکت توسعه خدمات انفورماتیک\nآدونیس\nADONIS\nClient IP\nPlease Select...\nServer IP\n10.15.45.10\nTerminal ID\nSubmit\nType x and Press Enter to g\nType Number and Press Enter:",
+  "visual_description": [
+    "اسکرین‌شات محیط ویندوز با یک پنجره برنامه SetRegistryConfigs روی پس‌زمینه کنسول آبی",
+    "فرم شامل فیلدهای Client IP (لیست کشویی)، Server IP (مقدار 10.15.45.10) و Terminal ID (خالی) است",
+    "دکمه سبز رنگ با برچسب Submit در پایین فرم قرار دارد",
+    "نوار عنوان پنجره اصلی شامل متن Administrator: \"Bank Refah ATM Config:: است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    36
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId51",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 36,
+    "page_number": 19,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.4,
+      181.13,
+      467.47,
+      385.33
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

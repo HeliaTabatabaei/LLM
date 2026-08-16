@@ -1,0 +1,37 @@
+﻿{
+  "image_name": "image83.jpeg",
+  "rId": "rId96",
+  "image_path": "img_folder/image_082_image83.jpg",
+  "caption": "نمایش وضعیت سرویس و عملکرد با خط آنلاین و حالت خارج از سرویس",
+  "ocr_text": "Service & Operating\n\nLine: online\n\nMode: out of service",
+  "visual_description": [
+    "متن شامل عنوان «Service & Operating» و دو خط وضعیت «Line: online» و «Mode: out of service» است.",
+    "پس‌زمینه سفید با نوشته‌های مشکی، بدون آیکون یا نمودار."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    84
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId96",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 84,
+    "page_number": 37,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      72.0,
+      474.73,
+      171.2,
+      536.37
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

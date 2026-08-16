@@ -1,0 +1,49 @@
+﻿{
+  "image_name": "image1.jpg",
+  "rId": "rId8",
+  "image_path": "img_folder/image_001_image1.jpg",
+  "caption": "جلد مستندات سیستم صوتی در دستگاه‌های خودپرداز آدونیس، نسخه و تاریخ بهمن ۱۳۹۴",
+  "ocr_text": "مستندات\nسیستم صوتی\nدر دستگاههای خودپرداز\nشماره نسخه : 2-179411-138-00\nبهمن 1394\nشرکت توسعه خدمات الکترونیکی آدونیس (سهامی خاص)",
+  "visual_description": [
+    "صفحه جلد سند فارسی با عنوان «سیستم صوتی در دستگاههای خودپرداز»",
+    "در پایین صفحه شماره نسخه «2-179411-138-00» و تاریخ «بهمن 1394» درج شده است",
+    "لوگوی شرکت و عبارت «شرکت توسعه خدمات الکترونیکی آدونیس (سهامی خاص)» در پایین قرار دارد",
+    "طرح خطی دستگاه خودپرداز در گوشه پایین چپ دیده می‌شود",
+    "نوار/حاشیه موج‌دار تیره در سمت راست صفحه وجود دارد"
+  ],
+  "image_type": "scan",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    0
+  ],
+  "rendered_composite": true,
+  "render_status": "rendered",
+  "render_details": {
+    "relationship_id": "rId8",
+    "rendered": true,
+    "status": "rendered",
+    "occurrence_index": 0,
+    "page_number": 1,
+    "overlay_count": 3,
+    "error": "",
+    "picture_name": "Picture 18",
+    "picture_box": [
+      1.05,
+      -0.0,
+      595.29,
+      840.35
+    ],
+    "crop_box": [
+      0.0,
+      0.0,
+      595.32,
+      841.92
+    ],
+    "overlay_names": [
+      "Text Box 20",
+      "Straight Connector 2",
+      "Straight Connector 3"
+    ]
+  }
+}

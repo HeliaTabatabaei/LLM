@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image24.jpeg",
+  "rId": "rId37",
+  "image_path": "img_folder/image_023_image24.jpg",
+  "caption": "پنجره انتخاب مقصد پارتیشن با گزینه Unallocated و دکمه Accept مشخص شده است.",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nPartition Destination\nNew partition location\nDisk properties\nPartition\nDisk 1\nFla...\nCapa...\nFree S...\nType\nSystem Reserved (C)\nPri,Act\n101.9 MB\n75.86 MB\nNTFS\nUnallocated\n39.9 GB\nUnallocated\nAccept\nCancel\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات نرم‌افزار Recovery Wizard با مراحل سمت چپ نمایش داده شده است.",
+    "پنجره Partition Destination باز است و عنوان New partition location دارد.",
+    "در جدول Disk properties برای Disk 1، ردیف Unallocated با ظرفیت 39.9 GB انتخاب شده است.",
+    "ردیف System Reserved (C) با فایل‌سیستم NTFS و وضعیت Pri,Act نمایش داده شده است.",
+    "دکمه Accept در پایین پنجره با علامت‌گذاری قرمز مشخص شده است."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    22
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId37",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 22,
+    "page_number": 13,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      568.18,
+      425.18,
+      753.33
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

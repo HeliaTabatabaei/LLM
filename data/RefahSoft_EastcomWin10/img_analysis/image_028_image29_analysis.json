@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image29.jpeg",
+  "rId": "rId42",
+  "image_path": "img_folder/image_028_image29.jpg",
+  "caption": "پیغام موفقیت عملیات بازیابی در Acronis True Image Home 2011",
+  "ocr_text": "Acronis True Image Home 2011\nBackup\nRecovery\nTools & Utilities\nSearch\nHome\nBackup\nRecovery\nLog\nTools & Utilities\nData recovery and backup management\nDisk Recovery\nRecover your computer from a backup.\nRefresh backups\nBrowse for backup...\nInformation\nRecover operation succeeded.\nOK\nPasargad_Windows7_20150624\nPasargad_Windows7_20150624  6/24/15 1:06:27 PM\nCreated\nCom...\nRating",
+  "visual_description": [
+    "اسکرین‌شات نرم‌افزار Acronis True Image Home 2011 در بخش Recovery",
+    "پنجره Information با متن «Recover operation succeeded.» نمایش داده شده است",
+    "دکمه «OK» در پنجره پیام قابل مشاهده است",
+    "صفحه اصلی شامل عنوان «Data recovery and backup management» و گزینه «Disk Recovery» است",
+    "فهرست پشتیبان‌ها شامل مورد «Pasargad_Windows7_20150624» با زمان «6/24/15 1:06:27 PM» دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    27
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId42",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 27,
+    "page_number": 15,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      153.53,
+      565.87,
+      436.98,
+      744.31
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

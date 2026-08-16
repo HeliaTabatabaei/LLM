@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image66.png",
+  "rId": "rId79",
+  "image_path": "img_folder/image_065_image66.png",
+  "caption": "پایان ویزارد ساخت Simple Volume با درایو E: و فایل‌سیستم NTFS",
+  "ocr_text": "New Simple Volume Wizard\n\nCompleting the New Simple\nVolume Wizard\n\nYou have successfully completed the New Simple Volume\nWizard.\n\nYou selected the following settings:\n\nVolume type: Simple Volume\nDisk selected: Disk 0\nVolume size: 59997 MB\nDrive letter or path: E:\nFile system: NTFS\nAllocation unit size: Default\nVolume label: New Volume\n\nTo close this wizard, click Finish.\n\n< Back\nFinish\nCancel",
+  "visual_description": [
+    "پنجره New Simple Volume Wizard در مرحله Completing نمایش داده شده است",
+    "تنظیمات نمایش‌داده‌شده: Disk 0، حجم 59997 MB، حرف درایو E:\\، فایل‌سیستم NTFS، Allocation unit size پیش‌فرض، برچسب New Volume",
+    "دکمه‌های < Back، Finish و Cancel در پایین پنجره دیده می‌شوند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    66
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId79",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 66,
+    "page_number": 29,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      573.07,
+      425.19,
+      773.87
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

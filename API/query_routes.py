@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import os
 from queue import Queue
+import queue
 from threading import Thread
 from typing import Any, Optional, Tuple
 import uuid
@@ -158,11 +160,6 @@ def build_router_agent() -> RouterAgent:
 # یک نمونه مشترک برای API
 router_agent = build_router_agent()
 
-
-
-   
-
-
 @router.post("/StreamQueryHistory")
 async def stream_queryHistory_endpoint(
     request: QueryRequestStreamٌwithConversionId,
@@ -230,7 +227,29 @@ async def stream_queryHistory_endpoint(
                 )
                 continue
             if isinstance(chunk, dict) and chunk.get("type") == "source_chunks":
-                continue       
+                # items = []
+                # while True:
+                #     try:
+                #         item = chunks.get_nowait()      # queue.Queue → غیرمسدودکننده
+                #     except queue.Empty:                 # ✅ استثنای درست
+                #         break
+                #     if item is None:                     # sentinel پایان
+                #         chunks.task_done()
+                #         break
+                #     items.append(item)
+                #     chunks.task_done()
+
+                # source_chunks = [
+                #     {
+                #         "id": c.get("id"),
+                #         "source_file": c.get("meta", {}).get("source_file"),
+                #         "image_paths": c.get("meta", {}).get("image_paths", []),
+                #     }
+                #     for c in items
+                # ]
+                # yield ("event: source_chunks\n"
+                #     f"data: {json.dumps(source_chunks, ensure_ascii=False)}\n\n")
+                continue
             # ۲. تفکیک متادیتا و Usage (ارسالی از openai_provider)
             if isinstance(chunk, dict) and chunk.get("type") == "meta":             
                 final_response_id = chunk.get("response_id")
@@ -245,12 +264,7 @@ async def stream_queryHistory_endpoint(
                 text = chunk.get("content", "")
                 answer_parts.append(text)
                 payload = {"text": chunk.get("content", "")}
-            #ht14050520
-            # elif isinstance(chunk, dict) and chunk.get("type") == "clarify":
-            #                 text = chunk.get("content", "")
-            #                 answer_parts.append(text)
-            #                 payload = {"text": chunk.get("content", "")}   
-                
+        
             elif isinstance(chunk, dict): 
                 text = chunk.get("text")
                 if text:

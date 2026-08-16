@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image15.jpg",
+  "rId": "rId28",
+  "image_path": "img_folder/image_014_image15.jpg",
+  "caption": "پنجره Recovery Wizard برای انتخاب فایل بکاپ Acronis و مسیر آرشیو",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nFinish\nSelect a backup from which to recover\nDetails\nName\nCreated\nImages\nAcronis_REFAH_Win10_ATM_AllModel_v1.0.3\nAcronis : مجدداً کنترل پکیج عملیاتی را انتخاب نمایید.\nPath:  E:\\_Unprotected\\ATM\\Pilot\\Refah\\Package 1.0.3\\Acronis_F\nBrowse\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات از پنجره Acronis Recovery Wizard با مرحله Archive selection فعال",
+    "لیست Details شامل ستون‌های Name و Created و یک گروه Images نمایش داده شده است",
+    "یک آیتم با نام Acronis_REFAH_Win10_ATM_AllModel_v1.0.3 در لیست وجود دارد",
+    "یک آیتم با متن فارسی در لیست با کادر قرمز هایلایت شده است",
+    "کادر Path مسیر E:\\_Unprotected\\ATM\\Pilot\\Refah\\Package 1.0.3\\Acronis_F را نشان می‌دهد",
+    "دکمه‌های Browse، Next > و Cancel در پایین پنجره دیده می‌شوند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    13
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId28",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 13,
+    "page_number": 10,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      119.15,
+      523.0,
+      439.44,
+      734.4
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image48.png",
+  "rId": "rId61",
+  "image_path": "img_folder/image_047_image48.png",
+  "caption": "منوی راست‌کلیک ویندوز روی دسکتاپ با گزینه‌های گرافیک و تنظیمات نمایش",
+  "ocr_text": "View\nSort by\nRefresh\nPaste\nPaste shortcut\nGraphics Properties...\nGraphics Options\nNew\nDisplay settings\nPersonalize",
+  "visual_description": [
+    "منوی زمینه دسکتاپ ویندوز نمایش داده شده است",
+    "گزینه‌های View، Sort by و Refresh در بالای منو دیده می‌شوند",
+    "گزینه‌های Paste و Paste shortcut غیرفعال (خاکستری) هستند",
+    "گزینه‌های Graphics Properties... و Graphics Options وجود دارد",
+    "زیرمنوی New با فلش سمت راست نمایش داده شده است",
+    "گزینه‌های Display settings و Personalize در پایین منو هستند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    48
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId61",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 48,
+    "page_number": 23,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      104.95,
+      509.84,
+      265.05,
+      734.03
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

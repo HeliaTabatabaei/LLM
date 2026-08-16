@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image69.jpg",
+  "rId": "rId82",
+  "image_path": "img_folder/image_068_image69.jpg",
+  "caption": "اسکرین‌شات پنجره RefahChangeValue با فهرست انواع و مقادیر عددی و دستور ورود",
+  "ocr_text": "Administrator: Pasargad Noor KarAfarin Refah Change Value\n\n[ *** :: ADONIS ESD COMPANY :: *** ]\n[ *** :: SECOND LEVEL Technical Support Group :: *** ]\n\n***:: RefahChangeValue ::***\n\n\n.:1:.                                  .:2:.\n\nType 1 : 1,000,000                     Type 1 : 2,000,000\nType 2 : 500,000                       Type 2 : 1,000,000\nType 3 : 100,000 (New)                 Type 3 : 500,000\nType 4 : 100,000 (Old)                 Type 4 : 100,000\n\n\nFor Opening First Menu press X and clicking Enter.\n\nType Number and Press Enter:",
+  "visual_description": [
+    "پنجره کنسولی با عنوان Administrator: Pasargad Noor KarAfarin Refah Change Value نمایش داده شده است",
+    "هدر شامل نام شرکت ADONIS ESD COMPANY و SECOND LEVEL Technical Support Group است",
+    "دو ستون با برچسب‌های .:1:. و .:2:. شامل Type 1 تا Type 4 و مقادیر عددی متفاوت هستند",
+    "برای Type 3 و Type 4 در ستون اول برچسب‌های (New) و (Old) دیده می‌شود",
+    "دستورهای متنی برای باز کردن منوی اول با کلید X و Enter و همچنین ورود شماره نوع و فشردن Enter نمایش داده شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    70
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId82",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 70,
+    "page_number": 32,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      148.15,
+      439.35,
+      296.85
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

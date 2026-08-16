@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image21.png",
+  "rId": "rId34",
+  "image_path": "img_folder/image_020_image21.png",
+  "caption": "پنجره Recovery Wizard برای تنظیمات بازیابی پارتیشن C و دکمه Next",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nSpecify recover settings of Partition C\nPartition location (required)\nNTFS (Unlabeled) (C:)\nNew location\nPartition type\nPrimary, Mark the partition as active\nChange default\nPartition size\nFree space before: 31 KB\nPartition size: 100 MB\nFree space after: 39.9 GB\nChange default\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات نرم‌افزار Recovery Wizard با مرحله «Settings of Partition C» انتخاب‌شده در نوار کناری",
+    "نمایش نوع فایل‌سیستم پارتیشن: NTFS (Unlabeled) (C:)",
+    "بخش Partition type شامل گزینه Primary و فعال بودن پارتیشن (Mark the partition as active)",
+    "بخش Partition size شامل Free space before: 31 KB، Partition size: 100 MB، Free space after: 39.9 GB",
+    "دکمه‌های پایین پنجره: Next > و Cancel؛ دکمه Next با دایره قرمز مشخص شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    19
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId34",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 19,
+    "page_number": 12,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      547.21,
+      425.18,
+      728.86
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

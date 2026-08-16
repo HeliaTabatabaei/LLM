@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image13.png",
+  "rId": "rId26",
+  "image_path": "img_folder/image_006_image13.png",
+  "caption": "بلوک‌دیاگرام اتصال ATM PC به آمپلی‌فایر و بلندگو",
+  "ocr_text": "ATM PC\nAMP\nSPEAKER",
+  "visual_description": [
+    "نمودار بلوکی با سه بخش: ATM PC، AMP و SPEAKER",
+    "یک فلش جهت‌دار از ATM PC به سمت AMP",
+    "یک فلش جهت‌دار از AMP به سمت SPEAKER",
+    "نماد AMP به شکل مثلث تقویت‌کننده رسم شده است",
+    "نماد SPEAKER شامل شکل بلندگو داخل یک کادر است"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    5,
+    6
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId26",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 5,
+    "page_number": 9,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      99.1,
+      250.98,
+      467.5,
+      345.48
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

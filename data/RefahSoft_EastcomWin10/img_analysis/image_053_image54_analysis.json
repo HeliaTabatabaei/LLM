@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image54.jpeg",
+  "rId": "rId67",
+  "image_path": "img_folder/image_053_image54.jpg",
+  "caption": "نمایی از کنترل پنل ویندوز با گزینه System مشخص‌شده.",
+  "ocr_text": "Control Panel > All Control Panel Items\nSearch Control Panel\nAdjust your computer's settings\nView by: Large icons\nKeyboard\nMouse\nParental Controls\nPhone and Modem\nRecovery\nSound\nSystem\nUser Accounts\nWindows Defender\nLocation and Other Sensors\nNetwork and Sharing Center\nPerformance Information and Tools\nPower Options\nRegion and Language\nSpeech Recognition\nTaskbar and Start Menu\nWindows Anytime Upgrade\nWindows Firewall\nMail\nNotification Area Icons\nPersonalization\nPrograms and Features\nRemoteApp and Desktop Connections\nSync Center\nTroubleshooting\nWindows CardSpace\nWindows Update",
+  "visual_description": [
+    "پنجره Control Panel در حالت All Control Panel Items نمایش داده شده است.",
+    "گزینه View by روی Large icons قرار دارد.",
+    "آیتم System با یک کادر قرمز مشخص شده است.",
+    "کادر جستجو با متن Search Control Panel در بالا سمت راست دیده می‌شود."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    54
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId67",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 54,
+    "page_number": 26,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.45,
+      167.4,
+      396.83,
+      306.65
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

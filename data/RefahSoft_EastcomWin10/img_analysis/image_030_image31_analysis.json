@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image31.png",
+  "rId": "rId44",
+  "image_path": "img_folder/image_030_image31.png",
+  "caption": "اسکرین‌شات صفحه ورود کاربر نرم‌افزار Adonis با فیلدهای ID و کد تأیید",
+  "ocr_text": "Adonis Login Page\nUSER LOGIN\nID\nVerification Code\nShow Password\nLog in\nOR\nExit\nآدنیس\nADONIS",
+  "visual_description": [
+    "پنجره با عنوان «Adonis Login Page» نمایش داده شده است",
+    "تیتر «USER LOGIN» در بالای فرم ورود قرار دارد",
+    "دو کادر ورودی با برچسب‌های «ID» و «Verification Code» وجود دارد",
+    "یک چک‌باکس با متن «Show Password» زیر فیلدها دیده می‌شود",
+    "دکمه «Log in» به رنگ آبی و دکمه «Exit» به رنگ خاکستری وجود دارد و بین آن‌ها متن «OR» قرار دارد",
+    "لوگوی «آدنیس / ADONIS» در سمت چپ پنجره دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    29
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId44",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 29,
+    "page_number": 16,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      519.59,
+      439.35,
+      678.49
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

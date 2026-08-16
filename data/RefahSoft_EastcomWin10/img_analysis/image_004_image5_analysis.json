@@ -1,0 +1,43 @@
+﻿{
+  "image_name": "image5.png",
+  "rId": "rId18",
+  "image_path": "img_folder/image_004_image5.png",
+  "caption": "نمایش فایل تنظیمات PooyaForwardServer با پورت‌ها، آدرس سرور و مسیر لاگ",
+  "ocr_text": "ListenerPort = 9005\n\nServer = 10.15.0.66:9600\nProtocolHeader = 2B\n\nLogFile = c:/ndcsecure/log/ndcSecure\n\nAgentPropertiesServiceAddress = http://10.15.45.100:9600/atmAgent/properties\nAgentGetLastVersionServiceAddress = http://10.15.45.100:9600/atmAgent/getLastVersion\nSerialNumber = 994429903926 N",
+  "visual_description": [
+    "اسکرین‌شات Notepad++ از فایل PooyaForwardServer.properties با 12 خط",
+    "پارامتر ListenerPort برابر 9005 تنظیم شده است",
+    "پارامتر Server برابر 10.15.0.66:9600 است",
+    "ProtocolHeader مقدار 2B دارد",
+    "مسیر LogFile برابر c:/ndcsecure/log/ndcSecure است",
+    "دو URL سرویس Agent با آدرس 10.15.45.100:9600 مشخص شده‌اند",
+    "SerialNumber مقدار 994429903926 N دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    3,
+    69
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId18",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 3,
+    "page_number": 6,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      95.15,
+      357.06,
+      463.56,
+      526.51
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

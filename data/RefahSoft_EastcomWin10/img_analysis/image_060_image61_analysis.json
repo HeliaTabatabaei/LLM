@@ -1,0 +1,44 @@
+﻿{
+  "image_name": "image61.tmp",
+  "rId": "rId74",
+  "image_path": "img_folder/image_060_image61.png",
+  "caption": "اسکرین‌شات Disk Management در ویندوز با منوی All Tasks و گزینه New Simple Volume.",
+  "ocr_text": "Computer Management\nFile Action View Help\nRefresh\nRescan Disks\nCreate VHD\nAttach VHD\nAll Tasks >\nHelp\nDevice Manager\nStorage\nDisk Management\nServices and Applications\nVolume\nLayout\nType\nFile System\nStatus\nActions\nDisk Management\nMore Actions\nNew Simple Volume...\nNew Spanned Volume...\nNew Striped Volume...\nNew Mirrored Volume...\nNew RAID-5 Volume...\nProperties\nDisk 0\nBasic\n232.88 GB\nOnline\nDisk 1\nRemovable\n297.20 GB\nOnline\nADONIS (D:)\n29.71 GB NTFS\nHealthy (Primary Partition)\n(C:)\n60.79 GB NTFS\nHealthy (Boot,\n171.90 GB\nUnallocated\nUnallocated\nPrimary partition\nSystem Reserv...\nADONIS (D:)\n(C:)",
+  "visual_description": [
+    "پنجره Computer Management با انتخاب Disk Management نمایش داده شده است.",
+    "منوی Action باز است و زیرمنوی All Tasks گزینه‌های New Simple Volume و سایر Volumeها را نشان می‌دهد.",
+    "یک فلش قرمز بزرگ به گزینه «New Simple Volume...» اشاره می‌کند.",
+    "در لیست بالا ستون‌های Volume، Layout، Type، File System و Status قابل مشاهده‌اند.",
+    "Disk 0 با ظرفیت 232.88 GB و وضعیت Online نمایش داده شده است.",
+    "روی Disk 0 یک بخش «171.90 GB Unallocated» دیده می‌شود.",
+    "پارتیشن (C:) با 60.79 GB و فایل‌سیستم NTFS نمایش داده شده است.",
+    "Disk 1 به صورت Removable با 297.20 GB و وضعیت Online نمایش داده شده است.",
+    "پارتیشن ADONIS (D:) با 29.71 GB NTFS و وضعیت Healthy (Primary Partition) دیده می‌شود."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    61
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId74",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 61,
+    "page_number": 28,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      83.66,
+      439.34,
+      281.16
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,37 @@
+﻿{
+  "image_name": "image2.png",
+  "rId": "rId9",
+  "image_path": "img_folder/image_002_image2.png",
+  "caption": "لوگوی شرکت توسعه خدمات الکترونیکی ادونیس",
+  "ocr_text": "ادونیس\nشرکت توسعه خدمات الکترونیکی",
+  "visual_description": [
+    "تصویر شامل لوگوتایپ فارسی «ادونیس» و عبارت «شرکت توسعه خدمات الکترونیکی» است.",
+    "یک نماد گرافیکی شبیه حرف A خاکستری با دو قوس آبی در سمت راست دیده می‌شود."
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    1
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId9",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 1,
+    "page_number": 2,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      113.53,
+      65.45,
+      453.55,
+      146.2
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

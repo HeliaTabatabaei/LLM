@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image34.jpg",
+  "rId": "rId47",
+  "image_path": "img_folder/image_033_image34.jpg",
+  "caption": "پنجره InstallShield برای Probase/C در حال آماده‌سازی نصب روی صفحه تنظیمات ATM",
+  "ocr_text": "Administrator: *** Set ATM Config ***\n[  ***  :: ADONIS ESD COMPANY ::  ***  ]\n[  ***  :: Bank Refah ATM Config ::  ***  ]\n[  *** Set ATM Config ***  ]\nProbase/C - InstallShield Wizard\nPreparing Setup\nInstalling Probase/C <13.00.12>\nWINCOR\nNIXD\nEXPERIENCE\nPreparing ProBase Installation ....\nInstalled\nCancel\n1- PC1500-2050-21\n3- PC2050-2150-\n5- EC2001 EPP Con\n7- EPPV5 Config\n9- Set Config and\nType Number and Press Enter:",
+  "visual_description": [
+    "نمایش کنسول/پنجره با عنوان Set ATM Config و منوی گزینه‌ها",
+    "پنجره InstallShield Wizard برای نصب Probase/C نسخه <13.00.12>",
+    "لوگوی WINCOR NIXD و پیام وضعیت «Preparing ProBase Installation ....»",
+    "دکمه «Cancel» در پنجره نصب قابل مشاهده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    32
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId47",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 32,
+    "page_number": 17,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      166.13,
+      560.2,
+      386.32,
+      727.4
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

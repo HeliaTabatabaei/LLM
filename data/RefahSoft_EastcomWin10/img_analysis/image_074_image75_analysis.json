@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image75.tmp",
+  "rId": "rId88",
+  "image_path": "img_folder/image_074_image75.png",
+  "caption": "پنجره Network Agent با گزینه‌های Send heartbeat و Run diagnostics و اطلاعات نسخه و پایگاه آنتی‌ویروس",
+  "ocr_text": "Network Agent\nSend heartbeat\nRun diagnostics utility\nCurrent server\nCurrent profile\nLast connected\n9/19/2023 8:49:00 AM\nNetwork Agent version\n14.0.0.10902\nProtection\nRunning (custom settings)\nAnti-virus database\n10/24/2022 7:49:00 AM",
+  "visual_description": [
+    "پنجره نرم‌افزار با عنوان «Network Agent» نمایش داده شده است",
+    "در سمت چپ گزینه‌های «Send heartbeat» و «Run diagnostics utility» دیده می‌شود",
+    "یک فلش سیاه به سمت عبارت «Send heartbeat» اشاره می‌کند",
+    "در بخش اطلاعات، فیلد «Network Agent version» با مقدار 14.0.0.10902 نمایش داده شده است",
+    "در بخش اطلاعات، فیلد «Anti-virus database» با زمان 10/24/2022 7:49:00 AM نمایش داده شده است",
+    "فیلد «Protection» وضعیت «Running (custom settings)» را نشان می‌دهد",
+    "آیتم «Last connected» زمان 9/19/2023 8:49:00 AM را نشان می‌دهد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    76
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId88",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 76,
+    "page_number": 34,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      406.67,
+      439.21,
+      495.97
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

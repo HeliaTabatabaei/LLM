@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image85.jpg",
+  "rId": "rId98",
+  "image_path": "img_folder/image_084_image85.jpg",
+  "caption": "جدول مقادیر مرجع با ستون‌های CUR، DEN و ST و گزینه‌های خروج",
+  "ocr_text": "REFRENCE VALUES\n\nCUR DEN ST\n\n01 1 RLS 2000000 EMPT\n02 2 RLS 1000000 LOW\n03 3 RLS 500000 MISS\n04 4 RLS 100000 MISS\n\n98 EXIT\n99 LOGOFF",
+  "visual_description": [
+    "عنوان «REFRENCE VALUES» در بالای تصویر دیده می‌شود",
+    "سه ستون با برچسب‌های «CUR»، «DEN» و «ST» نمایش داده شده‌اند",
+    "چهار ردیف داده شامل واحد «RLS» و مقادیر 2000000، 1000000، 500000 و 100000 است",
+    "وضعیت‌های ستون ST شامل «EMPT»، «LOW» و «MISS» (دو بار) است",
+    "گزینه‌های منو «98 EXIT» و «99 LOGOFF» در پایین صفحه وجود دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    86,
+    92
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId98",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 86,
+    "page_number": 38,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.5,
+      652.42,
+      396.8,
+      772.77
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

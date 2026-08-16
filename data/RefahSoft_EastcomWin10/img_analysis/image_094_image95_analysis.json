@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image95.png",
+  "rId": "rId108",
+  "image_path": "img_folder/image_094_image95.png",
+  "caption": "پنجره تنظیم مجوزهای اشتراک پوشه BITMAPS با کاربران Administrator و BANKUser",
+  "ocr_text": "Permissions for BITMAPS\nShare Permissions\nGroup or user names:\nAdministrator [ADONISTECH\\Administrator]\nBANKUser [ADONISTECH\\BANKUser]\nAdd...\nRemove\nPermissions for Administrator\nAllow\nDeny\nFull Control\nChange\nRead\nLearn about access control and permissions\nOK\nCancel\nApply",
+  "visual_description": [
+    "اسکرین‌شات پنجره Windows با عنوان «Permissions for BITMAPS» و تب «Share Permissions»",
+    "بخش «Group or user names» شامل Administrator [ADONISTECH\\Administrator] و BANKUser [ADONISTECH\\BANKUser]",
+    "در بخش «Permissions for Administrator»، گزینه‌های Full Control، Change و Read در ستون Allow تیک خورده‌اند",
+    "ستون Deny برای این مجوزها خالی است",
+    "دکمه‌های Add..., Remove, OK, Cancel, Apply و لینک Learn about access control and permissions قابل مشاهده‌اند",
+    "دو کادر مستطیلی قرمز برای برجسته‌سازی لیست کاربران و چک‌باکس‌های Allow نمایش داده شده‌اند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    98
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId108",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 98,
+    "page_number": 42,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.45,
+      515.41,
+      396.85,
+      755.85
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

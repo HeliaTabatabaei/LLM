@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image14.jpeg",
+  "rId": "rId27",
+  "image_path": "img_folder/image_013_image14.jpg",
+  "caption": "پنجره Recovery Wizard برای انتخاب آرشیو بکاپ و دکمه Browse مشخص شده است.",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nFinish\nSelect a backup from which to recover\nComments\nNo items to display\nPath:\nBrowse\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات یک پنجره نرم‌افزاری با عنوان Recovery Wizard",
+    "نوار کناری شامل مراحل: Archive selection، Recovery method، What to recover، Finish",
+    "عنوان بخش اصلی: Select a backup from which to recover",
+    "جدول/لیست با ستون Comments و پیام No items to display",
+    "فیلد Path در پایین و دکمه Browse در سمت راست (دایره قرمز دور آن)",
+    "دکمه‌های Next > و Cancel در پایین پنجره"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    12
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId27",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 12,
+    "page_number": 10,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      119.15,
+      305.15,
+      439.42,
+      500.75
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

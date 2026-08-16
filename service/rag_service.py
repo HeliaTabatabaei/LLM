@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import os
 from typing import Any, Optional
 
 from qdrant_client import models
 
 from Models.mainModels import SearchFilters
-from config import COLLECTION_NAME,COLLECTION_NAME_Meta
+from SQlDB.IngestionQuery import load_chunks_from_dbByDocId
+from config import COLLECTION_NAME, BaseUrl,COLLECTION_NAME_Meta
+from log import append_qa_to_filetest
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from providers.base import LLMProvider, StreamCallback
 
@@ -103,35 +106,81 @@ class RAGService:
                 query=query_vector,
                 using="dense",
                 limit=limit,
-                score_threshold=0.65
-             
+                score_threshold=0.65   
             )
     
             return getattr(hits, "points", []) or []
+    def getSourceFilePath(self,source ,docid)  :
+        chunks,t,path = load_chunks_from_dbByDocId(docid)
+        filename = source.replace("\\", "/").rsplit("/", 1)[-1]
+
+        append_qa_to_filetest(filename)
+        return  BaseUrl+ '/'+ path + '/' + filename
+    def getListofImagepath(self,imageList: list[Any],docid):
+        chunks,t,path = load_chunks_from_dbByDocId(docid)
+        return [
+         BaseUrl+ '/'+ path + '/'+ image["image_path"]
+         for image in imageList
+         if image.get("image_path")
+          ]
+    from typing import Any
+
+   
+        
+    def _build_rerank_condidate(self,results: list[Any]) :
+            candidates: list[dict[str, Any]] = []
+            if not results:
+                    return json.dumps([], ensure_ascii=False, indent=2)
+        
+            
+            for result in results:
+                payload = self._get_payload(result)
+               
+                candidates.append({
+                "id": str(self._get_result_id(result)),
+                "text": payload.get("maintext", ""),
+                "customer_name": payload.get("customer_name", ""),
+                "vendor_name": payload.get("vendor_name", ""),
+                "service_type": payload.get("service_type", ""),
+                "keywords": payload.get("keywords", []),
+                "heading": payload.get("heading_path", ""),
+                
+        })
+   
+            return   json.dumps(candidates, ensure_ascii=False, indent=2)      
+    def buildResponseCondidate(self,results: list[Any]) :
+        candidates: list[dict[str, Any]] = []
+        if not results:
+                return json.dumps([], ensure_ascii=False, indent=2)
     
-  
+        
+        for result in results:
+            payload = self._get_payload(result)
+            docid=payload.get("doc_id", "")
+            candidates.append({
+            "id": str(self._get_result_id(result)),
+            "text": payload.get("maintext", ""),
+            "meta": {
+                "customer_name": payload.get("customer_name", ""),
+                "vendor_name": payload.get("vendor_name", ""),
+                "service_type": payload.get("service_type", ""),
+                "keywords": payload.get("keywords", []),
+                "heading": payload.get("heading_path", ""),
+                "source_file": self.getSourceFilePath(payload.get("source_file", ""), docid),
+                "image_paths": self.getListofImagepath(payload.get("imgs_info", []), docid),
+    }
+})
+        return   json.dumps(candidates, ensure_ascii=False, indent=2)  
+    
+        
     def rerank_results(
         self,
         query: str,
         results: list[Any],
         history: str | None = None,
     ) -> list[Any]:
-        if not results:
-            return results
-
-        candidates: list[dict[str, Any]] = []
-        for result in results:
-            payload = self._get_payload(result)
-            candidates.append(
-                {
-                    "id": str(self._get_result_id(result)), # تبدیل به رشته برای تطابق با JSON
-                    "text": payload.get("text", ""),
-                    "title": payload.get("title", ""),
-                    "heading": payload.get("heading", ""),
-                    "source_file": payload.get("source_file", ""),
-                }
-            )
-
+        candidates=self._build_rerank_condidate(results)
+       
         system_prompt = """
 You are a technical document reranker. Your job is to score relevance on a scale of 0.0 to 1.0.
 
@@ -228,8 +277,8 @@ Rules:
         temperature: float = 0.1,
         history: str | None = None,
     ) -> None:
-        context = self._build_context(results)
-
+        context = self.buildResponseCondidate(results)#self._build_context(results)
+        append_qa_to_filetest(context)
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
             {
@@ -248,29 +297,29 @@ Rules:
             temperature=temperature,
         )
 
-    def _build_context(self, results: list[Any]) -> str:
-        chunks = []   
-        for i, r in enumerate(results, start=1):
-            if isinstance(r, dict):
-                payload = r["payload"]
-            else:
-                payload = r.payload
-            # text = payload.get("text", "")
-            maintext=payload.get("maintext", "")
-            doc_id = payload.get("doc_id", "نامشخص")
-            title = payload.get("title", "")
-            heading = payload.get("heading", "")
-            header = f"[سند {i}"
-            if doc_id:
-                header += f" - {doc_id}"
-            if title:
-                header += f" - {title}"
-            if heading:
-                header += f" > {heading}"
+    # def _build_context(self, results: list[Any]) -> str:
+    #     chunks = []   
+    #     for i, r in enumerate(results, start=1):
+    #         if isinstance(r, dict):
+    #             payload = r["payload"]
+    #         else:
+    #             payload = r.payload
+    #         # text = payload.get("text", "")
+    #         maintext=payload.get("maintext", "")
+    #         doc_id = payload.get("doc_id", "نامشخص")
+    #         title = payload.get("title", "")
+    #         heading = payload.get("heading", "")
+    #         header = f"[سند {i}"
+    #         if doc_id:
+    #             header += f" - {doc_id}"
+    #         if title:
+    #             header += f" - {title}"
+    #         if heading:
+    #             header += f" > {heading}"
     
-            header += "]"
-            chunks.append(f"{header}\n{maintext}")
-        return "\n\n".join(chunks)
+    #         header += "]"
+    #         chunks.append(f"{header}\n{maintext}")
+    #     return "\n\n".join(chunks)
     @staticmethod
     def _get_payload(result: Any) -> dict[str, Any]:
         if isinstance(result, dict):

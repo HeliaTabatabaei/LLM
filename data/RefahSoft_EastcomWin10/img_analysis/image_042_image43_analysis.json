@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image43.png",
+  "rId": "rId56",
+  "image_path": "img_folder/image_042_image43.png",
+  "caption": "پنجره نصب درایور Intel Graphics با نمایش روند نصب و نسخه درایور",
+  "ocr_text": "Intel® Installation Framework\nIntel® Graphics Driver\nSetup Progress\nPlease wait while the following setup operations are performed:\nCreating Process: C:\\Program Files (x86)\\Intel\\Intel(R) Processor Graphics\\uninstall\\Uninstall\\setup.exe\nInstalling Driver: Intel(R) HD Graphics\nVersion: 1.0.1.9 (1.0.1.9)\nNext >\nIntel® Installation Framework",
+  "visual_description": [
+    "پنجره Intel Installation Framework با عنوان Intel® Graphics Driver و بخش Setup Progress نمایش داده شده است",
+    "مسیر فایل setup.exe در C:\\Program Files (x86)\\Intel\\Intel(R) Processor Graphics\\uninstall\\Uninstall\\setup.exe نمایش داده می‌شود",
+    "در حال نصب Intel(R) HD Graphics است و نسخه 1.0.1.9 (1.0.1.9) نمایش داده شده",
+    "دکمه Next > در پایین سمت راست غیرفعال است و نوار پیشرفت در پنجره دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    42
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId56",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 42,
+    "page_number": 21,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      191.15,
+      252.1,
+      403.69,
+      419.65
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

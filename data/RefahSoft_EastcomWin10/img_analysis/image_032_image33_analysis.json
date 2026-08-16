@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image33.png",
+  "rId": "rId46",
+  "image_path": "img_folder/image_032_image33.png",
+  "caption": "صفحه تنظیمات EastCom در ابزار Bank Refah ATM Config با گزینه‌های انتخاب مدل و پورت",
+  "ocr_text": "Administrator - ::Bank Refah ATM Config::\n\n:::Set EastCom Config:::\n\n1- PC280- V2CU- 1DBCR                      2- PC2000- V2XU- 1DBCR\n\n3- PC285- V2CU- TP13- 1DBCR                4- PC285- V2CU- TP28- 1DBCR\n\nType x and Press Enter to go Main Menu\n\nType Number and Press Enter:",
+  "visual_description": [
+    "پنجره کنسولی با عنوان «Administrator - ::Bank Refah ATM Config::» نمایش داده شده است",
+    "بخش «:::Set EastCom Config:::» چهار گزینه شماره‌دار برای انتخاب پیکربندی (PC280/PC2000/PC285) دارد",
+    "دستور متنی «Type x and Press Enter to go Main Menu» برای بازگشت به منوی اصلی دیده می‌شود",
+    "در پایین پیام ورودی «Type Number and Press Enter:» برای دریافت انتخاب کاربر نمایش داده شده است",
+    "پس‌زمینه آبی با متن سفید و جداکننده‌های کاراکتری خطی در صفحه وجود دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    31
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId46",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 31,
+    "page_number": 17,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      106.13,
+      374.45,
+      446.27,
+      535.85
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image36.png",
+  "rId": "rId49",
+  "image_path": "img_folder/image_035_image36.png",
+  "caption": "صفحه تنظیمات ابزارهای ATM با منوی پیکربندی IP، مانیتورینگ و نصب درایور گرافیک",
+  "ocr_text": "Administrator - ::Bank Refah ATM Config::\n\n:::Set Tools Config:::\n\n1- Windows IP Config                    2- Set Monitoring Config\n\n3- Install PC5G Graphic Driver\n\nType x and Press Enter to go Main Menu\n\nType Number and Press Enter:1",
+  "visual_description": [
+    "پنجره کنسول با پس‌زمینه آبی و متن سفید نمایش داده شده است",
+    "عنوان پنجره: Administrator - ::Bank Refah ATM Config::",
+    "بخش منو با عنوان :::Set Tools Config::: وجود دارد",
+    "گزینه‌های منو شامل: 1- Windows IP Config، 2- Set Monitoring Config، 3- Install PC5G Graphic Driver",
+    "پیام راهنما: Type x and Press Enter to go Main Menu",
+    "خط ورودی: Type Number and Press Enter:1 نشان می‌دهد عدد 1 وارد شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    34,
+    38
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId49",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 34,
+    "page_number": 18,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.4,
+      339.75,
+      467.45,
+      465.0
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

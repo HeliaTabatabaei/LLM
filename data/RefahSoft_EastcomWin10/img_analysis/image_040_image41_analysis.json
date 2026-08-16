@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image41.png",
+  "rId": "rId54",
+  "image_path": "img_folder/image_040_image41.png",
+  "caption": "پنجره نصب درایور گرافیک اینتل برای پذیرش توافق‌نامه مجوز با گزینه‌های Yes و No",
+  "ocr_text": "Intel® Installation Framework\nIntel® Graphics Driver\nLicense Agreement\nintel\nYou must accept all of the terms of the license agreement in order to continue the setup program. Do you accept the terms?\nINTEL SOFTWARE LICENSE AGREEMENT (OEM / IHV / ISV Distribution & Single User)\nIMPORTANT - READ BEFORE COPYING, INSTALLING OR USING.\nDo not use or load this software and any associated materials (collectively, the \"Software\") until you have carefully read the following terms and conditions. By loading or using the Software, you agree to the terms of this Agreement. If you do not wish to so agree, do not install or use the Software.\nPlease Also Note:\n• If you are an Original Equipment Manufacturer (OEM), Independent Hardware Vendor (IHV), or Independent Software Vendor (ISV), this complete LICENSE AGREEMENT applies;\n• If you are an End-User, then only Exhibit A, the INTEL SOFTWARE LICENSE AGREEMENT,\n< Back\nNo\nYes\nIntel® Installation Framework",
+  "visual_description": [
+    "پنجره نصب Intel® Graphics Driver با عنوان License Agreement نمایش داده شده است",
+    "لوگوی intel در سمت راست بالای پنجره قرار دارد",
+    "یک کادر متنی اسکرول‌دار شامل متن توافق‌نامه مجوز نمایش داده می‌شود",
+    "سه دکمه در پایین: «< Back»، «No»، «Yes»"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    40
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId54",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 40,
+    "page_number": 20,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      184.4,
+      532.47,
+      411.12,
+      712.77
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

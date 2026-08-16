@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image46.jpg",
+  "rId": "rId59",
+  "image_path": "img_folder/image_045_image46.jpg",
+  "caption": "تصویر دو کیبورد با مشخص‌سازی کلیدهای جهت و کلیدهای Shift، F12 و Num Lock",
+  "ocr_text": "DIANA\nEsc\nF1\nF2\nF3\nF4\nF5\nF6\nF7\nF8\nF9\nF10\nF11\nF12\nPrtSc\nSysRq\nScroll\nLock\nPause\nBreak\nNum\nLock\nHome\nPage\nUp\nPage\nDown\nEnd\nInsert\nDelete\nEnter\nCapsLock\nShift\nCtrl\nAlt\ntab",
+  "visual_description": [
+    "دو تصویر از کیبورد با قاب‌های قرمز دور ناحیه کلیدهای I/J/K/L و فلش‌های سبز جهت‌نما روی آنها",
+    "دایره‌های قرمز روی کلیدهای Shift سمت چپ در هر دو کیبورد",
+    "دایره قرمز روی کلید F12 در هر دو کیبورد",
+    "دایره قرمز روی کلید Num Lock در کیبورد پایینی",
+    "وجود نوشته برند «DIANA» در قسمت بالای کیبورد پایینی"
+  ],
+  "image_type": "photo",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    46
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId59",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 46,
+    "page_number": 22,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      159.53,
+      391.77,
+      442.97,
+      660.67
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

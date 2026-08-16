@@ -1,0 +1,37 @@
+﻿{
+  "image_name": "image2.png",
+  "rId": "rId9",
+  "image_path": "img_folder/image_002_image2.png",
+  "caption": "لوگوی آدونیس و عبارت شرکت توسعه خدمات الکترونیکی",
+  "ocr_text": "آدونیس شرکت توسعه خدمات الکترونیکی",
+  "visual_description": [
+    "لوگوی گرافیکی شامل حرف A خاکستری با دو قوس آبی پیرامون آن",
+    "متن فارسی در سمت چپ لوگو با دو رنگ خاکستری و آبی"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    1
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId9",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 1,
+    "page_number": 2,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.58,
+      143.18,
+      467.6,
+      223.93
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

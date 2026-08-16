@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image23.jpeg",
+  "rId": "rId36",
+  "image_path": "img_folder/image_022_image23.jpg",
+  "caption": "پنجره Recovery Wizard برای تنظیمات بازیابی پارتیشن D و انتخاب محل جدید",
+  "ocr_text": "Recovery Wizard\nRecovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nSpecify recover settings of Partition D\nPartition location (required)\nNot selected\nNew location\nPartition type\nNot selected\nChange default\nPartition size\nFree space before: Not specified\nPartition size: Not specified\nFree space after: Not specified\nChange default\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات پنجره نرم‌افزار با عنوان Recovery Wizard",
+    "نوار مراحل سمت چپ شامل Archive selection تا Finish با انتخاب Settings of Partition D",
+    "بخش Partition location (required) مقدار Not selected و گزینه New location دارد",
+    "بخش Partition type مقدار Not selected و لینک Change default دارد",
+    "بخش Partition size شامل Free space before/after و Partition size با مقدار Not specified",
+    "دکمه‌های پایین پنجره شامل Next > و Cancel"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    21
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId36",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 21,
+    "page_number": 13,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      371.59,
+      425.19,
+      552.09
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

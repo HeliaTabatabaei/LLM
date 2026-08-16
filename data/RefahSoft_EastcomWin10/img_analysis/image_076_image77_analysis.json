@@ -1,0 +1,45 @@
+﻿{
+  "image_name": "image77.emf",
+  "rId": "rId90",
+  "image_path": "img_folder/image_076_image77.png",
+  "caption": "پنجره خطای Network Agent با پیام قطع شدن اتصال در سطح انتقال",
+  "ocr_text": "Network Agent\n#1259 Transport level error: connection has been terminated..\nOK\nSend heartb\nRun knaqch",
+  "visual_description": [
+    "پنجره محاوره‌ای با عنوان «Network Agent» نمایش داده شده است",
+    "آیکون هشدار مثلث زرد در کنار متن خطا وجود دارد",
+    "متن خطا شامل «#1259 Transport level error: connection has been terminated..» است",
+    "یک دکمه «OK» در پایین سمت راست پنجره دیده می‌شود",
+    "در پس‌زمینه لینک‌های «Send heartb» و «Run knaqch» قابل مشاهده‌اند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    78
+  ],
+  "rendered_composite": true,
+  "render_status": "rendered",
+  "render_details": {
+    "relationship_id": "rId90",
+    "rendered": true,
+    "status": "rendered",
+    "occurrence_index": 78,
+    "page_number": 35,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "Picture 10",
+    "picture_box": [
+      167.92,
+      87.14,
+      401.12,
+      166.86
+    ],
+    "crop_box": [
+      163.92,
+      83.14,
+      405.12,
+      170.86
+    ],
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image92.jpg",
+  "rId": "rId105",
+  "image_path": "img_folder/image_091_image92.jpg",
+  "caption": "نمایش پیام مرجع و درخواست باز کردن درِ گاوصندوق با گزینه OK",
+  "ocr_text": "REFRENCE VALUE\nPLEASE OPEN THE SAFE\nDOOR!\n> 01  OK",
+  "visual_description": [
+    "نمایشگر تک‌رنگ با متن چندخطی",
+    "وجود نشانگر انتخاب به شکل \">\" قبل از گزینه 01",
+    "وجود گزینه تایید با متن \"OK\""
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    95
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId105",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 95,
+    "page_number": 41,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      250.3,
+      130.66,
+      349.46,
+      184.76
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

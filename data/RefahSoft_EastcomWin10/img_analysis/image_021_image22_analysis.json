@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image22.jpg",
+  "rId": "rId35",
+  "image_path": "img_folder/image_021_image22.jpg",
+  "caption": "پنجره Recovery Wizard برای تغییر اندازه پارتیشن و تنظیمات بازیابی پارتیشن D",
+  "ocr_text": "Recovery Wizard\nRecovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nSpecify recover settings of Partition D\nPartition location (required)\nNTFS (Unlabeled) (D:)\nNew location\nPartition Size\nYou can change the size of the partition.\nUsed space\nFree space\nUnallocated space\nPartition size:\n100\nMB\nFree space before:\n0\nMB\nFree space after:\n0\nMB\nAccept\nCancel\nNext >\nCancel",
+  "visual_description": [
+    "نرم‌افزار Recovery Wizard مراحل لازم را در پنل سمت چپ نمایش می‌دهد و مرحله Settings of Partition D انتخاب شده است",
+    "پنجره Partition Size شامل نوار لغزنده تغییر اندازه پارتیشن است",
+    "سه گزینه Used space، Free space و Unallocated space برای نمایش وضعیت فضا وجود دارد",
+    "مقدار Partition size برابر 100 MB و Free space before/after هر دو 0 MB نمایش داده شده‌اند",
+    "یک فلش قرمز به فیلد Partition size اشاره می‌کند",
+    "دکمه‌های Accept و Cancel در پنجره Partition Size و دکمه‌های Next > و Cancel در پایین صفحه دیده می‌شوند",
+    "در بخش Partition location عبارت NTFS (Unlabeled) (D:) و لینک New location نمایش داده شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    20
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId35",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 20,
+    "page_number": 13,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.15,
+      112.59,
+      425.25,
+      328.74
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

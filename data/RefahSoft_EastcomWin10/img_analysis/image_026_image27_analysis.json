@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image27.jpeg",
+  "rId": "rId40",
+  "image_path": "img_folder/image_026_image27.jpg",
+  "caption": "پنجره Recovery Wizard برای انتخاب دیسک مقصد جهت بازیابی MBR",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nMBR of Disk 1\nFinish\nOptional steps:\nOptions\nSelect target disk for MBR recovery\nDisk properties\nDrive\nCapacity\nModel\nInterface\nDisk 1\n40 GB\nATA VMware Virtual I\nIDE(2) Primary Slave\nRecover disk signature\n40 GB\nC:\nUnallocated\n39.9 GB\nPrimary // Logical // Dynamic\nAcronis Secure Zone\nUnallocated // Unsupported\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات نرم‌افزار با عنوان Recovery Wizard و مرحله «Select target disk for MBR recovery» نمایش داده شده است.",
+    "فهرست مراحل در ستون چپ شامل Archive selection، Recovery method، What to recover، Settings of Partition C، Settings of Partition D، MBR of Disk 1 و Finish است.",
+    "جدول Disk properties یک دیسک با نام Disk 1 و ظرفیت 40 GB و مدل ATA VMware Virtual I و رابط IDE(2) Primary Slave را نشان می‌دهد.",
+    "گزینه Recover disk signature به صورت چک‌باکس قابل انتخاب نمایش داده شده است.",
+    "نقشه دیسک پایین پنجره وضعیت C: و Unallocated 39.9 GB را نمایش می‌دهد.",
+    "دکمه Next > با یک بیضی قرمز مشخص شده و دکمه Cancel در کنار آن است."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    25
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId40",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 25,
+    "page_number": 15,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      154.98,
+      90.35,
+      435.55,
+      291.95
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

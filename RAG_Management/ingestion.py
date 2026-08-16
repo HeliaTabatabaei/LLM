@@ -9,7 +9,7 @@ from RAG_Management.imageInfo import append_image_urls_to_maintext
 from RAG_Management.vectorstore   import get_client, ensure_collection
 
 from SQlDB.IngestionQuery import Deactivate_doc_from_sql, InsertDocsToSql, LogStatus, SetALLRecord_IsActiveFalse, SetIsActiveFalse, SetIsActiveTrue, load_chunks_from_db, load_chunks_from_dbByDocId
-from config import  COLLECTION_NAME, BATCH_SIZE, OPENAI_API_KEY, EMBED_MODEL, QDRANT_HOST, QDRANT_PORT
+from config import  COLLECTION_NAME, BATCH_SIZE, OPENAI_API_KEY, EMBED_MODEL, QDRANT_HOST, QDRANT_PORT, BaseUrl
 from RAG_Management.bm25 import PersianBM25Encoder
 from openai import OpenAI
 import pyodbc
@@ -199,26 +199,22 @@ def ingestQdrant(docid):
                 _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
                 )
     qdrant = get_client()#اتصال به پایگاه داده Qdrant را برقرار می‌کند.
-  
     ensure_collection(qdrant)# چک می‌کند که آیا کالکشن (میز) مورد نظر در Qdrant وجود دارد یا خیر (اگر نبود می‌سازد).
-   
     chunks,t,path = load_chunks_from_dbByDocId(docid)
-    print(len(chunks))
-    #all_texts = [c["embedding_text"].strip() for c in chunks if c["embedding_text"].strip()]
-    
     batch_texts, batch_points = [], []
-   
+    index=0
     for chunk in tqdm(chunks, desc="Ingesting chunks"):
+        if index==0:
+            print (chunk,flush=True)
+            index=1
+            
         text = chunk["embedding_text"].strip()
         maintext= chunk["main_text"].strip()
+        id=chunk["id"]
         if not text:
             continue
-
         h = text_hash(text) #هش کردن وکتور جهت مقایسه که تکراری نباشد
-        
         if already_indexed(qdrant, h): #اگر این متن قبلا در کیودرنت ایندکس شده باشد
-            #
-           
             LogStatus(
             _DocID=docid,_ActionName='Insert', _FileName='', _Step="setIsactiveToFalse",
             _Status="FAILED",_ErrorMessage="Hashfile is Existsted", _Timestamp=datetime.now()
@@ -229,30 +225,13 @@ def ingestQdrant(docid):
         #############14050430
         # # --- بخش جدید برای پردازش عکس‌ها ---
         metadata = chunk.get("metadata", {}).copy()
-        # source_file = metadata.get("source_file", "")
-        imgs_info = chunk.get("imgs_info", []) or metadata.get("imgs_info", [])
-        LogStatus(
-                    _DocID=docid,_ActionName='InsertQudrant', _FileName='', _Step="image info start",
-                    _Status="doing",_ErrorMessage="", _Timestamp=datetime.now()
-                    )
-        metadata = chunk.get("metadata", {}).copy()
-        imgs_info = metadata.get("imgs_info", [])
-        #"media/2-IT9411-138-00_AudioSystem/img_folder"
-        image_base_url = (
-         "http://10.100.52.7:8000/"+path
-      
-        )
-
-        maintext_with_links = append_image_urls_to_maintext(
-        maintext=maintext,
-        imgs_info=imgs_info,
-        image_base_url=image_base_url
-      
-        )  
+       
+       
        
         payload = {
+                "id":id,
                 "text": text, 
-                "maintext":maintext_with_links,
+                "maintext":maintext,
                 "text_hash": h, 
                 **metadata  # تمام اطلاعات متادیتا + imgs_info اصلاح‌شده در اینجا هست
             }
@@ -261,7 +240,6 @@ def ingestQdrant(docid):
         batch_texts.append(text)
         batch_points.append((chunk["id"], payload))
     
-     
         if len(batch_texts) >= BATCH_SIZE:
             LogStatus(
                                     _DocID=docid,_ActionName='ingestQdrant', _FileName='', _Step="ingestQdrant  step 2",

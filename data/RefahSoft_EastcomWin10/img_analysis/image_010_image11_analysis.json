@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image11.jpeg",
+  "rId": "rId24",
+  "image_path": "img_folder/image_010_image11.jpg",
+  "caption": "پنجره Add New Disk Wizard برای ایجاد پارتیشن و نمایش فضای Unallocated دیسک ۱",
+  "ocr_text": "Add New Disk Wizard\nAdd New Disk Wizard\nRequired steps:\nDisk selection\nPartition creation\nFinish\nCreate partitions\nCreate new partition\nProperties\nPartition\nFlags\nCapacity\nFree Space\nType\nDisk 1\nUnallocated\n40 GB\nUnallocated\n40 GB\nUnallocated\n40 GB\nPrimary // Logical // Dynamic\nAcronis Secure Zone\nUnallocated // Unsupported\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات از ویزارد «Add New Disk Wizard» در مرحله «Create partitions»",
+    "در بخش Required steps گزینه‌های Disk selection و Partition creation و Finish دیده می‌شوند",
+    "جدول پارتیشن‌ها ستون‌های Partition، Flags، Capacity، Free Space، Type را نشان می‌دهد",
+    "برای Disk 1 یک ردیف Unallocated با ظرفیت 40 GB نمایش داده شده است",
+    "دکمه «Next >» در پایین سمت راست با دایره قرمز مشخص شده است",
+    "راهنمای رنگی پایین شامل Primary // Logical // Dynamic، Acronis Secure Zone و Unallocated // Unsupported است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    9
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId24",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 9,
+    "page_number": 9,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      150.1,
+      321.33,
+      461.86,
+      501.73
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

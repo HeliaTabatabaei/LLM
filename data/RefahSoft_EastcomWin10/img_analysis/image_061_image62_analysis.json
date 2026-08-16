@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image62.png",
+  "rId": "rId75",
+  "image_path": "img_folder/image_061_image62.png",
+  "caption": "صفحه خوش‌آمدگویی «New Simple Volume Wizard» برای ایجاد یک ولوم ساده روی دیسک",
+  "ocr_text": "New Simple Volume Wizard\nWelcome to the New Simple\nVolume Wizard\nThis wizard helps you create a simple volume on a disk.\nA simple volume can only be on a single disk.\nTo continue, click Next.\n< Back\nNext >\nCancel",
+  "visual_description": [
+    "پنجره جادوی ایجاد ولوم ساده با عنوان New Simple Volume Wizard نمایش داده شده است",
+    "متن توضیح می‌دهد ولوم ساده فقط روی یک دیسک می‌تواند باشد و برای ادامه باید Next کلیک شود",
+    "دکمه‌های ناوبری < Back، Next > و Cancel در پایین پنجره وجود دارند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    62
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId75",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 62,
+    "page_number": 28,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      312.41,
+      425.19,
+      511.76
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

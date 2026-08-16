@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image78.tmp",
+  "rId": "rId91",
+  "image_path": "img_folder/image_077_image78.png",
+  "caption": "منوی راست‌کلیک ویندوز با گزینه Run as administrator هایلایت شده",
+  "ocr_text": "Open\nEdit\nPrint\nRun as administrator\nOpen in Media Player Classic\nOpen in MediaInfo\nOpen in VLC Player\n7-Zip\nCRC SHA\nRunChecker\n64bit.bat",
+  "visual_description": [
+    "منوی زمینه ویندوز نمایش داده شده است",
+    "گزینه \"Run as administrator\" با کادر زرد برجسته شده است",
+    "یک فلش زرد به گزینه \"Run as administrator\" اشاره می‌کند",
+    "فایل \"RunChecker 64bit.bat\" در سمت چپ منو دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    79
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId91",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 79,
+    "page_number": 35,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      135.8,
+      311.72,
+      419.04,
+      392.32
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

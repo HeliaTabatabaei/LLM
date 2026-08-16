@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image70.jpeg",
+  "rId": "rId83",
+  "image_path": "img_folder/image_069_image70.jpg",
+  "caption": "پنجره نصب Kaspersky Security Center 13 با دکمه Start installation مشخص‌شده",
+  "ocr_text": "Kaspersky Security Center 13\nPreparing for administration task\nNew applications will be installed on your device: Kaspersky Embedded Systems Security 3.2.0.200\n(3.2.0.200) and Kaspersky Security Center 13 Network Agent (13.0.0.11247).\nBefore installation, you must do the following:\n- Save your data\n- Close all running applications\nStart installation\nCancel",
+  "visual_description": [
+    "اسکرین‌شات پنجره Kaspersky Security Center 13 با عنوان Preparing for administration task",
+    "متن اعلام نصب دو برنامه: Kaspersky Embedded Systems Security 3.2.0.200 و Network Agent 13.0.0.11247",
+    "دو مورد پیش‌نیاز نصب به‌صورت بولت: Save your data و Close all running applications",
+    "دو دکمه پایین: Start installation (هایلایت با کادر قرمز) و Cancel",
+    "یک فلش قرمز به سمت دکمه Start installation اشاره می‌کند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    71
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId83",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 71,
+    "page_number": 32,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      638.14,
+      439.35,
+      783.29
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

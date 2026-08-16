@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image81.png",
+  "rId": "rId94",
+  "image_path": "img_folder/image_080_image81.png",
+  "caption": "نمودار مرحله‌ای ورود کلید رمزنگاری A با نمایش رقم جاری و فرمان‌های ACCESS و ENTER A",
+  "ocr_text": "06 ACCESS\n08 ENTER A\nENCRYPYION KEY A\nCURRENT DIGIT = 01\nENTER KEY A - _",
+  "visual_description": [
+    "سه برچسب متنی با پیکان‌های پله‌ای به‌ترتیب «06 ACCESS» سپس «08 ENTER A» و سپس متن تنظیم کلید",
+    "بخش نهایی شامل خطوط: «ENCRYPYION KEY A»، «CURRENT DIGIT = 01»، و «ENTER KEY A - _»",
+    "پیکان‌ها جهت جریان از چپ به راست را نشان می‌دهند"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    82
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId94",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 82,
+    "page_number": 37,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      72.0,
+      210.39,
+      369.46,
+      281.29
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

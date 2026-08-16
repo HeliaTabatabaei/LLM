@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image76.jpg",
+  "rId": "rId89",
+  "image_path": "img_folder/image_075_image76.jpg",
+  "caption": "پنجره Network Agent با گزینه‌های Send heartbeat و اطلاعات سرور و زمان آخرین اتصال",
+  "ocr_text": "Network Agent\nSend heartbeat\nRun diagnostic utility\nCurrent server 10.54.1.110\nCurrent profile\nLast connected 3/11/2023 1:08:24 PM\nNetwork Agent version: 14.0.0.10902\nProtection:\nSecurity application is not installed.\nAnti-virus database\nLast full scan",
+  "visual_description": [
+    "پنجره نرم‌افزار با عنوان «Network Agent» نمایش داده شده است.",
+    "در سمت چپ لینک‌های «Send heartbeat» و «Run diagnostic utility» دیده می‌شود.",
+    "در بخش اطلاعات، فیلد «Current server» مقدار «10.54.1.110» را نشان می‌دهد.",
+    "فیلد «Last connected» زمان «3/11/2023 1:08:24 PM» را نمایش می‌دهد.",
+    "خط «Network Agent version: 14.0.0.10902» قابل مشاهده است.",
+    "دو دایره شماره‌گذاری‌شده قرمز با اعداد «1» و «2» روی تصویر قرار دارند.",
+    "کادرهای قرمز دور «Send heartbeat» و دور ناحیه «Last connected» کشیده شده است."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    77
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId89",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 77,
+    "page_number": 34,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      141.65,
+      581.16,
+      453.38,
+      680.56
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,47 @@
+﻿{
+  "image_name": "image56.jpg",
+  "rId": "rId69",
+  "image_path": "img_folder/image_055_image56.jpg",
+  "caption": "صفحه تغییر نام رایانه با نمونه نام‌گذاری ترمینال و دکمه Next مشخص‌شده",
+  "ocr_text": "Rename your PC\nYou can use a combination of letters, hyphens, and numbers.\nCurrent PC name: DESKTOP-PIJKJKT\nATM-21169\nمثال:\nتوجه داشته باشید که شماره ترمینال هر دستگاه مختص همان ترمینال می باشد.\nNext\nCancel",
+  "visual_description": [
+    "پنجره تنظیمات ویندوز برای تغییر نام رایانه نمایش داده شده است",
+    "فیلد نام جدید شامل مقدار «ATM-21169» است",
+    "نام فعلی رایانه به صورت «DESKTOP-PIJKJKT» نمایش داده شده است",
+    "دکمه «Next» با کادر قرمز برجسته شده و دکمه «Cancel» کنار آن قرار دارد",
+    "متن فارسی توضیح می‌دهد شماره ترمینال هر دستگاه مختص همان ترمینال است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    56
+  ],
+  "rendered_composite": true,
+  "render_status": "rendered",
+  "render_details": {
+    "relationship_id": "rId69",
+    "rendered": true,
+    "status": "rendered",
+    "occurrence_index": 56,
+    "page_number": 26,
+    "overlay_count": 1,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      184.4,
+      571.64,
+      411.06,
+      671.54
+    ],
+    "crop_box": [
+      180.4,
+      567.64,
+      557.85,
+      675.65
+    ],
+    "overlay_names": [
+      "Text Box 4094"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image60.tmp",
+  "rId": "rId73",
+  "image_path": "img_folder/image_059_image60.png",
+  "caption": "پنجره Disk Management با فضای Unallocated مشخص‌شده روی دیسک ۰",
+  "ocr_text": "Computer Management\nFile  Action  View  Help\nComputer Management (Local)\nSystem Tools\nTask Scheduler\nEvent Viewer\nShared Folders\nLocal Users and Groups\nPerformance\nDevice Manager\nStorage\nDisk Management\nServices and Applications\nVolume\nLayout\nType\nFile System\nStatus\n(C:)\nADONIS (D:)\nSystem Reserved\nSimple\nBasic\nNTFS\nHealthy (Boot, Page Fi\nHealthy (Primary Partiti\nHealthy (System, Active\nActions\nDisk Management\nMore Actions\nDisk 0\nBasic\n232.88 GB\nOnline\nSyst\n103\n103\nUna\n(C:)\n60.79 GB NT\nHealthy (Boot\n171.90 GB\nUnallocated\nDisk 1\nRemovable\n29.72 GB\nOnline\nADONIS (D:)\n29.71 GB NTFS\nHealthy (Primary Partition)\nUnallocated\nPrimary partition",
+  "visual_description": [
+    "اسکرین‌شات از Windows Computer Management در بخش Storage > Disk Management",
+    "یک فلش قرمز بزرگ به گزینه Disk Management در پنل چپ اشاره می‌کند",
+    "یک کادر قرمز دور یک ناحیه پارتیشن با برچسب 171.90 GB Unallocated روی Disk 0 کشیده شده است",
+    "Disk 0 با ظرفیت 232.88 GB و وضعیت Online نمایش داده می‌شود",
+    "پارتیشن (C:) با اندازه 60.79 GB و فایل‌سیستم NTFS نمایش داده شده است",
+    "Disk 1 به‌صورت Removable با ظرفیت 29.72 GB و برچسب ADONIS (D:) با NTFS نمایش داده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    60
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId73",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 60,
+    "page_number": 27,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      548.62,
+      439.3,
+      744.62
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

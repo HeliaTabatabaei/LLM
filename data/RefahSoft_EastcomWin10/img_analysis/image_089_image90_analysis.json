@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image90.png",
+  "rId": "rId103",
+  "image_path": "img_folder/image_089_image90.png",
+  "caption": "نمودار متنی بررسی تعداد اسکناس و دستور بیرون آوردن و برگرداندن پول در دیسپنسر",
+  "ocr_text": "REFRENCE VALUE\nPULL OUT DISPENSER\nAND COUNT THE MONEY.\nAFTER COUNTING PUT\nTHE MONEY BACK!\n\n> 01 OK\n\n01 OK\n\nIF NO. OF NOTES\nDOESN’T EQUAL 8\nREPEAT THE FUNCTION!\nNO. OF NOTES = 8?\n> 01 YES\n  02 NO\n\n01 YES\n\nREFRENCE VALUE\nPLEASE PUSH IN CASH\nDISPENSER AND WAIT\nFOR RESTART\n> 01 OK",
+  "visual_description": [
+    "سه کادر مستطیلی با متن‌های انگلیسی به‌صورت مراحل پشت سر هم نمایش داده شده‌اند",
+    "بین کادر اول و دوم یک پیکان رو به راست با برچسب «01 OK» وجود دارد",
+    "بین کادر دوم و سوم یک پیکان رو به راست با برچسب «01 YES» وجود دارد",
+    "کادر اول دستور Pull out dispenser و شمارش پول و سپس قرار دادن پول به عقب را نشان می‌دهد",
+    "کادر دوم شرط «NO. OF NOTES = 8?» با گزینه‌های «01 YES» و «02 NO» را نمایش می‌دهد",
+    "کادر سوم دستور Push in cash dispenser و انتظار برای restart را نمایش می‌دهد"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    93
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId103",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 93,
+    "page_number": 40,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      82.8,
+      463.06,
+      479.52,
+      554.31
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image20.png",
+  "rId": "rId33",
+  "image_path": "img_folder/image_019_image20.png",
+  "caption": "پنجره Recovery Wizard برای انتخاب مقصد پارتیشن و نمایش دیسک‌ها و فضای تخصیص‌نیافته",
+  "ocr_text": "Recovery Wizard\nRecovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition\nE\nSettings of Partition\nC\nFinish\nPartition Destination\nNew partition location\nDisk properties\nChoose Columns\nPartition\nFlags\nCapa...\nFree S...\nDisk 1\nUnallocated\n200 GB\nDisk 2\nNTFS (BOOT) (D:)\nPri,Act\n4.995 GB\n1.566\nNTFS (ADONIS UTILITY HDD) (E:)\nPri\n926.5 GB\n576.9\nAccept\nCancel\nNext >\nCancel\nEN",
+  "visual_description": [
+    "اسکرین‌شات محیط ویندوز با پنجره Recovery Wizard و مرحله Settings of Partition",
+    "دیالوگ Partition Destination برای انتخاب محل پارتیشن جدید نمایش داده شده است",
+    "لیست دیسک‌ها شامل Disk 1 با فضای Unallocated برابر 200 GB",
+    "Disk 2 شامل دو پارتیشن NTFS: (BOOT) (D:) و (ADONIS UTILITY HDD) (E:)",
+    "ستون‌های جدول شامل Partition، Flags، Capa... و Free S... است",
+    "دکمه‌های Accept و Cancel در دیالوگ مقصد پارتیشن قابل مشاهده‌اند",
+    "دکمه Next > در پنجره اصلی غیرفعال (خاکستری) است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    18
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId33",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 18,
+    "page_number": 12,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      312.12,
+      425.2,
+      464.22
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

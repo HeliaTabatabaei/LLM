@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image9.jpeg",
+  "rId": "rId22",
+  "image_path": "img_folder/image_008_image9.jpg",
+  "caption": "صفحه انتخاب دیسک در Add New Disk Wizard با دیسک 1 و دکمه Next مشخص شده",
+  "ocr_text": "Add New Disk Wizard\nRequired steps\nDisk selection\nPartition creation\nFinish\nSelect your hard disk from the list below.\nDisk properties\nDrive\nCapacity\nModel\nInterface\nDisk 1\n40 GB\nATA VMware Virtual I\nIDE(2) Primary Slave\n40 GB\nC:\n39.99 GB NTFS\nPrimary // Logical // Dynamic\nAcronis Secure Zone\nUnallocated // Unsupported\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات ویزارد Add New Disk Wizard با مراحل Disk selection، Partition creation و Finish در ستون چپ",
+    "جدول Disk properties شامل ستون‌های Drive، Capacity، Model و Interface",
+    "ردیف انتخاب‌شده: Disk 1 با ظرفیت 40 GB، مدل ATA VMware Virtual I و رابط IDE(2) Primary Slave",
+    "نمای پایین شامل درایو C: با 39.99 GB NTFS و نوار ظرفیت 40 GB",
+    "دکمه‌های Next > و Cancel در پایین راست",
+    "دایره‌های قرمز روی Disk 1 و دکمه Next > و یک فلش قرمز به سمت ناحیه انتخاب دیسک"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    7
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId22",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 7,
+    "page_number": 8,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      139.4,
+      571.13,
+      451.17,
+      763.83
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image84.jpg",
+  "rId": "rId97",
+  "image_path": "img_folder/image_083_image84.jpg",
+  "caption": "نمایش فهرست گزینه‌ها با ستون‌های ID، CUR، DEN و STA و گزینه‌های CONFIRM/EXIT/LOGOFF",
+  "ocr_text": "ID        CUR        DEN        STA\n01        1          RLS        1000000    NA\n02        2          RLS        500000     NA\n03        3          RLS        100001     NA\n04        4          RLS        100002     NA\n97        CONFIRM\n98        EXIT\n99        LOGOFF",
+  "visual_description": [
+    "یک جدول متنی با سرستون‌های ID، CUR، DEN، STA نمایش داده شده است",
+    "چهار ردیف داده با شناسه‌های 01 تا 04 و مقادیر CUR=RLS و STA=NA وجود دارد",
+    "مقادیر DEN در ردیف‌ها: 1000000، 500000، 100001، 100002",
+    "گزینه‌های منو با شناسه‌های 97 CONFIRM، 98 EXIT، 99 LOGOFF در پایین دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 2,
+  "positions": [
+    85,
+    91
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId97",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 85,
+    "page_number": 38,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      201.35,
+      529.74,
+      393.91,
+      630.14
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

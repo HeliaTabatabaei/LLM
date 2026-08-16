@@ -1,0 +1,42 @@
+﻿{
+  "image_name": "image55.png",
+  "rId": "rId68",
+  "image_path": "img_folder/image_054_image55.png",
+  "caption": "صفحه About در تنظیمات ویندوز با مشخصات دستگاه و نسخه Windows 10",
+  "ocr_text": "Settings\nHome\nFind a setting\nSystem\nDisplay\nSound\nNotifications & actions\nFocus assist\nPower & sleep\nStorage\nTablet\nMultitasking\nProjecting to this PC\nShared experiences\nClipboard\nAbout\nYour PC is monitored and protected.\nSee details in Windows Security\nDevice specifications\nDevice name\nDESKTOP-PJKJ1KT\nProcessor\nIntel(R) Pentium(R) CPU G2020 @ 2.90GHz  2.90 GHz\nInstalled RAM\n3.00 GB\nDevice ID\nE6897620-BD1F-4576-90D2-1A983754341E\nProduct ID\n00425-00000-00002-AA324\nSystem type\n32-bit operating system, x64-based processor\nPen and touch\nNo pen or touch input is available for this display\nCopy\nRename this PC\nWindows specifications\nEdition\nWindows 10 Enterprise LTSC\nVersion\n21H2\nInstalled on\n4/9/2024\nOS build\n19044.1288\nExperience\nWindows Feature Experience Pack 120.2212.3920.0\n10:45 AM\n4/15/2024",
+  "visual_description": [
+    "اسکرین‌شات صفحه Settings > System > About در ویندوز",
+    "مشخصات پردازنده: Intel(R) Pentium(R) CPU G2020 @ 2.90GHz",
+    "حافظه RAM نصب‌شده: 3.00 GB",
+    "نوع سیستم: 32-bit operating system, x64-based processor",
+    "نسخه ویندوز: Windows 10 Enterprise LTSC، Version 21H2، OS build 19044.1288",
+    "نمایش Device ID و Product ID به‌صورت رشته‌های متنی",
+    "وجود دکمه‌های Copy و Rename this PC"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    55
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId68",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 55,
+    "page_number": 26,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      327.65,
+      439.3,
+      528.05
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

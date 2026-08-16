@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 LOG_DIR = BASE_DIR / "logs"
 LOG_FILE = LOG_DIR / "qa_log.txt"
-
+LOG_FILEtest = LOG_DIR / "qa_log1.txt"
 def append_qa_to_file(question: str) -> None:
     try:
         LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -22,6 +22,22 @@ def append_qa_to_file(question: str) -> None:
 
     except Exception as e:
         print(f"Failed to save QA log: {repr(e)}", flush=True)  
+def append_qa_to_filetest(question: str) -> None:
+    try:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        with LOG_FILEtest.open("a", encoding="utf-8") as f:
+            # f.write("=" * 80 + "\n")
+            # f.write(f"Time: {timestamp}\n")
+            f.write(f"Q: {question}\n")
+          
+
+      
+
+    except Exception as e:
+        print(f"Failed to save QA log: {repr(e)}", flush=True)          
 def log_message(message: str, log_file: str = "app_log.txt"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_entry = f"[{timestamp}] {message}\n"

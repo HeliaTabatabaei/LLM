@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image63.png",
+  "rId": "rId76",
+  "image_path": "img_folder/image_062_image63.png",
+  "caption": "پنجره New Simple Volume Wizard برای تعیین اندازه ولوم در ویندوز",
+  "ocr_text": "New Simple Volume Wizard\nSpecify Volume Size\nChoose a volume size that is between the maximum and minimum sizes.\n\nMaximum disk space in MB: 59997\nMinimum disk space in MB: 8\nSimple volume size in MB: 59997\n\n< Back\nNext >\nCancel",
+  "visual_description": [
+    "پنجره ویزارد «New Simple Volume Wizard» در مرحله «Specify Volume Size» نمایش داده شده است.",
+    "حداکثر فضای دیسک 59997 مگابایت و حداقل 8 مگابایت نشان داده می‌شود.",
+    "فیلد ورودی «Simple volume size in MB» مقدار 59997 دارد و کنترل افزایشی/کاهشی دارد.",
+    "دکمه‌های «< Back»، «Next >» و «Cancel» در پایین پنجره موجود است."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    63
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId76",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 63,
+    "page_number": 28,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      542.65,
+      425.19,
+      743.0
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image59.png",
+  "rId": "rId72",
+  "image_path": "img_folder/image_058_image59.png",
+  "caption": "منوی راست‌کلیک ویندوز با گزینه‌های مدیریت و نگاشت درایو شبکه",
+  "ocr_text": "Open\nManage\nMap network drive...\nDisconnect network drive...\nCreate shortcut\nDelete\nRename\nProperties",
+  "visual_description": [
+    "منوی زمینه‌ای ویندوز نمایش داده شده است.",
+    "گزینه Manage با پس‌زمینه آبی هایلایت شده است.",
+    "گزینه‌های Map network drive... و Disconnect network drive... در فهرست دیده می‌شوند.",
+    "گزینه‌های Create shortcut، Delete، Rename و Properties قابل مشاهده‌اند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    59
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId72",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 59,
+    "page_number": 27,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      240.65,
+      439.32,
+      354.0,
+      527.86
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

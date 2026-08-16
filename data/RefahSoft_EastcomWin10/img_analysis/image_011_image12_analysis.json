@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image12.jpeg",
+  "rId": "rId25",
+  "image_path": "img_folder/image_011_image12.jpg",
+  "caption": "پنجره Add New Disk Wizard با خلاصه دیسک و دکمه Proceed مشخص‌شده",
+  "ocr_text": "Add New Disk Wizard\nRequired steps:\nDisk selection\nPartition creation\nFinish\nSummary\nLocation: Disk 1\nBefore:\n40 GB\nC:\n39.99 GB NTFS\nAfter:\n40 GB\nUnallocated\n40 GB\nPrimary // Logical // Dynamic\nAcronis Secure Zone\nUnallocated // Unsupported\nProceed\nCancel",
+  "visual_description": [
+    "اسکرین‌شات از پنجره Add New Disk Wizard با مراحل سمت چپ: Disk selection، Partition creation، Finish",
+    "بخش Summary شامل Location: Disk 1",
+    "نمایش وضعیت Before: پارتیشن C: با 39.99 GB و فایل‌سیستم NTFS روی دیسک 40 GB",
+    "نمایش وضعیت After: کل دیسک 40 GB به صورت Unallocated",
+    "راهنمای رنگ/نماد برای Primary/Logical/Dynamic، Acronis Secure Zone، Unallocated/Unsupported",
+    "دکمه Proceed با یک بیضی قرمز در پایین سمت راست مشخص شده و کنار آن Cancel"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    10
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId25",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 10,
+    "page_number": 9,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      139.4,
+      520.75,
+      451.13,
+      712.05
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image100.png",
+  "rId": "rId113",
+  "image_path": "img_folder/image_099_image100.png",
+  "caption": "پنجره Select Users or Groups برای تنظیم دسترسی پوشه BITMAPS و انتخاب کاربر Administrator",
+  "ocr_text": "Permissions for BITMAPS\nSelect Users or Groups\nSelect this object type:\nUsers, Groups, or Built-in security principals\nObject Types...\nFrom this location:\nADONISTECH\nLocations...\nEnter the object names to select (examples):\nADONISTECH\\Administrator\nCheck Names\nAdvanced...\nOK\nCancel\nLearn about access control and permissions\nOK\nCancel\nApply",
+  "visual_description": [
+    "اسکرین‌شات پنجره ویندوز برای انتخاب Users/Groups در تنظیمات Permissions for BITMAPS",
+    "فیلد location مقدار ADONISTECH را نشان می‌دهد",
+    "فیلد object names شامل ADONISTECH\\Administrator است",
+    "دکمه‌های Object Types..., Locations..., Check Names, Advanced..., OK و Cancel قابل مشاهده‌اند",
+    "پشت پنجره، بخشی از پنجره Permissions با گزینه‌های OK/Cancel/Apply دیده می‌شود",
+    "دو کادر قرمز اطراف متن ADONISTECH\\Administrator و دکمه OK قرار دارد"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    103
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId113",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 103,
+    "page_number": 44,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      393.65,
+      439.31,
+      661.9
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

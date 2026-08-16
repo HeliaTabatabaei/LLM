@@ -1,0 +1,43 @@
+﻿{
+  "image_name": "image58.tmp",
+  "rId": "rId71",
+  "image_path": "img_folder/image_057_image58.png",
+  "caption": "پنجره تنظیمات Date and Time ویندوز با تاریخ و ساعت فارسی و منطقه زمانی تهران",
+  "ocr_text": "Date and Time\nDate and Time  Additional Clocks  Internet Time\nDate:\nدوشنبه، ۱۷ اردیبهشت ۱۴۰۳\nTime:\n11:24:01 ق.ظ\nChange date and time...\nTime zone\n(UTC+03:30) Tehran\nChange time zone...\nDaylight Saving Time ends on ۱۴۰۳ فروردین ۳۱, شنبه at 12:00 ق.ظ. The clock\nis not set to adjust for this change.\nNotify me when the clock changes\nOK  Cancel  Apply",
+  "visual_description": [
+    "پنجره تنظیمات ویندوز با عنوان Date and Time و تب‌های Date and Time، Additional Clocks و Internet Time",
+    "نمایش تاریخ به فارسی: دوشنبه، ۱۷ اردیبهشت ۱۴۰۳",
+    "نمایش زمان: 11:24:01 ق.ظ",
+    "نمایش منطقه زمانی: (UTC+03:30) Tehran",
+    "وجود دکمه‌های Change date and time... و Change time zone...",
+    "متن مربوط به Daylight Saving Time و عدم تنظیم ساعت برای این تغییر",
+    "گزینه تیک‌دار Notify me when the clock changes",
+    "دکمه‌های OK، Cancel و Apply (Apply غیرفعال)"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    58
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId71",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 58,
+    "page_number": 27,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      227.15,
+      134.1,
+      368.85,
+      284.02
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

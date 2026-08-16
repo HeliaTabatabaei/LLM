@@ -173,6 +173,8 @@ Example for missing bank:
         output = []
 
         for chunk in chunks:
+            docid=chunk.payload.get("doc_id", "")
+
             output.append(
                 {
                     "id": str(chunk.id),
@@ -181,14 +183,17 @@ Example for missing bank:
                         "text",
                         ""
                     ),
-                    "title": chunk.payload.get(
-                        "title",
-                        ""
-                    ),                
-                    "source_file": chunk.payload.get(
-                        "source_file",
-                        ""
-                    ),
+                    "meta": {
+                        "customer_name": chunk.payload.get("customer_name", ""),
+                        "vendor_name": chunk.payload.get("vendor_name", ""),
+                        "service_type": chunk.payload.get("service_type", ""),
+                        "keywords": chunk.payload.get("keywords", []),
+                        "heading": chunk.payload.get("heading_path", ""),
+                        "source_file": self.rag_service.getSourceFilePath(chunk.payload.get("source_file", ""), docid),
+                        "image_paths": self.rag_service.getListofImagepath(chunk.payload.get("imgs_info", []), docid),
+
+                    }        
+                  
                 }
             )
 
@@ -204,21 +209,16 @@ Example for missing bank:
         history: list[dict[str, Any]] | None = None,
     ) -> None:
         start=time.time()
-        # query_vector = self.llm_provider.embed_query(message)
-        # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
-        # start=time.time()
         results = self.rag_service.search(
             query_vector=query_vector,
             limit=20,
             filters=None,
-        )
-       
+        ) 
         append_qa_to_file(f"Rag search: {time.time() - start:.2f} seconds")
         start=time.time()
         if not results:
             on_chunk({"type": "token", "content": "هیچ سند مرتبطی یافت نشد."})
             return
-       
         reranked_results = self.rag_service.rerank_results(
             query=message,
             results=results,
@@ -226,7 +226,7 @@ Example for missing bank:
         )
         append_qa_to_file(f"Rank Query Time: {time.time() - start:.2f} seconds")
         start=time.time()
-        prepared_chunks = self.prepare_chunks(reranked_results)
+        prepared_chunks =self.prepare_chunks(reranked_results)
 
         on_chunk({
             "type": "source_chunks",

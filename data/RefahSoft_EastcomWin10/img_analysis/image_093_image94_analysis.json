@@ -1,0 +1,43 @@
+﻿{
+  "image_name": "image94.jpg",
+  "rId": "rId107",
+  "image_path": "img_folder/image_093_image94.jpg",
+  "caption": "پنجره Advanced Sharing ویندوز با نام اشتراک VideoArchive و دکمه Permissions مشخص شده",
+  "ocr_text": "JOURNAL Properties\nAdvanced Sharing\nShare this folder\nSettings\nShare name:\nVideoArchive\nAdd\nRemove\nLimit the number of simultaneous users to:\n20\nComments:\nPermissions\nCaching\nOK\nCancel\nApply\nTo change these settings, use the Network and Sharing Center.",
+  "visual_description": [
+    "اسکرین‌شات پنجره Advanced Sharing در Properties یک پوشه در ویندوز",
+    "گزینه Share this folder فعال است",
+    "فیلد Share name مقدار VideoArchive دارد",
+    "محدودیت کاربران همزمان روی 20 تنظیم شده است",
+    "دکمه Permissions با کادر قرمز هایلایت شده است",
+    "یک فلش قرمز به فیلد Share name اشاره می‌کند",
+    "دکمه‌های OK، Cancel و Apply در پایین پنجره دیده می‌شوند",
+    "گزینه‌های Add و Remove غیرفعال/خاکستری نمایش داده شده‌اند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    97
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId107",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 97,
+    "page_number": 42,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      198.45,
+      172.72,
+      396.85,
+      431.16
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

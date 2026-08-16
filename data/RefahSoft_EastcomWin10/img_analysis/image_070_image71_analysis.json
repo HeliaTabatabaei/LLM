@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image71.jpeg",
+  "rId": "rId84",
+  "image_path": "img_folder/image_070_image71.jpg",
+  "caption": "صفحه نصب Kaspersky Security Center 12 با پیام اتمام موفق و دکمه OK",
+  "ocr_text": "Kaspersky Security Center 12\nInstallation completed successfully\nExtracting archive to temporary location\nInstalling:  Kaspersky Security Center 12 Network Agent (12.0.0.7734)\nChecking connection to Administration Server\nInstalling:  Kaspersky Embedded Systems Security 3.2 (3.2.0.200)\nOK",
+  "visual_description": [
+    "پنجره نصب «Kaspersky Security Center 12» نمایش داده شده است",
+    "پیام «Installation completed successfully» در بالای پنجره دیده می‌شود",
+    "فهرست مراحل نصب با آیکون‌های تیک سبز کنار هر مرحله نمایش دارد",
+    "مراحل شامل استخراج آرشیو، نصب Network Agent با نسخه 12.0.0.7734، بررسی اتصال به Administration Server و نصب Embedded Systems Security 3.2 با نسخه 3.2.0.200 است",
+    "دکمه «OK» در پایین پنجره وجود دارد",
+    "یک فلش قرمز و کادر قرمز برای تاکید روی بخش مراحل و دکمه OK ترسیم شده‌اند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    72
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId84",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 72,
+    "page_number": 33,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      90.35,
+      439.28,
+      235.55
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

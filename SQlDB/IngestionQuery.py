@@ -202,9 +202,11 @@ def load_chunks_from_dbByDocId(docId):
     conn_str =connection_string
 
     query = f"""
-        SELECT id, JsonData,
-       replace(replace(LEFT(path, LEN(path) - CHARINDEX('/', REVERSE(path))),'data','media'),'/app/','')+'/img_folder'  AS folder_path
-        FROM dbo.LLM_Documnts
+         SELECT id, JsonData,
+         replace(replace(LEFT(path, LEN(path) - CHARINDEX('/', REVERSE(path))),'data','media'),'/app/','')+'/'  AS folder_path
+         FROM dbo.LLM_Documnts
+        
+      
         WHERE  id = ? 
         """
     #{docId}
@@ -229,6 +231,7 @@ def load_chunks_from_dbByDocId(docId):
 
                 qdrant_id = int(f"{table_id}{chunk_id:05d}")
                 chunk["metadata"]["doc_id"] = str(table_id)
+               
                 chunk["id"] = qdrant_id
                 chunks.append(chunk)
              

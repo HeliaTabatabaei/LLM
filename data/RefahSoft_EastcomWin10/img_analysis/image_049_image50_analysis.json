@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image50.png",
+  "rId": "rId63",
+  "image_path": "img_folder/image_049_image50.png",
+  "caption": "صفحه تنظیمات Display ویندوز با گزینه‌های Identify و Detect و تنظیم Night light",
+  "ocr_text": "Settings\nHome\nFind a setting\nSystem\nDisplay\nSound\nNotifications & actions\nFocus assist\nPower & sleep\nStorage\nTablet mode\nMultitasking\nShared experiences\nClipboard\nRemote Desktop\nDisplay\nSelect and rearrange displays\nSelect a display below to change the settings for it. Press and hold (or select) a display, then drag to rearrange it.\nIdentify\nDetect\nColor\nNight light\nOff\nNight light settings\nWindows HD Color",
+  "visual_description": [
+    "اسکرین‌شات از Windows Settings در بخش System > Display",
+    "بخش «Select and rearrange displays» با دو نمایشگر شماره‌گذاری‌شده 1 و 2 نمایش داده شده است",
+    "دو دکمه «Identify» و «Detect» در سمت راست پایین ناحیه نمایشگرها دیده می‌شود",
+    "در بخش «Color» گزینه «Night light» با وضعیت «Off» و لینک «Night light settings» وجود دارد",
+    "گزینه «Windows HD Color» در پایین صفحه دیده می‌شود",
+    "منوی سمت چپ شامل آیتم‌های Display، Sound، Notifications & actions، Focus assist، Power & sleep، Storage، Tablet mode، Multitasking، Shared experiences، Clipboard و Remote Desktop است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    50
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId63",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 50,
+    "page_number": 24,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      85.16,
+      439.35,
+      286.06
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

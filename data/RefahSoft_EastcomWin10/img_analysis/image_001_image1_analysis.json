@@ -1,0 +1,49 @@
+﻿{
+  "image_name": "image1.jpg",
+  "rId": "rId8",
+  "image_path": "img_folder/image_001_image1.jpg",
+  "caption": "جلد دستورالعمل نصب نرم‌افزار Eastcom Win 10 برای بانک رفاه",
+  "ocr_text": "دستورالعمل\nنصب نرم‌افزار\nEastcom Win 10 - بانک رفاه\nشماره نسخه: 01-5.506.01 -1-ITD403\nمهر 1404\nشرکت توسعه خدمات الکترونیکی آدونیس (سهامی خاص)",
+  "visual_description": [
+    "صفحه عنوان فارسی با تیتر «دستورالعمل نصب نرم‌افزار»",
+    "ذکر نام محصول «Eastcom Win 10» و عبارت «بانک رفاه»",
+    "نمایش شماره نسخه «01-5.506.01 -1-ITD403» و تاریخ «مهر 1404»",
+    "لوگوی شرکت و نام «شرکت توسعه خدمات الکترونیکی آدونیس (سهامی خاص)» در پایین",
+    "طرح خطی یک دستگاه خودپرداز در گوشه پایین چپ"
+  ],
+  "image_type": "scan",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    0
+  ],
+  "rendered_composite": true,
+  "render_status": "rendered",
+  "render_details": {
+    "relationship_id": "rId8",
+    "rendered": true,
+    "status": "rendered",
+    "occurrence_index": 0,
+    "page_number": 1,
+    "overlay_count": 3,
+    "error": "",
+    "picture_name": "Picture 18",
+    "picture_box": [
+      1.05,
+      -0.0,
+      595.29,
+      840.35
+    ],
+    "crop_box": [
+      0.0,
+      0.0,
+      595.32,
+      841.92
+    ],
+    "overlay_names": [
+      "Text Box 20",
+      "Straight Connector 2",
+      "Straight Connector 3"
+    ]
+  }
+}

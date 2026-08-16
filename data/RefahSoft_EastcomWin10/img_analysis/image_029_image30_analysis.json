@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image30.jpeg",
+  "rId": "rId43",
+  "image_path": "img_folder/image_029_image30.jpg",
+  "caption": "نمایش پیام‌های بوت/عیب‌یابی درباره RAID، LVM و خطاهای LinuxMountManager",
+  "ocr_text": "Loading, please wait...\nNo RAID disks\nReading all physical volumes.  This may take a while...\nNo volume groups found\nNo volume groups found\nNo volume groups found\nin LinuxMountManager::Directory::EnableNotification(), type = 138\nin LinuxMountManager::Directory::En\nableNotification(), type = 128\nin LinuxMountManager::Directory::EnableNotification(), type = 128\nmuxMountManager::Directory::EnableNotification(), type = 128\notification(), type = 128\nin LinuxMountManager::Directory::EnableN\nin LinuxMountManager::Directory::EnableNotification(), type = 128",
+  "visual_description": [
+    "صفحه کنسول با متن سفید روی پس‌زمینه سیاه",
+    "پیام «No RAID disks» نمایش داده شده است",
+    "پیام «Reading all physical volumes...» مربوط به اسکن LVM دیده می‌شود",
+    "چندین بار پیام «No volume groups found» نمایش داده شده است",
+    "چند خط لاگ شامل «LinuxMountManager::Directory::EnableNotification()» با type=128 و یک مورد type=138 دیده می‌شود"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    28
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId43",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 28,
+    "page_number": 16,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      77.62,
+      104.41,
+      474.46,
+      240.51
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

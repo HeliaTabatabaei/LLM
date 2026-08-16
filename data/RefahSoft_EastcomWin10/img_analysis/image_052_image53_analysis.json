@@ -1,0 +1,38 @@
+﻿{
+  "image_name": "image53.jpg",
+  "rId": "rId66",
+  "image_path": "img_folder/image_052_image53.jpg",
+  "caption": "منوی CHANGE EPP با چهار گزینه برای تغییر به نسخه‌ها و مدل‌های مختلف",
+  "ocr_text": "CHANGE EPP\n0) CHANGE TO EPP U5-V6\n01 CHANGE TO EPP EC2001\n02 CHANGE TO EPP EC2003\n03 CHANGE TO EPP JustTide",
+  "visual_description": [
+    "نمایشگر تک‌رنگ با پس‌زمینه روشن و متن تیره",
+    "عنوان صفحه: CHANGE EPP",
+    "فهرست گزینه‌ها با شماره‌گذاری 0)، 01، 02، 03 برای تغییر به U5-V6، EC2001، EC2003 و JustTide"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    53
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId66",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 53,
+    "page_number": 25,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      190.02,
+      439.3,
+      263.42
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,37 @@
+﻿{
+  "image_name": "image5.png",
+  "rId": "rId18",
+  "image_path": "img_folder/image_003_image5.png",
+  "caption": "عبارت «بنام خدا» با خط خوشنویسی",
+  "ocr_text": "بنام خدا",
+  "visual_description": [
+    "متن فارسی سیاه‌رنگ روی پس‌زمینه سفید",
+    "سبک نوشتار خوشنویسی با حروف کشیده و منحنی"
+  ],
+  "image_type": "scan",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    2
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId18",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 2,
+    "page_number": 5,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      85.8,
+      104.25,
+      122.4,
+      145.75
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

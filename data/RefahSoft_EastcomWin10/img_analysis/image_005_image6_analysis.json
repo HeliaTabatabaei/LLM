@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image6.tmp",
+  "rId": "rId19",
+  "image_path": "img_folder/image_005_image6.png",
+  "caption": "منوی بوت Acronis True Image با گزینه‌های اجرای برنامه، گزارش سیستم و شروع ویندوز",
+  "ocr_text": "Starting Acronis Loader..._\nAcronis\nTrue Image\nAcronis True Image\nAcronis System Report\nAcronis True Image (64-bit)\nAcronis System Report (64-bit)\nStart Windows\nYou can turn on MouseKeys to control the mouse pointer using the numeric keypad.\nPress ALT + left SHIFT + NUM LOCK or CTRL+ALT+M for F10 and control the pointer\nusing the numeric keypad.\nEN\nAcronis\nLoading, please wait...",
+  "visual_description": [
+    "صفحه منوی بوت Acronis True Image با پنج گزینه قابل انتخاب نمایش داده شده است",
+    "گزینه‌ها شامل Acronis True Image، Acronis System Report، نسخه‌های 64-bit و Start Windows هستند",
+    "بالای تصویر پیام «Starting Acronis Loader...» و پایین پیام «Loading, please wait...» دیده می‌شود",
+    "راهنمای فعال‌سازی MouseKeys و زبان «EN» در پایین صفحه موجود است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    4
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId19",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 4,
+    "page_number": 7,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      85.07,
+      270.04,
+      510.22,
+      674.08
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

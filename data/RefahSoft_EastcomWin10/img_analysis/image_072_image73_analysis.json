@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image73.jpeg",
+  "rId": "rId86",
+  "image_path": "img_folder/image_072_image73.jpg",
+  "caption": "منوی راست‌کلیک ویندوز با گزینه «Run as administrator» مشخص‌شده",
+  "ocr_text": "KLMover\n32bit.bat\nOpen\nEdit\nPrint\nRun as administrator\nOpen in Media Player Classic\nOpen in MediaInfo",
+  "visual_description": [
+    "آیکون فایل batch با نام KLMover 32bit.bat دیده می‌شود",
+    "منوی راست‌کلیک شامل گزینه‌های Open، Edit، Print و Run as administrator است",
+    "گزینه «Run as administrator» با کادر قرمز هایلایت شده است",
+    "گزینه‌های «Open in Media Player Classic» و «Open in MediaInfo» در منو دیده می‌شوند"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    74
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId86",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 74,
+    "page_number": 34,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      226.8,
+      177.58,
+      368.5,
+      258.97
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

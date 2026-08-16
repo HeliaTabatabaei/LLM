@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image97.png",
+  "rId": "rId110",
+  "image_path": "img_folder/image_096_image97.png",
+  "caption": "پنجره تنظیم مجوزهای پوشه BITMAPS و مجوزهای کاربر BANKUser با گزینه Add",
+  "ocr_text": "Permissions for BITMAPS\nShare Permissions\nGroup or user names:\nBANKUser (ADONISTECH\\BANKUser)\nAdd...\nRemove\nPermissions for BANKUser\nAllow\nDeny\nFull Control\nChange\nRead\nLearn about access control and permissions\nOK\nCancel\nApply",
+  "visual_description": [
+    "پنجره Windows برای تنظیم Permissions با عنوان «Permissions for BITMAPS» نمایش داده شده است.",
+    "در بخش Group or user names کاربر «BANKUser (ADONISTECH\\BANKUser)» فهرست شده است.",
+    "دکمه «Add...» با کادر قرمز برجسته شده است.",
+    "جدول مجوزها شامل ردیف‌های «Full Control»، «Change»، «Read» و ستون‌های «Allow» و «Deny» است.",
+    "چک‌باکس‌های Allow برای Full Control، Change و Read فعال هستند و چک‌باکس‌های Deny خالی‌اند.",
+    "دکمه‌های پایین پنجره شامل «OK»، «Cancel»، «Apply» است."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    100
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId110",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 100,
+    "page_number": 43,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      86.0,
+      385.37,
+      284.4,
+      624.94
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

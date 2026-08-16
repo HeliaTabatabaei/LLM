@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image99.png",
+  "rId": "rId112",
+  "image_path": "img_folder/image_098_image99.png",
+  "caption": "پنجره انتخاب کاربر/گروه در ویندوز برای تعیین مجوزها و بررسی نام کاربری administrator",
+  "ocr_text": "Permissions for BITMAPS\nSelect Users or Groups\nSelect this object type:\nUsers, Groups, or Built-in security principals\nObject Types...\nFrom this location:\nADONISTECH\nLocations...\nEnter the object names to select (examples):\nadministrator\nCheck Names\nAdvanced...\nOK\nCancel\nChange\nRead\nLearn about access control and permissions\nOK\nCancel\nApply",
+  "visual_description": [
+    "پنجره Windows با عنوان «Select Users or Groups» روی «Permissions for BITMAPS» نمایش داده شده است.",
+    "فیلد «From this location» مقدار «ADONISTECH» را نشان می‌دهد.",
+    "در کادر ورود نام، متن «administrator» وارد شده است.",
+    "دکمه «Check Names» با کادر قرمز برجسته شده است.",
+    "دکمه‌های «Object Types...»، «Locations...»، «Advanced...»، «OK» و «Cancel» قابل مشاهده‌اند.",
+    "در پنجره پس‌زمینه بخش مجوزها با گزینه‌های «Change» و «Read» و چک‌باکس‌ها دیده می‌شود."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    102
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId112",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 102,
+    "page_number": 44,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      155.9,
+      104.41,
+      439.31,
+      372.76
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image51.png",
+  "rId": "rId64",
+  "image_path": "img_folder/image_050_image51.png",
+  "caption": "پنجره تنظیمات نمایش ویندوز برای چیدمان دو نمایشگر و دکمه‌های Identify و Detect",
+  "ocr_text": "Display\nSelect and rearrange displays\nSelect a display below to change the settings for it. Press and hold (or select) a display, then drag to rearrange it.\n1\n2\nIdentify\nDetect\nColor",
+  "visual_description": [
+    "اسکرین‌شات از بخش Display در تنظیمات ویندوز",
+    "نمایش گزینه Select and rearrange displays با توضیح جابه‌جایی نمایشگرها",
+    "دو مستطیل نمایشگر با برچسب‌های 1 و 2 کنار هم نمایش داده شده‌اند",
+    "نمایشگر 2 با رنگ آبی انتخاب شده و نمایشگر 1 خاکستری است",
+    "دو دکمه Identify و Detect در پایین سمت راست دیده می‌شود",
+    "عنوان Color در پایین صفحه قابل مشاهده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    51
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId64",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 51,
+    "page_number": 24,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      191.15,
+      309.9,
+      403.7,
+      474.43
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

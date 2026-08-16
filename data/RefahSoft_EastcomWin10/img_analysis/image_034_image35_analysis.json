@@ -1,0 +1,40 @@
+﻿{
+  "image_name": "image35.png",
+  "rId": "rId48",
+  "image_path": "img_folder/image_034_image35.png",
+  "caption": "صفحه تنظیمات EPP در Bank Refah ATM Config با گزینه‌های EC2001، EC2003، EPPV5-V6 و JustTide",
+  "ocr_text": "Administrator - Bank Refah ATM Config:\n\n:::Set EPP Config:::\n\n1- EC2001 EPP Config                         2- EC2003 EPP Config\n\n3- EPPV5-V6 Config                            4- EPP JustTide Config\n\nType x and Press Enter to go Main Menu\n\nType Number and Press Enter:",
+  "visual_description": [
+    "پنجره کنسولی با عنوان «Administrator - Bank Refah ATM Config:» نمایش داده شده است",
+    "بخش منو با عنوان «:::Set EPP Config:::» وجود دارد",
+    "چهار گزینه شماره‌دار برای پیکربندی EPP نمایش داده شده‌اند: EC2001، EC2003، EPPV5-V6، EPP JustTide",
+    "راهنمای بازگشت به منوی اصلی با متن «Type x and Press Enter to go Main Menu» نمایش داده شده است",
+    "ورودی کاربر با متن «Type Number and Press Enter:» درخواست شده است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    33
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId48",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 33,
+    "page_number": 18,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      127.4,
+      83.65,
+      467.35,
+      209.74
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

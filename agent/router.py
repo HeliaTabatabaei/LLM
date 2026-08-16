@@ -220,14 +220,7 @@ class RouterAgent:
         
     ) -> None:
         history_text= "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
-        append_qa_to_file(history_text)
-        # start=time.time()
-        # query_vector = self.llm.embed_query(query)
-        # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
-        #meta_hits= self.document_agent.rag_service.searchMetaData(
- 
-
-
+        #append_qa_to_file(history_text)
         start1=time.time()
         rewrite_query=self.rewrite_query(query,history_text)
         append_qa_to_file(f"rewrite_query : {rewrite_query}")
@@ -237,9 +230,6 @@ class RouterAgent:
         intent = self.classify(rewrite_query,history_text)
         append_qa_to_file(f"check question type Time: {time.time() - start1:.2f} seconds")
         append_qa_to_file(f"intent: {intent} ")
-        print (intent,flush=True)
-
-
         if intent == "general":
             self.chat_agent.answer_stream(
                 message=rewrite_query,

@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image6.tmp",
+  "rId": "rId19",
+  "image_path": "img_folder/image_004_image6.png",
+  "caption": "نمودار بلوکی اتصال ATM PC به آمپلی‌فایر و سپس بلندگو",
+  "ocr_text": "ATM PC\nAMP\nSPEAKER",
+  "visual_description": [
+    "یک بلوک با برچسب ATM PC در سمت چپ قرار دارد",
+    "پیکان از ATM PC به یک بلوک مثلثی با برچسب AMP اشاره می‌کند",
+    "پیکان خروجی از AMP به بلوک بلندگو با برچسب SPEAKER در سمت راست وصل است",
+    "در بلوک SPEAKER یک نماد بلندگو با خطوط ورودی در سمت چپ نشان داده شده است"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    3
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId19",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 3,
+    "page_number": 5,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      99.1,
+      350.59,
+      467.38,
+      449.19
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

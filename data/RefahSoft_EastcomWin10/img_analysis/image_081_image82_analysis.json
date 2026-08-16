@@ -1,0 +1,37 @@
+﻿{
+  "image_name": "image82.tmp",
+  "rId": "rId95",
+  "image_path": "img_folder/image_081_image82.png",
+  "caption": "نمودار پله‌ای با پیکان‌ها برای دسترسی و نوشتن کلید A و پیام موفقیت",
+  "ocr_text": "06 ACCESS\n09 WRITE A\nKEY A STORED\n>01 OK",
+  "visual_description": [
+    "سه پله با پیکان‌های رو به راست بین مراحل «06 ACCESS»، «09 WRITE A» و «KEY A STORED» نمایش داده شده است",
+    "متن خروجی «>01 OK» زیر عبارت «KEY A STORED» دیده می‌شود"
+  ],
+  "image_type": "diagram",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    83
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId95",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 83,
+    "page_number": 37,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      72.0,
+      358.48,
+      313.92,
+      412.33
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

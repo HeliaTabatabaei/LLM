@@ -1,0 +1,43 @@
+﻿{
+  "image_name": "image65.png",
+  "rId": "rId78",
+  "image_path": "img_folder/image_064_image65.png",
+  "caption": "پنجره تنظیمات فرمت پارتیشن در New Simple Volume Wizard با انتخاب فایل‌سیستم NTFS",
+  "ocr_text": "New Simple Volume Wizard\nFormat Partition\nTo store data on this partition, you must format it first.\n\nChoose whether you want to format this volume, and if so, what settings you want to use.\n\nDo not format this volume\nFormat this volume with the following settings:\nFile system:\nNTFS\nAllocation unit size:\nDefault\nVolume label:\nNew Volume\nPerform a quick format\nEnable file and folder compression\n\n< Back\nNext >\nCancel",
+  "visual_description": [
+    "پنجره New Simple Volume Wizard در مرحله Format Partition نمایش داده شده است.",
+    "گزینه «Format this volume with the following settings:» انتخاب شده است.",
+    "فهرست کشویی File system روی NTFS قرار دارد.",
+    "Allocation unit size روی Default تنظیم شده است.",
+    "Volume label برابر New Volume است.",
+    "گزینه Perform a quick format تیک خورده است.",
+    "گزینه Enable file and folder compression بدون تیک است.",
+    "دکمه‌های < Back، Next > و Cancel در پایین پنجره موجود هستند."
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    65
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId78",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 65,
+    "page_number": 29,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      170.1,
+      342.82,
+      425.19,
+      542.17
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

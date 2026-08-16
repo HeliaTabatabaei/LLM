@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image17.jpeg",
+  "rId": "rId30",
+  "image_path": "img_folder/image_016_image17.jpg",
+  "caption": "نمای پنجره Recovery Wizard برای انتخاب پارتیشن‌های بازیابی و دکمه Next",
+  "ocr_text": "Recovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nSettings of Partition C\nSettings of Partition D\nSettings of Disk 1\nFinish\nSelect the items to recover.\nPartition\nFla...\nCa...\nUsed S...\nType\nDisk 1\nNTFS (System Reserved) (C:)\nNTFS (Unlabeled) (D:)\nMBR and Track 0\nPri, Act\n100 MB\n24.14 MB\nNTFS\nPri\n32 GB\n10.59 GB\nNTFS\nMBR and Track 0\nNext >\nCancel\n3",
+  "visual_description": [
+    "پنجره نرم‌افزار Recovery Wizard با مراحل سمت چپ و مرحله «What to recover» هایلایت شده",
+    "جدول انتخاب آیتم‌های بازیابی شامل «Disk 1» و ردیف‌های پارتیشن",
+    "دو چک‌باکس در کنار پارتیشن‌ها و یک چک‌باکس برای «MBR and Track 0» نمایش داده شده",
+    "ردیف‌ها شامل «NTFS (System Reserved) (C:)» و «NTFS (Unlabeled) (D:)» با مقادیر 100 MB و 32 GB",
+    "فلش‌ها و خط‌کشی قرمز اطراف گزینه‌های انتخاب و یک دایره قرمز دور دکمه «Next >»",
+    "دکمه‌های پایین سمت راست: «Next >» و «Cancel»"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    15
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId30",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 15,
+    "page_number": 11,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      137.9,
+      323.59,
+      421.31,
+      500.99
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

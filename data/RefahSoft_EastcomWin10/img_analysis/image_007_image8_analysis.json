@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image8.png",
+  "rId": "rId21",
+  "image_path": "img_folder/image_007_image8.png",
+  "caption": "پنجره Add New Disk Wizard برای انتخاب روش مقداردهی دیسک بین MBR و GPT",
+  "ocr_text": "Add New Disk Wizard\nAdd New Disk Wizard\nRequired steps:\nDisk selection\nInitialization options\nPartition creation\nFinish\nSelect the required disk initialization method\nInitialize disk in MBR layout\nDisk will use Master Boot Record (MBR) layout.\nInitialize disk in GPT layout\nDisk will use GUID Partition Table (GPT) layout.\nYour host operating system must support GUID Partition Table (GPT) partitioning style.\nNext >\nCancel\nEN",
+  "visual_description": [
+    "اسکرین‌شات یک ویزارد با عنوان Add New Disk Wizard",
+    "منوی مراحل در ستون چپ: Disk selection، Initialization options، Partition creation، Finish",
+    "بخش اصلی گزینه‌های رادیویی مقداردهی دیسک: Initialize disk in MBR layout و Initialize disk in GPT layout",
+    "توضیح متنی درباره استفاده از Master Boot Record (MBR) و GUID Partition Table (GPT)",
+    "دکمه‌های پایین پنجره: Next > و Cancel",
+    "آیکون زبان/ورودی با متن EN در گوشه پایین راست"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    6
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId21",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 6,
+    "page_number": 8,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      139.4,
+      355.61,
+      450.7,
+      540.06
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿{
+  "image_name": "image13.jpeg",
+  "rId": "rId26",
+  "image_path": "img_folder/image_012_image13.jpg",
+  "caption": "نمای اصلی Acronis True Image Home 2011 با تب Recovery مشخص‌شده",
+  "ocr_text": "Acronis True Image Home 2011\nBackup\nRecovery\nTools & Utilities\nSearch\nHome\nBackup\nRecovery\nLog\nTools & Utilities\nWelcome to Acronis True Image Home 2011\nWhat would you like to do?\nBack Up\nMy Disks | Files & Folders\nRecover\nMy Disks | Files & Folders\nMy favorites\nHelp\nOptions",
+  "visual_description": [
+    "اسکرین‌شات نرم‌افزار Acronis True Image Home 2011 با نوار بالایی شامل Backup، Recovery و Tools & Utilities",
+    "دکمه/تب Recovery با یک بیضی قرمز مشخص شده است",
+    "ستون کناری شامل Home، Backup، Recovery، Log و Tools & Utilities است",
+    "بخش مرکزی گزینه‌های Back Up و Recover با زیرنویس My Disks | Files & Folders را نشان می‌دهد",
+    "سمت راست بخش My favorites شامل Help و Options دیده می‌شود",
+    "کادر Search در بالا سمت راست موجود است"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    11
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId26",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 11,
+    "page_number": 10,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      156.35,
+      83.66,
+      402.95,
+      262.96
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

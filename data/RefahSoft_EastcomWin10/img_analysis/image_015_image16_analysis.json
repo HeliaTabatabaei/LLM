@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image16.png",
+  "rId": "rId29",
+  "image_path": "img_folder/image_015_image16.png",
+  "caption": "پنجره Recovery Wizard برای انتخاب روش بازیابی دیسک یا فایل‌ها",
+  "ocr_text": "Recovery Wizard\nRecovery Wizard\nRequired steps:\nArchive selection\nRecovery method\nWhat to recover\nFinish\nChoose recovery method.\nRecover whole disks and partitions\nRecover chosen files and folders\nSelect files and folders to recover from the original disk backup.\nNext >\nCancel",
+  "visual_description": [
+    "اسکرین‌شات یک ویزارد با عنوان Recovery Wizard و نوار مراحل سمت چپ",
+    "مرحله فعال «What to recover» و نمایش گزینه‌های رادیویی برای انتخاب روش بازیابی",
+    "دو گزینه: بازیابی کل دیسک‌ها و پارتیشن‌ها یا بازیابی فایل‌ها و پوشه‌های انتخابی",
+    "دکمه‌های «Next >» و «Cancel» در پایین پنجره"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    14
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId29",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 14,
+    "page_number": 11,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      137.9,
+      90.35,
+      421.3,
+      260.7
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

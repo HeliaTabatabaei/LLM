@@ -1,0 +1,36 @@
+﻿{
+  "image_name": "image4.png",
+  "rId": "rId17",
+  "image_path": "img_folder/image_003_image4.png",
+  "caption": "متن فارسی خوشنویسی‌شده «بنام خدا» روی زمینه سفید",
+  "ocr_text": "بنام خدا",
+  "visual_description": [
+    "عبارت فارسی «بنام خدا» با خط خوشنویسی مشکی روی پس‌زمینه سفید نمایش داده شده است."
+  ],
+  "image_type": "scan",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    2
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId17",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 2,
+    "page_number": 5,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      78.0,
+      90.0,
+      114.6,
+      131.5
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}

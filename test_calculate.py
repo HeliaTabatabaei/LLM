@@ -60,25 +60,29 @@ def build_router_agent() -> RouterAgent:
 
 
 if __name__ == "__main__":
-    router_agent = build_router_agent()
+    path = r"C:\Users\asus\Desktop\test_chunkStudio_revision_08022026\input\2-IT9411-138-00_AudioSystem.docx"
+    filename = os.path.basename(path)
+
+    print(filename)
+    # router_agent = build_router_agent()
 
 
 
-    def get_embedding(text):
-      return  router_agent.llm.embed_query(text)
-    queries = [
-        "شماره کارشناس مستقر در بانک سپه"]
+    # def get_embedding(text):
+    #   return  router_agent.llm.embed_query(text)
+    # queries = [
+    #     "شماره کارشناس مستقر در بانک سپه"]
       
 
-    for q in queries:
-        results = router_agent.document_agent.rag_service.search(
-            query_vector=get_embedding(q),
-            limit= 5
-        )
-        print(f"Query: {q}")
-        for r in results:
-            text_content = r.payload.get("maintext") or r.payload.get("text") or ""
-            print(f"  Score: {r.score} | Text: {text_content[:100]}")
-            append_qa_to_file(f"  Score: {r.score} | Text: {text_content[:100]}")
-            #print(f"  Score: {r.score} | Text: {r.payload.get('text')[:100]}")
-        print("---")
+    # for q in queries:
+    #     results = router_agent.document_agent.rag_service.search(
+    #         query_vector=get_embedding(q),
+    #         limit= 5
+    #     )
+    #     print(f"Query: {q}")
+    #     for r in results:
+    #         text_content = r.payload.get("maintext") or r.payload.get("text") or ""
+    #         print(f"  Score: {r.score} | Text: {text_content[:100]}")
+    #         append_qa_to_file(f"  Score: {r.score} | Text: {text_content[:100]}")
+    #         #print(f"  Score: {r.score} | Text: {r.payload.get('text')[:100]}")
+    #     print("---")

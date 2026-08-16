@@ -1,0 +1,39 @@
+﻿{
+  "image_name": "image49.png",
+  "rId": "rId62",
+  "image_path": "img_folder/image_048_image49.png",
+  "caption": "نتیجه جست‌وجوی ویندوز برای Display settings با فهرست گزینه‌های تنظیمات نمایش",
+  "ocr_text": "Filters\nBest match\nDisplay settings\nSystem settings\nSettings\nChange the primary display\nChange the orientation of the display\nDuplicate or extend to a connected display\nChoose when to turn off the screen when plugged in\nEase of Access display settings\nEase of Access brightness setting\ndisplay settings",
+  "visual_description": [
+    "نمای پنجره جست‌وجوی ویندوز با بخش Filters و Best match",
+    "آیتم انتخاب‌شده: Display settings (System settings)",
+    "فهرست گزینه‌های تنظیمات نمایش شامل تغییر نمایشگر اصلی، جهت نمایش، Duplicate/Extend، زمان خاموشی صفحه هنگام اتصال برق",
+    "نمایش گزینه‌های Ease of Access مرتبط با نمایش و روشنایی"
+  ],
+  "image_type": "screenshot",
+  "analysis_status": "complete",
+  "usage_count": 1,
+  "positions": [
+    49
+  ],
+  "rendered_composite": false,
+  "render_status": "no_overlay",
+  "render_details": {
+    "relationship_id": "rId62",
+    "rendered": false,
+    "status": "no_overlay",
+    "occurrence_index": 49,
+    "page_number": 23,
+    "overlay_count": 0,
+    "error": "",
+    "picture_name": "",
+    "picture_box": [
+      341.37,
+      595.33,
+      460.97,
+      734.02
+    ],
+    "crop_box": null,
+    "overlay_names": []
+  }
+}
