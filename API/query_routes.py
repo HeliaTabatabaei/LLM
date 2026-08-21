@@ -113,7 +113,8 @@ def build_router_agent() -> RouterAgent:
 
     provider = create_provider(
         provider_name="openai",
-        base_uri="https://api.gapgpt.app/v1",
+        base_uri="https://api.openai.com/v1",
+#"https://api.gapgpt.app/v1",
         api_key=os.getenv("OPENAI_API_KEY", ""),
         model=os.getenv("LLM_MODEL", ""),
         embed_model=os.getenv("EMBED_MODEL", ""),
@@ -281,9 +282,10 @@ async def stream_queryHistory_endpoint(
         try:         
             append_qa_to_file(request.query            
         )
-            append_qa_to_file(
-                        final_answer                            
-                    )
+            #ht
+            # append_qa_to_file(
+            #             final_answer                            
+            #         )
         except Exception as e:
             print(f"Failed to save QA log: {e}", flush=True)    
         if final_usage and final_response_id:
@@ -384,9 +386,9 @@ async def query_history_endpoint(
 
     try:
        
-        append_qa_to_file(
-                    question=final_answer                
-                )
+        # append_qa_to_file(
+        #             question=final_answer                
+        #         )
         append_qa_to_file(f"TotalTime: {time.time() - start:.2f} seconds")
     except Exception as e:
         print(f"Failed to save QA log: {e}", flush=True)

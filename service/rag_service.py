@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import json
+import time
 from typing import Any, Optional
 
 from qdrant_client import models
 
 from Models.mainModels import SearchFilters
 from config import COLLECTION_NAME,COLLECTION_NAME_Meta
+from log import append_qa_to_file
 from prompts_config import SYSTEM_PROMPT, USER_PROMPT
 from providers.base import LLMProvider, StreamCallback
 
@@ -116,6 +118,7 @@ class RAGService:
         results: list[Any],
         history: str | None = None,
     ) -> list[Any]:
+        start = time.time()
         if not results:
             return results
 
@@ -168,7 +171,8 @@ Rules:
                 ],
                 temperature=0,
             )
-
+            append_qa_to_file(f"Result time llm rank: {time.time() - start:.2f} seconds")
+            append_qa_to_file(response)         
             content = (response.content or "").strip()
             scored_items = self._parse_json_array(content)
 

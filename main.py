@@ -489,7 +489,7 @@ async def query1_endpoint(request: QueryRequest):
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail=f"خطا در پردازش درخواست: {str(e)}"
+            detail=f"خطا در پردازش درخواست: {str(e)}
         )
 @app.post("/api/queryWithRank", response_model=QueryResponse)
 async def queryWithRank_endpoint(request: QueryRequest):

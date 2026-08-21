@@ -199,7 +199,7 @@ class RouterAgent:
         
     ) -> None:
         history_text= "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in history])
-        append_qa_to_file(history_text)
+        #append_qa_to_file(history_text)
         # start=time.time()
         # query_vector = self.llm.embed_query(query)
         # append_qa_to_file(f"vector Query Time: {time.time() - start:.2f} seconds")
